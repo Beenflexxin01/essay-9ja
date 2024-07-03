@@ -1,0 +1,52 @@
+.pagination-ul {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin: 4rem auto;
+}
+
+.pagination {
+  margin: auto;
+  width: 0;
+}
+
+.pagination-link {
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: #000;
+  font-weight: bold;
+  border-bottom: none;
+}
+
+.user-nav {
+  height: 5rem;
+  cursor: pointer;
+}
+
+.activePage {
+  background-color: #3ac1ff;
+  padding: 0.3rem 1rem;
+  font-weight: bold;
+}
+
+.active {
+  background-color: transparent;
+}
+
+.dots {
+  cursor: pointer;
+}
+
+.stars {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.starRating {
+  color: #ec9901;
+}
+
+.grid-user {
+    display: flex;
+}

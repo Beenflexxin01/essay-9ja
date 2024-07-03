@@ -1,0 +1,159 @@
+.flex {
+  display: flex;
+  gap: 2rem;
+  padding: 2rem;
+  margin: 2rem 0;
+  align-items: center;
+  cursor: pointer;
+}
+
+.grid-flex {
+  background-color: #fff;
+  border: 1px solid #e4e7ec;
+  box-shadow: 12px 12px 12px #00000005;
+  border-radius: 1.2rem;
+  height: 10.6rem;
+  width: 23.9rem;
+  padding: 1.6rem;
+}
+
+.analytics {
+  background-color: #fff;
+  width: 74.9rem;
+  height: 47.1rem;
+  border-radius: 1.6rem;
+  padding: 3rem;
+}
+
+.analytic-flex {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+  background-color: #fff;
+  justify-content: space-between;
+  margin-bottom: 4rem;
+}
+
+.analytic-cta {
+  padding: 0.4rem 1.2rem;
+  border-radius: 0.6rem;
+  width: 9.6rem;
+  height: 3.1rem;
+  border: 1px solid #e6e6e6;
+  font-size: 1.6rem;
+  line-height: 23.2px;
+  color: #707070;
+}
+
+.analytics-flex {
+  background-color: #fff;
+  margin: 2rem;
+  border-radius: 1.6rem;
+  width: 33.9rem;
+  padding: 2rem;
+}
+
+.number-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.amount {
+  font-size: 3.2rem;
+  line-height: 38.4px;
+  font-weight: 700;
+  height: 3.8rem;
+  width: 10.3rem;
+  margin-top: 2.5rem;
+}
+
+.percent {
+  background-color: #e7f6ec;
+  padding: 0.2rem 1.2rem;
+  border-radius: 1.2rem;
+  width: 7.3rem;
+  height: 2.4rem;
+  text-align: center;
+  font-weight: 500;
+  line-height: 20.3px;
+  font-size: 1.4rem;
+  color: #036b26;
+  margin-top: 4rem;
+}
+
+.transaction-nav-li {
+  font-size: 1.6rem;
+  line-height: 23.2px;
+  color: #101010;
+}
+
+.transaction-date {
+  font-size: 1.4rem;
+  line-height: 20.3px;
+}
+
+.success {
+  background-color: #f0fff0;
+  padding: 0 1.2rem;
+  border-radius: 0.6rem;
+  width: 8.7rem;
+  height: 2rem;
+  color: #008000;
+  font-size: 1.4rem;
+  line-height: 20.3px;
+  text-align: right;
+}
+
+.cancel {
+  color: #ca0101;
+  background-color: #fff0f0;
+}
+
+.req {
+  font-size: 1.4rem;
+}
+
+.withdraw {
+  height: 24.6rem;
+  width: 33.9rem;
+}
+
+.withdrawal-flex {
+  margin-bottom: 0;
+}
+
+.wit-flex {
+  margin-bottom: 2rem;
+}
+
+.main-ul {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.main-li {
+  font-size: 1.4rem;
+}
+
+.activities {
+  background-color: #f8f8f8;
+}
+
+.act {
+  background-color: #fff;
+}
+
+.check {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.icon {
+  justify-content: space-between;
+}
+
+.task {
+  justify-content: space-between;
+}
