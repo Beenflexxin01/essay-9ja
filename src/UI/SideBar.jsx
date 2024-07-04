@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import logo from "../../public/images/logo.png";
+import logo from "/images/logo.png";
 import { TbLogout2 } from "react-icons/tb";
 
 function SideBar() {
@@ -27,24 +27,24 @@ function SideBar() {
               </NavLink>
             </li>
             <li className="side-bar-li">
-              <NavLink to="" className="side-bar-link">
+              <NavLink to="/withdrawal" className="side-bar-link">
                 Witdrawal Requests
               </NavLink>
             </li>
             <li className="side-bar-li">
-              <NavLink to="" className="side-bar-link">
+              <NavLink to="/transactions" className="side-bar-link">
                 Transactional History
               </NavLink>
             </li>
             <li className="side-bar-li">
-              <NavLink to="" className="side-bar-link">
+              <NavLink to="/tasks" className="side-bar-link">
                 Task Activities
               </NavLink>
             </li>
 
             <div className="sidebar">
               <li className="side-bar-li">
-                <NavLink to="" className="side-bar-link">
+                <NavLink to="/report" className="side-bar-link">
                   Report
                 </NavLink>
               </li>
@@ -54,7 +54,7 @@ function SideBar() {
                 </NavLink>
               </li>
               <li className="side-bar-li">
-                <NavLink to="" className="side-bar-link">
+                <NavLink to="/settings" className="side-bar-link">
                   Settings
                 </NavLink>
               </li>

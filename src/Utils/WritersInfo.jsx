@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { PiDotsThreeVertical, PiStar } from "react-icons/pi";
-import { NavLink } from "react-router-dom";
+import Pagination from "./Pagination";
+import WriterInfo from "../Features/Writers/WriterInfo";
 
-const writersInfo = [
+const writerInfo = [
   {
     id: "1",
     name: "Philip Wayne",
@@ -62,7 +62,7 @@ const writersInfo = [
 ];
 
 function WritersInfo() {
-  const [users] = useState(writersInfo);
+  const [users] = useState(writerInfo);
 
   const [currentPage, setCurrentPage] = useState(1);
   const productsPerPage = 4;
@@ -88,7 +88,6 @@ function WritersInfo() {
   function currentPageNumber(id) {
     setCurrentPage(id);
   }
-
   return (
     <>
       <div className="containr act">
@@ -106,70 +105,18 @@ function WritersInfo() {
             </ul>
           </nav>
         </div>
-        <div className="grid-5-cols">
-          {productPage &&
-            productPage.map((users) => (
-              <nav className="main-nav user-nav ">
-                <ul className="main-ul">
-                  <li className="main-li check">
-                    {" "}
-                    <input type="checkbox" />
-                    {users.name}
-                  </li>
-                  <li className="main-li">{users.tasksCompleted}</li>
-                  <li className="main-li">{users.date}</li>
-                  <li className="main-li ">{users.rate}</li>
-                  <li className="main-li check icon ">
-                    <div className="stars">
-                      <PiStar
-                        size={"15px"}
-                        className="dots starRating"
-                      />{" "}
-                      {users.rating}{" "}
-                    </div>
-                    <PiDotsThreeVertical size={"24px"} className="dots" />
-                  </li>
-                </ul>
-              </nav>
-            ))}
-        </div>
-      </div>
+        {productPage &&
+          productPage.map((users, n) => (
+            <WriterInfo users={users} key={n.id} />
+          ))}
 
-      <div className="pagination">
-        <nav className="pag-nav">
-          <ul className="pagination-ul">
-            <li className="pagination-li">
-              <NavLink
-                to="#"
-                className="pagination-link"
-                onClick={previousPage}>
-                Prev
-              </NavLink>
-            </li>
-            {numbers.map((n, index) => {
-              return (
-                <li
-                  className={`pagination-li ${
-                    currentPage === n ? "activePage" : ""
-                  }`}
-                  key={index}>
-                  <NavLink
-                    to="#"
-                    className="pagination-link"
-                    onClick={() => currentPageNumber(n)}>
-                    {n}
-                  </NavLink>
-                </li>
-              );
-            })}
-
-            <li className="pagination-li">
-              <NavLink to="#" className="pagination-link" onClick={nextPage}>
-                Next
-              </NavLink>
-            </li>
-          </ul>
-        </nav>
+        <Pagination
+          numbers={numbers}
+          currentPage={currentPage}
+          previousPage={previousPage}
+          nextPage={nextPage}
+          currentPageNumber={currentPageNumber}
+        />
       </div>
     </>
   );

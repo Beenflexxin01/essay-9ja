@@ -1,11 +1,9 @@
-import UserDetails from "../Features/Users/UserDetails";
-import UserReg from "../Features/Users/UserReg";
+import UserInfo from "../Utils/UserInfo";
 
 function Users() {
   return (
     <div>
-      <UserReg />
-      <UserDetails />
+      <UserInfo />
     </div>
   );
 }

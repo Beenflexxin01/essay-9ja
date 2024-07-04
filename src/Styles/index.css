@@ -26,6 +26,17 @@ li {
   margin: 2rem 1rem 4rem 32rem;
 }
 
+.page-header {
+  font-size: 4rem;
+  text-align: center;
+  width: 50%;
+  margin: auto;
+}
+
+.page {
+  margin: 15% auto;
+}
+
 .side-bar {
   max-width: 20%;
   position: absolute;

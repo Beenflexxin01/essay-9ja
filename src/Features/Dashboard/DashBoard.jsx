@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import lineChart from "../../public/images/Line Chart.png";
+import lineChart from "../../../public/images/Line Chart.png";
 
 function DashBoard() {
   return (

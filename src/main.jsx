@@ -4,6 +4,7 @@ import App from "./App.jsx";
 import "./Styles/index.css";
 import "./Styles/Dashboard.css";
 import "./Styles/Users.css";
+import "./Styles/Reports.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>

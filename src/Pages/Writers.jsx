@@ -1,4 +1,4 @@
-import WritersInfo from "../Features/Writers/WritersInfo";
+import WritersInfo from "../Utils/WritersInfo";
 
 function Writers() {
   return (

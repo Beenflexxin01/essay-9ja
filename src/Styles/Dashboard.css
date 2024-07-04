@@ -142,6 +142,8 @@
 
 .act {
   background-color: #fff;
+  border-radius: 1.6rem;
+  padding: 2rem 0;
 }
 
 .check {

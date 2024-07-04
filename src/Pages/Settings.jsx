@@ -1,9 +1,11 @@
+import MainSettings from "../Features/Settings/MainSettings";
+
 function Settings() {
-    return (
-        <div>
-            
-        </div>
-    )
+  return (
+    <div>
+      <MainSettings />
+    </div>
+  );
 }
 
-export default Settings
+export default Settings;

@@ -1,8 +1,7 @@
-import { PiDotsThreeVertical } from "react-icons/pi";
 import { useNavigate } from "react-router-dom";
 
-function UserReg({ users }) {
-  const { name, title, hired, date, lastActive, actTime } = users;
+function ReportDetails({ reports }) {
+  const { name, title, status, date, amount } = reports;
   const navigate = useNavigate();
 
   return (
@@ -15,14 +14,12 @@ function UserReg({ users }) {
               <input type="checkbox" />
               {name}
             </li>
-            <li className="main-li">{hired}</li>
+            <li className="main-li">{title}</li>
             <li className="main-li">{date}</li>
             <li className="main-li ">
-              {lastActive} <span className="span">{actTime}</span>
+              {status} <span className="span">{}</span>
             </li>
-            <li className="main-li check icon">
-              {title} <PiDotsThreeVertical size={"24px"} className="dots" />
-            </li>
+            <li className="main-li check icon">{amount}</li>
           </ul>
         </nav>
       </div>
@@ -30,4 +27,4 @@ function UserReg({ users }) {
   );
 }
 
-export default UserReg;
+export default ReportDetails;

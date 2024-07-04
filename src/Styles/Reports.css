@@ -1,0 +1,162 @@
+.input {
+  background-color: #f8f8f8;
+  width: 33.2rem;
+  height: 4.8rem;
+  margin: 1rem 0;
+  cursor: pointer;
+  border-radius: 0.8rem;
+  outline: none;
+  border: 1px solid #e0e0e0;
+}
+
+.report-form {
+  background-color: #fafafa;
+}
+
+label {
+  font-size: 1.6rem;
+  color: #4f4f4f;
+  line-height: 21.6px;
+}
+
+.button {
+  background-color: #023474;
+  padding: 0.8rem;
+  width: 19.4rem;
+  height: 4.8rem;
+  color: #fff;
+}
+
+.fl {
+  width: 54.2rem;
+  height: 7.4rem;
+}
+
+.sta {
+  height: 8rem;
+}
+
+.sta-inp {
+  width: 16.1rem;
+}
+
+.search {
+  width: 25.5rem;
+  padding: 0.8rem 1.6rem;
+}
+
+.tert {
+  padding: 1rem 2rem;
+}
+
+.report {
+  background-color: #fff;
+}
+
+.s-l {
+  display: flex;
+  align-items: center;
+}
+
+.settings {
+  background-color: #fff;
+  height: 90.7rem;
+  width: 110.4rem;
+  border-radius: 1.6rem;
+  position: absolute;
+}
+
+.profile {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  border-radius: 0.8rem;
+  height: 5.6rem;
+  font-size: 1.6rem;
+  line-height: 23.2px;
+  cursor: pointer;
+}
+
+.profile-btn {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  padding: 1rem 10rem;
+}
+
+.profile-studio {
+  position: absolute;
+  margin: 4rem 20%;
+  background-color: #fafafa;
+  width: 75.1rem;
+  height: 80.7rem;
+  border-radius: 0.8rem;
+  text-align: center;
+  padding: 4rem;
+}
+
+.input::placeholder {
+  opacity: 30%;
+  padding: 2rem;
+}
+
+.avt-img {
+  height: 8rem;
+  margin-top: 2rem;
+}
+
+.profile-li {
+  width: 50rem;
+  height: 8.4rem;
+  margin: 2.5rem 0;
+  font-size: 1.4rem;
+  color: #4f4f4f;
+}
+
+.profile-input {
+  width: 50rem;
+  height: 5.6rem;
+}
+
+.pro-form {
+  text-align: start;
+  margin: auto;
+  width: 80%;
+}
+
+.withdraw-ul {
+  grid-template-columns: 80% 20%;
+}
+
+.with-flex {
+  padding: 0;
+}
+
+.with-li {
+  margin: 1rem 3rem;
+}
+
+.approve {
+  background-color: #008000;
+  color: #fff;
+  padding: 0.4rem 1.2rem;
+  border-radius: 0.6rem;
+  width: 8.6rem;
+  height: 3.1rem;
+  text-align: center;
+  font-weight: 700;
+  line-height: 23.2px;
+}
+
+.decline {
+  background-color: #ffe5e5;
+  color: #ca0101;
+}
+
+.meg {
+  color: #063574;
+  width: 2.4rem;
+  height: 2.4rem;
+  background-color: #0636742c;
+  border-radius: 9rem;
+}

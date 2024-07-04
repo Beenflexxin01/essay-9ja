@@ -1,9 +1,11 @@
+import WithdrawalInfo from "../Utils/WithdrawalInfo";
+
 function Withdrawal() {
-    return (
-        <div>
-            
-        </div>
-    )
+  return (
+    <div>
+      <WithdrawalInfo />
+    </div>
+  );
 }
 
-export default Withdrawal
+export default Withdrawal;

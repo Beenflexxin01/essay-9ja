@@ -1,5 +1,5 @@
-import DashBoard from "../Features/DashBoard";
-import TaskActivities from "../Features/TaskActivities";
+import DashBoard from "../Features/Dashboard/DashBoard";
+import TaskActivities from "../Features/Dashboard/TaskActivities";
 
 function Dashboard() {
   return (

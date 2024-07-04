@@ -7,7 +7,7 @@
 
 .pagination {
   margin: auto;
-  width: 0;
+  width: 25%;
 }
 
 .pagination-link {
@@ -45,8 +45,78 @@
 
 .starRating {
   color: #ec9901;
+  display: flex;
+  align-items: center;
+}
+
+.r {
+  color: #e5e5e5;
+  fill: #e5e5e5;
 }
 
 .grid-user {
-    display: flex;
+  display: flex;
+}
+
+.back {
+  font-size: 1.4rem;
+  line-height: 20.3px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.details {
+  color: #023474;
+  font-size: 1.6rem;
+  line-height: 23.2px;
+  margin: 2rem 0;
+}
+
+.activities {
+  background-color: #fafafa;
+}
+
+.bg {
+  background-color: #fff;
+  height: 89rem;
+  border-radius: 1.6rem;
+  width: 100.4rem;
+  padding: 2rem;
+}
+
+.grid-user {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  /* width: 110.4rem; */
+}
+
+.grid-user-li {
+  color: #999999;
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 23.2px;
+  padding: 1rem;
+}
+
+.user-detail {
+  font-weight: 700;
+  color: #505050;
+}
+
+.mail {
+  color: #505050;
+  text-decoration: none;
+}
+
+.canceled {
+  background-color: #fff0f0;
+  color: #ca0101;
+  font-weight: 400;
+  line-height: 20.3px;
+  font-size: 1.4rem;
+  width: 8.7rem;
+  border: 0.6rem;
+  padding: 1rem 1.2rem;
 }

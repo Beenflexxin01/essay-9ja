@@ -1,9 +1,11 @@
+import TaskActivityInfo from "../Utils/TaskActivityInfo";
+
 function TaskActivities() {
-    return (
-        <div>
-            
-        </div>
-    )
+  return (
+    <div>
+      <TaskActivityInfo />
+    </div>
+  );
 }
 
-export default TaskActivities
+export default TaskActivities;

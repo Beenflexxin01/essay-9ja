@@ -1,13 +1,15 @@
 import { PiDotsThreeVertical } from "react-icons/pi";
 import { useNavigate } from "react-router-dom";
 
-function UserReg({ users }) {
-  const { name, title, hired, date, lastActive, actTime } = users;
+function Tasks({ tasks }) {
+  const { name, title, date, status, amount } = tasks;
   const navigate = useNavigate();
 
   return (
     <>
-      <div className="grid-5-cols" onClick={() => navigate("/user-details")}>
+      <div
+        className="grid-5-cols"
+        onClick={() => navigate("/task-details")}>
         <nav className="main-nav user-nav ">
           <ul className="main-ul">
             <li className="main-li check">
@@ -15,13 +17,11 @@ function UserReg({ users }) {
               <input type="checkbox" />
               {name}
             </li>
-            <li className="main-li">{hired}</li>
-            <li className="main-li">{date}</li>
-            <li className="main-li ">
-              {lastActive} <span className="span">{actTime}</span>
-            </li>
+            <li className="main-li">{title}</li>
+            <li className="main-li ">{date}</li>
+            <li className="main-li">{status}</li>
             <li className="main-li check icon">
-              {title} <PiDotsThreeVertical size={"24px"} className="dots" />
+              {amount} <PiDotsThreeVertical size={"24px"} className="dots" />
             </li>
           </ul>
         </nav>
@@ -30,4 +30,4 @@ function UserReg({ users }) {
   );
 }
 
-export default UserReg;
+export default Tasks;
