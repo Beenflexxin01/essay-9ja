@@ -1,6 +1,7 @@
 import { NavLink } from "react-router-dom";
 import logo from "/images/logo.png";
 import { TbLogout2 } from "react-icons/tb";
+import AddBtn from "./AddBtn";
 
 function SideBar() {
   return (
@@ -49,9 +50,7 @@ function SideBar() {
                 </NavLink>
               </li>
               <li className="side-bar-li">
-                <NavLink to="" className="side-bar-link">
-                  Add a new Team
-                </NavLink>
+                <AddBtn />
               </li>
               <li className="side-bar-li">
                 <NavLink to="/settings" className="side-bar-link">

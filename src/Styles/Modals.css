@@ -1,0 +1,65 @@
+.btn-primary {
+  background-color: #023474;
+  width: 100%;
+  height: 5.6rem;
+  border-radius: 0.8rem;
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 22.4px;
+}
+
+.modal-btn {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  font-size: 1.4rem;
+  color: #505050;
+  text-decoration: none;
+  padding: 0;
+  margin: 0 2rem;
+}
+
+.modal-btn:hover,
+.modal-btn:active {
+  background-color: transparent;
+  color: #505050;
+}
+
+.form-control {
+  padding: 0.8rem 2rem;
+  border-radius: 0.8rem;
+  background-color: #f2f2f2;
+  /* width: 49.6rem; */
+  height: 5.6rem;
+  margin: 1rem 0;
+}
+
+.modal-content {
+  width: 56rem;
+  height: 69.1rem;
+  border-radius: 1.6rem;
+}
+
+.btn-close {
+  background-color: #ffffff;
+  border-radius: 2rem;
+  height: 4rem;
+  width: 4rem;
+  box-shadow: 4px 2px 8px 5px #00000014;
+}
+
+.modal-header {
+  border-bottom: none;
+  margin-bottom: 3rem;
+}
+
+.modal-footer {
+  border-top: none;
+}
+
+.view-btn {
+  /* width: 0; */
+  background-color: transparent;
+  border: none;
+  outline: none;
+}

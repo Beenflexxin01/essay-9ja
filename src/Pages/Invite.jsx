@@ -1,9 +1,14 @@
+import UserModalBtn from "../UI/ViewBtn";
+import InviteModal from "../Modals/InviteModal";
+
 function Invite() {
-    return (
-        <div>
-            
-        </div>
-    )
+  return (
+    <div>
+      <UserModalBtn />
+
+      <InviteModal />
+    </div>
+  );
 }
 
-export default Invite
+export default Invite;

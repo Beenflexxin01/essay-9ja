@@ -128,7 +128,7 @@ function ReportInfo() {
             </div>
           </ul>
         </nav>
-        <div className="nav">
+        <div className="">
           <nav className="main-nav user-nav activities">
             <ul className="main-ul">
               <li className="main-li">Writer/User name</li>

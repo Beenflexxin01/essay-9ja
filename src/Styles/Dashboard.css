@@ -159,3 +159,7 @@
 .task {
   justify-content: space-between;
 }
+
+.grid-user-ul {
+  padding: 0;
+}

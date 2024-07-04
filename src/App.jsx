@@ -14,6 +14,7 @@ import Settings from "./Pages/Settings";
 import SecuritySettings from "./Features/Settings/SecuritySettings";
 import PageNotFound from "./Pages/PageNotFound";
 import Withdrawal from "./Pages/Withdrawal";
+import Invite from "./Pages/Invite";
 
 function App() {
   return (
@@ -38,6 +39,7 @@ function App() {
             <Route path="settings" element={<Settings />} />
             <Route path="security-settings" element={<SecuritySettings />} />
             <Route path="withdrawal" element={<Withdrawal />} />
+            <Route path="invite" element={<Invite />} />
             <Route path="*" element={<PageNotFound />} />
           </Route>
         </Routes>

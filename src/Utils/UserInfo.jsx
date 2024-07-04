@@ -101,7 +101,7 @@ function UserInfo() {
         <div className="flex task">
           <h3 className="tertiary-header">Users</h3>
         </div>
-        <div className="nav">
+        <div className="">
           <nav className="main-nav user-nav activities">
             <ul className="main-ul">
               <li className="main-li">User name</li>
