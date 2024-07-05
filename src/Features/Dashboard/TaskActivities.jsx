@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { PiDotsThreeVertical } from "react-icons/pi";
+import TasksViewBtn from "../../Modals/ModalBtn/TasksViewBtn";
 
 function TaskActivities() {
   return (
@@ -8,10 +8,10 @@ function TaskActivities() {
         <div className="flex task">
           <h3 className="tertiary-header">Task Activities</h3>
           <p className="text-description">
-            <Link>View All</Link>
+            <Link to="/tasks">View All</Link>
           </p>
         </div>
-        <div className="nav">
+        <div className="">
           <nav className="main-nav activities">
             <ul className="main-ul">
               <li className="main-li">Writer name</li>
@@ -34,7 +34,7 @@ function TaskActivities() {
               <li className="main-li">24/05/2024</li>
               <li className="main-li complete success">Completed</li>
               <li className="main-li check icon">
-                #150,000.00 <PiDotsThreeVertical size={"24px"} />
+                #150,000.00 <TasksViewBtn />
               </li>
             </ul>
           </nav>
@@ -53,7 +53,7 @@ function TaskActivities() {
               </li>
               <li className="main-li check icon">
                 #150,000.00
-                <PiDotsThreeVertical size={"24px"} />
+                <TasksViewBtn />
               </li>
             </ul>
           </nav>
@@ -70,7 +70,7 @@ function TaskActivities() {
               <li className="main-li">24/05/2024</li>
               <li className="main-li complete success">Completed</li>
               <li className="main-li check icon">
-                #150,000.00 <PiDotsThreeVertical size={"24px"} />
+                #150,000.00 <TasksViewBtn />
               </li>
             </ul>
           </nav>
@@ -87,7 +87,7 @@ function TaskActivities() {
               <li className="main-li complete success">Complete</li>
 
               <li className="main-li check icon">
-                #150,000.00 <PiDotsThreeVertical size={"24px"} />
+                #150,000.00 <TasksViewBtn />
               </li>
             </ul>
           </nav>

@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import lineChart from "../../../public/images/Line Chart.png";
+import lineChart from "/images/Line Chart.png";
 
 function DashBoard() {
   return (
@@ -51,7 +51,7 @@ function DashBoard() {
                 <p className="text-descfription">Recent Transaction made</p>
 
                 <p className="text-description">
-                  <Link>View All</Link>
+                  <Link to="/transactions">View All</Link>
                 </p>
               </div>
               <nav className="transaction-nav">
@@ -105,7 +105,7 @@ function DashBoard() {
               <div className="analytic-flex ">
                 <p className="text-descfription"> Recent Withdrawal Made</p>
                 <p className="text-description">
-                  <Link>View All</Link>
+                  <Link to="/withdrawal">View All</Link>
                 </p>
               </div>
               <nav className="transaction-nav">

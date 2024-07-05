@@ -1,4 +1,4 @@
-import ViewBtn from "../../UI/ViewBtn";
+import UsersViewBtn from "../../Modals/ModalBtn/UsersViewBtn";
 
 function UserReg({ users }) {
   const { name, title, hired, date, lastActive, actTime } = users;
@@ -20,7 +20,7 @@ function UserReg({ users }) {
             </li>
             <li className="main-li check  icon">
               {title}
-              <ViewBtn />
+              <UsersViewBtn />
             </li>
           </ul>
         </nav>

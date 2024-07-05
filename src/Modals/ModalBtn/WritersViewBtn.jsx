@@ -1,12 +1,10 @@
 import { useState } from "react";
-import UserModal from "../Modals/UserModal";
-// import InviteModal from "../Modals/InviteModal";
 import Button from "react-bootstrap/Button";
 import { PiDotsThreeVertical } from "react-icons/pi";
+import WritersModal from "../WritersModal";
 
-function ViewBtn() {
+function WritersViewBtn() {
   const [modalShow, setModalShow] = useState(false);
-  // const [modalShow, setModalShow] = React.useState(false);
   return (
     <>
       <Button
@@ -15,9 +13,9 @@ function ViewBtn() {
         className="view-btn">
         <PiDotsThreeVertical size={"24px"} className="dots" />
       </Button>
-      <UserModal show={modalShow} onHide={() => setModalShow(false)} />
+      <WritersModal show={modalShow} onHide={() => setModalShow(false)} />
     </>
   );
 }
 
-export default ViewBtn;
+export default WritersViewBtn;

@@ -1,12 +1,15 @@
-import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import { HiEye, HiTrash, HiUserAdd } from "react-icons/hi";
 import { useNavigate } from "react-router-dom";
 import WritersDeleteBtn from "./DeleteModalBtn/WritersDeleteBtn";
-import DeactivateUserModalBtn from "./UpdateModalBtn/DeactivateUserModalBtn";
+import { useState } from "react";
+import DeactivateWriterModalBtn from "./UpdateModalBtn/DeactivateWriterModalBtn";
 
-function UserModal(props) {
+function WritersModal(props) {
   const navigate = useNavigate();
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleOffMenuBar = () => setIsOpen(!isOpen);
   return (
     <>
       <Modal
@@ -20,25 +23,21 @@ function UserModal(props) {
             <ul className="modal-ul">
               <li
                 className="modal-li"
-                onClick={() => navigate("/user-details")}>
-                <HiEye size={"14px"} /> View user detail
+                onClick={() => navigate("/writer-details")}>
+                <HiEye size={"14px"} /> View detail
               </li>
-              <li className="modal-li">
-                <HiUserAdd size={"14px"} /> <DeactivateUserModalBtn />
+              <li className="modal-li" onClick={toggleOffMenuBar}>
+                <HiUserAdd size={"14px"} /> <DeactivateWriterModalBtn />
               </li>
-              <li className="modal-li">
+              <li className="modal-li" onClick={() => setIsOpen(!isOpen)}>
                 <HiTrash size={"14px"} /> <WritersDeleteBtn />
               </li>
             </ul>
           </nav>
         </Modal.Body>
-
-        <Modal.Footer>
-          <Button onClick={props.onHide}>Close</Button>
-        </Modal.Footer>
       </Modal>
     </>
   );
 }
 
-export default UserModal;
+export default WritersModal;

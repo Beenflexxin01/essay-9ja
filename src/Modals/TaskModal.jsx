@@ -1,11 +1,10 @@
-import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import { HiEye, HiTrash, HiUserAdd } from "react-icons/hi";
 import { useNavigate } from "react-router-dom";
-import WritersDeleteBtn from "./DeleteModalBtn/WritersDeleteBtn";
-import DeactivateUserModalBtn from "./UpdateModalBtn/DeactivateUserModalBtn";
+import TaskDeleteBtn from "./DeleteModalBtn/TaskDeleteBtn";
+import UpdateTaskModalBtn from "./UpdateModalBtn/UpdateTaskModalBtn";
 
-function UserModal(props) {
+function TaskModal(props) {
   const navigate = useNavigate();
   return (
     <>
@@ -20,25 +19,21 @@ function UserModal(props) {
             <ul className="modal-ul">
               <li
                 className="modal-li"
-                onClick={() => navigate("/user-details")}>
-                <HiEye size={"14px"} /> View user detail
+                onClick={() => navigate("/task-details")}>
+                <HiEye size={"14px"} /> View task detail
               </li>
               <li className="modal-li">
-                <HiUserAdd size={"14px"} /> <DeactivateUserModalBtn />
+                <HiUserAdd size={"14px"} /> <UpdateTaskModalBtn />
               </li>
               <li className="modal-li">
-                <HiTrash size={"14px"} /> <WritersDeleteBtn />
+                <HiTrash size={"14px"} /> <TaskDeleteBtn />
               </li>
             </ul>
           </nav>
         </Modal.Body>
-
-        <Modal.Footer>
-          <Button onClick={props.onHide}>Close</Button>
-        </Modal.Footer>
       </Modal>
     </>
   );
 }
 
-export default UserModal;
+export default TaskModal;

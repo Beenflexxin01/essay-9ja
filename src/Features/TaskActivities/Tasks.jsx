@@ -1,4 +1,4 @@
-import ViewBtn from "../../UI/ViewBtn";
+import TasksViewBtn from "../../Modals/ModalBtn/TasksViewBtn";
 
 function Tasks({ tasks }) {
   const { name, title, date, status, amount } = tasks;
@@ -17,7 +17,7 @@ function Tasks({ tasks }) {
             <li className="main-li ">{date}</li>
             <li className="main-li">{status}</li>
             <li className="main-li check icon">
-              {amount} <ViewBtn />
+              {amount} <TasksViewBtn />
             </li>
           </ul>
         </nav>

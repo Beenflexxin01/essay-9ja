@@ -1,4 +1,4 @@
-import ViewBtn from "../../UI/ViewBtn";
+import TransactionsViewBtn from "../../Modals/ModalBtn/TransactionsViewBtn";
 
 function Transactions({ transactions }) {
   const { name, reason, accountDetail, amount, status, spanText } =
@@ -20,7 +20,7 @@ function Transactions({ transactions }) {
             </li>
             <li className="main-li">{amount}</li>
             <li className="main-li check icon">
-              {status} <ViewBtn />
+              {status} <TransactionsViewBtn />
             </li>
           </ul>
         </nav>

@@ -43,8 +43,8 @@
 .btn-close {
   background-color: #ffffff;
   border-radius: 2rem;
-  height: 4rem;
-  width: 4rem;
+  height: 2rem;
+  width: 2rem;
   box-shadow: 4px 2px 8px 5px #00000014;
 }
 
@@ -58,8 +58,115 @@
 }
 
 .view-btn {
-  /* width: 0; */
   background-color: transparent;
   border: none;
+  position: relative;
   outline: none;
+}
+
+.modal-li {
+  font-size: 1.6rem;
+  width: 20rem;
+  height: 2.3rem;
+  color: #101010;
+  margin: 2rem 0;
+  cursor: pointer;
+}
+
+.btn {
+  --bs-btn-font-size: 1.6rem;
+}
+
+.modal-c {
+  width: 30rem;
+  overflow: hidden;
+  height: 16.9rem;
+  border-radius: 1.6rem;
+  position: absolute;
+  left: 80%;
+  top: 0;
+}
+
+.delete {
+  color: #a60000;
+}
+
+.modal--header {
+  flex-direction: column;
+}
+
+.remove {
+  font-weight: 700;
+  font-size: 1.6rem;
+}
+
+.modal-text {
+  font-size: 1.6rem;
+  text-align: center;
+}
+
+.modal--content {
+  width: 33.9rem;
+  height: 46.2rem;
+  overflow: hidden;
+  position: absolute;
+  left: 40%;
+  border-radius: 1.6rem;
+  margin-top: 13rem;
+}
+
+.m-btn {
+  margin: 3rem 4rem;
+}
+
+.modal--btn {
+  margin: 1rem 0;
+  font-weight: 700;
+  font-size: 1.6rem;
+  text-align: center;
+  border-radius: 1.2rem;
+  width: 23.2rem;
+  height: 3.9rem;
+  padding: 0.8rem 1.6rem;
+}
+
+.keep-btn {
+  background-color: #ebf4ff;
+  color: #000000;
+  border: none;
+  outline: none;
+}
+
+.keep-btn:hover,
+.keep-btn:active {
+  background-color: #ebf4ff;
+  color: #000000;
+}
+
+.modal-task-content {
+  height: 33rem;
+  border-radius: 1.6rem;
+}
+
+.update-header {
+  text-align: center;
+  display: block;
+}
+
+.update {
+  font-weight: 700;
+  text-align: center;
+}
+
+.up {
+  width: 22.6rem;
+  height: 4.8rem;
+  margin: auto;
+}
+
+.comp {
+  background-color: #f6f6f6;
+  height: 3.2rem;
+  width: 10.3rem;
+  padding: 0.6rem;
 }

@@ -1,5 +1,5 @@
 import { PiStar } from "react-icons/pi";
-import ViewBtn from "../../UI/ViewBtn";
+import WritersViewBtn from "../../Modals/ModalBtn/WritersViewBtn";
 
 function WriterInfo({ users }) {
   const { name, date, tasksCompleted, rate, rating } = users;
@@ -21,7 +21,7 @@ function WriterInfo({ users }) {
               <div className="stars">
                 <PiStar size={"15px"} className="dots starRating" /> {rating}{" "}
               </div>
-              <ViewBtn />
+              <WritersViewBtn />
             </li>
           </ul>
         </nav>
