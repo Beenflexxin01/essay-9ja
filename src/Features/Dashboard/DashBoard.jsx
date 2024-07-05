@@ -125,6 +125,7 @@ function DashBoard() {
                 <ul className="transaction-nav-ul">
                   <div className="analytic-flex withdrawal-flex">
                     <li className="transaction-nav-li">Babalola Timothy</li>
+                    <li className="transaction-nav-li">#150,000</li>
                   </div>
                   <div className="analytic-flex wit-flex">
                     <li className="transaction-nav-li req">
