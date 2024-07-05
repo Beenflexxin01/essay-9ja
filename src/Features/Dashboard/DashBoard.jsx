@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import lineChart from "/images/Line Chart.png";
+import LineChart from "./LineChart";
 
 function DashBoard() {
   return (
@@ -40,7 +40,7 @@ function DashBoard() {
                 </p>
                 <p className="analytic-cta">Weekly</p>
               </div>
-              <img src={lineChart} alt="Line Chart" className="chart-img" />
+              <LineChart />
             </div>
           </div>
 
