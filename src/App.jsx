@@ -15,6 +15,8 @@ import SecuritySettings from "./Features/Settings/SecuritySettings";
 import PageNotFound from "./Pages/PageNotFound";
 import Withdrawal from "./Pages/Withdrawal";
 import Invite from "./Pages/Invite";
+import Login from "./Components/Auth/Login";
+import ForgotPssword from "./Components/Auth/ForgotPssword";
 
 function App() {
   return (
@@ -42,6 +44,8 @@ function App() {
             <Route path="invite" element={<Invite />} />
             <Route path="*" element={<PageNotFound />} />
           </Route>
+          <Route path="login-admin" element={<Login />} />
+          <Route path="forgot-password" element={<ForgotPssword />} />
         </Routes>
       </BrowserRouter>
     </>

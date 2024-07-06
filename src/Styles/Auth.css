@@ -1,0 +1,56 @@
+.form-li {
+  font-size: 1.6rem;
+  line-height: 21.6px;
+  color: #000;
+}
+
+.form-container {
+  margin: 8rem auto;
+  width: 35%;
+}
+
+.align {
+  text-align: center;
+}
+
+.form {
+  margin: auto;
+}
+
+.login-text {
+  font-size: 1.6rem;
+  line-height: 22.4px;
+  color: #333333;
+}
+
+.secondary-header {
+  font-size: 3.2rem;
+  color: #063574;
+  line-height: 43.2px;
+}
+
+.login-input {
+  background-color: #f8f8f8;
+  border: 1px solid #e0e0e0;
+  width: 50rem;
+  height: 5.6rem;
+  cursor: default;
+}
+
+.login-logo {
+  margin-bottom: 5rem;
+  cursor: pointer;
+}
+
+.login-btn {
+  background-color: #023474;
+  opacity: 50%;
+  color: #fff;
+  font-size: 1.6rem;
+  line-height: 21.6px;
+  cursor: pointer;
+}
+
+.password {
+  text-decoration: none;
+}

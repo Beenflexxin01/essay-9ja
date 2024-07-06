@@ -1,6 +1,7 @@
 import { NavLink } from "react-router-dom";
 import logo from "/images/logo.png";
-function Login() {
+
+function ForgotPassword() {
   return (
     <>
       <div className="form-container">
@@ -8,10 +9,9 @@ function Login() {
           <NavLink to="/home">
             <img src={logo} alt="Logo" className="logo login-logo" />
           </NavLink>
-          <h2 className="secondary-header">👋Welcome Admin</h2>
+          <h2 className="secondary-header">Forgot Password?</h2>
           <p className="login-text">
-            Login to your dashboard to tract the progress of your work or give
-            out a project
+            You don't need to worry. We will send a reset instruction
           </p>
         </div>
         <div className="form">
@@ -27,24 +27,6 @@ function Login() {
                     required
                   />
                 </li>
-                <li className="form-li">
-                  <label htmlFor="password">Password</label>
-                  <input
-                    type="password"
-                    className="input login-input"
-                    placeholder="........."
-                    required
-                  />
-                </li>
-
-                <li className="form-li">
-                  <NavLink
-                    to="/forgot-password"
-                    className="password
-                  ">
-                    Forgot Password?
-                  </NavLink>
-                </li>
 
                 <li className="form-l">
                   <input
@@ -52,6 +34,15 @@ function Login() {
                     value="Login"
                     className="input button login-btn login-input"
                   />
+                </li>
+
+                <li className="form-li">
+                  <NavLink
+                    to="/login-admin"
+                    className="password
+                  ">
+                    &larr; Back to Login Page
+                  </NavLink>
                 </li>
               </ul>
             </nav>
@@ -62,4 +53,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default ForgotPassword;
