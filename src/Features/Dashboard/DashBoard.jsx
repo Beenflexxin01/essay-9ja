@@ -1,5 +1,11 @@
 import { Link } from "react-router-dom";
 import LineChart from "./LineChart";
+import {
+  HiArrowDownLeft,
+  HiArrowUpRight,
+  HiChartPie,
+  HiMegaphone,
+} from "react-icons/hi2";
 
 function DashBoard() {
   return (
@@ -12,14 +18,20 @@ function DashBoard() {
                 <p className="text-description">Total number of writers</p>
                 <div className="number-flex">
                   <p className="amount">45,823</p>
-                  <p className="percent">75%</p>
+                  <p className="percent">
+                    75%
+                    <HiChartPie />
+                  </p>
                 </div>
               </div>
               <div className="grid-flex">
                 <p className="text-description">Total active writers</p>
                 <div className="number-flex">
                   <p className="amount">40,823</p>
-                  <p className="percent">75%</p>
+
+                  <p className="percent">
+                    75% <HiChartPie />{" "}
+                  </p>
                 </div>
               </div>
 
@@ -27,7 +39,10 @@ function DashBoard() {
                 <p className="text-description">Total number of users</p>
                 <div className="number-flex">
                   <p className="amount">100,713</p>
-                  <p className="percent">75%</p>
+
+                  <p className="percent">
+                    75% <HiChartPie />
+                  </p>
                 </div>
               </div>
             </div>
@@ -57,7 +72,10 @@ function DashBoard() {
               <nav className="transaction-nav">
                 <ul className="transaction-nav-ul">
                   <div className="analytic-flex">
-                    <li className="transaction-nav-li">Philip Wayne</li>
+                    <li className="transaction-nav-li">
+                      <HiArrowDownLeft className="arrow" size={"20px"} />
+                      Philip Wayne
+                    </li>
                     <li className="transaction-nav-li">#150,000</li>
                   </div>
                   <div className="analytic-flex">
@@ -71,7 +89,10 @@ function DashBoard() {
               <nav className="transaction-nav">
                 <ul className="transaction-nav-ul">
                   <div className="analytic-flex">
-                    <li className="transaction-nav-li">Samuel Onakoya</li>
+                    <li className="transaction-nav-li">
+                      <HiArrowUpRight className="arrow suc" size={"20px"} />
+                      Samuel Onakoya
+                    </li>
                     <li className="transaction-nav-li">#120,000</li>
                   </div>
                   <div className="analytic-flex">
@@ -87,7 +108,10 @@ function DashBoard() {
               <nav className="transaction-nav">
                 <ul className="transaction-nav-ul">
                   <div className="analytic-flex">
-                    <li className="transaction-nav-li">Philip Wayne</li>
+                    <li className="transaction-nav-li">
+                      <HiArrowDownLeft className="arrow" size={"20px"} />
+                      Philip Wayne
+                    </li>
                     <li className="transaction-nav-li">#90,000</li>
                   </div>
                   <div className="analytic-flex">
@@ -111,7 +135,10 @@ function DashBoard() {
               <nav className="transaction-nav">
                 <ul className="transaction-nav-ul">
                   <div className="analytic-flex withdrawal-flex">
-                    <li className="transaction-nav-li">Opeyemi Fashawe</li>
+                    <li className="transaction-nav-li">
+                      <HiMegaphone size={"15px"} className="icon meg" />
+                      Opeyemi Fashawe
+                    </li>
                     <li className="transaction-nav-li">#150,000</li>
                   </div>
                   <div className="analytic-flex wit-flex">
@@ -124,7 +151,10 @@ function DashBoard() {
               <nav className="transaction-nav">
                 <ul className="transaction-nav-ul">
                   <div className="analytic-flex withdrawal-flex">
-                    <li className="transaction-nav-li">Babalola Timothy</li>
+                    <li className="transaction-nav-li">
+                      <HiMegaphone size={"15px"} className="icon meg" />
+                      Babalola Timothy
+                    </li>
                     <li className="transaction-nav-li">#150,000</li>
                   </div>
                   <div className="analytic-flex wit-flex">
