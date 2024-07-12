@@ -1,84 +1,103 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Pagination from "./Pagination";
 import Transactions from "../Features/Transactions/Transactions";
+import BackendLink from "./BackendLink";
 
-const transactionInfo = [
-  {
-    id: "1",
-    name: "Ronald Richards",
-    reason: "Biomedical Practice",
-    accountDetail: "0856785621",
-    amount: "#150,000",
-    status: "Completed",
-    spanText: "- GTB",
-  },
-  {
-    id: "2",
-    name: "Ronald Richards",
-    reason: "AR & VR importance",
-    accountDetail: "0856785621",
-    amount: "#150,000",
-    status: "Canceled",
-    spanText: "- GTB",
-  },
-  {
-    id: "3",
-    name: "Kristin Watson",
-    reason: "AR & VR importance",
-    accountDetail: "0060078945",
-    amount: "Today#150,000",
-    status: "Completed",
-    spanText: "- Sterl..",
-  },
-  {
-    id: "4",
-    name: "Cody Fisher",
-    reason: "Biomedical Practice",
-    accountDetail: "0060078945",
-    amount: "Today#150,000",
-    status: "Canceled",
-    spanText: "- Sterl..",
-  },
-  {
-    id: "5",
-    name: "Arlene McCoy",
-    reason: "Usefulness of AI",
-    accountDetail: "0856785621",
-    amount: "#150,000",
-    status: "Completed",
-    spanText: "- GTB",
-  },
-  {
-    id: "6",
-    name: "Floyd Miles",
-    reason: "Usefulness of AI",
-    accountDetail: "0060078945",
-    amount: "#150,000",
-    status: "Completed",
-    spanText: "- Sterl...",
-  },
-  {
-    id: "7",
-    name: "Theresa Webb",
-    reason: "Biomedical Practice",
-    accountDetail: "0856785621",
-    amount: "#150,000",
-    status: "Completed",
-    spanText: "- GTB",
-  },
-];
+// const transactionInfo = [
+//   {
+//     id: "1",
+//     name: "Ronald Richards",
+//     reason: "Biomedical Practice",
+//     accountDetail: "0856785621",
+//     amount: "#150,000",
+//     status: "Completed",
+//     spanText: "- GTB",
+//   },
+//   {
+//     id: "2",
+//     name: "Ronald Richards",
+//     reason: "AR & VR importance",
+//     accountDetail: "0856785621",
+//     amount: "#150,000",
+//     status: "Canceled",
+//     spanText: "- GTB",
+//   },
+//   {
+//     id: "3",
+//     name: "Kristin Watson",
+//     reason: "AR & VR importance",
+//     accountDetail: "0060078945",
+//     amount: "Today#150,000",
+//     status: "Completed",
+//     spanText: "- Sterl..",
+//   },
+//   {
+//     id: "4",
+//     name: "Cody Fisher",
+//     reason: "Biomedical Practice",
+//     accountDetail: "0060078945",
+//     amount: "Today#150,000",
+//     status: "Canceled",
+//     spanText: "- Sterl..",
+//   },
+//   {
+//     id: "5",
+//     name: "Arlene McCoy",
+//     reason: "Usefulness of AI",
+//     accountDetail: "0856785621",
+//     amount: "#150,000",
+//     status: "Completed",
+//     spanText: "- GTB",
+//   },
+//   {
+//     id: "6",
+//     name: "Floyd Miles",
+//     reason: "Usefulness of AI",
+//     accountDetail: "0060078945",
+//     amount: "#150,000",
+//     status: "Completed",
+//     spanText: "- Sterl...",
+//   },
+//   {
+//     id: "7",
+//     name: "Theresa Webb",
+//     reason: "Biomedical Practice",
+//     accountDetail: "0856785621",
+//     amount: "#150,000",
+//     status: "Completed",
+//     spanText: "- GTB",
+//   },
+// ];
 
 function TransactionInfo() {
-  const [users] = useState(transactionInfo);
+  const [transactions, setTransactions] = useState([]);
 
   const [currentPage, setCurrentPage] = useState(1);
   const productsPerPage = 4;
 
   const lastIndex = currentPage * productsPerPage;
   const firstIndex = lastIndex - productsPerPage;
-  const productPage = users.slice(firstIndex, lastIndex);
-  const npages = Math.ceil(users.length / productsPerPage);
+  const productPage = transactions.slice(firstIndex, lastIndex);
+  const npages = Math.ceil(transactions.length / productsPerPage);
   const numbers = [...Array(npages + 1).keys()].slice(1);
+
+  useEffect(() => {
+    async function getTransactionInfo() {
+      try {
+        const res = await fetch(`${BackendLink}/wallets/transactions/all`);
+
+        if (!res.ok) throw new Error("Unable to fetch transactions");
+
+        const data = await res.json();
+        if (data.Response === "False")
+          throw new Error("Unable to fetch transaction data! ");
+        setTransactions(data);
+      } catch (err) {
+        console.log(err.message);
+      }
+    }
+    getTransactionInfo();
+  }, []);
 
   function nextPage() {
     if (currentPage !== npages) {

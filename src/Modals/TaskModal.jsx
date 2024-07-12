@@ -4,8 +4,10 @@ import { useNavigate } from "react-router-dom";
 import TaskDeleteBtn from "./DeleteModalBtn/TaskDeleteBtn";
 import UpdateTaskModalBtn from "./UpdateModalBtn/UpdateTaskModalBtn";
 
-function TaskModal(props) {
+function TaskModal(props, tasks) {
   const navigate = useNavigate();
+  const { _id: tasksId } = tasks;
+
   return (
     <>
       <Modal
@@ -19,7 +21,7 @@ function TaskModal(props) {
             <ul className="modal-ul">
               <li
                 className="modal-li"
-                onClick={() => navigate("/task-details")}>
+                onClick={() => navigate(`/task-details/${tasksId}`)}>
                 <HiEye size={"14px"} /> View task detail
               </li>
               <li className="modal-li">

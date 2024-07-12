@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function Pagination({
   numbers,
@@ -12,9 +12,9 @@ function Pagination({
       <nav className="pag-nav">
         <ul className="pagination-ul">
           <li className="pagination-li">
-            <NavLink to="#" className="pagination-link" onClick={previousPage}>
+            <Link to="#" className="pagination-link" onClick={previousPage}>
               Prev
-            </NavLink>
+            </Link>
           </li>
           {numbers.map((n, index) => {
             return (
@@ -23,20 +23,20 @@ function Pagination({
                   currentPage === n ? "activePage" : ""
                 }`}
                 key={index}>
-                <NavLink
+                <Link
                   to="#"
                   className="pagination-link"
                   onClick={() => currentPageNumber(n)}>
                   {n}
-                </NavLink>
+                </Link>
               </li>
             );
           })}
 
           <li className="pagination-li">
-            <NavLink to="#" className="pagination-link" onClick={nextPage}>
+            <Link to="#" className="pagination-link" onClick={nextPage}>
               Next
-            </NavLink>
+            </Link>
           </li>
         </ul>
       </nav>

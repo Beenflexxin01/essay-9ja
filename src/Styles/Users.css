@@ -29,9 +29,9 @@
   font-weight: bold;
 }
 
-.active {
+/* .active {
   background-color: transparent;
-}
+} */
 
 .dots {
   cursor: pointer;

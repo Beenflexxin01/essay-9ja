@@ -17,7 +17,7 @@ function Tasks({ tasks }) {
             <li className="main-li ">{date}</li>
             <li className="main-li">{status}</li>
             <li className="main-li check icon">
-              {amount} <TasksViewBtn />
+              {amount} <TasksViewBtn tasks={tasks} />
             </li>
           </ul>
         </nav>

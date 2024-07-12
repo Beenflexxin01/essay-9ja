@@ -35,6 +35,10 @@
   width: 50rem;
   height: 5.6rem;
   cursor: default;
+  font-size: 1.6rem;
+  cursor: text;
+  padding: 0 1.5rem;
+  display: flex;
 }
 
 .login-logo {
@@ -53,4 +57,16 @@
 
 .password {
   text-decoration: none;
+  font-size: 1.4rem;
+}
+
+.absolute {
+  position: absolute;
+  left: 63%;
+  top: 58%;
+}
+
+.input-error {
+  color: red;
+  font-size: 1.2rem;
 }

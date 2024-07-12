@@ -1,75 +1,76 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import UserReg from "../Features/Users/UserReg";
 import Pagination from "./Pagination";
+import BackendLink from "./BackendLink";
 
-const userInfo = [
-  {
-    id: "1",
-    name: "Philip Wayne",
-    hired: "#",
-    date: "24/05/2024",
-    lastActive: "Monday",
-    actTime: "- 5:00AM",
-    title: "Uses of AI in Our World",
-  },
-  {
-    id: "2",
-    name: "Ronald Richards",
-    hired: "#",
-    date: "24/05/2024",
-    lastActive: "01/02/2023",
-    actTime: "- 2:00AM",
-    title: "Uses of AI in Our World",
-  },
-  {
-    id: "3",
-    name: "Kristin Watson",
-    hired: "#",
-    date: "04/04/2024",
-    lastActive: "Today",
-    actTime: "- 2:00AM",
-    title: "Uses of AI in Our World",
-  },
-  {
-    id: "4",
-    name: "Cody Fisher",
-    hired: "#",
-    date: "24/05/2024",
-    lastActive: "Today",
-    actTime: "- 3:00AM",
-    title: "Uses of AI in Our World",
-  },
-  {
-    id: "5",
-    name: "Arlene McCoy",
-    hired: "#",
-    date: "24/05/2022",
-    lastActive: "12/12/2022",
-    actTime: "- 1:00PM",
-    title: "Uses of AI in Our World",
-  },
-  {
-    id: "6",
-    name: "Floyd Miles",
-    hired: "#",
-    date: "24/05/2022",
-    lastActive: "12/12/2022",
-    actTime: "- 1:00PM",
-    title: "Uses of AI in Our World",
-  },
-  {
-    id: "7",
-    name: "Theresa Webb",
-    hired: "#",
-    date: "24/01/2024",
-    lastActive: "Wednesday",
-    actTime: "- 1:00PM",
-    title: "Uses of AI in Our World",
-  },
-];
+// const userInfo = [
+//   {
+//     id: "1",
+//     name: "Philip Wayne",
+//     hired: "#",
+//     date: "24/05/2024",
+//     lastActive: "Monday",
+//     actTime: "- 5:00AM",
+//     title: "Uses of AI in Our World",
+//   },
+//   {
+//     id: "2",
+//     name: "Ronald Richards",
+//     hired: "#",
+//     date: "24/05/2024",
+//     lastActive: "01/02/2023",
+//     actTime: "- 2:00AM",
+//     title: "Uses of AI in Our World",
+//   },
+//   {
+//     id: "3",
+//     name: "Kristin Watson",
+//     hired: "#",
+//     date: "04/04/2024",
+//     lastActive: "Today",
+//     actTime: "- 2:00AM",
+//     title: "Uses of AI in Our World",
+//   },
+//   {
+//     id: "4",
+//     name: "Cody Fisher",
+//     hired: "#",
+//     date: "24/05/2024",
+//     lastActive: "Today",
+//     actTime: "- 3:00AM",
+//     title: "Uses of AI in Our World",
+//   },
+//   {
+//     id: "5",
+//     name: "Arlene McCoy",
+//     hired: "#",
+//     date: "24/05/2022",
+//     lastActive: "12/12/2022",
+//     actTime: "- 1:00PM",
+//     title: "Uses of AI in Our World",
+//   },
+//   {
+//     id: "6",
+//     name: "Floyd Miles",
+//     hired: "#",
+//     date: "24/05/2022",
+//     lastActive: "12/12/2022",
+//     actTime: "- 1:00PM",
+//     title: "Uses of AI in Our World",
+//   },
+//   {
+//     id: "7",
+//     name: "Theresa Webb",
+//     hired: "#",
+//     date: "24/01/2024",
+//     lastActive: "Wednesday",
+//     actTime: "- 1:00PM",
+//     title: "Uses of AI in Our World",
+//   },
+// ];
 
 function UserInfo() {
-  const [users] = useState(userInfo);
+  const [users, setUsers] = useState([]);
 
   const [currentPage, setCurrentPage] = useState(1);
   const productsPerPage = 4;
@@ -79,6 +80,23 @@ function UserInfo() {
   const productPage = users.slice(firstIndex, lastIndex);
   const npages = Math.ceil(users.length / productsPerPage);
   const numbers = [...Array(npages + 1).keys()].slice(1);
+
+  useEffect(() => {
+    async function getWritersInfo() {
+      try {
+        const res = await fetch(`${BackendLink}/users`);
+        if (!res.ok) throw new Error("Unable to fetch data");
+
+        const data = await res.json();
+        if (data.Response === "False")
+          throw new Error("Something went wrong while trying to fetch data");
+        setUsers(data);
+      } catch (err) {
+        console.log(err.message);
+      }
+    }
+    getWritersInfo();
+  }, []);
 
   function nextPage() {
     if (currentPage !== npages) {

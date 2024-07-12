@@ -1,12 +1,9 @@
-import { useNavigate } from "react-router-dom";
-
 function ReportDetails({ reports }) {
   const { name, title, status, date, amount } = reports;
-  const navigate = useNavigate();
 
   return (
     <>
-      <div className="grid-5-cols" onClick={() => navigate("/user-details")}>
+      <div className="grid-5-cols">
         <nav className="main-nav user-nav ">
           <ul className="main-ul">
             <li className="main-li check">

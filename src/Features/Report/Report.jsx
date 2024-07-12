@@ -30,7 +30,7 @@ function Report() {
                 </div>
                 <div className="flex fl">
                   <li className="report-li stat">
-                    <label htmlFor="text">Staus</label>
+                    <label htmlFor="text">Status</label>
                     <input
                       type="text"
                       className="input search-input"

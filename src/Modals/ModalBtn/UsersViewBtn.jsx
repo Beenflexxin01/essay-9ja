@@ -4,7 +4,7 @@ import UserModal from "../UserModal";
 import Button from "react-bootstrap/Button";
 import { PiDotsThreeVertical } from "react-icons/pi";
 
-function UsersViewBtn() {
+function UsersViewBtn({ users }) {
   const [modalShow, setModalShow] = useState(false);
   // const [modalShow, setModalShow] = React.useState(false);
   return (
@@ -15,7 +15,11 @@ function UsersViewBtn() {
         className="view-btn">
         <PiDotsThreeVertical size={"24px"} className="dots" />
       </Button>
-      <UserModal show={modalShow} onHide={() => setModalShow(false)} />
+      <UserModal
+        show={modalShow}
+        onHide={() => setModalShow(false)}
+        users={users}
+      />
     </>
   );
 }

@@ -1,7 +1,46 @@
-import { useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
+import BackendLink from "../../Utils/BackendLink";
 
 function TransactionDetails() {
+  const [transactionDetails, setTransactionDetails] = useState({});
+  const { id } = useParams();
   const navigate = useNavigate();
+
+  const {
+    // txRef,
+    transactionAmount,
+    // paymentGateway,
+    // transactionMode,
+    transactionStatus,
+    transactionDescription,
+    currency,
+    // taskId,
+    // transactionType,
+    // contractId,
+    createdAt,
+    firstName,
+    lastName,
+  } = transactionDetails;
+
+  useEffect(() => {
+    async function getTransactionDetails() {
+      try {
+        const res = await fetch(`${BackendLink}/wallets/transactions/${id}`);
+
+        if (!res.ok) throw new Error("Unable to fetch transactions");
+
+        const data = await res.json();
+        if (data.Response === "Fale")
+          throw new Error("Unable to load transaction data!");
+        setTransactionDetails(data);
+      } catch (err) {
+        console.log(err.message);
+      }
+    }
+    getTransactionDetails();
+  }, [id]);
+
   return (
     <>
       <div className="containr">
@@ -35,20 +74,25 @@ function TransactionDetails() {
                   <li className="grid-user-li activities user-detail">
                     Sterling Bank
                   </li>
-                  <li className="grid-user-li user-detail">Onakoya Billgate</li>
+                  <li className="grid-user-li user-detail">
+                    {firstName} {lastName}
+                  </li>
                   <li className="grid-user-li activities user-detail">
                     Ronald Richards
                   </li>
-                  <li className="grid-user-li user-detail">#150,000</li>
+                  <li className="grid-user-li user-detail">
+                    {currency}
+                    {transactionAmount}
+                  </li>
                   <li className="grid-user-li user-detail activities ">
-                    24/05/2024
+                    {createdAt}
                   </li>
 
                   <li className="grid-user-li user-detail canceled">
-                    Canceled
+                    {transactionStatus}
                   </li>
                   <li className="grid-user-li activities user-detail">
-                    Biomedical Practice
+                    {transactionDescription}
                   </li>
                 </ul>
               </nav>

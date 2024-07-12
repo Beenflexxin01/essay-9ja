@@ -1,77 +1,95 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Pagination from "./Pagination";
 import WriterInfo from "../Features/Writers/WriterInfo";
+import BackendLink from "./BackendLink";
 
-const writerInfo = [
-  {
-    id: "1",
-    name: "Philip Wayne",
-    tasksCompleted: "#",
-    date: "24/05/2024",
-    rate: "#1,600/Hr",
-    rating: "5.0",
-  },
-  {
-    id: "2",
-    name: "Ronald Richards",
-    tasksCompleted: "#",
-    date: "24/05/2024",
-    rate: "#700/Hr",
-    rating: "2.8",
-  },
-  {
-    id: "3",
-    name: "Kristin Watson",
-    tasksCompleted: "#",
-    date: "04/04/2024",
-    rate: "#950/Hr",
-    rating: "3.7",
-  },
-  {
-    id: "4",
-    name: "Cody Fisher",
-    tasksCompleted: "#",
-    date: "24/05/2024",
-    rate: "#1,450/Hr",
-    rating: "5.0",
-  },
-  {
-    id: "5",
-    name: "Arlene McCoy",
-    tasksCompleted: "#",
-    date: "24/05/2022",
-    rate: "#1,300/Hr",
-    rating: "4.0",
-  },
-  {
-    id: "6",
-    name: "Floyd Miles",
-    tasksCompleted: "#",
-    date: "24/05/2022",
-    rate: "#1,000/Hr",
-    rating: "4.5",
-  },
-  {
-    id: "7",
-    name: "Theresa Webb",
-    tasksCompleted: "#",
-    date: "24/01/2024",
-    rate: "#1,500/Hr",
-    rating: "5.0",
-  },
-];
+// const writerInfo = [
+//   {
+//     id: "1",
+//     name: "Philip Wayne",
+//     tasksCompleted: "#",
+//     date: "24/05/2024",
+//     rate: "#1,600/Hr",
+//     rating: "5.0",
+//   },
+//   {
+//     id: "2",
+//     name: "Ronald Richards",
+//     tasksCompleted: "#",
+//     date: "24/05/2024",
+//     rate: "#700/Hr",
+//     rating: "2.8",
+//   },
+//   {
+//     id: "3",
+//     name: "Kristin Watson",
+//     tasksCompleted: "#",
+//     date: "04/04/2024",
+//     rate: "#950/Hr",
+//     rating: "3.7",
+//   },
+//   {
+//     id: "4",
+//     name: "Cody Fisher",
+//     tasksCompleted: "#",
+//     date: "24/05/2024",
+//     rate: "#1,450/Hr",
+//     rating: "5.0",
+//   },
+//   {
+//     id: "5",
+//     name: "Arlene McCoy",
+//     tasksCompleted: "#",
+//     date: "24/05/2022",
+//     rate: "#1,300/Hr",
+//     rating: "4.0",
+//   },
+//   {
+//     id: "6",
+//     name: "Floyd Miles",
+//     tasksCompleted: "#",
+//     date: "24/05/2022",
+//     rate: "#1,000/Hr",
+//     rating: "4.5",
+//   },
+//   {
+//     id: "7",
+//     name: "Theresa Webb",
+//     tasksCompleted: "#",
+//     date: "24/01/2024",
+//     rate: "#1,500/Hr",
+//     rating: "5.0",
+//   },
+// ];
 
 function WritersInfo() {
-  const [users] = useState(writerInfo);
+  const [writers, setWriters] = useState([]);
 
   const [currentPage, setCurrentPage] = useState(1);
   const productsPerPage = 4;
 
   const lastIndex = currentPage * productsPerPage;
   const firstIndex = lastIndex - productsPerPage;
-  const productPage = users.slice(firstIndex, lastIndex);
-  const npages = Math.ceil(users.length / productsPerPage);
+  const productPage = writers.slice(firstIndex, lastIndex);
+  const npages = Math.ceil(writers.length / productsPerPage);
   const numbers = [...Array(npages + 1).keys()].slice(1);
+
+  useEffect(() => {
+    async function getWritersInfo() {
+      try {
+        const res = await fetch(`${BackendLink}/users/writers`);
+        if (!res.ok) throw new Error("Unable to fetch data");
+
+        const data = await res.json();
+        if (data.Response === "False")
+          throw new Error("Something went wrong while trying to fetch data");
+        setWriters(data);
+      } catch (err) {
+        console.log(err.message);
+      }
+    }
+    getWritersInfo();
+  }, []);
 
   function nextPage() {
     if (currentPage !== npages) {
@@ -106,8 +124,8 @@ function WritersInfo() {
           </nav>
         </div>
         {productPage &&
-          productPage.map((users, n) => (
-            <WriterInfo users={users} key={n.id} />
+          productPage.map((writers, n) => (
+            <WriterInfo writers={writers} key={n.id} />
           ))}
 
         <Pagination

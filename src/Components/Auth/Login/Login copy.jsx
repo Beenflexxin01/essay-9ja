@@ -1,6 +1,24 @@
 import { NavLink } from "react-router-dom";
 import logo from "/images/logo.png";
+import { useState } from "react";
 function Login() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    if (!email || !password) return;
+
+    // login(
+    //   { email, password },
+    //   {
+    //     onSettled: () => {
+    //       setEmail("");
+    //       setPassword("");
+    //     },
+    //   }
+    // );
+  }
   return (
     <>
       <div className="form-container">

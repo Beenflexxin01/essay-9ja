@@ -5,8 +5,9 @@ import { useNavigate } from "react-router-dom";
 import WritersDeleteBtn from "./DeleteModalBtn/WritersDeleteBtn";
 import DeactivateUserModalBtn from "./UpdateModalBtn/DeactivateUserModalBtn";
 
-function UserModal(props) {
+function UserModal(props, users) {
   const navigate = useNavigate();
+  const { _id: usersId } = users;
   return (
     <>
       <Modal
@@ -20,7 +21,7 @@ function UserModal(props) {
             <ul className="modal-ul">
               <li
                 className="modal-li"
-                onClick={() => navigate("/user-details")}>
+                onClick={() => navigate(`/user-details/${usersId}`)}>
                 <HiEye size={"14px"} /> View user detail
               </li>
               <li className="modal-li">

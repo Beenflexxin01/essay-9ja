@@ -6,6 +6,7 @@ import {
   HiChartPie,
   HiMegaphone,
 } from "react-icons/hi2";
+import TaskActivities from "./TaskActivities";
 
 function DashBoard() {
   return (
@@ -167,6 +168,7 @@ function DashBoard() {
             </div>
           </div>
         </div>
+        <TaskActivities />
       </div>
     </>
   );

@@ -4,7 +4,7 @@ import TasksViewBtn from "../../Modals/ModalBtn/TasksViewBtn";
 function TaskActivities() {
   return (
     <>
-      <div className="containr act">
+      <div className="act">
         <div className="flex task">
           <h3 className="tertiary-header">Task Activities</h3>
           <p className="text-description">

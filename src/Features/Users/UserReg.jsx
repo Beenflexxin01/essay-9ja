@@ -1,7 +1,8 @@
 import UsersViewBtn from "../../Modals/ModalBtn/UsersViewBtn";
 
 function UserReg({ users }) {
-  const { name, title, hired, date, lastActive, actTime } = users;
+  const { firstName, lastName, title, hired, date, lastActive, actTime } =
+    users;
 
   return (
     <>
@@ -11,7 +12,7 @@ function UserReg({ users }) {
             <li className="main-li check">
               {" "}
               <input type="checkbox" />
-              {name}
+              {firstName} {lastName}
             </li>
             <li className="main-li">{hired}</li>
             <li className="main-li">{date}</li>
@@ -20,7 +21,7 @@ function UserReg({ users }) {
             </li>
             <li className="main-li check  icon">
               {title}
-              <UsersViewBtn />
+              <UsersViewBtn users={users} />
             </li>
           </ul>
         </nav>

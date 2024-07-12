@@ -4,7 +4,7 @@
   padding: 2rem;
   margin: 2rem 0;
   align-items: center;
-  cursor: pointer;
+  /* cursor: pointer; */
 }
 
 .grid-flex {

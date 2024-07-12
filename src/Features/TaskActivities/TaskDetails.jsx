@@ -6,7 +6,7 @@ function TaskDetails() {
     <>
       <div className="containr">
         <div className="bg">
-          <button className="back" onClick={() => navigate("/users")}>
+          <button className="back" onClick={() => navigate("/tasks")}>
             &larr; Back
           </button>
 
