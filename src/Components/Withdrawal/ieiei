@@ -1,0 +1,13 @@
+// import { useNavigate } from "react-router-dom";
+// import useSignOut from "react-auth-kit";
+// function LogOut() {
+//   const signOut = useSignOut();
+
+//   const navigate = useNavigate();
+
+//   const logout = () => {
+//     signOut();
+
+//     navigate("/auth/login");
+//   };
+// }

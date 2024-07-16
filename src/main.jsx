@@ -2,7 +2,6 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "bootstrap/dist/css/bootstrap.min.css";
 import App from "./App.jsx";
-import { Auth0Provider } from "@auth0/auth0-react";
 
 import "./Styles/index.css";
 import "./Styles/Dashboard.css";
@@ -15,12 +14,11 @@ import ErrorFallback from "./UI/ErrorFallback.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <Auth0Provider>
-      <ErrorBoundary
-        FallbackComponent={ErrorFallback}
-        onReset={() => window.location.replace("/")}>
-        <App />
-      </ErrorBoundary>
-    </Auth0Provider>
+    <ErrorBoundary
+      FallbackComponent={ErrorFallback}
+      onReset={() => window.location.replace("")}
+    >
+      <App />
+    </ErrorBoundary>
   </React.StrictMode>
 );

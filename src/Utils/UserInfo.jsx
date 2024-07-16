@@ -1,73 +1,8 @@
 import { useEffect, useState } from "react";
-import UserReg from "../Features/Users/UserReg";
+import UserReg from "../Components/Users/UserReg";
 import Pagination from "./Pagination";
 import BackendLink from "./BackendLink";
-
-// const userInfo = [
-//   {
-//     id: "1",
-//     name: "Philip Wayne",
-//     hired: "#",
-//     date: "24/05/2024",
-//     lastActive: "Monday",
-//     actTime: "- 5:00AM",
-//     title: "Uses of AI in Our World",
-//   },
-//   {
-//     id: "2",
-//     name: "Ronald Richards",
-//     hired: "#",
-//     date: "24/05/2024",
-//     lastActive: "01/02/2023",
-//     actTime: "- 2:00AM",
-//     title: "Uses of AI in Our World",
-//   },
-//   {
-//     id: "3",
-//     name: "Kristin Watson",
-//     hired: "#",
-//     date: "04/04/2024",
-//     lastActive: "Today",
-//     actTime: "- 2:00AM",
-//     title: "Uses of AI in Our World",
-//   },
-//   {
-//     id: "4",
-//     name: "Cody Fisher",
-//     hired: "#",
-//     date: "24/05/2024",
-//     lastActive: "Today",
-//     actTime: "- 3:00AM",
-//     title: "Uses of AI in Our World",
-//   },
-//   {
-//     id: "5",
-//     name: "Arlene McCoy",
-//     hired: "#",
-//     date: "24/05/2022",
-//     lastActive: "12/12/2022",
-//     actTime: "- 1:00PM",
-//     title: "Uses of AI in Our World",
-//   },
-//   {
-//     id: "6",
-//     name: "Floyd Miles",
-//     hired: "#",
-//     date: "24/05/2022",
-//     lastActive: "12/12/2022",
-//     actTime: "- 1:00PM",
-//     title: "Uses of AI in Our World",
-//   },
-//   {
-//     id: "7",
-//     name: "Theresa Webb",
-//     hired: "#",
-//     date: "24/01/2024",
-//     lastActive: "Wednesday",
-//     actTime: "- 1:00PM",
-//     title: "Uses of AI in Our World",
-//   },
-// ];
+import Loader from "../UI/Loader";
 
 function UserInfo() {
   const [users, setUsers] = useState([]);
@@ -77,7 +12,7 @@ function UserInfo() {
 
   const lastIndex = currentPage * productsPerPage;
   const firstIndex = lastIndex - productsPerPage;
-  const productPage = users.slice(firstIndex, lastIndex);
+  const usersPage = users.slice(firstIndex, lastIndex);
   const npages = Math.ceil(users.length / productsPerPage);
   const numbers = [...Array(npages + 1).keys()].slice(1);
 
@@ -130,16 +65,25 @@ function UserInfo() {
             </ul>
           </nav>
         </div>
-        {productPage &&
-          productPage.map((users, n) => <UserReg users={users} key={n.id} />)}
+        {users.length > 0 ? (
+          <div>
+            {usersPage.map((users, n) => (
+              <UserReg users={users} key={n.id} />
+            ))}
 
-        <Pagination
-          numbers={numbers}
-          currentPage={currentPage}
-          previousPage={previousPage}
-          nextPage={nextPage}
-          currentPageNumber={currentPageNumber}
-        />
+            <Pagination
+              numbers={numbers}
+              currentPage={currentPage}
+              previousPage={previousPage}
+              nextPage={nextPage}
+              currentPageNumber={currentPageNumber}
+            />
+          </div>
+        ) : (
+          <div className="spinner">
+            <Loader />
+          </div>
+        )}
       </div>
     </>
   );

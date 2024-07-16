@@ -1,4 +1,4 @@
-import MainSettings from "../Features/Settings/MainSettings";
+import MainSettings from "../Components/Settings/MainSettings";
 
 function Settings() {
   return (

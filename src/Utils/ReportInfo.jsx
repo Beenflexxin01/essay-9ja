@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Pagination from "./Pagination";
-import ReportDetails from "../Features/Report/ReportDetails";
+import ReportDetails from "../Components/Report/ReportDetails";
 import { IoSearch } from "react-icons/io5";
 
 const reportInfo = [

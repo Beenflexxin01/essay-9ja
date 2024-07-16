@@ -1,83 +1,38 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Pagination from "./Pagination";
-import Tasks from "../Features/TaskActivities/Tasks";
-
-const taskInfo = [
-  {
-    id: "1",
-    name: "Ronald Richards",
-    title: "Biomedical Practice",
-    date: "24/05/2024",
-    amount: "#150,000",
-    status: "Completed",
-  },
-  {
-    id: "2",
-    name: "Ronald Richards",
-    title: "AR & VR importance",
-    date: "24/05/2024",
-    amount: "#150,000",
-    status: "Incomplete",
-    spanText: "- GTB",
-  },
-  {
-    id: "3",
-    name: "Kristin Watson",
-    title: "AR & VR importance",
-    date: "0060078945",
-    amount: "#150,000",
-    status: "Completed",
-    spanText: "- Sterl..",
-  },
-  {
-    id: "4",
-    name: "Cody Fisher",
-    title: "Biomedical Practice",
-    date: "0060078945",
-    amount: "#150,000",
-    status: "Incomplete",
-    spanText: "- Sterl..",
-  },
-  {
-    id: "5",
-    name: "Arlene McCoy",
-    title: "Usefulness of AI",
-    date: "24/05/2024",
-    amount: "#150,000",
-    status: "Completed",
-    spanText: "- GTB",
-  },
-  {
-    id: "6",
-    name: "Floyd Miles",
-    title: "Usefulness of AI",
-    date: "0060078945",
-    amount: "#150,000",
-    status: "Completed",
-    spanText: "- Sterl...",
-  },
-  {
-    id: "7",
-    name: "Theresa Webb",
-    title: "Biomedical Practice",
-    date: "24/05/2024",
-    amount: "#150,000",
-    status: "Completed",
-    spanText: "- GTB",
-  },
-];
+import Tasks from "../Components/TaskActivities/Tasks";
+import BackendLink from "./BackendLink";
+import Loader from "../UI/Loader";
 
 function TaskActivityInfo() {
-  const [users] = useState(taskInfo);
+  const [contracts, setContracts] = useState([]);
 
   const [currentPage, setCurrentPage] = useState(1);
   const productsPerPage = 4;
 
   const lastIndex = currentPage * productsPerPage;
   const firstIndex = lastIndex - productsPerPage;
-  const productPage = users.slice(firstIndex, lastIndex);
-  const npages = Math.ceil(users.length / productsPerPage);
+  const contractPages = contracts.slice(firstIndex, lastIndex);
+  const npages = Math.ceil(contracts.length / productsPerPage);
   const numbers = [...Array(npages + 1).keys()].slice(1);
+
+  useEffect(() => {
+    async function getContractInfo() {
+      try {
+        const res = await fetch(`${BackendLink}/contracts`);
+
+        if (!res.ok) throw new Error("Unable to fetch transactions");
+
+        const data = await res.json();
+        if (data.Response === "False")
+          throw new Error("Unable to fetch transaction data! ");
+        setContracts(data);
+      } catch (err) {
+        console.log(err.message);
+      }
+    }
+    getContractInfo();
+  }, []);
 
   function nextPage() {
     if (currentPage !== npages) {
@@ -111,16 +66,25 @@ function TaskActivityInfo() {
             </ul>
           </nav>
         </div>
-        {productPage &&
-          productPage.map((tasks, n) => <Tasks tasks={tasks} key={n.id} />)}
+        {contracts.length > 0 ? (
+          <div>
+            {contractPages.map((tasks, n) => (
+              <Tasks tasks={tasks} key={n.id} />
+            ))}
 
-        <Pagination
-          numbers={numbers}
-          currentPage={currentPage}
-          previousPage={previousPage}
-          nextPage={nextPage}
-          currentPageNumber={currentPageNumber}
-        />
+            <Pagination
+              numbers={numbers}
+              currentPage={currentPage}
+              previousPage={previousPage}
+              nextPage={nextPage}
+              currentPageNumber={currentPageNumber}
+            />
+          </div>
+        ) : (
+          <div className="spinner">
+            <Loader />
+          </div>
+        )}
       </div>
     </>
   );

@@ -1,90 +1,56 @@
 import { useEffect, useState } from "react";
 import Pagination from "./Pagination";
-import Transactions from "../Features/Transactions/Transactions";
+import Transactions from "../Components/Transactions/Transactions";
 import BackendLink from "./BackendLink";
-
-// const transactionInfo = [
-//   {
-//     id: "1",
-//     name: "Ronald Richards",
-//     reason: "Biomedical Practice",
-//     accountDetail: "0856785621",
-//     amount: "#150,000",
-//     status: "Completed",
-//     spanText: "- GTB",
-//   },
-//   {
-//     id: "2",
-//     name: "Ronald Richards",
-//     reason: "AR & VR importance",
-//     accountDetail: "0856785621",
-//     amount: "#150,000",
-//     status: "Canceled",
-//     spanText: "- GTB",
-//   },
-//   {
-//     id: "3",
-//     name: "Kristin Watson",
-//     reason: "AR & VR importance",
-//     accountDetail: "0060078945",
-//     amount: "Today#150,000",
-//     status: "Completed",
-//     spanText: "- Sterl..",
-//   },
-//   {
-//     id: "4",
-//     name: "Cody Fisher",
-//     reason: "Biomedical Practice",
-//     accountDetail: "0060078945",
-//     amount: "Today#150,000",
-//     status: "Canceled",
-//     spanText: "- Sterl..",
-//   },
-//   {
-//     id: "5",
-//     name: "Arlene McCoy",
-//     reason: "Usefulness of AI",
-//     accountDetail: "0856785621",
-//     amount: "#150,000",
-//     status: "Completed",
-//     spanText: "- GTB",
-//   },
-//   {
-//     id: "6",
-//     name: "Floyd Miles",
-//     reason: "Usefulness of AI",
-//     accountDetail: "0060078945",
-//     amount: "#150,000",
-//     status: "Completed",
-//     spanText: "- Sterl...",
-//   },
-//   {
-//     id: "7",
-//     name: "Theresa Webb",
-//     reason: "Biomedical Practice",
-//     accountDetail: "0856785621",
-//     amount: "#150,000",
-//     status: "Completed",
-//     spanText: "- GTB",
-//   },
-// ];
+// import axios, { AxiosError } from "axios";
+import Loader from "../UI/Loader";
 
 function TransactionInfo() {
   const [transactions, setTransactions] = useState([]);
+
+  // const [error, setError] = useState();
 
   const [currentPage, setCurrentPage] = useState(1);
   const productsPerPage = 4;
 
   const lastIndex = currentPage * productsPerPage;
   const firstIndex = lastIndex - productsPerPage;
-  const productPage = transactions.slice(firstIndex, lastIndex);
+  const transactionPage = transactions.slice(firstIndex, lastIndex);
   const npages = Math.ceil(transactions.length / productsPerPage);
   const numbers = [...Array(npages + 1).keys()].slice(1);
 
   useEffect(() => {
-    async function getTransactionInfo() {
+    async function getTransactionInfo(email, password) {
+      // try {
+      //   const token = localStorage.getItem("token");
+
+      //   if (token) {
+      //     await axios
+      //       .get(`${BackendLink}/wallets/transactions/all`, {
+      //         headers: {
+      //           Authorization: "Bearer " + token,
+      //         },
+      //       })
+      //       .then((response) => console.log(response.data))
+      //       .catch((error) => console.error("Request error:", error));
+      //   } else {
+      //     console.error("Token not found");
+      //   }
+      // } catch (err) {
+      //   if (err && err instanceof AxiosError) setError(err.res?.data.message);
+      //   else if (err && err instanceof Error) setError(err.message);
+      //   console.log("Error: ", err);
+      // }
       try {
-        const res = await fetch(`${BackendLink}/wallets/transactions/all`);
+        const res = await fetch(`${BackendLink}/wallets/transactions/all`, {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ email, password }),
+        });
+
+        // axios.get();
 
         if (!res.ok) throw new Error("Unable to fetch transactions");
 
@@ -93,7 +59,9 @@ function TransactionInfo() {
           throw new Error("Unable to fetch transaction data! ");
         setTransactions(data);
       } catch (err) {
-        console.log(err.message);
+        // if (err && err instanceof AxiosError) setError(err.res?.data.message);
+        // else if (err && err instanceof Error) setError(err.message);
+        console.log("Error: ", err);
       }
     }
     getTransactionInfo();
@@ -131,18 +99,25 @@ function TransactionInfo() {
             </ul>
           </nav>
         </div>
-        {productPage &&
-          productPage.map((transactions, n) => (
-            <Transactions transactions={transactions} key={n.id} />
-          ))}
+        {transactions.length > 0 ? (
+          <div>
+            {transactionPage.map((transactions, n) => (
+              <Transactions transactions={transactions} key={n.id} />
+            ))}
 
-        <Pagination
-          numbers={numbers}
-          currentPage={currentPage}
-          previousPage={previousPage}
-          nextPage={nextPage}
-          currentPageNumber={currentPageNumber}
-        />
+            <Pagination
+              numbers={numbers}
+              currentPage={currentPage}
+              previousPage={previousPage}
+              nextPage={nextPage}
+              currentPageNumber={currentPageNumber}
+            />
+          </div>
+        ) : (
+          <div className="spinner">
+            <Loader />
+          </div>
+        )}
       </div>
     </>
   );

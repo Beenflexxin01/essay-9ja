@@ -1,4 +1,4 @@
-import DashBoard from "../Features/Dashboard/DashBoard";
+import DashBoard from "../Components/Dashboard/DashBoard";
 
 function Dashboard() {
   return (

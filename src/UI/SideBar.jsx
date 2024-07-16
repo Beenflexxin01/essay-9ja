@@ -2,6 +2,7 @@ import { NavLink } from "react-router-dom";
 import logo from "/images/logo.png";
 import { TbLogout2 } from "react-icons/tb";
 import AddBtn from "./AddBtn";
+import LogOut from "../Components/Auth/LogOut";
 
 function SideBar() {
   return (
@@ -28,12 +29,15 @@ function SideBar() {
               </NavLink>
             </li>
             <li className="side-bar-li">
-              <NavLink to="/withdrawal" className="side-bar-link">
+              <NavLink
+                to="/wallets/withdrawal/requests"
+                className="side-bar-link"
+              >
                 Witdrawal Requests
               </NavLink>
             </li>
             <li className="side-bar-li">
-              <NavLink to="/transactions" className="side-bar-link">
+              <NavLink to="/wallets/transactions/all" className="side-bar-link">
                 Transactional History
               </NavLink>
             </li>
@@ -60,7 +64,7 @@ function SideBar() {
 
               <button className="cta">
                 <TbLogout2 size={"24px"} className="icons logout" />
-                Log out
+                <LogOut />
               </button>
             </div>
           </ul>

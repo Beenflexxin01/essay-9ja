@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import Pagination from "./Pagination";
-import WriterInfo from "../Features/Writers/WriterInfo";
 import BackendLink from "./BackendLink";
-
+import Loader from "../UI/Loader";
+import WriterInfo from "../Components/Writers/WriterInfo";
 // const writerInfo = [
 //   {
 //     id: "1",
@@ -63,32 +63,43 @@ import BackendLink from "./BackendLink";
 // ];
 
 function WritersInfo() {
-  const [writers, setWriters] = useState([]);
+  const [writer, setWriter] = useState([]);
 
   const [currentPage, setCurrentPage] = useState(1);
   const productsPerPage = 4;
 
   const lastIndex = currentPage * productsPerPage;
   const firstIndex = lastIndex - productsPerPage;
-  const productPage = writers.slice(firstIndex, lastIndex);
-  const npages = Math.ceil(writers.length / productsPerPage);
+  const writerPage = writer.slice(firstIndex, lastIndex);
+  const npages = Math.ceil(writer.length / productsPerPage);
   const numbers = [...Array(npages + 1).keys()].slice(1);
 
   useEffect(() => {
-    async function getWritersInfo() {
+    async function getWriterInfo() {
       try {
-        const res = await fetch(`${BackendLink}/users/writers`);
+        const res = await fetch(
+          `${BackendLink}/users/writer`,
+
+          {
+            method: "GET",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            credentials: "include", // Include cookies with the request
+          }
+        );
+
         if (!res.ok) throw new Error("Unable to fetch data");
 
         const data = await res.json();
         if (data.Response === "False")
           throw new Error("Something went wrong while trying to fetch data");
-        setWriters(data);
+        setWriter(data);
       } catch (err) {
         console.log(err.message);
       }
     }
-    getWritersInfo();
+    getWriterInfo();
   }, []);
 
   function nextPage() {
@@ -106,37 +117,42 @@ function WritersInfo() {
   function currentPageNumber(id) {
     setCurrentPage(id);
   }
-  return (
-    <>
-      <div className="containr act">
-        <div className="flex task">
-          <h3 className="tertiary-header">Writers</h3>
-        </div>
-        <div className="">
-          <nav className="main-nav user-nav activities">
-            <ul className="main-ul">
-              <li className="main-li">Name</li>
-              <li className="main-li">Completed Tasks</li>
-              <li className="main-li">Date Joined</li>
-              <li className="main-li">Rate</li>
-              <li className="main-li">Rating</li>
-            </ul>
-          </nav>
-        </div>
-        {productPage &&
-          productPage.map((writers, n) => (
-            <WriterInfo writers={writers} key={n.id} />
-          ))}
 
-        <Pagination
-          numbers={numbers}
-          currentPage={currentPage}
-          previousPage={previousPage}
-          nextPage={nextPage}
-          currentPageNumber={currentPageNumber}
-        />
+  return (
+    <div className="containr act">
+      <div className="flex task">
+        <h3 className="tertiary-header">Writer</h3>
       </div>
-    </>
+      <div>
+        <nav className="main-nav user-nav activities">
+          <ul className="main-ul">
+            <li className="main-li">Name</li>
+            <li className="main-li">Completed Tasks</li>
+            <li className="main-li">Date Joined</li>
+            <li className="main-li">Rate</li>
+            <li className="main-li">Rating</li>
+          </ul>
+        </nav>
+      </div>
+      {writer.length > 0 ? (
+        <div>
+          {writerPage.map((writer) => (
+            <WriterInfo key={writer.id} writer={writer} />
+          ))}
+          <Pagination
+            numbers={numbers}
+            currentPage={currentPage}
+            previousPage={previousPage}
+            nextPage={nextPage}
+            currentPageNumber={currentPageNumber}
+          />
+        </div>
+      ) : (
+        <div className="spinner">
+          <Loader />
+        </div>
+      )}
+    </div>
   );
 }
 

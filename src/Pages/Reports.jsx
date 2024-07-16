@@ -1,4 +1,4 @@
-import Report from "../Features/Report/Report"
+import Report from "../Components/Report/Report"
 import ReportInfo from "../Utils/ReportInfo"
 
 function Reports() {

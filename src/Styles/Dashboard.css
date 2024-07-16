@@ -4,7 +4,14 @@
   padding: 2rem;
   margin: 2rem 0;
   align-items: center;
-  /* cursor: pointer; */
+}
+
+.spin {
+  position: absolute;
+  top: 68%;
+  text-align: center;
+  font-size: 1.6rem;
+  margin: 0 10%;
 }
 
 .grid-flex {
@@ -48,7 +55,6 @@
   background-color: #fff;
   margin: 2rem;
   border-radius: 1.6rem;
-  width: 33.9rem;
   padding: 2rem;
 }
 
@@ -119,7 +125,6 @@
 
 .withdraw {
   height: 24.6rem;
-  width: 33.9rem;
 }
 
 .withdrawal-flex {
