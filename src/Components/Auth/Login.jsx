@@ -51,7 +51,7 @@ function Login() {
         Cookies.set("authToken", accessToken, {
           path: "/",
           expires: 1,
-          sameSite: "none",
+          sameSite: "Strict",
         });
 
         signIn({
