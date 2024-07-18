@@ -5,77 +5,11 @@ import Loader from "../UI/Loader";
 import apiCall from "../hooks/apiCall";
 import WriterInfo from "../Components/Writers/WriterInfo";
 
-// const reportInfo = [
-//   {
-//     id: "1",
-//     name: "Philip Wayne",
-
-//     date: "24/05/2024",
-//     status: "Completed",
-//     amount: "#150,000",
-//     title: "Uses of AI in Our World",
-//   },
-//   {
-//     id: "2",
-//     name: "Ronald Richards",
-
-//     date: "24/05/2024",
-//     status: "Completed",
-//     amount: "#150,000",
-//     title: "Uses of AI in Our World",
-//   },
-//   {
-//     id: "3",
-//     name: "Kristin Watson",
-
-//     date: "04/04/2024",
-//     status: "Completed",
-//     amount: "#150,000",
-//     title: "Uses of AI in Our World",
-//   },
-//   {
-//     id: "4",
-//     name: "Cody Fisher",
-
-//     date: "24/05/2024",
-//     status: "Completed",
-//     amount: "#150,000",
-//     title: "Uses of AI in Our World",
-//   },
-//   {
-//     id: "5",
-//     name: "Arlene McCoy",
-
-//     date: "24/05/2022",
-//     status: "Cancelled",
-//     amount: "#200,000",
-//     title: "Uses of AI in Our World",
-//   },
-//   {
-//     id: "6",
-//     name: "Floyd Miles",
-
-//     date: "24/05/2022",
-//     status: "Cancelled",
-//     amount: "#150,000",
-//     title: "Uses of AI in Our World",
-//   },
-//   {
-//     id: "7",
-//     name: "Theresa Webb",
-
-//     date: "24/01/2024",
-//     status: "Completed",
-//     amount: "#150,000",
-//     title: "Uses of AI in Our World",
-//   },
-// ];
-
 function WritersInfo() {
   const [writer, setWriter] = useState([]);
 
   const [currentPage, setCurrentPage] = useState(1);
-  const writerPerPage = 4;
+  const writerPerPage = 10;
 
   const lastIndex = currentPage * writerPerPage;
   const firstIndex = lastIndex - writerPerPage;
@@ -99,7 +33,7 @@ function WritersInfo() {
       }
     }
     getWriterInfo();
-  }, []);
+  }, [setWriter]);
 
   function nextPage() {
     if (currentPage !== npages) {

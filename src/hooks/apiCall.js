@@ -49,6 +49,8 @@ async function apiCall(url, options = {}) {
       throw new Error("No authentication token found");
     }
 
+    console.log(token);
+
     const headers = {
       ...options.headers,
       Authorization: `Bearer ${token}`,
@@ -59,13 +61,12 @@ async function apiCall(url, options = {}) {
       headers,
       ...options,
     });
-
     return response.data; // Return response data
   } catch (error) {
     if (error.response && error.response.status === 401) {
       console.error("Unauthorized. Redirecting to login...");
       document.cookie = "token=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/"; // Optionally, clear the token
-      window.location.href = "/login"; // Redirect to login
+      window.location.href = "/auth/login"; // Redirect to login
     } else {
       console.error("API call error:", error);
       throw error;
