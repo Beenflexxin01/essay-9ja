@@ -49,8 +49,6 @@ async function apiCall(url, options = {}) {
       throw new Error("No authentication token found");
     }
 
-    console.log(token);
-
     const headers = {
       ...options.headers,
       Authorization: `Bearer ${token}`,
