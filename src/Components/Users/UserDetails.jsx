@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
-import BackendLink from "../../Utils/BackendLink";
+import BaseUrl from "../../Utils/BaseUrl";
 
 function UserDetails() {
   const [userDetails, setUserDetails] = useState();
@@ -20,7 +20,7 @@ function UserDetails() {
   useEffect(() => {
     async function getUserDetails() {
       try {
-        const res = await fetch(`${BackendLink}/users/${id}`);
+        const res = await fetch(`${BaseUrl}/users/single/${id}`);
 
         if (!res.ok) throw new Error("Unable to fetch transactions");
 

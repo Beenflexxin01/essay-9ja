@@ -67,7 +67,7 @@ function DashBoard() {
                 <p className="text-descfription">Recent Transaction made</p>
 
                 <p className="text-description">
-                  <Link to="/transactions">View All</Link>
+                  <Link to="/wallets/transactions/all">View All</Link>
                 </p>
               </div>
               <nav className="transaction-nav">
@@ -130,7 +130,7 @@ function DashBoard() {
               <div className="analytic-flex ">
                 <p className="text-descfription"> Recent Withdrawal Made</p>
                 <p className="text-description">
-                  <Link to="/withdrawal">View All</Link>
+                  <Link to="/wallets/withdrawal/requests">View All</Link>
                 </p>
               </div>
               <nav className="transaction-nav">

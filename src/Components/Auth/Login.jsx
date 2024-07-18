@@ -9,7 +9,7 @@ import useSignIn from "react-auth-kit/hooks/useSignIn";
 import useIsAuthenticated from "react-auth-kit/hooks/useIsAuthenticated";
 import useAxiosWithAuth from "../../hooks/useAxiosWithAuth"; //
 import logo from "/images/logo.png";
-import BackendLink from "../../Utils/BackendLink";
+import BaseUrl from "../../Utils/BaseUrl";
 import { AxiosError } from "axios";
 
 import Cookies from "js-cookie";
@@ -43,7 +43,7 @@ function Login() {
     setIsLoading(true);
 
     try {
-      const response = await axios.post(`${BackendLink}/auth/login`, values);
+      const response = await axios.post(`${BaseUrl}/auth/login`, values);
       if (response.status === 200) {
         const { tokens } = response.data.data;
         const { accessToken, refreshToken } = tokens;

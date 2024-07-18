@@ -1,6 +1,5 @@
 import { NavLink } from "react-router-dom";
 import logo from "/images/logo.png";
-import { TbLogout2 } from "react-icons/tb";
 import AddBtn from "./AddBtn";
 import LogOut from "../Components/Auth/LogOut";
 
@@ -62,10 +61,7 @@ function SideBar() {
                 </NavLink>
               </li>
 
-              <button className="cta">
-                <TbLogout2 size={"24px"} className="icons logout" />
-                <LogOut />
-              </button>
+              <LogOut />
             </div>
           </ul>
         </nav>

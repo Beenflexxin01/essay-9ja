@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import { HiStar } from "react-icons/hi";
 import { Link, useNavigate, useParams } from "react-router-dom";
-import BackendLink from "../../Utils/BackendLink";
-
+import BaseUrl from "../../Utils/BaseUrl";
+import apiCall from "../../hooks/apiCall";
 function WriterDetails() {
-  const [writerDetails, setWriterDetails] = useState();
+  const [writerDetails, setWriterDetails] = useState({});
   const navigate = useNavigate();
   const { id } = useParams();
 
@@ -125,21 +125,25 @@ function WriterDetails() {
   } = writerDetails;
 
   useEffect(() => {
-    async function getWriterDetails() {
+    async function getContractInfo() {
       try {
-        const res = await fetch(`${BackendLink}/users/writers/${id}`);
+        const data = await apiCall(`${BaseUrl}/users/writers/${id}`);
 
-        if (!res.ok) throw new Error("Unable to fetch transactions");
+          // const res = await fetch(`${BackendLink}/api/products/${id}`);
 
-        const data = await res.json();
-        if (data.Response === "Fale")
-          throw new Error("Unable to load transaction data!");
-        setWriterDetails(data);
+
+        if (Array.isArray(data.data.data)) {
+          setWriterDetails(data.data.data);
+        } else {
+          if (data.Response === "False")
+            throw new Error("Something went wrong while trying to fetch data");
+          setWriterDetails(data);
+        }
       } catch (err) {
-        console.log(err.message);
+        console.log(err);
       }
     }
-    getWriterDetails();
+    getContractInfo();
   }, [id]);
   return (
     <>

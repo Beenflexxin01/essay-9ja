@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import Pagination from "./Pagination";
 import Transactions from "../Components/Transactions/Transactions";
-import BackendLink from "./BackendLink";
+import BaseUrl from "./BaseUrl";
 // import axios, { AxiosError } from "axios";
 import Loader from "../UI/Loader";
+import apiCall from "../hooks/apiCall";
 
 function TransactionInfo() {
   const [transactions, setTransactions] = useState([]);
@@ -11,57 +12,28 @@ function TransactionInfo() {
   // const [error, setError] = useState();
 
   const [currentPage, setCurrentPage] = useState(1);
-  const productsPerPage = 4;
+  const transactionsPerPage = 4;
 
-  const lastIndex = currentPage * productsPerPage;
-  const firstIndex = lastIndex - productsPerPage;
+  const lastIndex = currentPage * transactionsPerPage;
+  const firstIndex = lastIndex - transactionsPerPage;
   const transactionPage = transactions.slice(firstIndex, lastIndex);
-  const npages = Math.ceil(transactions.length / productsPerPage);
+  const npages = Math.ceil(transactions.length / transactionsPerPage);
   const numbers = [...Array(npages + 1).keys()].slice(1);
 
   useEffect(() => {
-    async function getTransactionInfo(email, password) {
-      // try {
-      //   const token = localStorage.getItem("token");
-
-      //   if (token) {
-      //     await axios
-      //       .get(`${BackendLink}/wallets/transactions/all`, {
-      //         headers: {
-      //           Authorization: "Bearer " + token,
-      //         },
-      //       })
-      //       .then((response) => console.log(response.data))
-      //       .catch((error) => console.error("Request error:", error));
-      //   } else {
-      //     console.error("Token not found");
-      //   }
-      // } catch (err) {
-      //   if (err && err instanceof AxiosError) setError(err.res?.data.message);
-      //   else if (err && err instanceof Error) setError(err.message);
-      //   console.log("Error: ", err);
-      // }
+    async function getTransactionInfo() {
       try {
-        const res = await fetch(`${BackendLink}/wallets/transactions/all`, {
-          method: "GET",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ email, password }),
-        });
+        const data = await apiCall(`${BaseUrl}/wallets/transactions/all`);
 
-        // axios.get();
-
-        if (!res.ok) throw new Error("Unable to fetch transactions");
-
-        const data = await res.json();
-        if (data.Response === "False")
-          throw new Error("Unable to fetch transaction data! ");
-        setTransactions(data);
+        if (Array.isArray(data.data.data)) {
+          setTransactions(data.data.data);
+        } else {
+          if (data.Response === "False")
+            throw new Error("Something went wrong while trying to fetch data");
+          setTransactions(data);
+        }
       } catch (err) {
-        // if (err && err instanceof AxiosError) setError(err.res?.data.message);
-        // else if (err && err instanceof Error) setError(err.message);
-        console.log("Error: ", err);
+        console.log(err);
       }
     }
     getTransactionInfo();
@@ -90,7 +62,7 @@ function TransactionInfo() {
         </div>
         <div className="">
           <nav className="main-nav user-nav activities">
-            <ul className="main-ul">
+            <ul className="main-ul ">
               <li className="main-li">Name</li>
               <li className="main-li">Reason</li>
               <li className="main-li">Account Detail</li>

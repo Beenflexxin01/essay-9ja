@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import BackendLink from "../../Utils/BackendLink";
+import BaseUrl from "../../Utils/BaseUrl";
 
 function TaskDetails() {
   const [taskDetails, setTaskDetails] = useState();
@@ -55,7 +55,7 @@ function TaskDetails() {
   useEffect(() => {
     async function getTaskDetails() {
       try {
-        const res = await fetch(`${BackendLink}/contracts/${id}`);
+        const res = await fetch(`${BaseUrl}/contracts/${id}`);
 
         if (!res.ok) throw new Error("Unable to fetch transactions");
 

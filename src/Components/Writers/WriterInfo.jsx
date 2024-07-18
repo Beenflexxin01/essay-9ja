@@ -1,15 +1,15 @@
 import { PiStar } from "react-icons/pi";
 import WritersViewBtn from "../../Modals/ModalBtn/WritersViewBtn";
 
-function WriterInfo({ writers }) {
+function WriterInfo({ writer }) {
   const {
     firstName,
     lastName,
     averageRating,
     ratePerPage,
     totalTasksCompleted,
-    date,
-  } = writers;
+    createdAt,
+  } = writer;
 
   return (
     <>
@@ -22,14 +22,14 @@ function WriterInfo({ writers }) {
               {firstName} {lastName}
             </li>
             <li className="main-li">{totalTasksCompleted}</li>
-            <li className="main-li">{date}</li>
+            <li className="main-li">{createdAt}</li>
             <li className="main-li ">{ratePerPage}</li>
             <li className="main-li check icon ">
               <div className="stars">
                 <PiStar size={"15px"} className="dots starRating" />{" "}
                 {averageRating}{" "}
               </div>
-              <WritersViewBtn writers={writers} />
+              <WritersViewBtn writer={writer} />
             </li>
           </ul>
         </nav>

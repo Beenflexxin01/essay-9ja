@@ -1,64 +1,73 @@
 import { useEffect, useState } from "react";
 import Pagination from "./Pagination";
-import BackendLink from "./BackendLink";
+import BaseUrl from "./BaseUrl";
 import Loader from "../UI/Loader";
+import apiCall from "../hooks/apiCall";
 import WriterInfo from "../Components/Writers/WriterInfo";
-// const writerInfo = [
+
+// const reportInfo = [
 //   {
 //     id: "1",
 //     name: "Philip Wayne",
-//     tasksCompleted: "#",
+
 //     date: "24/05/2024",
-//     rate: "#1,600/Hr",
-//     rating: "5.0",
+//     status: "Completed",
+//     amount: "#150,000",
+//     title: "Uses of AI in Our World",
 //   },
 //   {
 //     id: "2",
 //     name: "Ronald Richards",
-//     tasksCompleted: "#",
+
 //     date: "24/05/2024",
-//     rate: "#700/Hr",
-//     rating: "2.8",
+//     status: "Completed",
+//     amount: "#150,000",
+//     title: "Uses of AI in Our World",
 //   },
 //   {
 //     id: "3",
 //     name: "Kristin Watson",
-//     tasksCompleted: "#",
+
 //     date: "04/04/2024",
-//     rate: "#950/Hr",
-//     rating: "3.7",
+//     status: "Completed",
+//     amount: "#150,000",
+//     title: "Uses of AI in Our World",
 //   },
 //   {
 //     id: "4",
 //     name: "Cody Fisher",
-//     tasksCompleted: "#",
+
 //     date: "24/05/2024",
-//     rate: "#1,450/Hr",
-//     rating: "5.0",
+//     status: "Completed",
+//     amount: "#150,000",
+//     title: "Uses of AI in Our World",
 //   },
 //   {
 //     id: "5",
 //     name: "Arlene McCoy",
-//     tasksCompleted: "#",
+
 //     date: "24/05/2022",
-//     rate: "#1,300/Hr",
-//     rating: "4.0",
+//     status: "Cancelled",
+//     amount: "#200,000",
+//     title: "Uses of AI in Our World",
 //   },
 //   {
 //     id: "6",
 //     name: "Floyd Miles",
-//     tasksCompleted: "#",
+
 //     date: "24/05/2022",
-//     rate: "#1,000/Hr",
-//     rating: "4.5",
+//     status: "Cancelled",
+//     amount: "#150,000",
+//     title: "Uses of AI in Our World",
 //   },
 //   {
 //     id: "7",
 //     name: "Theresa Webb",
-//     tasksCompleted: "#",
+
 //     date: "24/01/2024",
-//     rate: "#1,500/Hr",
-//     rating: "5.0",
+//     status: "Completed",
+//     amount: "#150,000",
+//     title: "Uses of AI in Our World",
 //   },
 // ];
 
@@ -66,37 +75,31 @@ function WritersInfo() {
   const [writer, setWriter] = useState([]);
 
   const [currentPage, setCurrentPage] = useState(1);
-  const productsPerPage = 4;
+  const writerPerPage = 4;
 
-  const lastIndex = currentPage * productsPerPage;
-  const firstIndex = lastIndex - productsPerPage;
+  // const validWriters = Array.isArray(writer) ? writer : [];
+
+  const lastIndex = currentPage * writerPerPage;
+  const firstIndex = lastIndex - writerPerPage;
   const writerPage = writer.slice(firstIndex, lastIndex);
-  const npages = Math.ceil(writer.length / productsPerPage);
+  // const writerPage = validWriters.slice(firstIndex, lastIndex);
+  const npages = Math.ceil(writerPage.length / writerPerPage);
   const numbers = [...Array(npages + 1).keys()].slice(1);
 
   useEffect(() => {
     async function getWriterInfo() {
       try {
-        const res = await fetch(
-          `${BackendLink}/users/writer`,
+        const data = await apiCall(`${BaseUrl}/users/writers`);
 
-          {
-            method: "GET",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            credentials: "include", // Include cookies with the request
-          }
-        );
-
-        if (!res.ok) throw new Error("Unable to fetch data");
-
-        const data = await res.json();
-        if (data.Response === "False")
-          throw new Error("Something went wrong while trying to fetch data");
-        setWriter(data);
+        if (Array.isArray(data.data.data)) {
+          setWriter(data.data.data);
+        } else {
+          if (data.Response === "False")
+            throw new Error("Something went wrong while trying to fetch data");
+          setWriter(data);
+        }
       } catch (err) {
-        console.log(err.message);
+        console.log(err);
       }
     }
     getWriterInfo();
@@ -121,7 +124,7 @@ function WritersInfo() {
   return (
     <div className="containr act">
       <div className="flex task">
-        <h3 className="tertiary-header">Writer</h3>
+        <h3 className="tertiary-header">writer</h3>
       </div>
       <div>
         <nav className="main-nav user-nav activities">

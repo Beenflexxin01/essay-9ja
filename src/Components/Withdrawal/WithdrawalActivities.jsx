@@ -1,7 +1,7 @@
 import { HiMegaphone } from "react-icons/hi2";
 
 function WithdrawalActivities({ withdrawal }) {
-  const { currency, status, amount, bankName, accountName, accountNumber } =
+  const { currency, status, amount, bankName, accountNumber, updatedBy } =
     withdrawal;
 
   return (
@@ -12,7 +12,9 @@ function WithdrawalActivities({ withdrawal }) {
             <div className="sp">
               <li className="main-li check">
                 <HiMegaphone size={"15px"} className="icon meg" />
-                {accountName}
+                {updatedBy
+                  ? `${updatedBy.firstName} ${updatedBy.lastName}`
+                  : "N/A"}
               </li>
               <li className="main-li with-li">
                 Requested for a withdrawal of {currency} {amount}{" "}

@@ -1,34 +1,36 @@
 import { useEffect, useState } from "react";
 import Pagination from "./Pagination";
 import WithdrawalActivities from "../Components/Withdrawal/WithdrawalActivities";
-import BackendLink from "./BackendLink";
+import BaseUrl from "./BaseUrl";
 import Loader from "../UI/Loader";
+import apiCall from "../hooks/apiCall";
 
 function WithdrawalInfo() {
   const [withdrawals, setWithdrawals] = useState([]);
 
   const [currentPage, setCurrentPage] = useState(1);
-  const productsPerPage = 4;
+  const withdrawalsPerPage = 4;
 
-  const lastIndex = currentPage * productsPerPage;
-  const firstIndex = lastIndex - productsPerPage;
+  const lastIndex = currentPage * withdrawalsPerPage;
+  const firstIndex = lastIndex - withdrawalsPerPage;
   const withdrawalPage = withdrawals.slice(firstIndex, lastIndex);
-  const npages = Math.ceil(withdrawals.length / productsPerPage);
+  const npages = Math.ceil(withdrawals.length / withdrawalsPerPage);
   const numbers = [...Array(npages + 1).keys()].slice(1);
 
   useEffect(() => {
     async function getWithdrawalReq() {
       try {
-        const res = await fetch(`${BackendLink}/wallets/withdrawal/requests`);
+        const data = await apiCall(`${BaseUrl}/wallets/withdrawal/requests`);
 
-        if (!res.ok) throw new Error("Unable to fetch withdrawals");
-
-        const data = await res.json();
-        if (data.Response === "False")
-          throw new Error("Unable ton fetch withdrawal data!");
-        setWithdrawals(data);
+        if (Array.isArray(data.data.data)) {
+          setWithdrawals(data.data.data);
+        } else {
+          if (data.Response === "False")
+            throw new Error("Something went wrong while trying to fetch data");
+          setWithdrawals(data);
+        }
       } catch (err) {
-        console.log(err.message);
+        console.log(err);
       }
     }
     getWithdrawalReq();
