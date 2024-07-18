@@ -8,6 +8,7 @@ function Transactions({ transactions }) {
     transactionDescription,
     userId,
     transactionAmount,
+    _id: transactionId
   } = transactions;
 
   return (
@@ -28,7 +29,7 @@ function Transactions({ transactions }) {
             </li>
             <li className="main-li check icon">
               {transactionStatus}{" "}
-              <TransactionsViewBtn transactions={transactions} />
+              <TransactionsViewBtn transactionId={transactionId} />
             </li>
           </ul>
         </nav>

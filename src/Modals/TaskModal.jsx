@@ -4,9 +4,8 @@ import { useNavigate } from "react-router-dom";
 import TaskDeleteBtn from "./DeleteModalBtn/TaskDeleteBtn";
 import UpdateTaskModalBtn from "./UpdateModalBtn/UpdateTaskModalBtn";
 
-function TaskModal(props, tasks) {
+function TaskModal({ taskId, ...props }) {
   const navigate = useNavigate();
-  const { _id: tasksId } = tasks;
 
   return (
     <>
@@ -15,13 +14,15 @@ function TaskModal(props, tasks) {
         size="1g"
         aria-labelledby="contained-modal-title-vcenter"
         centered
-        className="modal-c">
+        className="modal-c"
+      >
         <Modal.Body>
           <nav className="modal-nav">
             <ul className="modal-ul">
               <li
                 className="modal-li"
-                onClick={() => navigate(`/task-details/${tasksId}`)}>
+                onClick={() => navigate(`/task-details/${taskId}`)}
+              >
                 <HiEye size={"14px"} /> View task detail
               </li>
               <li className="modal-li">

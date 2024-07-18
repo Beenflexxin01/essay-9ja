@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import BaseUrl from "../../Utils/BaseUrl";
+import apiCall from "../../hooks/apiCall";
 
 function TaskDetails() {
   const [taskDetails, setTaskDetails] = useState();
@@ -69,6 +70,26 @@ function TaskDetails() {
     }
     getTaskDetails();
   }, [id]);
+
+  useEffect(() => {
+    async function getTaskDetails() {
+      try {
+        const data = await apiCall(`${BaseUrl}/contracts/${id}`);
+
+        if (data.data) {
+          setTaskDetails(data.data);
+        } else {
+          if (data.Response === "False")
+            throw new Error("Something went wrong while trying to fetch data");
+          setTaskDetails(data);
+        }
+      } catch (err) {
+        console.log(err);
+      }
+    }
+    getTaskDetails();
+  }, [id]);
+
   return (
     <>
       <div className="containr">

@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import BaseUrl from "../../Utils/BaseUrl";
+import apiCall from "../../hooks/apiCall";
 
 function UserDetails() {
-  const [userDetails, setUserDetails] = useState();
+  const [userDetails, setUserDetails] = useState({});
   const navigate = useNavigate();
   const { id } = useParams();
 
@@ -18,18 +19,38 @@ function UserDetails() {
   } = userDetails;
 
   useEffect(() => {
+    async function getWriterDetails() {
+      try {
+        const data = await apiCall(`${BaseUrl}/users/single/${id}`);
+
+        if (data.data) {
+          setUserDetails(data.data);
+        } else {
+          if (data.Response === "False")
+            throw new Error("Something went wrong while trying to fetch data");
+          setUserDetails(data);
+        }
+      } catch (err) {
+        console.log(err);
+      }
+    }
+    getWriterDetails();
+  }, [id]);
+
+  useEffect(() => {
     async function getUserDetails() {
       try {
-        const res = await fetch(`${BaseUrl}/users/single/${id}`);
+        const data = await apiCall(`${BaseUrl}/users/writers/${id}`);
 
-        if (!res.ok) throw new Error("Unable to fetch transactions");
-
-        const data = await res.json();
-        if (data.Response === "Fale")
-          throw new Error("Unable to load transaction data!");
-        setUserDetails(data);
+        if (Array.isArray(data.data.data)) {
+          setUserDetails(data.data.data);
+        } else {
+          if (data.Response === "False")
+            throw new Error("Something went wrong while trying to fetch data");
+          setUserDetails(data);
+        }
       } catch (err) {
-        console.log(err.message);
+        console.log(err);
       }
     }
     getUserDetails();

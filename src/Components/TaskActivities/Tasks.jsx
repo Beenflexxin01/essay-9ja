@@ -33,7 +33,7 @@ function Tasks({ tasks }) {
   //     "reviews": []
   // },
 
-  const { firstName, lastName, title, dueDate, status, currency, amount } =
+  const { firstName, lastName, title, dueDate, status, currency, amount, _id: taskId } =
     tasks;
 
   return (
@@ -50,7 +50,7 @@ function Tasks({ tasks }) {
             <li className="main-li ">{dueDate}</li>
             <li className="main-li">{status}</li>
             <li className="main-li check icon">
-              {currency} {amount} <TasksViewBtn tasks={tasks} />
+              {currency} {amount} <TasksViewBtn taskId={taskId} />
             </li>
           </ul>
         </nav>

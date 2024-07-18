@@ -3,20 +3,21 @@ import Button from "react-bootstrap/Button";
 import { PiDotsThreeVertical } from "react-icons/pi";
 
 import TransactionModal from "../TransactionModal";
-function TransactionsViewBtn({ transactions }) {
+function TransactionsViewBtn({ transactionId }) {
   const [modalShow, setModalShow] = useState(false);
   return (
     <>
       <Button
         variant=""
         onClick={() => setModalShow(true)}
-        className="view-btn">
+        className="view-btn"
+      >
         <PiDotsThreeVertical size={"24px"} className="dots" />
       </Button>
       <TransactionModal
         show={modalShow}
         onHide={() => setModalShow(false)}
-        transactions={transactions}
+        transactionId={transactionId}
       />
     </>
   );

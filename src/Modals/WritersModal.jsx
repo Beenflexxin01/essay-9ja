@@ -5,14 +5,10 @@ import WritersDeleteBtn from "./DeleteModalBtn/WritersDeleteBtn";
 import { useState } from "react";
 import DeactivateWriterModalBtn from "./UpdateModalBtn/DeactivateWriterModalBtn";
 
-function WritersModal(props, { writer }) {
+function WritersModal({ writersId, ...props }) {
   const navigate = useNavigate();
 
   const [isOpen, setIsOpen] = useState(false);
-
-  const { _id: writersId } = writer;
-
-  console.log(writersId);
 
   const toggleOffMenuBar = () => setIsOpen(!isOpen);
   return (
@@ -29,7 +25,7 @@ function WritersModal(props, { writer }) {
             <ul className="modal-ul">
               <li
                 className="modal-li"
-                onClick={() => navigate(`/users/writers/${writersId}`)}
+                onClick={() => navigate(`/writer-details/${writersId}`)}
               >
                 <HiEye size={"14px"} /> View detail
               </li>

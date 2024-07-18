@@ -77,12 +77,9 @@ function WritersInfo() {
   const [currentPage, setCurrentPage] = useState(1);
   const writerPerPage = 4;
 
-  // const validWriters = Array.isArray(writer) ? writer : [];
-
   const lastIndex = currentPage * writerPerPage;
   const firstIndex = lastIndex - writerPerPage;
   const writerPage = writer.slice(firstIndex, lastIndex);
-  // const writerPage = validWriters.slice(firstIndex, lastIndex);
   const npages = Math.ceil(writerPage.length / writerPerPage);
   const numbers = [...Array(npages + 1).keys()].slice(1);
 
@@ -90,7 +87,6 @@ function WritersInfo() {
     async function getWriterInfo() {
       try {
         const data = await apiCall(`${BaseUrl}/users/writers`);
-
         if (Array.isArray(data.data.data)) {
           setWriter(data.data.data);
         } else {

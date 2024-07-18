@@ -2,9 +2,8 @@ import Modal from "react-bootstrap/Modal";
 import { HiEye } from "react-icons/hi";
 import { useNavigate } from "react-router-dom";
 
-function TransactionModal(props, transactions) {
+function TransactionModal({ transactionId, ...props }) {
   const navigate = useNavigate();
-  const { _id: transactionsId } = transactions;
 
   return (
     <>
@@ -13,15 +12,17 @@ function TransactionModal(props, transactions) {
         size="1g"
         aria-labelledby="contained-modal-title-vcenter"
         centered
-        className="modal-c">
+        className="modal-c"
+      >
         <Modal.Body>
           <nav className="modal-nav">
             <ul className="modal-ul">
               <li
                 className="modal-li"
                 onClick={() =>
-                  navigate(`/transaction-details/${transactionsId}`)
-                }>
+                  navigate(`/transaction-details/${transactionId}`)
+                }
+              >
                 <HiEye size={"14px"} /> view transaction detail
               </li>
             </ul>

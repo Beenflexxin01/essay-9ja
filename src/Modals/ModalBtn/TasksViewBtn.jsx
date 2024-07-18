@@ -3,17 +3,22 @@ import Button from "react-bootstrap/Button";
 import { PiDotsThreeVertical } from "react-icons/pi";
 
 import TaskModal from "../TaskModal";
-function TasksViewBtn({tasks}) {
+function TasksViewBtn({ taskId }) {
   const [modalShow, setModalShow] = useState(false);
   return (
     <>
       <Button
         variant=""
         onClick={() => setModalShow(true)}
-        className="view-btn">
+        className="view-btn"
+      >
         <PiDotsThreeVertical size={"24px"} className="dots" />
       </Button>
-      <TaskModal show={modalShow} onHide={() => setModalShow(false)} tasks={tasks} />
+      <TaskModal
+        show={modalShow}
+        onHide={() => setModalShow(false)}
+        taskId={taskId}
+      />
     </>
   );
 }

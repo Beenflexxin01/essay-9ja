@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import BaseUrl from "../../Utils/BaseUrl";
+import apiCall from "../../hooks/apiCall";
 
 function TransactionDetails() {
   const [transactionDetails, setTransactionDetails] = useState({});
@@ -26,16 +27,17 @@ function TransactionDetails() {
   useEffect(() => {
     async function getTransactionDetails() {
       try {
-        const res = await fetch(`${BaseUrl}/wallets/transactions/${id}`);
+        const data = await apiCall(`${BaseUrl}/wallets/transactions/${id}`);
 
-        if (!res.ok) throw new Error("Unable to fetch transactions");
-
-        const data = await res.json();
-        if (data.Response === "Fale")
-          throw new Error("Unable to load transaction data!");
-        setTransactionDetails(data);
+        if (data.data) {
+          setTransactionDetails(data.data);
+        } else {
+          if (data.Response === "False")
+            throw new Error("Something went wrong while trying to fetch data");
+          setTransactionDetails(data);
+        }
       } catch (err) {
-        console.log(err.message);
+        console.log(err);
       }
     }
     getTransactionDetails();

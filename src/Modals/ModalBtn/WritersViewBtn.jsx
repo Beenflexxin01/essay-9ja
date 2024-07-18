@@ -3,7 +3,7 @@ import Button from "react-bootstrap/Button";
 import { PiDotsThreeVertical } from "react-icons/pi";
 import WritersModal from "../WritersModal";
 
-function WritersViewBtn({ writer }) {
+function WritersViewBtn({ writersId }) {
   const [modalShow, setModalShow] = useState(false);
 
   return (
@@ -11,13 +11,14 @@ function WritersViewBtn({ writer }) {
       <Button
         variant=""
         onClick={() => setModalShow(true)}
-        className="view-btn">
+        className="view-btn"
+      >
         <PiDotsThreeVertical size={"24px"} className="dots" />
       </Button>
       <WritersModal
         show={modalShow}
         onHide={() => setModalShow(false)}
-        writer={writer}
+        writersId={writersId}
       />
     </>
   );

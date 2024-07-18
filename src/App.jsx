@@ -59,7 +59,7 @@ function App() {
                 path="transaction-details/:id"
                 element={<TransactionDetails />}
               />
-              <Route path="users/writers/:id" element={<WriterDetails />} />
+              <Route path="writer-details/:id" element={<WriterDetails />} />
               <Route path="task-details/:id" element={<TaskDetails />} />
               <Route path="tasks" element={<TaskActivities />} />
               <Route path="settings" element={<Settings />} />

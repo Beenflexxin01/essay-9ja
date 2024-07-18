@@ -9,6 +9,7 @@ function WriterInfo({ writer }) {
     ratePerPage,
     totalTasksCompleted,
     createdAt,
+    _id: writersId,
   } = writer;
 
   return (
@@ -17,7 +18,6 @@ function WriterInfo({ writer }) {
         <nav className="main-nav user-nav ">
           <ul className="main-ul">
             <li className="main-li check">
-              {" "}
               <input type="checkbox" />
               {firstName} {lastName}
             </li>
@@ -29,7 +29,7 @@ function WriterInfo({ writer }) {
                 <PiStar size={"15px"} className="dots starRating" />{" "}
                 {averageRating}{" "}
               </div>
-              <WritersViewBtn writer={writer} />
+              <WritersViewBtn writersId={writersId} />
             </li>
           </ul>
         </nav>
