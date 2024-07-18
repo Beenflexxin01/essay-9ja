@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import logo from "/images/logo.png";
 import AddBtn from "./AddBtn";
 import LogOut from "../Components/Auth/LogOut";
@@ -8,7 +8,9 @@ function SideBar() {
     <>
       <div className="side-bar">
         <div className="log-img">
-          <img src={logo} alt="Logo" className="logo-img" />
+          <Link to="/home">
+            <img src={logo} alt="Logo" className="logo-img" />
+          </Link>
         </div>
         <nav className="side-bar-nav">
           <ul className="side-bar-ul">
