@@ -38,8 +38,8 @@ function TransactionDetails() {
     // transactionType,
     // contractId,
     createdAt,
-    firstName,
-    lastName,
+    // firstName,
+    // lastName,
   } = transactionDetails;
 
   useEffect(() => {
@@ -94,9 +94,7 @@ function TransactionDetails() {
                   <li className="grid-user-li activities user-detail">
                     Sterling Bank
                   </li>
-                  <li className="grid-user-li user-detail">
-                Femi Gates
-                  </li>
+                  <li className="grid-user-li user-detail">Femi Gates</li>
                   <li className="grid-user-li activities user-detail">
                     Ronald Richards
                   </li>
