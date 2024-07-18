@@ -16,6 +16,8 @@ function UserDetails() {
     accountStatus,
     accountType,
     createdAt,
+    phoneNumber,
+    country,
   } = userDetails;
 
   useEffect(() => {
@@ -95,13 +97,13 @@ function UserDetails() {
                   </li>
                   <li className="grid-user-li user-detail">
                     <Link to="tel: +234 905 673 0986" className="mail">
-                      +234 905 673 0986
+                      {phoneNumber ? `${phoneNumber}` : "N/A"}
                     </Link>
                   </li>
-                  <li className="grid-user-li activities user-detail">#14</li>
                   <li className="grid-user-li user-detail">{createdAt}</li>
+                  {/* <li className="grid-user-li activities user-detail"></li> */}
                   <li className="grid-user-li activities user-detail">
-                    Akwa Ibom, Nigeria
+                    {country}
                   </li>
                   <li className="grid-user-li user-detail">{lastLoginAt}</li>
                   <li className="grid-user-li activities user-detail">

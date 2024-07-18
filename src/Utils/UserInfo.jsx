@@ -71,7 +71,7 @@ function UserInfo() {
         {users.length > 0 ? (
           <div>
             {usersPage.map((users, n) => (
-              <UserReg users={users} key={n.id} />
+              <UserReg users={users} key={users._id} />
             ))}
 
             <Pagination

@@ -85,8 +85,15 @@ function UserReg({ users }) {
   //               }
   //           },
 
-  const { firstName, lastName, phoneNumber, email, updatedAt, createdAt, _id: userId } =
-    users;
+  const {
+    firstName,
+    lastName,
+    phoneNumber,
+    email,
+    updatedAt,
+    createdAt,
+    _id: userId,
+  } = users;
 
   return (
     <>
@@ -104,7 +111,8 @@ function UserReg({ users }) {
               {updatedAt} <span className="span"></span>
             </li>
             <li className="main-li check  icon">
-              {phoneNumber}
+              {phoneNumber ? `${phoneNumber}` : "N/A"}
+
               <UsersViewBtn userId={userId} />
             </li>
           </ul>
