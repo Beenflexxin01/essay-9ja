@@ -23,6 +23,10 @@
   cursor: pointer;
 }
 
+.transaction-nav {
+  height: 8rem;
+}
+
 .activePage {
   background-color: #3ac1ff;
   padding: 0.3rem 1rem;

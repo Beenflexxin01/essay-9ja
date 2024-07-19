@@ -33,8 +33,15 @@ function Tasks({ tasks }) {
   //     "reviews": []
   // },
 
-  const { firstName, lastName, title, dueDate, status, currency, amount, _id: taskId } =
-    tasks;
+  const {
+    title,
+    dueDate,
+    status,
+    currency,
+    amount,
+    _id: taskId,
+    writer,
+  } = tasks;
 
   return (
     <>
@@ -44,7 +51,7 @@ function Tasks({ tasks }) {
             <li className="main-li check">
               {" "}
               <input type="checkbox" />
-              {firstName} {lastName}
+              {writer ? `${writer.firstName} ${writer.lastName}` : "N/A"}
             </li>
             <li className="main-li">{title}</li>
             <li className="main-li ">{dueDate}</li>

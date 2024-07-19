@@ -8,13 +8,13 @@ function Transactions({ transactions }) {
     transactionDescription,
     userId,
     transactionAmount,
-    _id: transactionId
+    _id: transactionId,
   } = transactions;
 
   return (
     <>
       <div className="grid-5-cols">
-        <nav className="main-nav user-nav ">
+        <nav className="main-nav user-nav transaction-nav">
           <ul className="main-ul transaction-ul">
             <li className="main-li check">
               {" "}

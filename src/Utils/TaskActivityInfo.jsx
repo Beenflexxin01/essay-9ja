@@ -9,7 +9,7 @@ function TaskActivityInfo() {
   const [contracts, setContracts] = useState([]);
 
   const [currentPage, setCurrentPage] = useState(1);
-  const contractsPerPage = 4;
+  const contractsPerPage = 10;
 
   const lastIndex = currentPage * contractsPerPage;
   const firstIndex = lastIndex - contractsPerPage;

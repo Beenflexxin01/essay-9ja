@@ -8,24 +8,6 @@ function TransactionDetails() {
   const { id } = useParams();
   const navigate = useNavigate();
 
-  //  {
-  //     "error": false,
-  //     "message": "Transaction Fetched Successfully",
-  //     "data": {
-  //         "_id": "662e44a2758c0f7ba322ee8d",
-  //         "userId": "65076587d40712c7abdaa0a3",
-  //         "transactionAmount": 35800,
-  //         "txRef": "211f0ec0-09cf-4822-a9fc-a49c7b03f917",
-  //         "transactionID": "3750252153",
-  //         "transactionDescription": "Wallet Funding",
-  //         "transactionType": "credit",
-  //         "transactionStatus": "successful",
-  //         "transactionMode": "deposit",
-  //         "paymentGateway": "paystack",
-  //         "createdAt": "2024-04-28T12:44:18.425Z",
-  //         "updatedAt": "2024-04-28T12:45:17.272Z"
-  //     }
-  // }
   const {
     // txRef,
     transactionAmount,
@@ -65,7 +47,10 @@ function TransactionDetails() {
     <>
       <div className="containr">
         <div className="bg">
-          <button className="back" onClick={() => navigate("/transactions")}>
+          <button
+            className="back"
+            onClick={() => navigate("/wallets/transactions/all")}
+          >
             &larr; Back
           </button>
 
