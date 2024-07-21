@@ -11,18 +11,19 @@ import useAxiosWithAuth from "../../hooks/useAxiosWithAuth"; //
 import logo from "/images/logo.png";
 import BaseUrl from "../../Utils/BaseUrl";
 import { AxiosError } from "axios";
+import { loginValidatorSchema } from "../../Utils/Validator";
 
 import Cookies from "js-cookie";
 import { toast } from "react-toastify";
 
-const validationSchema = Yup.object({
-  email: Yup.string()
-    .email("Invalid email")
-    .required("This field is required. Kindly provide a valid email! 🙂"),
-  password: Yup.string()
-    .min(6, "Too Short!")
-    .required("This field is required. Kindly provide a valid password! 🤐"),
-});
+// const validationSchema = Yup.object({
+//   email: Yup.string()
+//     .email("Invalid email")
+//     .required("This field is required. Kindly provide a valid email! 🙂"),
+//   password: Yup.string()
+//     .min(6, "Too Short!")
+//     .required("This field is required. Kindly provide a valid password! 🤐"),
+// });
 
 function Login() {
   const [isLoading, setIsLoading] = useState(false);
@@ -91,7 +92,7 @@ function Login() {
       email: "",
       password: "",
     },
-    validationSchema,
+    loginValidatorSchema,
     onSubmit,
   });
 

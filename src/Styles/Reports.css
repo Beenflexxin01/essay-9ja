@@ -7,6 +7,11 @@
   border-radius: 0.8rem;
   outline: none;
   border: 1px solid #e0e0e0;
+  padding: 0 1rem;
+}
+
+.options {
+  cursor: pointer;
 }
 
 .report-form {
@@ -124,7 +129,7 @@ label {
 }
 
 .withdraw-ul {
-  grid-template-columns: 80% 20%;
+  grid-template-columns: 75% 25%;
 }
 
 .with-flex {
@@ -137,13 +142,15 @@ label {
 
 .approve {
   background-color: #008000;
-  color: #fff;
+  color: #f8f8f8;
   padding: 0.4rem 1.2rem;
   border-radius: 0.6rem;
+  font-weight: 700;
+  font-size: 1.6rem;
   width: 8.6rem;
   height: 3.1rem;
-  text-align: center;
   font-weight: 700;
+  text-transform: capitalize;
 }
 
 .decline {
@@ -157,4 +164,27 @@ label {
   height: 2.4rem;
   background-color: #0636742c;
   border-radius: 9rem;
+}
+
+.rejected {
+  background-color: #ffebeb;
+  color: #ca0101;
+}
+
+.approved {
+  background-color: #e5ffe5;
+  color: #008000;
+}
+
+.statusClass {
+  text-transform: capitalize;
+}
+
+.pending {
+  background-color: transparent;
+}
+
+.btnn {
+  border: none;
+  outline: none;
 }

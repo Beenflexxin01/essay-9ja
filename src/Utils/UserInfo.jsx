@@ -9,7 +9,7 @@ function UserInfo() {
   const [users, setUsers] = useState([]);
 
   const [currentPage, setCurrentPage] = useState(1);
-  const usersPerPage = 4;
+  const usersPerPage = 10;
 
   const lastIndex = currentPage * usersPerPage;
   const firstIndex = lastIndex - usersPerPage;
@@ -21,7 +21,6 @@ function UserInfo() {
     async function getUserInfo() {
       try {
         const data = await apiCall(`${BaseUrl}/users`);
-
         if (Array.isArray(data.data.data)) {
           setUsers(data.data.data);
         } else {

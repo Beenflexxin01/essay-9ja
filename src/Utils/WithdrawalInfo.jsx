@@ -9,7 +9,7 @@ function WithdrawalInfo() {
   const [withdrawals, setWithdrawals] = useState([]);
 
   const [currentPage, setCurrentPage] = useState(1);
-  const withdrawalsPerPage = 4;
+  const withdrawalsPerPage = 10;
 
   const lastIndex = currentPage * withdrawalsPerPage;
   const firstIndex = lastIndex - withdrawalsPerPage;

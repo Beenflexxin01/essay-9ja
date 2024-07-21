@@ -12,7 +12,7 @@ function TransactionInfo() {
   // const [error, setError] = useState();
 
   const [currentPage, setCurrentPage] = useState(1);
-  const transactionsPerPage = 4;
+  const transactionsPerPage = 10;
 
   const lastIndex = currentPage * transactionsPerPage;
   const firstIndex = lastIndex - transactionsPerPage;

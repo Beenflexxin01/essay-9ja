@@ -23,6 +23,7 @@ import RequireAuth from "@auth-kit/react-router/RequireAuth";
 
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import AppSettings from "./Components/Settings/AppSettings";
 
 function App() {
   const store = createStore({
@@ -64,6 +65,7 @@ function App() {
               <Route path="tasks" element={<TaskActivities />} />
               <Route path="settings" element={<Settings />} />
               <Route path="security-settings" element={<SecuritySettings />} />
+              <Route path="app-settings" element={<AppSettings />} />
               <Route
                 path="wallets/withdrawal/requests"
                 element={<Withdrawal />}
