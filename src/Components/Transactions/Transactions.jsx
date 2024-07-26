@@ -11,6 +11,15 @@ function Transactions({ transactions }) {
     _id: transactionId,
   } = transactions;
 
+  const statusClass =
+    transactionStatus === "canceled"
+      ? "rejected completed"
+      : transactionStatus === "successful"
+        ? "approved completed"
+        : transactionStatus === "pending"
+          ? "pending completed"
+          : "";
+
   return (
     <>
       <div className="grid-5-cols">
@@ -27,10 +36,10 @@ function Transactions({ transactions }) {
               {currency}
               {transactionAmount}
             </li>
-            <li className="main-li check icon">
-              {transactionStatus}{" "}
+            <div className="check icon">
+              <li className={`main-li  ${statusClass}`}>{transactionStatus}</li>
               <TransactionsViewBtn transactionId={transactionId} />
-            </li>
+            </div>
           </ul>
         </nav>
       </div>

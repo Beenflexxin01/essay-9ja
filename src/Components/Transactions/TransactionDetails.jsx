@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import BaseUrl from "../../Utils/BaseUrl";
 import apiCall from "../../hooks/apiCall";
+import DateFormatter from "../../Utils/DateFormatter";
 
 function TransactionDetails() {
   const [transactionDetails, setTransactionDetails] = useState({});
@@ -29,8 +30,8 @@ function TransactionDetails() {
       try {
         const data = await apiCall(`${BaseUrl}/wallets/transactions/${id}`);
 
-        if (data.data) {
-          setTransactionDetails(data.data);
+        if (data.data.data) {
+          setTransactionDetails(data.data.data);
         } else {
           if (data.Response === "False")
             throw new Error("Something went wrong while trying to fetch data");
@@ -88,7 +89,7 @@ function TransactionDetails() {
                     {transactionAmount}
                   </li>
                   <li className="grid-user-li user-detail activities ">
-                    {createdAt}
+                    <DateFormatter createdAt={createdAt} />
                   </li>
 
                   <li className="grid-user-li user-detail canceled">

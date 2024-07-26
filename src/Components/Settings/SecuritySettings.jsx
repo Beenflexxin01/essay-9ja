@@ -10,7 +10,7 @@ function SecuritySettings() {
         <Button />
       </div>
       <div className="profile-studio">
-        <h3 className="tertiary-header">Security Settings</h3>
+        <h3 className="tertiary-header app-header">Security Settings</h3>
         <div className="profile-form">
           <form action="" className="pro-form">
             <nav className="profile-nav">

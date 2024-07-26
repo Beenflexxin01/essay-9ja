@@ -4,7 +4,6 @@ import BaseUrl from "../../Utils/BaseUrl";
 import apiCall from "../../hooks/apiCall";
 import DateFormatter from "../../Utils/DateFormatter";
 import DateUpdateFormatter from "../../Utils/DateUpdateFormatter";
-// import { createdAt } from "../../Utils/DateFormatter";
 function TaskDetails() {
   const [taskDetails, setTaskDetails] = useState({});
   const navigate = useNavigate();
@@ -16,28 +15,10 @@ function TaskDetails() {
   useEffect(() => {
     async function getTaskDetails() {
       try {
-        const res = await fetch(`${BaseUrl}/contracts/${id}`);
-
-        if (!res.ok) throw new Error("Unable to fetch transactions");
-
-        const data = await res.json();
-        if (data.Response === "Fale")
-          throw new Error("Unable to load transaction data!");
-        setTaskDetails(data);
-      } catch (err) {
-        console.log(err.message);
-      }
-    }
-    getTaskDetails();
-  }, [id]);
-
-  useEffect(() => {
-    async function getTaskDetails() {
-      try {
         const data = await apiCall(`${BaseUrl}/contracts/${id}`);
 
-        if (data.data) {
-          setTaskDetails(data.data);
+        if (data.data.data) {
+          setTaskDetails(data.data.data);
         } else {
           if (data.Response === "False")
             throw new Error("Something went wrong while trying to fetch data");

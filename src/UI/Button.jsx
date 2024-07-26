@@ -1,34 +1,35 @@
 import { HiKey, HiUser } from "react-icons/hi";
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { FaGear } from "react-icons/fa6";
 
 function Button() {
   const navigate = useNavigate();
   return (
     <>
-      <div className="">
+      <div className="profile-set">
         <div className="profile-btn">
-          <HiUser size={"24px"} />
-          <button className="profile" onClick={() => navigate("/settings")}>
-            Profile Settings
-          </button>
-        </div>
-
-        <div className="profile-btn">
-          <HiKey size={"24px"} />
-          <button
-            className="profile"
-            onClick={() => navigate("/security-settings")}
+          <NavLink
+            to="/settings"
+            className="profile side-bar-link"
+            onClick={() => navigate("/settings")}
           >
-            Security Settings
-          </button>
+            <HiUser size={"24px"} />
+            Profile Settings
+          </NavLink>
         </div>
 
         <div className="profile-btn">
+          <NavLink to="/security-settings" className="profile side-bar-link">
+          <HiKey size={"24px"} />
+            Security Settings
+          </NavLink>
+        </div>
+
+        <div className="profile-btn">
+          <NavLink className="profile side-bar-link" to="/app-settings">
           <FaGear size={"24px"} />
-          <button className="profile" onClick={() => navigate("/app-settings")}>
             Application Settings
-          </button>
+          </NavLink>
         </div>
       </div>
     </>

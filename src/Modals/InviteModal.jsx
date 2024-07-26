@@ -13,15 +13,11 @@ function InviteModal({ handleShow, show, handleClose }) {
           <Form>
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
               <Form.Label>First Name</Form.Label>
-              <Form.Control type="name" placeholder="Robert" autoFocus />
+              <Form.Control type="name" placeholder="Robert" />
               <Form.Label>Last Name</Form.Label>
-              <Form.Control type="name" placeholder="Stanley" autoFocus />
+              <Form.Control type="name" placeholder="Stanley" />
               <Form.Label>Email address</Form.Label>
-              <Form.Control
-                type="email"
-                placeholder="name@example.com"
-                autoFocus
-              />
+              <Form.Control type="email" placeholder="john@example.com" />
             </Form.Group>
           </Form>
         </Modal.Body>

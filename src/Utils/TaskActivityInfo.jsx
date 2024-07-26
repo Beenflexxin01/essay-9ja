@@ -20,14 +20,16 @@ function TaskActivityInfo() {
   useEffect(() => {
     async function getContractInfo() {
       try {
-        const data = await apiCall(`${BaseUrl}/contracts`);
+        const response = await apiCall(`${BaseUrl}/contracts`);
 
-        if (Array.isArray(data.data.data)) {
-          setContracts(data.data.data);
+        if (
+          response &&
+          response.data &&
+          Array.isArray(response.data.data.data)
+        ) {
+          setContracts(response.data.data.data);
         } else {
-          if (data.Response === "False")
-            throw new Error("Something went wrong while trying to fetch data");
-          setContracts(data);
+          console.error("Unexpected response structure:", response);
         }
       } catch (err) {
         console.log(err);

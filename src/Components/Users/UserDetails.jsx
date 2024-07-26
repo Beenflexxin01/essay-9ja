@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import BaseUrl from "../../Utils/BaseUrl";
 import apiCall from "../../hooks/apiCall";
+import DateFormatter from "../../Utils/DateFormatter";
+import DateUpdateFormatter from "../../Utils/DateUpdateFormatter";
 
 function UserDetails() {
   const [userDetails, setUserDetails] = useState({});
@@ -14,7 +16,6 @@ function UserDetails() {
     email,
     lastLoginAt,
     accountStatus,
-    accountType,
     createdAt,
     phoneNumber,
     country,
@@ -25,8 +26,8 @@ function UserDetails() {
       try {
         const data = await apiCall(`${BaseUrl}/users/single/${id}`);
 
-        if (data.data) {
-          setUserDetails(data.data);
+        if (data.data.data) {
+          setUserDetails(data.data.data);
         } else {
           if (data.Response === "False")
             throw new Error("Something went wrong while trying to fetch data");
@@ -74,11 +75,15 @@ function UserDetails() {
                   <li className="grid-user-li">User name:</li>
                   <li className="grid-user-li activities">Email address:</li>
                   <li className="grid-user-li">Contact number:</li>
+                  {/* <li className="grid-user-li activities">
+                    No. of writer's hired:
+                  </li> */}
 
-                  <li className="grid-user-li">Date Joined:</li>
-                  <li className="grid-user-li activities">State / Country:</li>
-                  <li className="grid-user-li">Last Active:</li>
-                  <li className="grid-user-li activities">Last Time Active:</li>
+                  <li className="grid-user-li activities">Date Joined:</li>
+                  <li className="grid-user-li ">State / Country:</li>
+                  <li className="grid-user-li activities">Last Active:</li>
+                  <li className="grid-user-li ">Last Time Active:</li>
+                  {/* <li className="grid-user-li ">Task topic:</li> */}
                 </ul>
               </nav>
             </div>
@@ -100,16 +105,21 @@ function UserDetails() {
                       {phoneNumber ? `${phoneNumber}` : "N/A"}
                     </Link>
                   </li>
-                  <li className="grid-user-li user-detail">{createdAt}</li>
-                  {/* <li className="grid-user-li activities user-detail"></li> */}
-                  <li className="grid-user-li activities user-detail">
-                    {country}
+                  <li className="grid-user-li user-detail activities">
+                    <DateFormatter createdAt={createdAt} />
                   </li>
-                  <li className="grid-user-li user-detail">{lastLoginAt}</li>
-                  <li className="grid-user-li activities user-detail">
+                  {/* <li className="grid-user-li activities user-detail"></li> */}
+                  <li className="grid-user-li user-detail ">
+                    {country ? country : "N / A"}
+                  </li>
+                  <li className="grid-user-li activities user-detail activities">
                     {accountStatus}
                   </li>
-                  <li className="grid-user-li user-detail">{accountType}</li>
+                  <li className="grid-user-li user-detail">
+                    <DateUpdateFormatter updatedAt={lastLoginAt} />
+                  </li>
+
+                  {/* <li className="grid-user-li user-detail ">{}</li> */}
                 </ul>
               </nav>
             </div>

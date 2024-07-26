@@ -3,16 +3,18 @@ import { HiMegaphone } from "react-icons/hi2";
 import BaseUrl from "../../Utils/BaseUrl";
 import apiCall from "../../hooks/apiCall";
 import { auth } from "../../hooks/apiAuth";
+import DateFormatter from "../../Utils/DateFormatter";
+// import DateFormatter from "../../Utils/DateFormatter";
 
 function WithdrawalActivities({ withdrawal }) {
   const {
     currency,
     status,
     amount,
-    bankName,
-    accountNumber,
     updatedBy,
     _id: withdrawalId,
+    bankAccount,
+    createdAt,
   } = withdrawal;
 
   const [withdrawalStatus, setWithdrawalStatus] = useState(status);
@@ -53,13 +55,15 @@ function WithdrawalActivities({ withdrawal }) {
     }
   };
 
+  const accountNumber = bankAccount ? bankAccount.accountNumber : "N / A";
+  const bankName = bankAccount ? bankAccount.bankName : "N / A";
+
   const statusClass =
     withdrawalStatus === "rejected"
       ? "rejected"
       : withdrawalStatus === "approved"
         ? "approved"
         : "pending";
-
   return (
     <>
       <div className="grid-5-cols ">
@@ -73,13 +77,18 @@ function WithdrawalActivities({ withdrawal }) {
                   : "N/A"}
               </li>
               <li className="main-li with-li">
-                Requested for a withdrawal of {currency} {amount}{" "}
-                {accountNumber} <span className="span-">{bankName}</span>
+                Requested for a withdrawal of {currency} {amount} to {""}
+                {accountNumber} ({bankName}) - {""}
+                <span className="span-withdraw">
+                  <DateFormatter createdAt={createdAt} />
+                </span>
               </li>
             </div>
 
-            <div className={`flex with-flex ${statusClass} approve`}>
-              <li className="main-li check icon ">{withdrawalStatus}</li>
+            <div className={`flex with-flex ${statusClass} approve req`}>
+              <li className="main-li check icon">
+                Request {withdrawalStatus}
+              </li>
               {withdrawalStatus === "pending" && (
                 <>
                   <li className="main-li check icon  ">

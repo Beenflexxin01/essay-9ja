@@ -74,7 +74,8 @@ async function apiCall(url, method = "GET", data = {}, options = {}) {
       ...options,
     });
 
-    return response.data; // Return the full response
+    // return response; // Return the full response
+    return response; // Return the full response
   } catch (error) {
     if (error.response) {
       console.error("API call error:", error.response.data); // Log full error response

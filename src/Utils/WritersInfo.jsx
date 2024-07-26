@@ -20,13 +20,15 @@ function WritersInfo() {
   useEffect(() => {
     async function getWriterInfo() {
       try {
-        const data = await apiCall(`${BaseUrl}/users/writers`);
-        if (Array.isArray(data.data.data)) {
-          setWriter(data.data.data);
+        const response = await apiCall(`${BaseUrl}/users/writers`);
+        if (
+          response &&
+          response.data &&
+          Array.isArray(response.data.data.data)
+        ) {
+          setWriter(response.data.data.data);
         } else {
-          if (data.Response === "False")
-            throw new Error("Something went wrong while trying to fetch data");
-          setWriter(data);
+          console.error("Unexpected response structure:", response);
         }
       } catch (err) {
         console.log(err);

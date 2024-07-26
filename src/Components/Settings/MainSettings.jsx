@@ -11,7 +11,7 @@ function MainSettings() {
           <Button />
         </div>
         <div className="profile-studio">
-          <h3 className="tertiary-header">Profile Settings</h3>
+          <h3 className="tertiary-header app-header">Profile Settings</h3>
           <img src={avt} alt="" className="avt-img" />
           <div className="profile-form">
             <form action="" className="pro-form">

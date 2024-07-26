@@ -87,12 +87,12 @@ function AppSettings() {
     <div className="containr">
       <div className="settings">
         <div className="tert">
-          <h3 className="tertiary-header ">Settings</h3>
+          <h3 className="tertiary-header">Settings</h3>
         </div>
         <Button />
       </div>
       <div className="profile-studio">
-        <h3 className="tertiary-header app-header">Application Settings</h3>
+        <h3 className="tertiary-header">Application Settings</h3>
         <div className="profile-form">
           <form onSubmit={formik.handleSubmit} className="pro-form">
             <nav className="profile-nav">

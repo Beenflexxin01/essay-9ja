@@ -20,14 +20,18 @@ function WithdrawalInfo() {
   useEffect(() => {
     async function getWithdrawalReq() {
       try {
-        const data = await apiCall(`${BaseUrl}/wallets/withdrawal/requests`);
+        const response = await apiCall(
+          `${BaseUrl}/wallets/withdrawal/requests`
+        );
 
-        if (Array.isArray(data.data.data)) {
-          setWithdrawals(data.data.data);
+        if (
+          response &&
+          response.data &&
+          Array.isArray(response.data.data.data)
+        ) {
+          setWithdrawals(response.data.data.data);
         } else {
-          if (data.Response === "False")
-            throw new Error("Something went wrong while trying to fetch data");
-          setWithdrawals(data);
+          console.error("Unexpected response structure:", response);
         }
       } catch (err) {
         console.log(err);

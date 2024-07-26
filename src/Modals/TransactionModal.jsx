@@ -12,7 +12,7 @@ function TransactionModal({ transactionId, ...props }) {
         size="1g"
         aria-labelledby="contained-modal-title-vcenter"
         centered
-        className="modal-c"
+        className="modal-c transaction-modal"
       >
         <Modal.Body>
           <nav className="modal-nav">

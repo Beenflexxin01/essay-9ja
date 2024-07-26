@@ -23,14 +23,16 @@ function TransactionInfo() {
   useEffect(() => {
     async function getTransactionInfo() {
       try {
-        const data = await apiCall(`${BaseUrl}/wallets/transactions/all`);
+        const response = await apiCall(`${BaseUrl}/wallets/transactions/all`);
 
-        if (Array.isArray(data.data.data)) {
-          setTransactions(data.data.data);
+        if (
+          response &&
+          response.data &&
+          Array.isArray(response.data.data.data)
+        ) {
+          setTransactions(response.data.data.data);
         } else {
-          if (data.Response === "False")
-            throw new Error("Something went wrong while trying to fetch data");
-          setTransactions(data);
+          console.error("Unexpected response structure:", response);
         }
       } catch (err) {
         console.log(err);

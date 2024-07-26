@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 
 function Pagination({
   numbers,
@@ -7,33 +8,6 @@ function Pagination({
   currentPageNumber,
   nextPage,
 }) {
-  // const [writer, setWriter] = useState([]);
-
-  // const [currentPage, setCurrentPage] = useState(1);
-  // const writerPerPage = 10;
-
-  // const lastIndex = currentPage * writerPerPage;
-  // const firstIndex = lastIndex - writerPerPage;
-  // const writerPage = writer.slice(firstIndex, lastIndex);
-  // const npages = Math.ceil(writerPage.length / writerPerPage);
-  // const numbers = [...Array(npages + 1).keys()].slice(1);
-
-  // function nextPage() {
-  //   if (currentPage !== npages) {
-  //     setCurrentPage(currentPage + 1);
-  //   }
-  // }
-
-  // function previousPage() {
-  //   if (currentPage !== 1) {
-  //     setCurrentPage(currentPage - 1);
-  //   }
-  // }
-
-  // function currentPageNumber(id) {
-  //   setCurrentPage(id);
-  // }
-
   return (
     <>
       {/* <WritersInfo writerPage={writerPage} setWriter={setWriter} writer={writer} /> */}
@@ -42,7 +16,7 @@ function Pagination({
           <ul className="pagination-ul">
             <li className="pagination-li">
               <Link to="#" className="pagination-link" onClick={previousPage}>
-                Prev
+                <IoIosArrowBack size={"20px"} className="next prev" />
               </Link>
             </li>
             {numbers.map((n, index) => {
@@ -64,7 +38,7 @@ function Pagination({
 
             <li className="pagination-li">
               <Link to="#" className="pagination-link" onClick={nextPage}>
-                Next
+                <IoIosArrowForward size={"20px"} className="next" />
               </Link>
             </li>
           </ul>

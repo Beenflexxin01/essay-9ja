@@ -8,7 +8,7 @@ const DateUpdateFormatter = ({ updatedAt }) => {
       const parsedDate = parseISO(dateStr);
 
       // Format the Date object into a more readable format
-      return format(parsedDate, "MMMM dd, yyyy, HH:mm");
+      return format(parsedDate, "MM / dd / yyyy");
     } catch (error) {
       console.error("Error formatting date:", error);
       return "Invalid Date";
@@ -19,9 +19,9 @@ const DateUpdateFormatter = ({ updatedAt }) => {
   //   const formattedUpdatedAt = formatDate(updatedAt);
 
   return (
-    <div>
+    <>
       <p>{formattedUpdatedAt}</p>
-    </div>
+    </>
   );
 };
 
