@@ -2,8 +2,9 @@ import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import BaseUrl from "../../Utils/BaseUrl";
 import apiCall from "../../hooks/apiCall";
-import DateFormatter from "../../Utils/DateFormatter";
-import DateUpdateFormatter from "../../Utils/DateUpdateFormatter";
+import { DateFormatter } from "../../Utils/DateFormatter";
+import { DateUpdateFormatter } from "../../Utils/DateFormatter";
+import { convertKoboToNaira } from "../../Utils/NairaConverter";
 function TaskDetails() {
   const [taskDetails, setTaskDetails] = useState({});
   const navigate = useNavigate();
@@ -75,7 +76,7 @@ function TaskDetails() {
                     <DateUpdateFormatter updatedAt={endDate} />
                   </li>
                   <li className="grid-user-li user-detail activities">
-                    {currency} {amount}
+                    {currency} {convertKoboToNaira(amount)}
                   </li>
                   <li className="grid-user-li  user-detail canceled">
                     {status}

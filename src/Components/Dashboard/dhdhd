@@ -1,0 +1,828 @@
+{
+    "error": false,
+    "message": "Dashboard Data fetched Successfully",
+    "data": {
+        "totalWriters": 3,
+        "totalActiveWriters": 1,
+        "totalUsers": 8,
+        "transactions": [
+            {
+                "_id": "66819382118cebfc460343b6",
+                "userId": "6507651ed40712c7abdaa09e",
+                "contractId": "66818c982981f7992428aaea",
+                "taskId": "6665b933d03b84d4954c87a0",
+                "transactionAmount": 99900,
+                "txRef": "4731a224-95f7-4ff0-b055-c83c6a2f8853",
+                "currency": "NGN",
+                "transactionID": null,
+                "transactionDescription": "Payment for Contract ID: 66818c982981f7992428aaea",
+                "transactionType": "credit",
+                "transactionStatus": "successful",
+                "transactionMode": "payment",
+                "paymentGateway": "essay9ja",
+                "createdAt": "2024-06-30T17:18:58.616Z",
+                "updatedAt": "2024-06-30T17:18:58.616Z",
+                "user": {
+                    "_id": "6507651ed40712c7abdaa09e",
+                    "firstName": "Rasheed",
+                    "lastName": "Ayoade",
+                    "password": "$argon2id$v=19$m=65536,t=3,p=4$VK1QC6TiwdtnP8GD3OB4qw$aAV0i/vFkZH80qVBv7ndavnyBRhxMqfbBr/gZPngnZ8",
+                    "email": "essaywriter@mailinator.com",
+                    "isEmailVerified": true,
+                    "accountType": "writer",
+                    "accountStatus": "active",
+                    "createdAt": "2023-09-17T20:44:14.390Z",
+                    "updatedAt": "2024-07-09T07:39:36.970Z",
+                    "refreshToken": "$argon2id$v=19$m=65536,t=3,p=4$Uw202DOAVR/XpAdm0aBw2A$08vv/eqwUBs9CvuzQ4vprKrMMA9Pt1wN0Ilpeb/gGXM",
+                    "bio": "This is a bio",
+                    "country": "NG",
+                    "phoneNumber": "2348133166900",
+                    "profilePic": "https://picsum.photos/id/237/200/300",
+                    "website": "https://essay9ja.com",
+                    "writer": {
+                        "resume": "https://essay9ja.com",
+                        "additionalFiles": [
+                            "https://essay9ja.com",
+                            "https://essay9ja.com"
+                        ],
+                        "ratePerPage": 50,
+                        "education": [
+                            {
+                                "institutionName": "Lagos State University",
+                                "faculty": "Engineering",
+                                "educationLevel": "Undergraduate",
+                                "department": "Chemical Engineering",
+                                "startDate": "2016-11-14",
+                                "endDate": "2022-07-07"
+                            },
+                            {
+                                "institutionName": "Udacity",
+                                "faculty": "Engineering",
+                                "educationLevel": "Nanodegree",
+                                "department": "Full Stack NanoDegree",
+                                "startDate": "2023-07-14",
+                                "current": true,
+                                "certificate": "https://picsum.photos/id/237/200/300"
+                            }
+                        ],
+                        "employmentHistory": [
+                            {
+                                "position": "Head of Content",
+                                "companyName": "Dangote Group",
+                                "country": "NG",
+                                "startDate": "2023-01-14",
+                                "current": true
+                            },
+                            {
+                                "position": "Content Writer",
+                                "companyName": "PayStack",
+                                "country": "NG",
+                                "startDate": "2020-01-14",
+                                "endDate": "2023-01-14"
+                            }
+                        ],
+                        "award": [
+                            {
+                                "name": "Top Award",
+                                "year": "2022",
+                                "file": "https://essay9ja.com"
+                            },
+                            {
+                                "name": "Sweet Award",
+                                "year": "2023",
+                                "file": "https://essay9ja.com"
+                            }
+                        ],
+                        "portfolio": {
+                            "personalWebsite": "https://essay9ja.com",
+                            "docsLink": "https://essay9ja.com",
+                            "file": "https://picsum.photos/id/237/200/300"
+                        },
+                        "offerings": [
+                            "65076888571a827bb21fb4d3",
+                            "650767fd571a827bb21fb4b5"
+                        ]
+                    },
+                    "lastLoginAt": "2024-07-09T07:39:36.970Z"
+                }
+            },
+            {
+                "_id": "66818c9a2981f7992428aaf3",
+                "userId": "65076587d40712c7abdaa0a3",
+                "contractId": "66818c982981f7992428aaea",
+                "taskId": "6665b933d03b84d4954c87a0",
+                "transactionAmount": 111000,
+                "txRef": "0b3d5ff9-e6ef-4cd0-860b-1f601049055b",
+                "currency": "NGN",
+                "transactionID": null,
+                "transactionDescription": "Payment for Task BLOG writing Gig",
+                "transactionType": "debit",
+                "transactionStatus": "successful",
+                "transactionMode": "payment",
+                "paymentGateway": "essay9ja",
+                "createdAt": "2024-06-30T16:49:30.141Z",
+                "updatedAt": "2024-06-30T16:49:30.141Z",
+                "user": {
+                    "_id": "65076587d40712c7abdaa0a3",
+                    "firstName": "Rasheed",
+                    "lastName": "Ayoade",
+                    "password": "$argon2id$v=19$m=65536,t=3,p=4$bQcg/A72Hc+SRqlas+fOvw$WK6WF9gXD7rwrY9aoo45Vd+aOreUjmt1txlCb5EEtGo",
+                    "email": "essayuser@mailinator.com",
+                    "isEmailVerified": true,
+                    "accountType": "user",
+                    "accountStatus": "active",
+                    "createdAt": "2023-09-17T20:45:59.186Z",
+                    "updatedAt": "2024-07-09T04:33:44.316Z",
+                    "refreshToken": "$argon2id$v=19$m=65536,t=3,p=4$lbL2vTimfdae53+NujYb+w$NCtd9MVgz2cgDQ7oQ/dCL0u49H3zebs6bi8xm2x8Czw",
+                    "bio": "This is a bio",
+                    "country": "NG",
+                    "phoneNumber": "2348133166900",
+                    "profilePic": "https://picsum.photos/id/237/200/300",
+                    "website": "https://essay9ja.com",
+                    "lastLoginAt": "2024-07-09T04:33:44.316Z"
+                }
+            },
+            {
+                "_id": "66695b69668267f08d4de885",
+                "userId": "65076587d40712c7abdaa0a3",
+                "contractId": "66695b68668267f08d4de87c",
+                "taskId": "6665b933d03b84d4954c87a0",
+                "transactionAmount": 132000,
+                "txRef": "3e3a91f7-6472-488e-8c12-3e057a948247",
+                "currency": "NGN",
+                "transactionID": null,
+                "transactionDescription": "Payment for Task BLOG writing Gig",
+                "transactionType": "debit",
+                "transactionStatus": "successful",
+                "transactionMode": "payment",
+                "paymentGateway": "essay9ja",
+                "createdAt": "2024-06-12T08:25:13.774Z",
+                "updatedAt": "2024-06-12T08:25:13.774Z",
+                "user": {
+                    "_id": "65076587d40712c7abdaa0a3",
+                    "firstName": "Rasheed",
+                    "lastName": "Ayoade",
+                    "password": "$argon2id$v=19$m=65536,t=3,p=4$bQcg/A72Hc+SRqlas+fOvw$WK6WF9gXD7rwrY9aoo45Vd+aOreUjmt1txlCb5EEtGo",
+                    "email": "essayuser@mailinator.com",
+                    "isEmailVerified": true,
+                    "accountType": "user",
+                    "accountStatus": "active",
+                    "createdAt": "2023-09-17T20:45:59.186Z",
+                    "updatedAt": "2024-07-09T04:33:44.316Z",
+                    "refreshToken": "$argon2id$v=19$m=65536,t=3,p=4$lbL2vTimfdae53+NujYb+w$NCtd9MVgz2cgDQ7oQ/dCL0u49H3zebs6bi8xm2x8Czw",
+                    "bio": "This is a bio",
+                    "country": "NG",
+                    "phoneNumber": "2348133166900",
+                    "profilePic": "https://picsum.photos/id/237/200/300",
+                    "website": "https://essay9ja.com",
+                    "lastLoginAt": "2024-07-09T04:33:44.316Z"
+                }
+            }
+        ],
+        "withdrawals": [
+            {
+                "_id": "665c6d6ef984ce0f52d115d0",
+                "writerId": "6507651ed40712c7abdaa09e",
+                "amount": 100000,
+                "currency": "NGN",
+                "status": "approved",
+                "createdAt": "2024-06-02T13:02:38.533Z",
+                "updatedAt": "2024-06-02T13:03:50.901Z",
+                "remark": "Nothing much",
+                "updatedBy": "65076739e94dddfc4f33c755",
+                "writer": {
+                    "_id": "6507651ed40712c7abdaa09e",
+                    "firstName": "Rasheed",
+                    "lastName": "Ayoade",
+                    "password": "$argon2id$v=19$m=65536,t=3,p=4$VK1QC6TiwdtnP8GD3OB4qw$aAV0i/vFkZH80qVBv7ndavnyBRhxMqfbBr/gZPngnZ8",
+                    "email": "essaywriter@mailinator.com",
+                    "isEmailVerified": true,
+                    "accountType": "writer",
+                    "accountStatus": "active",
+                    "createdAt": "2023-09-17T20:44:14.390Z",
+                    "updatedAt": "2024-07-09T07:39:36.970Z",
+                    "refreshToken": "$argon2id$v=19$m=65536,t=3,p=4$Uw202DOAVR/XpAdm0aBw2A$08vv/eqwUBs9CvuzQ4vprKrMMA9Pt1wN0Ilpeb/gGXM",
+                    "bio": "This is a bio",
+                    "country": "NG",
+                    "phoneNumber": "2348133166900",
+                    "profilePic": "https://picsum.photos/id/237/200/300",
+                    "website": "https://essay9ja.com",
+                    "writer": {
+                        "resume": "https://essay9ja.com",
+                        "additionalFiles": [
+                            "https://essay9ja.com",
+                            "https://essay9ja.com"
+                        ],
+                        "ratePerPage": 50,
+                        "education": [
+                            {
+                                "institutionName": "Lagos State University",
+                                "faculty": "Engineering",
+                                "educationLevel": "Undergraduate",
+                                "department": "Chemical Engineering",
+                                "startDate": "2016-11-14",
+                                "endDate": "2022-07-07"
+                            },
+                            {
+                                "institutionName": "Udacity",
+                                "faculty": "Engineering",
+                                "educationLevel": "Nanodegree",
+                                "department": "Full Stack NanoDegree",
+                                "startDate": "2023-07-14",
+                                "current": true,
+                                "certificate": "https://picsum.photos/id/237/200/300"
+                            }
+                        ],
+                        "employmentHistory": [
+                            {
+                                "position": "Head of Content",
+                                "companyName": "Dangote Group",
+                                "country": "NG",
+                                "startDate": "2023-01-14",
+                                "current": true
+                            },
+                            {
+                                "position": "Content Writer",
+                                "companyName": "PayStack",
+                                "country": "NG",
+                                "startDate": "2020-01-14",
+                                "endDate": "2023-01-14"
+                            }
+                        ],
+                        "award": [
+                            {
+                                "name": "Top Award",
+                                "year": "2022",
+                                "file": "https://essay9ja.com"
+                            },
+                            {
+                                "name": "Sweet Award",
+                                "year": "2023",
+                                "file": "https://essay9ja.com"
+                            }
+                        ],
+                        "portfolio": {
+                            "personalWebsite": "https://essay9ja.com",
+                            "docsLink": "https://essay9ja.com",
+                            "file": "https://picsum.photos/id/237/200/300"
+                        },
+                        "offerings": [
+                            "65076888571a827bb21fb4d3",
+                            "650767fd571a827bb21fb4b5"
+                        ]
+                    },
+                    "lastLoginAt": "2024-07-09T07:39:36.970Z"
+                }
+            },
+            {
+                "_id": "665c69cc7d5fa43c28e8f013",
+                "writerId": "6507651ed40712c7abdaa09e",
+                "amount": 300000,
+                "currency": "NGN",
+                "status": "rejected",
+                "createdAt": "2024-06-02T12:47:08.106Z",
+                "updatedAt": "2024-06-02T13:00:41.501Z",
+                "remark": "Nothing much",
+                "updatedBy": "65076739e94dddfc4f33c755",
+                "writer": {
+                    "_id": "6507651ed40712c7abdaa09e",
+                    "firstName": "Rasheed",
+                    "lastName": "Ayoade",
+                    "password": "$argon2id$v=19$m=65536,t=3,p=4$VK1QC6TiwdtnP8GD3OB4qw$aAV0i/vFkZH80qVBv7ndavnyBRhxMqfbBr/gZPngnZ8",
+                    "email": "essaywriter@mailinator.com",
+                    "isEmailVerified": true,
+                    "accountType": "writer",
+                    "accountStatus": "active",
+                    "createdAt": "2023-09-17T20:44:14.390Z",
+                    "updatedAt": "2024-07-09T07:39:36.970Z",
+                    "refreshToken": "$argon2id$v=19$m=65536,t=3,p=4$Uw202DOAVR/XpAdm0aBw2A$08vv/eqwUBs9CvuzQ4vprKrMMA9Pt1wN0Ilpeb/gGXM",
+                    "bio": "This is a bio",
+                    "country": "NG",
+                    "phoneNumber": "2348133166900",
+                    "profilePic": "https://picsum.photos/id/237/200/300",
+                    "website": "https://essay9ja.com",
+                    "writer": {
+                        "resume": "https://essay9ja.com",
+                        "additionalFiles": [
+                            "https://essay9ja.com",
+                            "https://essay9ja.com"
+                        ],
+                        "ratePerPage": 50,
+                        "education": [
+                            {
+                                "institutionName": "Lagos State University",
+                                "faculty": "Engineering",
+                                "educationLevel": "Undergraduate",
+                                "department": "Chemical Engineering",
+                                "startDate": "2016-11-14",
+                                "endDate": "2022-07-07"
+                            },
+                            {
+                                "institutionName": "Udacity",
+                                "faculty": "Engineering",
+                                "educationLevel": "Nanodegree",
+                                "department": "Full Stack NanoDegree",
+                                "startDate": "2023-07-14",
+                                "current": true,
+                                "certificate": "https://picsum.photos/id/237/200/300"
+                            }
+                        ],
+                        "employmentHistory": [
+                            {
+                                "position": "Head of Content",
+                                "companyName": "Dangote Group",
+                                "country": "NG",
+                                "startDate": "2023-01-14",
+                                "current": true
+                            },
+                            {
+                                "position": "Content Writer",
+                                "companyName": "PayStack",
+                                "country": "NG",
+                                "startDate": "2020-01-14",
+                                "endDate": "2023-01-14"
+                            }
+                        ],
+                        "award": [
+                            {
+                                "name": "Top Award",
+                                "year": "2022",
+                                "file": "https://essay9ja.com"
+                            },
+                            {
+                                "name": "Sweet Award",
+                                "year": "2023",
+                                "file": "https://essay9ja.com"
+                            }
+                        ],
+                        "portfolio": {
+                            "personalWebsite": "https://essay9ja.com",
+                            "docsLink": "https://essay9ja.com",
+                            "file": "https://picsum.photos/id/237/200/300"
+                        },
+                        "offerings": [
+                            "65076888571a827bb21fb4d3",
+                            "650767fd571a827bb21fb4b5"
+                        ]
+                    },
+                    "lastLoginAt": "2024-07-09T07:39:36.970Z"
+                }
+            }
+        ],
+        "contracts": [
+            {
+                "_id": "66818c982981f7992428aaea",
+                "title": "BLOG writing Gig",
+                "description": "Help run am sharp sharp",
+                "taskId": "6665b933d03b84d4954c87a0",
+                "writerId": "6507651ed40712c7abdaa09e",
+                "userId": "65076587d40712c7abdaa0a3",
+                "amount": 1110,
+                "txRef": "0b3d5ff9-e6ef-4cd0-860b-1f601049055b",
+                "currency": "NGN",
+                "status": "completed",
+                "submissionStatus": "approved",
+                "expiryDate": "2024-07-05T16:49:31.078Z",
+                "dueDate": "2024-07-28T23:00:00.000Z",
+                "startDate": "2024-06-30T16:55:13.419Z",
+                "endDate": "2024-06-30T17:18:59.030Z",
+                "createdAt": "2024-06-30T16:49:31.084Z",
+                "updatedAt": "2024-06-30T17:18:59.031Z",
+                "submissionDate": "2024-06-30T17:16:48.966Z",
+                "submissionFiles": [
+                    "http://res.cloudinary.com/dfhteb3xs/image/upload/v1719767806/nj8fhgutnfiywjiwxdah.pdf",
+                    "http://res.cloudinary.com/dfhteb3xs/image/upload/v1719767808/skgmzmlsxvymqytxa2na.pdf"
+                ],
+                "submissionMessage": "I have adjusted the work",
+                "writer": {
+                    "_id": "6507651ed40712c7abdaa09e",
+                    "firstName": "Rasheed",
+                    "lastName": "Ayoade",
+                    "password": "$argon2id$v=19$m=65536,t=3,p=4$VK1QC6TiwdtnP8GD3OB4qw$aAV0i/vFkZH80qVBv7ndavnyBRhxMqfbBr/gZPngnZ8",
+                    "email": "essaywriter@mailinator.com",
+                    "isEmailVerified": true,
+                    "accountType": "writer",
+                    "accountStatus": "active",
+                    "createdAt": "2023-09-17T20:44:14.390Z",
+                    "updatedAt": "2024-07-09T07:39:36.970Z",
+                    "refreshToken": "$argon2id$v=19$m=65536,t=3,p=4$Uw202DOAVR/XpAdm0aBw2A$08vv/eqwUBs9CvuzQ4vprKrMMA9Pt1wN0Ilpeb/gGXM",
+                    "bio": "This is a bio",
+                    "country": "NG",
+                    "phoneNumber": "2348133166900",
+                    "profilePic": "https://picsum.photos/id/237/200/300",
+                    "website": "https://essay9ja.com",
+                    "writer": {
+                        "resume": "https://essay9ja.com",
+                        "additionalFiles": [
+                            "https://essay9ja.com",
+                            "https://essay9ja.com"
+                        ],
+                        "ratePerPage": 50,
+                        "education": [
+                            {
+                                "institutionName": "Lagos State University",
+                                "faculty": "Engineering",
+                                "educationLevel": "Undergraduate",
+                                "department": "Chemical Engineering",
+                                "startDate": "2016-11-14",
+                                "endDate": "2022-07-07"
+                            },
+                            {
+                                "institutionName": "Udacity",
+                                "faculty": "Engineering",
+                                "educationLevel": "Nanodegree",
+                                "department": "Full Stack NanoDegree",
+                                "startDate": "2023-07-14",
+                                "current": true,
+                                "certificate": "https://picsum.photos/id/237/200/300"
+                            }
+                        ],
+                        "employmentHistory": [
+                            {
+                                "position": "Head of Content",
+                                "companyName": "Dangote Group",
+                                "country": "NG",
+                                "startDate": "2023-01-14",
+                                "current": true
+                            },
+                            {
+                                "position": "Content Writer",
+                                "companyName": "PayStack",
+                                "country": "NG",
+                                "startDate": "2020-01-14",
+                                "endDate": "2023-01-14"
+                            }
+                        ],
+                        "award": [
+                            {
+                                "name": "Top Award",
+                                "year": "2022",
+                                "file": "https://essay9ja.com"
+                            },
+                            {
+                                "name": "Sweet Award",
+                                "year": "2023",
+                                "file": "https://essay9ja.com"
+                            }
+                        ],
+                        "portfolio": {
+                            "personalWebsite": "https://essay9ja.com",
+                            "docsLink": "https://essay9ja.com",
+                            "file": "https://picsum.photos/id/237/200/300"
+                        },
+                        "offerings": [
+                            "65076888571a827bb21fb4d3",
+                            "650767fd571a827bb21fb4b5"
+                        ]
+                    },
+                    "lastLoginAt": "2024-07-09T07:39:36.970Z"
+                },
+                "user": {
+                    "_id": "65076587d40712c7abdaa0a3",
+                    "firstName": "Rasheed",
+                    "lastName": "Ayoade",
+                    "password": "$argon2id$v=19$m=65536,t=3,p=4$bQcg/A72Hc+SRqlas+fOvw$WK6WF9gXD7rwrY9aoo45Vd+aOreUjmt1txlCb5EEtGo",
+                    "email": "essayuser@mailinator.com",
+                    "isEmailVerified": true,
+                    "accountType": "user",
+                    "accountStatus": "active",
+                    "createdAt": "2023-09-17T20:45:59.186Z",
+                    "updatedAt": "2024-07-09T04:33:44.316Z",
+                    "refreshToken": "$argon2id$v=19$m=65536,t=3,p=4$lbL2vTimfdae53+NujYb+w$NCtd9MVgz2cgDQ7oQ/dCL0u49H3zebs6bi8xm2x8Czw",
+                    "bio": "This is a bio",
+                    "country": "NG",
+                    "phoneNumber": "2348133166900",
+                    "profilePic": "https://picsum.photos/id/237/200/300",
+                    "website": "https://essay9ja.com",
+                    "lastLoginAt": "2024-07-09T04:33:44.316Z"
+                },
+                "task": {
+                    "_id": "6665b933d03b84d4954c87a0",
+                    "title": "BLOG writing Gig",
+                    "description": "Help run am sharp sharp",
+                    "attachment": null,
+                    "userId": "65076587d40712c7abdaa0a3",
+                    "offeringId": "65076888571a827bb21fb4d3",
+                    "projectBaseCurrency": "NGN",
+                    "projectBudget": 10000,
+                    "projectDuration": "less_than_one_month",
+                    "projectScope": "one_off",
+                    "status": "closed",
+                    "additionaInfo": {
+                        "fontSize": "14",
+                        "fontTheme": "Arial",
+                        "spaceLine": "Double Spacing",
+                        "numberOfPages": "20",
+                        "numberOfResearchQuestions": "5",
+                        "numberOfChapters": "3",
+                        "info": "Please do am well"
+                    },
+                    "createdAt": "2024-06-09T14:16:19.148Z",
+                    "updatedAt": "2024-06-30T16:55:13.926Z"
+                }
+            },
+            {
+                "_id": "664a0457794765d29f239b2f",
+                "title": "BLOG writing Gig",
+                "description": "Help run am sharp sharp",
+                "taskId": "65c6fae5a16631e64444b5a3",
+                "writerId": "6507651ed40712c7abdaa09e",
+                "userId": "65076587d40712c7abdaa0a3",
+                "amount": 1500,
+                "txRef": "34833877-d17c-4a35-9629-4d338ec6900e",
+                "currency": "NGN",
+                "status": "completed",
+                "submissionStatus": "approved",
+                "expiryDate": "2024-05-26T13:53:29.625Z",
+                "dueDate": "2024-05-24T23:00:00.000Z",
+                "startDate": null,
+                "endDate": "2024-05-19T13:53:29.638Z",
+                "createdAt": "2024-05-19T13:53:29.638Z",
+                "updatedAt": "2024-05-19T13:55:34.547Z",
+                "submissionDate": "2024-05-19T13:55:14.683Z",
+                "submissionFiles": [
+                    "http://res.cloudinary.com/dfhteb3xs/image/upload/v1716126912/uvf4pvzs9le5duedrpns.pdf",
+                    "http://res.cloudinary.com/dfhteb3xs/image/upload/v1716126914/ddi2wzrwopd1roloo3pn.pdf"
+                ],
+                "submissionMessage": "I have adjusted the work",
+                "writer": {
+                    "_id": "6507651ed40712c7abdaa09e",
+                    "firstName": "Rasheed",
+                    "lastName": "Ayoade",
+                    "password": "$argon2id$v=19$m=65536,t=3,p=4$VK1QC6TiwdtnP8GD3OB4qw$aAV0i/vFkZH80qVBv7ndavnyBRhxMqfbBr/gZPngnZ8",
+                    "email": "essaywriter@mailinator.com",
+                    "isEmailVerified": true,
+                    "accountType": "writer",
+                    "accountStatus": "active",
+                    "createdAt": "2023-09-17T20:44:14.390Z",
+                    "updatedAt": "2024-07-09T07:39:36.970Z",
+                    "refreshToken": "$argon2id$v=19$m=65536,t=3,p=4$Uw202DOAVR/XpAdm0aBw2A$08vv/eqwUBs9CvuzQ4vprKrMMA9Pt1wN0Ilpeb/gGXM",
+                    "bio": "This is a bio",
+                    "country": "NG",
+                    "phoneNumber": "2348133166900",
+                    "profilePic": "https://picsum.photos/id/237/200/300",
+                    "website": "https://essay9ja.com",
+                    "writer": {
+                        "resume": "https://essay9ja.com",
+                        "additionalFiles": [
+                            "https://essay9ja.com",
+                            "https://essay9ja.com"
+                        ],
+                        "ratePerPage": 50,
+                        "education": [
+                            {
+                                "institutionName": "Lagos State University",
+                                "faculty": "Engineering",
+                                "educationLevel": "Undergraduate",
+                                "department": "Chemical Engineering",
+                                "startDate": "2016-11-14",
+                                "endDate": "2022-07-07"
+                            },
+                            {
+                                "institutionName": "Udacity",
+                                "faculty": "Engineering",
+                                "educationLevel": "Nanodegree",
+                                "department": "Full Stack NanoDegree",
+                                "startDate": "2023-07-14",
+                                "current": true,
+                                "certificate": "https://picsum.photos/id/237/200/300"
+                            }
+                        ],
+                        "employmentHistory": [
+                            {
+                                "position": "Head of Content",
+                                "companyName": "Dangote Group",
+                                "country": "NG",
+                                "startDate": "2023-01-14",
+                                "current": true
+                            },
+                            {
+                                "position": "Content Writer",
+                                "companyName": "PayStack",
+                                "country": "NG",
+                                "startDate": "2020-01-14",
+                                "endDate": "2023-01-14"
+                            }
+                        ],
+                        "award": [
+                            {
+                                "name": "Top Award",
+                                "year": "2022",
+                                "file": "https://essay9ja.com"
+                            },
+                            {
+                                "name": "Sweet Award",
+                                "year": "2023",
+                                "file": "https://essay9ja.com"
+                            }
+                        ],
+                        "portfolio": {
+                            "personalWebsite": "https://essay9ja.com",
+                            "docsLink": "https://essay9ja.com",
+                            "file": "https://picsum.photos/id/237/200/300"
+                        },
+                        "offerings": [
+                            "65076888571a827bb21fb4d3",
+                            "650767fd571a827bb21fb4b5"
+                        ]
+                    },
+                    "lastLoginAt": "2024-07-09T07:39:36.970Z"
+                },
+                "user": {
+                    "_id": "65076587d40712c7abdaa0a3",
+                    "firstName": "Rasheed",
+                    "lastName": "Ayoade",
+                    "password": "$argon2id$v=19$m=65536,t=3,p=4$bQcg/A72Hc+SRqlas+fOvw$WK6WF9gXD7rwrY9aoo45Vd+aOreUjmt1txlCb5EEtGo",
+                    "email": "essayuser@mailinator.com",
+                    "isEmailVerified": true,
+                    "accountType": "user",
+                    "accountStatus": "active",
+                    "createdAt": "2023-09-17T20:45:59.186Z",
+                    "updatedAt": "2024-07-09T04:33:44.316Z",
+                    "refreshToken": "$argon2id$v=19$m=65536,t=3,p=4$lbL2vTimfdae53+NujYb+w$NCtd9MVgz2cgDQ7oQ/dCL0u49H3zebs6bi8xm2x8Czw",
+                    "bio": "This is a bio",
+                    "country": "NG",
+                    "phoneNumber": "2348133166900",
+                    "profilePic": "https://picsum.photos/id/237/200/300",
+                    "website": "https://essay9ja.com",
+                    "lastLoginAt": "2024-07-09T04:33:44.316Z"
+                },
+                "task": {
+                    "_id": "65c6fae5a16631e64444b5a3",
+                    "title": "BLOG writing Gig",
+                    "description": "Help run am sharp sharp",
+                    "attachment": "http://res.cloudinary.com/dfhteb3xs/image/upload/v1707539173/rd3p2kvcguluupwfp2mv.pdf",
+                    "userId": "65076587d40712c7abdaa0a3",
+                    "offeringId": "65076888571a827bb21fb4d3",
+                    "projectBaseCurrency": "NGN",
+                    "projectBudget": 10000,
+                    "projectDuration": "less_than_one_month",
+                    "projectScope": "one_off",
+                    "status": "closed",
+                    "additionaInfo": {
+                        "fontSize": "14",
+                        "fontTheme": "Arial",
+                        "spaceLine": "Double Spacing",
+                        "numberOfPages": "20",
+                        "numberOfResearchQuestions": "5",
+                        "numberOfChapters": "3",
+                        "info": "Please do am well"
+                    },
+                    "createdAt": "2024-02-10T04:26:13.476Z",
+                    "updatedAt": "2024-05-26T10:46:08.909Z"
+                }
+            },
+            {
+                "_id": "6649dde4161f3850767cb12b",
+                "title": "BLOG writing Gig",
+                "description": "Help run am sharp sharp",
+                "taskId": "65c6fae5a16631e64444b5a3",
+                "writerId": "6507651ed40712c7abdaa09e",
+                "userId": "65076587d40712c7abdaa0a3",
+                "amount": 3500,
+                "txRef": "156cee4e-e8fd-47c6-bb96-33b89cefaa5b",
+                "currency": "NGN",
+                "status": "completed",
+                "submissionStatus": "approved",
+                "expiryDate": "2024-05-26T11:09:27.260Z",
+                "dueDate": "2024-05-24T23:00:00.000Z",
+                "startDate": null,
+                "endDate": "2024-05-19T13:53:29.638Z",
+                "createdAt": "2024-05-19T11:09:27.270Z",
+                "updatedAt": "2024-05-19T13:26:34.008Z",
+                "submissionDate": "2024-05-19T11:15:25.745Z",
+                "submissionFiles": [
+                    "http://res.cloudinary.com/dfhteb3xs/image/upload/v1716117324/q9rvwobakryu6wyxf5nr.pdf",
+                    "http://res.cloudinary.com/dfhteb3xs/image/upload/v1716117325/mao6isogcvntbs5ph2iw.pdf"
+                ],
+                "submissionMessage": "I have completed the work",
+                "writer": {
+                    "_id": "6507651ed40712c7abdaa09e",
+                    "firstName": "Rasheed",
+                    "lastName": "Ayoade",
+                    "password": "$argon2id$v=19$m=65536,t=3,p=4$VK1QC6TiwdtnP8GD3OB4qw$aAV0i/vFkZH80qVBv7ndavnyBRhxMqfbBr/gZPngnZ8",
+                    "email": "essaywriter@mailinator.com",
+                    "isEmailVerified": true,
+                    "accountType": "writer",
+                    "accountStatus": "active",
+                    "createdAt": "2023-09-17T20:44:14.390Z",
+                    "updatedAt": "2024-07-09T07:39:36.970Z",
+                    "refreshToken": "$argon2id$v=19$m=65536,t=3,p=4$Uw202DOAVR/XpAdm0aBw2A$08vv/eqwUBs9CvuzQ4vprKrMMA9Pt1wN0Ilpeb/gGXM",
+                    "bio": "This is a bio",
+                    "country": "NG",
+                    "phoneNumber": "2348133166900",
+                    "profilePic": "https://picsum.photos/id/237/200/300",
+                    "website": "https://essay9ja.com",
+                    "writer": {
+                        "resume": "https://essay9ja.com",
+                        "additionalFiles": [
+                            "https://essay9ja.com",
+                            "https://essay9ja.com"
+                        ],
+                        "ratePerPage": 50,
+                        "education": [
+                            {
+                                "institutionName": "Lagos State University",
+                                "faculty": "Engineering",
+                                "educationLevel": "Undergraduate",
+                                "department": "Chemical Engineering",
+                                "startDate": "2016-11-14",
+                                "endDate": "2022-07-07"
+                            },
+                            {
+                                "institutionName": "Udacity",
+                                "faculty": "Engineering",
+                                "educationLevel": "Nanodegree",
+                                "department": "Full Stack NanoDegree",
+                                "startDate": "2023-07-14",
+                                "current": true,
+                                "certificate": "https://picsum.photos/id/237/200/300"
+                            }
+                        ],
+                        "employmentHistory": [
+                            {
+                                "position": "Head of Content",
+                                "companyName": "Dangote Group",
+                                "country": "NG",
+                                "startDate": "2023-01-14",
+                                "current": true
+                            },
+                            {
+                                "position": "Content Writer",
+                                "companyName": "PayStack",
+                                "country": "NG",
+                                "startDate": "2020-01-14",
+                                "endDate": "2023-01-14"
+                            }
+                        ],
+                        "award": [
+                            {
+                                "name": "Top Award",
+                                "year": "2022",
+                                "file": "https://essay9ja.com"
+                            },
+                            {
+                                "name": "Sweet Award",
+                                "year": "2023",
+                                "file": "https://essay9ja.com"
+                            }
+                        ],
+                        "portfolio": {
+                            "personalWebsite": "https://essay9ja.com",
+                            "docsLink": "https://essay9ja.com",
+                            "file": "https://picsum.photos/id/237/200/300"
+                        },
+                        "offerings": [
+                            "65076888571a827bb21fb4d3",
+                            "650767fd571a827bb21fb4b5"
+                        ]
+                    },
+                    "lastLoginAt": "2024-07-09T07:39:36.970Z"
+                },
+                "user": {
+                    "_id": "65076587d40712c7abdaa0a3",
+                    "firstName": "Rasheed",
+                    "lastName": "Ayoade",
+                    "password": "$argon2id$v=19$m=65536,t=3,p=4$bQcg/A72Hc+SRqlas+fOvw$WK6WF9gXD7rwrY9aoo45Vd+aOreUjmt1txlCb5EEtGo",
+                    "email": "essayuser@mailinator.com",
+                    "isEmailVerified": true,
+                    "accountType": "user",
+                    "accountStatus": "active",
+                    "createdAt": "2023-09-17T20:45:59.186Z",
+                    "updatedAt": "2024-07-09T04:33:44.316Z",
+                    "refreshToken": "$argon2id$v=19$m=65536,t=3,p=4$lbL2vTimfdae53+NujYb+w$NCtd9MVgz2cgDQ7oQ/dCL0u49H3zebs6bi8xm2x8Czw",
+                    "bio": "This is a bio",
+                    "country": "NG",
+                    "phoneNumber": "2348133166900",
+                    "profilePic": "https://picsum.photos/id/237/200/300",
+                    "website": "https://essay9ja.com",
+                    "lastLoginAt": "2024-07-09T04:33:44.316Z"
+                },
+                "task": {
+                    "_id": "65c6fae5a16631e64444b5a3",
+                    "title": "BLOG writing Gig",
+                    "description": "Help run am sharp sharp",
+                    "attachment": "http://res.cloudinary.com/dfhteb3xs/image/upload/v1707539173/rd3p2kvcguluupwfp2mv.pdf",
+                    "userId": "65076587d40712c7abdaa0a3",
+                    "offeringId": "65076888571a827bb21fb4d3",
+                    "projectBaseCurrency": "NGN",
+                    "projectBudget": 10000,
+                    "projectDuration": "less_than_one_month",
+                    "projectScope": "one_off",
+                    "status": "closed",
+                    "additionaInfo": {
+                        "fontSize": "14",
+                        "fontTheme": "Arial",
+                        "spaceLine": "Double Spacing",
+                        "numberOfPages": "20",
+                        "numberOfResearchQuestions": "5",
+                        "numberOfChapters": "3",
+                        "info": "Please do am well"
+                    },
+                    "createdAt": "2024-02-10T04:26:13.476Z",
+                    "updatedAt": "2024-05-26T10:46:08.909Z"
+                }
+            }
+        ]
+    }
+}

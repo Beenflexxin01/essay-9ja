@@ -101,8 +101,15 @@ const LineChart = () => {
   };
 
   return (
-    <div>
+    <div className="analytics">
       <Line data={data} options={options} />
+      <h3 className="tertiary-header">Analytics</h3>
+      <div className="analytic-flex">
+        <p className="text-description">
+          Overall active analytics for the week
+        </p>
+        <p className="analytic-cta">Weekly</p>
+      </div>
     </div>
   );
 };

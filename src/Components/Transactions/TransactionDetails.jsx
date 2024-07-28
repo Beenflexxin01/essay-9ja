@@ -2,7 +2,8 @@ import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import BaseUrl from "../../Utils/BaseUrl";
 import apiCall from "../../hooks/apiCall";
-import DateFormatter from "../../Utils/DateFormatter";
+import { DateFormatter } from "../../Utils/DateFormatter";
+import { convertKoboToNaira } from "../../Utils/NairaConverter";
 
 function TransactionDetails() {
   const [transactionDetails, setTransactionDetails] = useState({});
@@ -86,7 +87,7 @@ function TransactionDetails() {
                   </li>
                   <li className="grid-user-li user-detail">
                     {currency}
-                    {transactionAmount}
+                    {convertKoboToNaira(transactionAmount)}
                   </li>
                   <li className="grid-user-li user-detail activities ">
                     <DateFormatter createdAt={createdAt} />

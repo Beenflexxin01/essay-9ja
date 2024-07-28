@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import React from "react";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 
 function Pagination({
@@ -10,37 +10,34 @@ function Pagination({
 }) {
   return (
     <>
-      {/* <WritersInfo writerPage={writerPage} setWriter={setWriter} writer={writer} /> */}
       <div className="pagination">
         <nav className="pag-nav">
           <ul className="pagination-ul">
-            <li className="pagination-li">
-              <Link to="#" className="pagination-link" onClick={previousPage}>
-                <IoIosArrowBack size={"20px"} className="next prev" />
-              </Link>
-            </li>
+            <button
+              to="#"
+              className={`pagination-link ${currentPage === 1 ? "disabled" : ""}`}
+              onClick={previousPage}
+            >
+              <IoIosArrowBack size={"20px"} className="next prev" />
+            </button>
             {numbers.map((n, index) => {
               return (
-                <li
-                  className={`pagination-li ${currentPage === n ? "activePage" : ""}`}
+                <button
+                  className={`pagination-link pagination-li ${currentPage === n ? "activePage" : ""}`}
                   key={index}
+                  onClick={() => currentPageNumber(n)}
                 >
-                  <Link
-                    to="#"
-                    className="pagination-link"
-                    onClick={() => currentPageNumber(n)}
-                  >
-                    {n}
-                  </Link>
-                </li>
+                  {n}
+                </button>
               );
             })}
-
-            <li className="pagination-li">
-              <Link to="#" className="pagination-link" onClick={nextPage}>
-                <IoIosArrowForward size={"20px"} className="next" />
-              </Link>
-            </li>
+            <button
+              to="#"
+              className={`pagination-link ${currentPage === 1 ? "disabled" : ""}`}
+              onClick={nextPage}
+            >
+              <IoIosArrowForward size={"20px"} className="next" />
+            </button>
           </ul>
         </nav>
       </div>

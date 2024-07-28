@@ -1,6 +1,6 @@
 import { PiStar } from "react-icons/pi";
 import WritersViewBtn from "../../Modals/ModalBtn/WritersViewBtn";
-import DateFormatter from "../../Utils/DateFormatter";
+import { DateFormatter } from "../../Utils/DateFormatter";
 
 function WriterInfo({ writer }) {
   const {

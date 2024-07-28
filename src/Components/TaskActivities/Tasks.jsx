@@ -1,4 +1,6 @@
+import React from "react";
 import TasksViewBtn from "../../Modals/ModalBtn/TasksViewBtn";
+import { convertKoboToNaira } from "../../Utils/NairaConverter";
 
 function Tasks({ tasks }) {
   const {
@@ -23,18 +25,18 @@ function Tasks({ tasks }) {
   return (
     <>
       <div className="grid-5-cols">
-        <nav className="main-nav user-nav ">
+        <nav className="main-nav user-nav">
           <ul className="main-ul">
             <li className="main-li check">
-              {" "}
               <input type="checkbox" />
               {writer ? `${writer.firstName} ${writer.lastName}` : "N/A"}
             </li>
             <li className="main-li">{title}</li>
-            <li className="main-li ">{dueDate}</li>
+            <li className="main-li">{dueDate}</li>
             <li className={`main-li ${statusClass}`}>{status}</li>
             <li className="main-li check icon">
-              {currency} {amount} <TasksViewBtn taskId={taskId} />
+              {currency} {convertKoboToNaira(amount)}
+              <TasksViewBtn taskId={taskId} />
             </li>
           </ul>
         </nav>

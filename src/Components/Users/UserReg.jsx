@@ -1,6 +1,6 @@
 import UsersViewBtn from "../../Modals/ModalBtn/UsersViewBtn";
-import DateFormatter from "../../Utils/DateFormatter";
-import DateUpdateFormatter from "../../Utils/DateUpdateFormatter";
+import { DateFormatter, TimeFormatter } from "../../Utils/DateFormatter";
+import { DateUpdateFormatter } from "../../Utils/DateFormatter";
 
 function UserReg({ user }) {
   const {
@@ -27,9 +27,11 @@ function UserReg({ user }) {
             <li className="main-li">
               <DateFormatter createdAt={createdAt} />
             </li>
-            <li className="main-li ">
-              <DateUpdateFormatter updatedAt={updatedAt} />
-              <span className="span"></span>
+            <li className="main-li format">
+              <DateUpdateFormatter updatedAt={updatedAt} />-
+              <span className="span">
+                <TimeFormatter updatedAt={updatedAt} />
+              </span>
             </li>
             <li className="main-li check  icon">
               {phoneNumber ? `${phoneNumber}` : "N/A"}

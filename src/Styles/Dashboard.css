@@ -2,8 +2,14 @@
   display: flex;
   gap: 2rem;
   padding: 2rem;
-  margin: 2rem 0;
+  /* margin: 2rem 0; */
   align-items: center;
+}
+
+.dashboard-flex {
+  display: flex;
+  gap: 2rem;
+  margin: 1.6rem 0;
 }
 
 .spin {
@@ -38,7 +44,7 @@
   gap: 4rem;
   background-color: #fff;
   justify-content: space-between;
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
 }
 
 .analytic-cta {
@@ -53,9 +59,11 @@
 
 .analytics-flex {
   background-color: #fff;
-  margin: 2rem;
+  margin: 1.6rem;
   border-radius: 1.6rem;
   padding: 2rem;
+  height: 33.1rem;
+  width: 33.9rem;
 }
 
 .number-flex {
@@ -92,12 +100,6 @@
   color: #101010;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-}
-
-.transaction-date {
-  font-size: 1.4rem;
-  line-height: 20.3px;
 }
 
 .success {
@@ -119,16 +121,18 @@
   background-color: #fff0f0;
 }
 
-.req {
-  font-size: 1.4rem;
-}
-
 .withdraw {
-  height: 24.6rem;
+  height: 27.6rem;
 }
 
 .withdrawal-flex {
-  margin-bottom: 0;
+  margin-bottom: 3rem;
+}
+
+.transactions--li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .wit-flex {
@@ -147,12 +151,9 @@
 
 .activities {
   background-color: #f8f8f8;
-}
-
-.act {
-  background-color: #fff;
-  border-radius: 1.6rem;
-  padding: 2rem 0;
+  /* width: 110.4rem; */
+  height: 4.3rem;
+  padding: 0.8rem 4rem;
 }
 
 .check {
@@ -187,4 +188,54 @@
 
 .transaction-nav-ul {
   padding: 0;
+}
+
+.transaction-date {
+  font-size: 1.4rem;
+  line-height: 20.3px;
+}
+
+.transaction-flex {
+  display: flex;
+  align-items: center;
+  width: 33.9rem;
+  gap: 3px;
+}
+
+.transaction-approved {
+  width: 8.7rem;
+  height: 2rem;
+  padding: 0 1.2rem;
+  border-radius: 0.6rem;
+  font-size: 1.4rem;
+  line-height: 20.3px;
+}
+
+.kf {
+  width: 33.9rem;
+  padding: 0.4rem 0.8rem;
+  margin: 0.8rem 0;
+}
+
+.request {
+  font-size: 1.4rem;
+  margin-left: 2.8rem;
+}
+
+.link {
+  color: #063574;
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+
+.dashboard-task {
+  margin: 1.6rem;
+  width: 110.4rem;
+  height: 30.3rem;
+}
+
+.act {
+  background-color: #fff;
+  border-radius: 1.6rem;
+  padding: 2rem 0;
 }

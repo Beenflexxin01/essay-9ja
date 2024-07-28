@@ -2,7 +2,6 @@ import React from "react";
 import PropTypes from "prop-types";
 
 const StarRating = ({ rating, totalStars = 5 }) => {
-  // Function to determine star class
   const getStarClass = (index) => {
     if (rating >= index + 1) {
       return "filled";

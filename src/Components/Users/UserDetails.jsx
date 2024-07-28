@@ -2,8 +2,7 @@ import { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import BaseUrl from "../../Utils/BaseUrl";
 import apiCall from "../../hooks/apiCall";
-import DateFormatter from "../../Utils/DateFormatter";
-import DateUpdateFormatter from "../../Utils/DateUpdateFormatter";
+import { DateFormatter, TimeFormatter } from "../../Utils/DateFormatter";
 
 function UserDetails() {
   const [userDetails, setUserDetails] = useState({});
@@ -75,15 +74,11 @@ function UserDetails() {
                   <li className="grid-user-li">User name:</li>
                   <li className="grid-user-li activities">Email address:</li>
                   <li className="grid-user-li">Contact number:</li>
-                  {/* <li className="grid-user-li activities">
-                    No. of writer's hired:
-                  </li> */}
 
                   <li className="grid-user-li activities">Date Joined:</li>
                   <li className="grid-user-li ">State / Country:</li>
                   <li className="grid-user-li activities">Last Active:</li>
                   <li className="grid-user-li ">Last Time Active:</li>
-                  {/* <li className="grid-user-li ">Task topic:</li> */}
                 </ul>
               </nav>
             </div>
@@ -108,7 +103,6 @@ function UserDetails() {
                   <li className="grid-user-li user-detail activities">
                     <DateFormatter createdAt={createdAt} />
                   </li>
-                  {/* <li className="grid-user-li activities user-detail"></li> */}
                   <li className="grid-user-li user-detail ">
                     {country ? country : "N / A"}
                   </li>
@@ -116,10 +110,8 @@ function UserDetails() {
                     {accountStatus}
                   </li>
                   <li className="grid-user-li user-detail">
-                    <DateUpdateFormatter updatedAt={lastLoginAt} />
+                    <TimeFormatter updatedAt={lastLoginAt} />
                   </li>
-
-                  {/* <li className="grid-user-li user-detail ">{}</li> */}
                 </ul>
               </nav>
             </div>

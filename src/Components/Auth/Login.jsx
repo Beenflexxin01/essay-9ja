@@ -1,6 +1,5 @@
 import React, { useState, useCallback } from "react";
 import { useFormik } from "formik";
-import * as Yup from "yup";
 import { Link, Navigate, NavLink, useNavigate } from "react-router-dom";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import ClipLoader from "react-spinners/ClipLoader";
@@ -15,15 +14,6 @@ import { loginValidatorSchema } from "../../Utils/Validator";
 
 import Cookies from "js-cookie";
 import { toast } from "react-toastify";
-
-// const validationSchema = Yup.object({
-//   email: Yup.string()
-//     .email("Invalid email")
-//     .required("This field is required. Kindly provide a valid email! 🙂"),
-//   password: Yup.string()
-//     .min(6, "Too Short!")
-//     .required("This field is required. Kindly provide a valid password! 🤐"),
-// });
 
 function Login() {
   const [isLoading, setIsLoading] = useState(false);
@@ -171,14 +161,14 @@ function Login() {
             Forgot Password?
           </Link>
 
-          <div className="">
+          <div className="align">
             <Button
               type="submit"
               className="w-full py-6 bg-primary text-background hover:bg-primary-800"
               disabled={formik.isSubmitting}
             >
               {isLoading ? (
-                <div className="flex items-center justify-center space-x-3">
+                <div className="">
                   <ClipLoader
                     color={"#ffffff"}
                     loading={isLoading}

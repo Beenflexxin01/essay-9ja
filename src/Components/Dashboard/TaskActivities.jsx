@@ -1,10 +1,19 @@
 import { Link } from "react-router-dom";
 import TasksViewBtn from "../../Modals/ModalBtn/TasksViewBtn";
+import { convertKoboToNaira } from "../../Utils/NairaConverter";
+import { DateFormatter } from "../../Utils/DateFormatter";
+import { Loader } from "../../UI/Loader";
 
-function TaskActivities() {
+function TaskActivities({ contracts }) {
+  const statusClass =
+    contracts === "cancelled"
+      ? "rejected completed"
+      : contracts === "successful"
+        ? ""
+        : "approved transaction-approved";
   return (
     <>
-      <div className="act">
+      <div className="act dashboard-task">
         <div className="flex task">
           <h3 className="tertiary-header">Task Activities</h3>
           <p className="text-description">
@@ -23,74 +32,36 @@ function TaskActivities() {
           </nav>
         </div>
         <div className="grid-5-cols">
-          <nav className="main-nav ">
-            <ul className="main-ul">
-              <li className="main-li check">
-                {" "}
-                <input type="checkbox" />
-                Philip Wayne
-              </li>
-              <li className="main-li">Biomedical Practice</li>
-              <li className="main-li">24/05/2024</li>
-              <li className="main-li complete success">Completed</li>
-              <li className="main-li check icon">
-                #150,000.00 <TasksViewBtn />
-              </li>
-            </ul>
-          </nav>
-        </div>
-        <div className="grid-5-cols">
-          <nav className="main-nav activities">
-            <ul className="main-ul ">
-              <li className="main-li check ">
-                <input type="checkbox" />
-                Timothy Babalola
-              </li>
-              <li className="main-li">Human & Ai Algorithm</li>
-              <li className="main-li">24/05/2024</li>
-              <li className="main-li complete incomplete success cancel">
-                Incomplete
-              </li>
-              <li className="main-li check icon">
-                #150,000.00
-                <TasksViewBtn />
-              </li>
-            </ul>
-          </nav>
-        </div>
-        <div className="grid-5-cols">
-          <nav className="main-nav">
-            <ul className="main-ul">
-              <li className="main-li check">
-                {" "}
-                <input type="checkbox" />
-                Omolola Blossom
-              </li>
-              <li className="main-li">Tinubu Regime</li>
-              <li className="main-li">24/05/2024</li>
-              <li className="main-li complete success">Completed</li>
-              <li className="main-li check icon">
-                #150,000.00 <TasksViewBtn />
-              </li>
-            </ul>
-          </nav>
-        </div>
-        <div className="grid-5-cols">
-          <nav className="main-nav">
-            <ul className="main-ul">
-              <li className="main-li check ">
-                <input type="checkbox" />
-                Tiger Smith
-              </li>
-              <li className="main-li">AR & VR Importance</li>
-              <li className="main-li">24/05/2024</li>
-              <li className="main-li complete success">Complete</li>
-
-              <li className="main-li check icon">
-                #150,000.00 <TasksViewBtn />
-              </li>
-            </ul>
-          </nav>
+          {contracts.length > 0 ? (
+            contracts.map((contract) => (
+              <nav className="main-nav ">
+                <ul className="main-ul">
+                  <li className="main-li check">
+                    {" "}
+                    <input type="checkbox" />
+                    {contract.writer
+                      ? `${contract.writer.firstName} ${contract.writer.lastName}`
+                      : "N/A"}
+                  </li>
+                  <li className="main-li">{contract.title}</li>
+                  <li className="main-li">
+                    <DateFormatter createdAt={contract.createdAt} />
+                  </li>
+                  <li className={`main-li  ${statusClass}`}>
+                    {contract.status}
+                  </li>
+                  <li className="main-li check icon">
+                    {contract.currency} {convertKoboToNaira(contract.amount)}{" "}
+                    <TasksViewBtn />
+                  </li>
+                </ul>
+              </nav>
+            ))
+          ) : (
+            <div className="spinner grower">
+              <Loader />
+            </div>
+          )}
         </div>
       </div>
     </>

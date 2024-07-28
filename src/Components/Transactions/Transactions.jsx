@@ -1,4 +1,5 @@
 import TransactionsViewBtn from "../../Modals/ModalBtn/TransactionsViewBtn";
+import { convertKoboToNaira } from "../../Utils/NairaConverter";
 
 function Transactions({ transactions }) {
   const {
@@ -34,7 +35,7 @@ function Transactions({ transactions }) {
             <li className="main-li ">{txRef}</li>
             <li className="main-li">
               {currency}
-              {transactionAmount}
+              {convertKoboToNaira(transactionAmount)}
             </li>
             <div className="check icon">
               <li className={`main-li  ${statusClass}`}>{transactionStatus}</li>
