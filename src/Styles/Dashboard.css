@@ -63,7 +63,7 @@
   border-radius: 1.6rem;
   padding: 2rem;
   height: 33.1rem;
-  width: 33.9rem;
+  /* width: 33.9rem; */
 }
 
 .number-flex {
@@ -198,8 +198,7 @@
 .transaction-flex {
   display: flex;
   align-items: center;
-  width: 33.9rem;
-  gap: 3px;
+  justify-content: space-between;
 }
 
 .transaction-approved {
@@ -212,7 +211,6 @@
 }
 
 .kf {
-  width: 33.9rem;
   padding: 0.4rem 0.8rem;
   margin: 0.8rem 0;
 }
@@ -230,7 +228,7 @@
 
 .dashboard-task {
   margin: 1.6rem;
-  width: 110.4rem;
+  /* width: 110.4rem; */
   height: 30.3rem;
 }
 

@@ -177,7 +177,7 @@ function DashBoard() {
                       </li>
                       <li className="transaction-nav-li request ">
                         Request For A Withdrawal of {withdrawal.currency}{" "}
-                        {convertKoboToNaira(withdrawal.amount)}
+                        {convertKoboToNaira(withdrawal.amount)} {""} - {""} 
                         <DateFormatter createdAt={withdrawal.createdAt} />
                       </li>
                     </div>
