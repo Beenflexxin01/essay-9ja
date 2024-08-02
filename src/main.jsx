@@ -9,7 +9,6 @@ import "./Styles/Reports.css";
 import "./Styles/Modals.css";
 import "./Styles/Auth.css";
 import "./Styles/Users.css";
-import "./Styles/StarRating.css";
 import { ErrorBoundary } from "react-error-boundary";
 import ErrorFallback from "./UI/ErrorFallback.jsx";
 

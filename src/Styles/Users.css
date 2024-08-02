@@ -53,7 +53,7 @@
 }
 
 .starRating {
-  color: #ec9901;
+  color: gold;
   display: flex;
   align-items: center;
 }
@@ -82,9 +82,9 @@
   margin: 2rem 0;
 }
 
-.activities {
+/* .activities {
   background-color: #fafafa;
-}
+} */
 
 .bg {
   background-color: #fff;
@@ -162,4 +162,14 @@ p {
   font-size: 1.2rem;
   font-weight: 400;
   line-height: 17.4px;
+}
+
+.ll {
+  margin-left: 2rem;
+}
+
+.span-flex {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
 }

@@ -10,7 +10,8 @@ function DeactivateAccountModal(props) {
         size="1g"
         aria-labelledby="contained-modal-title-vcenter"
         centered
-        className="modal--content">
+        className="modal--content"
+      >
         <Modal.Header className="modal--header">
           <img src={btn} alt="Delete" className="modal-img" />
           <Modal.Title className="delete remove">

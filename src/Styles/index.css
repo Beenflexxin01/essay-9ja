@@ -73,12 +73,6 @@ li {
   margin-top: 0.38px;
 }
 
-.active {
-  background-color: #f4f7fb;
-  padding: 0.8rem 1.6rem;
-  border-radius: 0.8rem;
-}
-
 .log-img {
   background-color: #fff;
   padding: 0 2.4rem;
@@ -101,6 +95,15 @@ li {
   display: flex;
   align-items: center;
   gap: 1.2rem;
+}
+
+.active {
+  background-color: #f4f7fb;
+  /* padding: 0.8rem 1.6rem; */
+  border-radius: 0.8rem;
+  color: #023474;
+  font-weight: 500;
+  /* line-height: 18.9px; */
 }
 
 .main-nav-ul,
@@ -238,4 +241,12 @@ li {
 
 .grower {
   margin: 10rem auto;
+}
+
+.login {
+  background-color: #023474;
+}
+
+.login:hover {
+  background-color: #023474;
 }

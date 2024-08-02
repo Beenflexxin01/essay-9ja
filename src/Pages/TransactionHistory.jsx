@@ -63,7 +63,7 @@ function TransactionHistory() {
           <nav className="main-nav user-nav activities">
             <ul className="main-ul ">
               <li className="main-li">Name</li>
-              <li className="main-li">Reason</li>
+              <li className="main-li">Description</li>
               <li className="main-li">Account Detail</li>
               <li className="main-li">Amount</li>
               <li className="main-li">Status</li>

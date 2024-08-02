@@ -31,7 +31,7 @@ const LineChart = () => {
         lineTension: 0.1,
         backgroundColor: "rgba(75,192,192,0.4)",
         borderColor: "rgba(75,192,192,1)",
-        borderCapStyle: "butt",
+        borderCapStyle: "",
         borderDash: [],
         borderDashOffset: 0.0,
         borderJoinStyle: "miter",
@@ -100,18 +100,7 @@ const LineChart = () => {
     },
   };
 
-  return (
-    <div className="analytics">
-      <Line data={data} options={options} />
-      <h3 className="tertiary-header">Analytics</h3>
-      <div className="analytic-flex">
-        <p className="text-description">
-          Overall active analytics for the week
-        </p>
-        <p className="analytic-cta">Weekly</p>
-      </div>
-    </div>
-  );
+  return <Line data={data} options={options} />;
 };
 
 export default LineChart;

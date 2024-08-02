@@ -40,12 +40,8 @@
   margin: 3.5rem 0;
 }
 
-/* .form-label {
-} */
-
 .modal-content {
   width: 56rem;
-  height: 69.1rem;
   border-radius: 1.6rem;
 }
 
@@ -60,8 +56,7 @@
 .modal-header {
   border-bottom: none;
   margin: 4.8rem 3.4rem 4.3rem 3.4rem;
-  /* width: 17.4rem; */
-  height: 2.9rem;
+  /* height: 2.9rem; */
 }
 
 .modal-title {
@@ -87,6 +82,9 @@
   color: #101010;
   margin: 2rem 0;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
 }
 
 .btn {
@@ -96,7 +94,6 @@
 .modal-c {
   width: 30rem;
   overflow: hidden;
-  height: 16.9rem;
   border-radius: 1.6rem;
   position: absolute;
   left: 80%;
@@ -107,8 +104,15 @@
   color: #a60000;
 }
 
+.delete:hover,
+.delete:active {
+  color: #a60000;
+  counter-reset: 4;
+}
+
 .modal--header {
   flex-direction: column;
+  margin: 0;
 }
 
 .remove {
@@ -151,6 +155,7 @@
   color: #000000;
   border: none;
   outline: none;
+  margin-bottom: 4.4rem;
 }
 
 .keep-btn:hover,
@@ -187,7 +192,15 @@
   padding: 0.6rem;
 }
 
-.transaction-modal {
-  height: 7.1rem;
-  width: 29.2rem;
+.invite-modal {
+  margin: 10.4rem 0 16.6rem 0;
+}
+
+.invite-modal::-webkit-scrollbar {
+  width: 0;
+}
+
+.modal--body {
+  height: 100%;
+  height: 69.1rem;
 }

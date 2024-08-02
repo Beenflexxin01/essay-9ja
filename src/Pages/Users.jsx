@@ -56,7 +56,7 @@ function Users() {
     <>
       <div className="containr act">
         <div className="flex task">
-          <h3 className="tertiary-header">Users</h3>
+          <h3 className="tertiary-header">Clients</h3>
         </div>
         <div className="">
           <nav className="main-nav user-nav activities">

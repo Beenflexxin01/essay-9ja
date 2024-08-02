@@ -2,7 +2,11 @@ import { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import BaseUrl from "../../Utils/BaseUrl";
 import apiCall from "../../hooks/apiCall";
-import { DateFormatter, TimeFormatter } from "../../Utils/DateFormatter";
+import {
+  DateFormatter,
+  LastLoginAt,
+  LastLoginAtDistance,
+} from "../../Utils/DateFormatter";
 
 function UserDetails() {
   const [userDetails, setUserDetails] = useState({});
@@ -13,11 +17,10 @@ function UserDetails() {
     firstName,
     lastName,
     email,
-    lastLoginAt,
-    accountStatus,
     createdAt,
     phoneNumber,
     country,
+    lastLoginAt,
   } = userDetails;
 
   useEffect(() => {
@@ -71,14 +74,13 @@ function UserDetails() {
             <div className="grid-user-flex">
               <nav className="grid-user-nav">
                 <ul className="grid-user-ul">
-                  <li className="grid-user-li">User name:</li>
+                  <li className="grid-user-li">Client name:</li>
                   <li className="grid-user-li activities">Email address:</li>
                   <li className="grid-user-li">Contact number:</li>
 
                   <li className="grid-user-li activities">Date Joined:</li>
                   <li className="grid-user-li ">State / Country:</li>
-                  <li className="grid-user-li activities">Last Active:</li>
-                  <li className="grid-user-li ">Last Time Active:</li>
+                  <li className="grid-user-li activities">Last Seen:</li>
                 </ul>
               </nav>
             </div>
@@ -106,11 +108,12 @@ function UserDetails() {
                   <li className="grid-user-li user-detail ">
                     {country ? country : "N / A"}
                   </li>
-                  <li className="grid-user-li activities user-detail activities">
-                    {accountStatus}
-                  </li>
-                  <li className="grid-user-li user-detail">
-                    <TimeFormatter updatedAt={lastLoginAt} />
+                  <li className="grid-user-li activities user-detail activities flex">
+                    <LastLoginAt createdAt={lastLoginAt} />
+                    <span className="span-withdraw span-flex">
+                      at
+                      <LastLoginAtDistance createdAt={lastLoginAt} />
+                    </span>
                   </li>
                 </ul>
               </nav>

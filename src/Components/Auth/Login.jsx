@@ -56,7 +56,8 @@ function Login() {
           refreshTokenExpireIn: 86400,
         });
 
-        resetForm({ email: "", password: "" });
+        resetForm();
+        // resetForm({ email: "", password: "" });
 
         toast.success("Login Successful. Redriecting to dashboard page!");
 
@@ -102,7 +103,7 @@ function Login() {
           </p>
         </div>
         <form onSubmit={formik.handleSubmit} className="space-y-4 md:space-y-6">
-          <div>
+          <div className="relative">
             <label
               htmlFor="email"
               className="block mb-2 text-sm md:text-base font-medium text-gray-900 dark:text-gray-300"
@@ -123,13 +124,13 @@ function Login() {
               <span className="input-error">{formik.errors.email}</span>
             )}
           </div>
-          <label
-            htmlFor="password"
-            className="block mb-2 text-sm md:text-base font-medium text-gray-900 dark:text-gray-300"
-          >
-            Password
-          </label>
           <div className="relative">
+            <label
+              htmlFor="password"
+              className="block mb-2 text-sm md:text-base font-medium text-gray-900 dark:text-gray-300"
+            >
+              Password
+            </label>
             <input
               name="password"
               type={showPassword ? "text" : "password"}
@@ -157,26 +158,28 @@ function Login() {
               )}
             </div>
           </div>
-          <Link to="/forgot-password" className="password">
-            Forgot Password?
-          </Link>
+          <div className="forgot-password">
+            <Link to="/forgot-password" className="password">
+              Forgot Password?
+            </Link>
+          </div>
 
           <div className="align">
             <Button
               type="submit"
-              className="w-full py-6 bg-primary text-background hover:bg-primary-800"
+              className=" login"
               disabled={formik.isSubmitting}
             >
               {isLoading ? (
                 <div className="">
-                  <ClipLoader
+                  {/* <ClipLoader
                     color={"#ffffff"}
                     loading={isLoading}
                     size={20}
                     aria-label="Loading Spinner"
                     data-testid="loader"
-                  />
-                  <p className="capitalize">Loading...</p>
+                  /> */}
+                  <p className="capitalize">Log In</p>
                 </div>
               ) : (
                 "Log In"

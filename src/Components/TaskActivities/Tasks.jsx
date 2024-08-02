@@ -1,6 +1,7 @@
 import React from "react";
 import TasksViewBtn from "../../Modals/ModalBtn/TasksViewBtn";
 import { convertKoboToNaira } from "../../Utils/NairaConverter";
+import { DateFormatter } from "../../Utils/DateFormatter";
 
 function Tasks({ tasks }) {
   const {
@@ -32,7 +33,9 @@ function Tasks({ tasks }) {
               {writer ? `${writer.firstName} ${writer.lastName}` : "N/A"}
             </li>
             <li className="main-li">{title}</li>
-            <li className="main-li">{dueDate}</li>
+            <li className="main-li">
+              <DateFormatter createdAt={dueDate} />
+            </li>
             <li className={`main-li ${statusClass}`}>{status}</li>
             <li className="main-li check icon">
               {currency} {convertKoboToNaira(amount)}

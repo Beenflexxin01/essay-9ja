@@ -93,7 +93,7 @@ function SideBar() {
                     fill="#767B91"
                   />
                 </svg>
-                User
+                Clients
               </NavLink>
             </li>
             <li className="side-bar-li">

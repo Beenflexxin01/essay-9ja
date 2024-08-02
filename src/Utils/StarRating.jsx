@@ -1,31 +1,20 @@
 import React from "react";
-import PropTypes from "prop-types";
+import ReactStars from "react-stars";
 
-const StarRating = ({ rating, totalStars = 5 }) => {
-  const getStarClass = (index) => {
-    if (rating >= index + 1) {
-      return "filled";
-    } else if (rating > index && rating < index + 1) {
-      return "half-filled";
-    } else {
-      return "";
-    }
-  };
-
+const StarRating = ({ rating, totalStars = 5, onRatingChange }) => {
   return (
     <div className="star-rating">
-      {[...Array(totalStars)].map((_, index) => (
-        <span key={index} className={`star ${getStarClass(index)}`}>
-          &#9733;
-        </span>
-      ))}
+      <ReactStars
+        count={totalStars}
+        value={rating}
+        size={24}
+        half={true}
+        onChange={onRatingChange}
+        color2={"#EC9901"}
+        edit={false}
+      />
     </div>
   );
-};
-
-StarRating.propTypes = {
-  rating: PropTypes.number.isRequired,
-  totalStars: PropTypes.number,
 };
 
 export default StarRating;
