@@ -177,11 +177,13 @@ label {
 .rejected {
   background-color: #ffebeb;
   color: #ca0101;
+  text-transform: capitalize;
 }
 
 .approved {
   background-color: #e5ffe5;
   color: #008000;
+  text-transform: capitalize;
 }
 
 .statusClass {

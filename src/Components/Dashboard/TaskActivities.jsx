@@ -34,28 +34,31 @@ function TaskActivities({ contracts }) {
         <div className="grid-5-cols">
           {contracts.length > 0 ? (
             contracts.map((contract) => (
-              <nav className="main-nav ">
-                <ul className="main-ul">
-                  <li className="main-li check">
-                    {" "}
-                    <input type="checkbox" />
-                    {contract.writer
-                      ? `${contract.writer.firstName} ${contract.writer.lastName}`
-                      : "N/A"}
-                  </li>
-                  <li className="main-li">{contract.title}</li>
-                  <li className="main-li">
-                    <DateFormatter createdAt={contract.createdAt} />
-                  </li>
-                  <li className={`main-li  ${statusClass}`}>
-                    {contract.status}
-                  </li>
-                  <li className="main-li check icon">
-                    {contract.currency} {convertKoboToNaira(contract.amount)}{" "}
-                    <TasksViewBtn />
-                  </li>
-                </ul>
-              </nav>
+              <>
+                <div key={contract._id}></div>
+                <nav className="main-nav ">
+                  <ul className="main-ul">
+                    <li className="main-li check">
+                      {" "}
+                      <input type="checkbox" />
+                      {contract.writer
+                        ? `${contract.writer.firstName} ${contract.writer.lastName}`
+                        : "N/A"}
+                    </li>
+                    <li className="main-li">{contract.title}</li>
+                    <li className="main-li">
+                      <DateFormatter createdAt={contract.createdAt} />
+                    </li>
+                    <li className={`main-li  ${statusClass}`}>
+                      {contract.status}
+                    </li>
+                    <li className="main-li check icon">
+                      {contract.currency} {convertKoboToNaira(contract.amount)}{" "}
+                      <TasksViewBtn />
+                    </li>
+                  </ul>
+                </nav>
+              </>
             ))
           ) : (
             <div className="spinner grower">

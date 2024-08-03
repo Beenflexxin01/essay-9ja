@@ -12,10 +12,15 @@ function AppSettings() {
 
   const onSubmit = async (values, { resetForm }) => {
     setIsLoading(true);
-    const { title, type, value } = values;
+    const {
+      minimumWithdrawal,
+      fundRelease,
+      contractPercentage,
+      contractRelease,
+    } = values;
 
     try {
-      // Fetch settings to check if the type exists
+      // Fetch settings to check if the fundRelease exists
       const allSettingsRes = await apiCall(`${BaseUrl}/settings`, "GET");
       console.log(allSettingsRes, "ALL SETTINGS RESPONSE");
       if (!allSettingsRes || allSettingsRes.status !== 200) {
@@ -29,15 +34,16 @@ function AppSettings() {
       console.log("Fetched settings:", settings);
 
       const settingExists = settings.some(
-        (setting) => setting.title === title
+        (setting) => setting.minimumWithdrawal === minimumWithdrawal
         // setting.value === value
       );
       console.log("Does setting exist?", settingExists);
 
       if (settingExists) {
         const patchRes = await apiCall(`${BaseUrl}/settings`, "PATCH", {
-          type,
-          value,
+          fundRelease,
+          contractPercentage,
+          contractRelease,
         });
         console.log("PATCH RESPONSE", patchRes);
         if (patchRes.status === 200) {
@@ -48,9 +54,10 @@ function AppSettings() {
         }
       } else {
         const postRes = await apiCall(`${BaseUrl}/settings`, "POST", {
-          title,
-          type,
-          value,
+          minimumWithdrawal,
+          fundRelease,
+          contractPercentage,
+          contractRelease,
         });
         console.log("POST RESPONSE", postRes);
         if (postRes.status === 201) {
@@ -75,13 +82,23 @@ function AppSettings() {
 
   const formik = useFormik({
     initialValues: {
-      title: "",
-      type: "",
-      value: "",
+      minimumWithdrawal: "",
+      contractPercentage: "",
+      fundRelease: "",
+      contractRelease: "",
     },
-    validationSchema,
+    // validationSchema,
     onSubmit,
   });
+  // const formik = useFormik({
+  //   initialValues: {
+  //     minimumWithdrawal: "",
+  //     fundRelease: "",
+  //     value: "",
+  //   },
+  //   // validationSchema,
+  //   onSubmit,
+  // });
 
   return (
     <div className="containr">
@@ -98,63 +115,66 @@ function AppSettings() {
             <nav className="profile-nav">
               <ul className="profile-ul">
                 <li className="profile-li">
-                  <label htmlFor="title">Title</label>
+                  <label htmlFor="minimumWithdrawal">
+                    Minimum Withdrawal Amount
+                  </label>
                   <input
-                    type="text"
-                    id="title"
-                    name="title"
+                    type="number"
+                    id="minimumWithdrawal"
+                    name="minimumWithdrawal"
                     className="input profile-input"
                     placeholder="e.g. Minimum Withdrawal Amount"
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur}
-                    value={formik.values.title}
+                    value={formik.values.minimumWithdrawal}
                   />
-                  {formik.touched.title && formik.errors.title ? (
-                    <div className="input-error">{formik.errors.title}</div>
+                  {formik.touched.minimumWithdrawal &&
+                  formik.errors.minimumWithdrawal ? (
+                    <div className="input-error">
+                      {formik.errors.minimumWithdrawal}
+                    </div>
                   ) : null}
                 </li>
                 <li className="profile-li ">
-                  <label htmlFor="type">Type</label>
-                  <select
-                    id="type"
-                    name="type"
-                    className="input profile-input options"
-                    onChange={formik.handleChange}
-                    onBlur={formik.handleBlur}
-                    value={formik.values.type}
-                  >
-                    <option value="">Select Type</option>
-                    <option value="minimumWithdrawalAmount">
-                      Minimum Withdrawal Amount
-                    </option>
-                    <option value="releaseFundsToWriterAfterDays">
-                      Release Funds To Writer After Days
-                    </option>
-                    <option value="contractAcceptanceDeadline">
-                      Contract Acceptance Deadline
-                    </option>
-                    <option value="contractServiceFeePercentage">
-                      Contract Service Fee Percentage
-                    </option>
-                    <option value="contractSubmissionDeadline">
-                      Contract Submission Deadline
-                    </option>
-                  </select>
-                  {formik.touched.type && formik.errors.type ? (
-                    <div className="input-error">{formik.errors.type}</div>
+                  <label htmlFor="type">Days to release funds to writer</label>
+                  <input
+                    type="number"
+                    placeholder="5"
+                    className="input profile-input"
+                  />
+                  {formik.touched.fundRelease && formik.errors.fundRelease ? (
+                    <div className="input-error">
+                      {formik.errors.fundRelease}
+                    </div>
+                  ) : null}
+                </li>
+                <li className="profile-li ">
+                  <label htmlFor="type">
+                    Days to release contract if not accepted
+                  </label>
+                  <input
+                    type="number"
+                    placeholder="5"
+                    className="input profile-input"
+                  />
+                  {formik.touched.contractRelease &&
+                  formik.errors.contractRelease ? (
+                    <div className="input-error">
+                      {formik.errors.contractRelease}
+                    </div>
                   ) : null}
                 </li>
                 <li className="profile-li">
-                  <label htmlFor="value">Value</label>
+                  <label htmlFor="value">Contract Service Percentage</label>
                   <input
-                    type="text"
+                    type="number"
                     id="value"
                     name="value"
                     className="input profile-input"
-                    placeholder="e.g. 5000"
+                    placeholder=" 10%"
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur}
-                    value={formik.values.value}
+                    value={formik.values.contractPercentage}
                   />
                   {formik.touched.value && formik.errors.value ? (
                     <div className="input-error">{formik.errors.value}</div>
@@ -162,7 +182,7 @@ function AppSettings() {
                 </li>
                 <li className="profile-li">
                   {isLoading ? (
-                    <div className="flex items-center justify-center space-x-3">
+                    <div className="">
                       <ClipLoader
                         color={"#ffffff"}
                         loading={isLoading}
