@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
-import BaseUrl from "../../Utils/BaseUrl";
+import { BaseUrl } from "../../Utils/BaseUrl";
 import apiCall from "../../hooks/apiCall";
 import {
   DateFormatter,

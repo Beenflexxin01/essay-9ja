@@ -1,7 +1,7 @@
 import { useFormik } from "formik";
 import Button from "../../UI/Button";
 import apiCall from "../../hooks/apiCall";
-import BaseUrl from "../../Utils/BaseUrl";
+import { BaseUrl } from "../../Utils/BaseUrl";
 import { toast } from "react-toastify";
 import { useState } from "react";
 import ClipLoader from "react-spinners/ClipLoader";
@@ -87,18 +87,9 @@ function AppSettings() {
       fundRelease: "",
       contractRelease: "",
     },
-    // validationSchema,
+    validationSchema,
     onSubmit,
   });
-  // const formik = useFormik({
-  //   initialValues: {
-  //     minimumWithdrawal: "",
-  //     fundRelease: "",
-  //     value: "",
-  //   },
-  //   // validationSchema,
-  //   onSubmit,
-  // });
 
   return (
     <div className="containr">

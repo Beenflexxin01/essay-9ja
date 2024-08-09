@@ -1,8 +1,7 @@
 .flex {
   display: flex;
   gap: 2rem;
-  padding: 2rem;
-  /* margin: 2rem 0; */
+  padding: 0.5rem 1.6rem;
   align-items: center;
 }
 
@@ -100,9 +99,10 @@
 }
 
 .transaction-nav-li {
+  display: flex;
+  gap: 1rem;
   font-size: 1.6rem;
   color: #101010;
-  display: flex;
   align-items: center;
 }
 
@@ -136,7 +136,6 @@
 .transactions--li {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
 }
 
 .wit-flex {
@@ -152,13 +151,12 @@
 
 .main-li {
   font-size: 1.35rem;
+  text-transform: capitalize;
 }
 
 .activities {
   background-color: #f8f8f8;
-  /* width: 110.4rem; */
   height: 4.3rem;
-  /* padding: 0.8rem 4rem; */
 }
 
 .check {
@@ -206,10 +204,9 @@
   justify-content: space-between;
 }
 
-.transaction-approved {
+.completed {
   width: 8.7rem;
   height: 2rem;
-  padding: 0 1.2rem;
   border-radius: 0.6rem;
   font-size: 1.4rem;
   line-height: 20.3px;
@@ -222,7 +219,11 @@
 
 .request {
   font-size: 1.4rem;
-  margin-left: 2.8rem;
+  margin-left: 3.5rem;
+}
+
+.transaction-request {
+  margin-left: 4.2rem;
 }
 
 .link {
@@ -249,4 +250,8 @@
 
 .relative {
   margin: 2.4rem 0;
+}
+
+.gg {
+  padding: 0.5rem;
 }

@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import Transactions from "../Components/Transactions/Transactions";
-import {Loader} from "../UI/Loader";
+import { Loader } from "../UI/Loader";
 import apiCall from "../hooks/apiCall";
 import Pagination from "../Utils/Pagination";
-import BaseUrl from "../Utils/BaseUrl";
+import { BaseUrl } from "../Utils/BaseUrl";
 
 function TransactionHistory() {
   const [transactions, setTransactions] = useState([]);
@@ -59,36 +59,40 @@ function TransactionHistory() {
         <div className="flex task">
           <h3 className="tertiary-header">Transactional history</h3>
         </div>
-        <div className="">
+        <div className="transaction-containe">
           <nav className="main-nav user-nav activities">
             <ul className="main-ul ">
-              <li className="main-li">Name</li>
+              <li className="main-li name">Name</li>
               <li className="main-li">Description</li>
               <li className="main-li">Account Detail</li>
               <li className="main-li">Amount</li>
               <li className="main-li">Status</li>
             </ul>
           </nav>
-        </div>
-        {transactions.length > 0 ? (
-          <div>
-            {transactionPage.map((transactions, n) => (
-              <Transactions transactions={transactions} key={n._id} />
-            ))}
+          {transactions.length > 0 ? (
+            <div className="transaction-container">
+              {transactionPage.map((transactions, index) => (
+                <Transactions
+                  transactions={transactions}
+                  key={transactions._id}
+                  index={index}
+                />
+              ))}
 
-            <Pagination
-              numbers={numbers}
-              currentPage={currentPage}
-              previousPage={previousPage}
-              nextPage={nextPage}
-              currentPageNumber={currentPageNumber}
-            />
-          </div>
-        ) : (
-          <div className="spinner">
-            <Loader />
-          </div>
-        )}
+              <Pagination
+                numbers={numbers}
+                currentPage={currentPage}
+                previousPage={previousPage}
+                nextPage={nextPage}
+                currentPageNumber={currentPageNumber}
+              />
+            </div>
+          ) : (
+            <div className="spinner">
+              <Loader />
+            </div>
+          )}
+        </div>
       </div>
     </>
   );

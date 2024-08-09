@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import UserReg from "../Components/Users/UserReg";
 import { Loader } from "../UI/Loader";
 import apiCall from "../hooks/apiCall";
-import BaseUrl from "../Utils/BaseUrl";
+import { BaseUrl } from "../Utils/BaseUrl";
 import Pagination from "../Utils/Pagination";
 
 function Users() {
@@ -61,7 +61,7 @@ function Users() {
         <div className="">
           <nav className="main-nav user-nav activities">
             <ul className="main-ul">
-              <li className="main-li">User name</li>
+              <li className="main-li name">User name</li>
               <li className="main-li">No. of Writer Hired</li>
               <li className="main-li">Date Joined</li>
               <li className="main-li">Last Active</li>
@@ -72,7 +72,7 @@ function Users() {
         {users.length > 0 ? (
           <div>
             {usersPage.map((user, index) => (
-              <UserReg user={user} key={user._id} />
+              <UserReg user={user} key={user._id} index={index} />
             ))}
             <Pagination
               numbers={numbers}

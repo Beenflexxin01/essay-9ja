@@ -2,13 +2,12 @@ import React, { useState, useCallback } from "react";
 import { useFormik } from "formik";
 import { Link, Navigate, NavLink, useNavigate } from "react-router-dom";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
-import ClipLoader from "react-spinners/ClipLoader";
 import Button from "react-bootstrap/Button";
 import useSignIn from "react-auth-kit/hooks/useSignIn";
 import useIsAuthenticated from "react-auth-kit/hooks/useIsAuthenticated";
 import useAxiosWithAuth from "../../hooks/useAxiosWithAuth"; //
 import logo from "/images/logo.png";
-import BaseUrl from "../../Utils/BaseUrl";
+import {BaseUrl} from "../../Utils/BaseUrl";
 import { AxiosError } from "axios";
 import { loginValidatorSchema } from "../../Utils/Validator";
 

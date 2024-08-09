@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import WithdrawalActivities from "../Components/Withdrawal/WithdrawalActivities";
-import {Loader} from "../UI/Loader";
+import { Loader } from "../UI/Loader";
 import apiCall from "../hooks/apiCall";
-import BaseUrl from "../Utils/BaseUrl";
+import { BaseUrl } from "../Utils/BaseUrl";
 import Pagination from "../Utils/Pagination";
 
 function Withdrawal() {
@@ -63,8 +63,12 @@ function Withdrawal() {
         </div>
         {withdrawals.length > 0 ? (
           <div>
-            {withdrawalPage.map((withdrawal, n) => (
-              <WithdrawalActivities withdrawal={withdrawal} key={n.id} />
+            {withdrawalPage.map((withdrawal, index) => (
+              <WithdrawalActivities
+                withdrawal={withdrawal}
+                key={withdrawal._id}
+                index={index}
+              />
             ))}
 
             <Pagination

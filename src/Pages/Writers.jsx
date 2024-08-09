@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Loader } from "../UI/Loader";
 import apiCall from "../hooks/apiCall";
 import WriterInfo from "../Components/Writers/WriterInfo";
-import BaseUrl from "../Utils/BaseUrl";
+import { BaseUrl } from "../Utils/BaseUrl";
 import Pagination from "../Utils/Pagination";
 
 function Writers() {
@@ -61,7 +61,7 @@ function Writers() {
       <div>
         <nav className="main-nav user-nav activities">
           <ul className="main-ul">
-            <li className="main-li">Name</li>
+            <li className="main-li name">Name</li>
             <li className="main-li">Completed Tasks</li>
             <li className="main-li">Date Joined</li>
             <li className="main-li">Rate</li>
@@ -71,8 +71,8 @@ function Writers() {
       </div>
       {writer.length > 0 ? (
         <div>
-          {writerPage.map((writer) => (
-            <WriterInfo key={writer._id} writer={writer} />
+          {writerPage.map((writer, index) => (
+            <WriterInfo key={writer._id} writer={writer} index={index} />
           ))}
           <Pagination
             numbers={numbers}

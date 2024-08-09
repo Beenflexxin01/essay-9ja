@@ -13,7 +13,7 @@ function UpdateTaskModal(props) {
           <Modal.Title className="update">Update Status</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <div className="flex up">
+          <div className="flex update-button">
             <div className="comp">
               <button className="success">Completed</button>
             </div>

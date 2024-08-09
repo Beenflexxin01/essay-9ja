@@ -3,14 +3,9 @@ import TasksViewBtn from "../../Modals/ModalBtn/TasksViewBtn";
 import { convertKoboToNaira } from "../../Utils/NairaConverter";
 import { DateFormatter } from "../../Utils/DateFormatter";
 import { Loader } from "../../UI/Loader";
+import { GetTransactionStatus } from "../../Utils/BaseUrl";
 
 function TaskActivities({ contracts }) {
-  const statusClass =
-    contracts === "cancelled"
-      ? "rejected completed"
-      : contracts === "successful"
-        ? ""
-        : "approved transaction-approved";
   return (
     <>
       <div className="act dashboard-task">
@@ -35,7 +30,7 @@ function TaskActivities({ contracts }) {
           {contracts.length > 0 ? (
             contracts.map((contract) => (
               <>
-                <div key={contract._id}></div>
+                <div key={contract.writer.firstName}></div>
                 <nav className="main-nav ">
                   <ul className="main-ul">
                     <li className="main-li check">
@@ -49,9 +44,9 @@ function TaskActivities({ contracts }) {
                     <li className="main-li">
                       <DateFormatter createdAt={contract.createdAt} />
                     </li>
-                    <li className={`main-li  ${statusClass}`}>
-                      {contract.status}
-                    </li>
+                    <GetTransactionStatus>
+                      <li className="gg">{contract.status}</li>
+                    </GetTransactionStatus>
                     <li className="main-li check icon">
                       {contract.currency} {convertKoboToNaira(contract.amount)}{" "}
                       <TasksViewBtn />

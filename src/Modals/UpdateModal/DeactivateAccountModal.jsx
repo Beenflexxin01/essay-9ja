@@ -7,7 +7,7 @@ function DeactivateAccountModal(props) {
     <>
       <Modal
         {...props}
-        size="1g"
+        size="lg"
         aria-labelledby="contained-modal-title-vcenter"
         centered
         className="modal--content"

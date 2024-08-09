@@ -6,7 +6,7 @@ export function DateFormatter({ createdAt }) {
     try {
       const parsedDate = parseISO(dateStr);
 
-      return format(parsedDate, "MM/dd/yyyy");
+      return format(parsedDate, "dd/MM/yyyy");
     } catch (error) {
       console.log("Error formatting date:", error);
       return "Invalid Date";
@@ -27,7 +27,7 @@ export function DateUpdateFormatter({ updatedAt }) {
     try {
       const parsedDate = parseISO(dateStr);
 
-      return format(parsedDate, "MM/dd/yyyy");
+      return format(parsedDate, "dd/MM/yyyy");
     } catch (error) {
       console.error("Error formatting date:", error);
       return "Invalid Date";
@@ -48,7 +48,7 @@ export function LastLoginAt({ createdAt }) {
     try {
       const parsedDate = parseISO(dateStr);
 
-      return format(parsedDate, "MM/dd/yyyy");
+      return format(parsedDate, "dd/MM/yyyy");
     } catch (error) {
       console.error("Error formatting date:", error);
       return "Invalid Date";

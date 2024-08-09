@@ -3,13 +3,13 @@ import LineChart from "./LineChart";
 import TaskActivities from "./TaskActivities";
 import { HiArrowDownLeft, HiArrowUpRight } from "react-icons/hi2";
 import { useEffect, useState } from "react";
-import BaseUrl from "../../Utils/BaseUrl";
+import { BaseUrl, GetTransactionStatus } from "../../Utils/BaseUrl";
 import apiCall from "../../hooks/apiCall";
 import { convertKoboToNaira } from "../../Utils/NairaConverter";
 import { DateFormatter, DistanceFormtatter } from "../../Utils/DateFormatter";
 import { Loader } from "../../UI/Loader";
 
-function DashBoard() {
+function DashBoard({ status }) {
   const [dashboard, setDashboard] = useState({});
 
   useEffect(() => {
@@ -37,13 +37,6 @@ function DashBoard() {
     contracts = [],
   } = dashboard;
 
-  const statusClass =
-    transactions === "cancelled"
-      ? "rejected completed"
-      : transactions === "successful"
-        ? ""
-        : "approved transaction-approved";
-
   return (
     <div className="containr">
       <div className="grid-2">
@@ -67,8 +60,8 @@ function DashBoard() {
                       fill="#036B26"
                     />
                     <path
-                      fill-rule="evenodd"
-                      clip-rule="evenodd"
+                      fillRule="evenodd"
+                      clipRule="evenodd"
                       d="M3.33332 0C1.86056 0 0.666656 1.19391 0.666656 2.66667V9.33333C0.666656 10.8061 1.86056 12 3.33332 12H12.6667C14.1394 12 15.3333 10.8061 15.3333 9.33333V2.66667C15.3333 1.19391 14.1394 0 12.6667 0H3.33332ZM1.99999 2.66667C1.99999 1.93029 2.59694 1.33333 3.33332 1.33333H12.6667C13.403 1.33333 14 1.93029 14 2.66667V9.33333C14 10.0697 13.403 10.6667 12.6667 10.6667H3.33332C2.59694 10.6667 1.99999 10.0697 1.99999 9.33333V2.66667Z"
                       fill="#036B26"
                     />
@@ -94,8 +87,8 @@ function DashBoard() {
                       fill="#036B26"
                     />
                     <path
-                      fill-rule="evenodd"
-                      clip-rule="evenodd"
+                      fillRule="evenodd"
+                      clipRule="evenodd"
                       d="M3.33332 0C1.86056 0 0.666656 1.19391 0.666656 2.66667V9.33333C0.666656 10.8061 1.86056 12 3.33332 12H12.6667C14.1394 12 15.3333 10.8061 15.3333 9.33333V2.66667C15.3333 1.19391 14.1394 0 12.6667 0H3.33332ZM1.99999 2.66667C1.99999 1.93029 2.59694 1.33333 3.33332 1.33333H12.6667C13.403 1.33333 14 1.93029 14 2.66667V9.33333C14 10.0697 13.403 10.6667 12.6667 10.6667H3.33332C2.59694 10.6667 1.99999 10.0697 1.99999 9.33333V2.66667Z"
                       fill="#036B26"
                     />
@@ -121,8 +114,8 @@ function DashBoard() {
                       fill="#036B26"
                     />
                     <path
-                      fill-rule="evenodd"
-                      clip-rule="evenodd"
+                      fillRule="evenodd"
+                      clipRule="evenodd"
                       d="M3.33332 0C1.86056 0 0.666656 1.19391 0.666656 2.66667V9.33333C0.666656 10.8061 1.86056 12 3.33332 12H12.6667C14.1394 12 15.3333 10.8061 15.3333 9.33333V2.66667C15.3333 1.19391 14.1394 0 12.6667 0H3.33332ZM1.99999 2.66667C1.99999 1.93029 2.59694 1.33333 3.33332 1.33333H12.6667C13.403 1.33333 14 1.93029 14 2.66667V9.33333C14 10.0697 13.403 10.6667 12.6667 10.6667H3.33332C2.59694 10.6667 1.99999 10.0697 1.99999 9.33333V2.66667Z"
                       fill="#036B26"
                     />
@@ -179,7 +172,7 @@ function DashBoard() {
                             ? `${transaction.user.firstName} ${transaction.user.lastName}`
                             : "N/A"}
                         </li>
-                        <li className="transaction-nav-li request">
+                        <li className="transaction-nav-li transaction-request">
                           <DateFormatter createdAt={transaction.createdAt} />
                         </li>
                       </div>
@@ -188,9 +181,9 @@ function DashBoard() {
                           {transaction.currency}{" "}
                           {convertKoboToNaira(transaction.transactionAmount)}
                         </li>
-                        <li className={`transaction-nav-li ${statusClass}`}>
-                          {transaction.transactionStatus}
-                        </li>
+                        <GetTransactionStatus withdrawalStatus={transactions}>
+                          <li className="gg">{transaction.transactionStatus}</li>
+                        </GetTransactionStatus>
                       </div>
                     </div>
                   ))
@@ -229,8 +222,8 @@ function DashBoard() {
                         >
                           <circle cx="12" cy="12.5" r="12" fill="#E7F1FE" />
                           <path
-                            fill-rule="evenodd"
-                            clip-rule="evenodd"
+                            fillRule="evenodd"
+                            clipRule="evenodd"
                             d="M19.25 7.07211C19.25 6.03044 18.2143 5.30591 17.2358 5.663L11.7623 7.66033L6.26613 8.09011C4.70474 8.2122 3.5 9.51483 3.5 11.081V12.1691C3.5 13.7353 4.70475 15.0379 6.26613 15.16L6.57557 15.1842L7.10336 19.7692C7.23331 20.898 8.18901 21.75 9.3253 21.75C10.6657 21.75 11.7051 20.5792 11.5461 19.2482L11.1031 15.5382L11.7623 15.5898L17.2358 17.5871C18.2143 17.9442 19.25 17.2197 19.25 16.178V7.07211ZM6.38306 9.58554L11.1731 9.21098V14.0391L6.38306 13.6646C5.60237 13.6035 5 12.9522 5 12.1691V11.081C5 10.2979 5.60237 9.64659 6.38306 9.58554ZM17.75 16.178L12.6731 14.3254V8.92474L17.75 7.07211L17.75 16.178ZM8.59352 19.5977L8.09919 15.3033L9.57823 15.419L10.0567 19.4261C10.1091 19.8644 9.76675 20.25 9.3253 20.25C8.95107 20.25 8.63632 19.9694 8.59352 19.5977Z"
                             fill="#063574"
                           />

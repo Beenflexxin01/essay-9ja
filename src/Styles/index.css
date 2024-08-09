@@ -7,7 +7,7 @@
 html {
   font-size: 62.5%;
   scroll-behavior: smooth;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
 }
 
 body {
@@ -16,7 +16,6 @@ body {
   color: #505050;
   font-weight: 400;
   background-color: #fafafa;
-  height: 102.4rem;
 }
 
 li {
@@ -24,7 +23,7 @@ li {
 }
 
 .containr {
-  margin: 2rem 3rem 4rem 25rem;
+  margin: 1.6rem 3rem 4rem 25rem;
 }
 
 .page-header {
@@ -39,19 +38,17 @@ li {
 }
 
 .pnf-img {
-  /* width: 20%; */
   margin: 0 35%;
 }
 
 .side-bar {
-  max-width: 28rem;
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   border: 1px solid #f2f2f2;
-  height: 102.4rem;
   width: 23.4rem;
+  /* height: 100vh; */
 }
 
 .dd {
@@ -60,7 +57,6 @@ li {
 
 .side-bar-nav {
   background-color: #fff;
-  /* height: 100vh; */
 }
 
 .side-bar-ul,
@@ -68,8 +64,7 @@ li {
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
-  padding: 4rem 1rem;
-  height: 102.4rem;
+  padding: 4rem 1rem 2rem 1rem;
   margin-top: 0.38px;
 }
 
@@ -81,9 +76,9 @@ li {
 }
 
 .sidebar {
-  margin-top: 50rem;
+  margin-top: 16rem;
   padding: 0;
-  height: 13.6rem;
+  /* height: 13.6rem; */
 }
 
 .side-bar-link {
@@ -249,4 +244,8 @@ li {
 
 .login:hover {
   background-color: #023474;
+}
+
+.name {
+  padding: 0 3.5rem;
 }
