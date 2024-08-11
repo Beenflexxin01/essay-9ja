@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import WritersDeleteBtn from "./DeleteModalBtn/WritersDeleteBtn";
 import DeactivateUserModalBtn from "./UpdateModalBtn/DeactivateUserModalBtn";
 
-function UserModal({ userId, ...props }) {
+function UserModal({ userId, accountStatus, ...props }) {
   const navigate = useNavigate();
   return (
     <>
@@ -64,7 +64,10 @@ function UserModal({ userId, ...props }) {
                     fill="#505050"
                   />
                 </svg>{" "}
-                <DeactivateUserModalBtn />
+                <DeactivateUserModalBtn
+                  userId={userId}
+                  accountStatus={accountStatus}
+                />
               </li>
               <li className="modal-li">
                 <svg

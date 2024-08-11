@@ -176,3 +176,24 @@ p {
   border: none;
   padding: 0;
 }
+
+.email-hover {
+  max-width: 12rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  position: relative;
+  white-space: nowrap;
+}
+
+.email-hover:hover {
+  max-width: none;
+  white-space: normal;
+}
+
+.cap {
+  text-transform: capitalize;
+}
+
+.task-width {
+  padding: 0 1.6rem;
+}

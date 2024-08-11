@@ -10,6 +10,7 @@ function WriterInfo({ writer, index }) {
     ratePerPage,
     totalTasksCompleted,
     createdAt,
+    accountStatus,
     _id: writersId,
   } = writer;
 
@@ -44,7 +45,10 @@ function WriterInfo({ writer, index }) {
                   </svg>{" "}
                   {averageRating}{" "}
                 </div>
-                <WritersViewBtn writersId={writersId} />
+                <WritersViewBtn
+                  writersId={writersId}
+                  accountStatus={accountStatus}
+                />
               </li>
             </ul>
           </BackgroundColor>

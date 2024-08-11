@@ -29,15 +29,17 @@ export function GetTransactionStatus({ transactions, children }) {
 }
 export function GetTaskStatus({ status, children }) {
   const taskClass =
-    status === "rejected"
-      ? "rejected completed cancel"
-      : status === "completed"
-        ? "approved completed"
+    status === "closed"
+      ? "rejected completed task-width"
+      : status === "active"
+        ? "approved completed task-width"
         : status === "pending"
-          ? "pending completed cancel"
+          ? "pending completed task-width"
           : "";
 
-  return <div className={`${taskClass} transaction-nav-li gg`}>{children}</div>;
+  return (
+    <div className={`${taskClass} transaction-nav-li gg `}>{children}</div>
+  );
 }
 
 export function BackgroundColor({ index, children }) {

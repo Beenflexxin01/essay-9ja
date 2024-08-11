@@ -24,7 +24,7 @@ function Transactions({ transactions, index }) {
                 <input type="checkbox" />
                 {userId ? `${userId.firstName} ${userId.lastName}` : "N/A"}
               </li>
-              <li className="main-li">{transactionDescription}</li>
+              <li className="main-li email-hover t-h">{transactionDescription}</li>
               <li className="main-li ">{transactionType}</li>
               <li className="main-li">
                 {currency}

@@ -215,7 +215,3 @@ label {
 .pending {
   color: red;
 }
-
-.cancel {
-  padding: 0 1rem;
-}

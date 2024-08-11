@@ -20,7 +20,8 @@ function TaskActivities() {
   useEffect(() => {
     async function getContractInfo() {
       try {
-        const response = await apiCall(`${BaseUrl}/contracts`);
+        const response = await apiCall(`${BaseUrl}/tasks/all`);
+        // const response = await apiCall(`${BaseUrl}/contracts`);
 
         if (
           response &&

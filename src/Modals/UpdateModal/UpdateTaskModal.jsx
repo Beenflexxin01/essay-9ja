@@ -8,16 +8,17 @@ function UpdateTaskModal(props) {
         size="1g"
         aria-labelledby="contained-modal-title-vcenter"
         centered
-        className="modal-task-content modal--content">
+        className="modal-task-content modal--content"
+      >
         <Modal.Header className="update-header">
           <Modal.Title className="update">Update Status</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <div className="flex update-button">
             <div className="comp">
-              <button className="success">Completed</button>
+              <button className="success">Active</button>
             </div>
-            <button className="success cancel">Cancelled</button>
+            <button className="success cancel">Closed</button>
           </div>
           <div className="m-btn">
             <Button className="modal--btn">Update</Button>

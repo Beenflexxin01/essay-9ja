@@ -7,7 +7,7 @@ function TaskDeleteBtn() {
   return (
     <>
       <Button variant="" onClick={() => setModalShow(true)} className="delete">
-        Delete Task
+        Close Task
       </Button>
       <TaskDeleteModal show={modalShow} onHide={() => setModalShow(false)} />
     </>

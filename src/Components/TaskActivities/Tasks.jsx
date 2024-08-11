@@ -7,12 +7,12 @@ import { BackgroundColor, GetTaskStatus } from "../../Utils/BaseUrl";
 function Tasks({ tasks, index }) {
   const {
     title,
-    dueDate,
+    createdAt,
     status,
-    currency,
-    amount,
+    projectBaseCurrency,
+    projectBudget,
     _id: taskId,
-    writer,
+    offeringId,
   } = tasks;
 
   return (
@@ -23,17 +23,17 @@ function Tasks({ tasks, index }) {
             <ul className="main-ul">
               <li className="main-li check">
                 <input type="checkbox" />
-                {writer ? `${writer.firstName} ${writer.lastName}` : "N/A"}
+                {offeringId ? `${offeringId.name} ` : "N/A"}
               </li>
               <li className="main-li">{title}</li>
               <li className="main-li">
-                <DateFormatter createdAt={dueDate} />
+                <DateFormatter createdAt={createdAt} />
               </li>
               <GetTaskStatus status={status}>
-                <li className="gg">{status}</li>
+                <li className="main-li gg ">{status}</li>
               </GetTaskStatus>
               <li className="main-li check icon">
-                {currency} {convertKoboToNaira(amount)}
+                {projectBaseCurrency} {convertKoboToNaira(projectBudget)}
                 <TasksViewBtn taskId={taskId} />
               </li>
             </ul>

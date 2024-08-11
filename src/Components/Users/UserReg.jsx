@@ -8,6 +8,7 @@ function UserReg({ user, index }) {
     firstName,
     lastName,
     phoneNumber,
+    accountStatus,
     email,
     updatedAt,
     createdAt,
@@ -20,11 +21,11 @@ function UserReg({ user, index }) {
         <nav className="main-nav user-nav">
           <BackgroundColor index={index}>
             <ul className="main-ul">
-              <li className="main-li check">
+              <li className="main-li check cap">
                 <input type="checkbox" />
                 {firstName} {lastName}
               </li>
-              <li className="main-li">{email}</li>
+              <li className="main-li email-hover">{email}</li>
               <li className="main-li">
                 <DateFormatter createdAt={createdAt} />
               </li>
@@ -33,10 +34,11 @@ function UserReg({ user, index }) {
                 <span className="span">
                   <TimeFormatter updatedAt={updatedAt} />
                 </span>
+                {accountStatus}
               </li>
               <li className="main-li check icon">
                 {phoneNumber ? `${phoneNumber}` : "N/A"}
-                <UsersViewBtn userId={userId} />
+                <UsersViewBtn userId={userId} accountStatus={accountStatus} />
               </li>
             </ul>
           </BackgroundColor>

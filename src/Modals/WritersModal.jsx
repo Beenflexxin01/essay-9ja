@@ -4,7 +4,7 @@ import WritersDeleteBtn from "./DeleteModalBtn/WritersDeleteBtn";
 import { useState } from "react";
 import DeactivateWriterModalBtn from "./UpdateModalBtn/DeactivateWriterModalBtn";
 
-function WritersModal({ writersId, ...props }) {
+function WritersModal({ writersId, accountStatus, ...props }) {
   const navigate = useNavigate();
 
   const [isOpen, setIsOpen] = useState(false);
@@ -69,7 +69,7 @@ function WritersModal({ writersId, ...props }) {
                     fill="#505050"
                   />
                 </svg>
-                <DeactivateWriterModalBtn />
+                <DeactivateWriterModalBtn accountStatus={accountStatus} />
               </li>
               <li className="modal-li" onClick={() => setIsOpen(!isOpen)}>
                 <svg

@@ -10,13 +10,20 @@ function TaskDetails() {
   const navigate = useNavigate();
   const { id } = useParams();
 
-  const { title, status, startDate, endDate, amount, currency, user, writer } =
-    taskDetails;
+  const {
+    title,
+    status,
+    createdAt,
+    updatedAt,
+    projectBudget,
+    projectBaseCurrency,
+    offeringId,
+  } = taskDetails;
 
   useEffect(() => {
     async function getTaskDetails() {
       try {
-        const data = await apiCall(`${BaseUrl}/contracts/${id}`);
+        const data = await apiCall(`${BaseUrl}/tasks/${id}`);
 
         if (data.data.data) {
           setTaskDetails(data.data.data);
@@ -47,12 +54,12 @@ function TaskDetails() {
               <nav className="grid-user-nav">
                 <ul className="grid-user-ul">
                   <li className="grid-user-li">Writer's name:</li>
-                  <li className="grid-user-li activities">Customer's Name:</li>
-                  <li className="grid-user-li">Task Title:</li>
-                  <li className="grid-user-li activities">Start Date:</li>
-                  <li className="grid-user-li">End Date:</li>
-                  <li className="grid-user-li activities">Amount Charge:</li>
-                  <li className="grid-user-li">Status:</li>
+                  {/* <li className="grid-user-li activities">Customer's Name:</li> */}
+                  <li className="grid-user-li activities">Task Title:</li>
+                  <li className="grid-user-li ">Start Date:</li>
+                  <li className="grid-user-li activities">End Date:</li>
+                  <li className="grid-user-li">project Budget Charge:</li>
+                  <li className="grid-user-li activities">Status:</li>
                 </ul>
               </nav>
             </div>
@@ -61,24 +68,26 @@ function TaskDetails() {
               <nav className="grid-user-nav">
                 <ul className="grid-user-ul">
                   <li className="grid-user-li user-detail">
-                    {user ? `${user.firstName} ${user.lastName}` : "N/A"}
+                    {offeringId ? `${offeringId.name} ` : "N/A"}
                   </li>
+
+                  {/* <li className="grid-user-li user-detail activities">
+                    {writer ? `${writer.firstName} ${writer.lastName}` : "N/A"}
+                  </li> */}
 
                   <li className="grid-user-li user-detail activities">
-                    {writer ? `${writer.firstName} ${writer.lastName}` : "N/A"}
-                  </li>
-
-                  <li className="grid-user-li user-detail">{title}</li>
-                  <li className="grid-user-li activities user-detail">
-                    <DateFormatter createdAt={startDate} />
+                    {title}
                   </li>
                   <li className="grid-user-li  user-detail">
-                    <DateUpdateFormatter updatedAt={endDate} />
+                    <DateFormatter createdAt={createdAt} />
                   </li>
-                  <li className="grid-user-li user-detail activities">
-                    {currency} {convertKoboToNaira(amount)}
+                  <li className="grid-user-li activities  user-detail">
+                    <DateUpdateFormatter updatedAt={updatedAt} />
                   </li>
-                  <li className="grid-user-li  user-detail canceled">
+                  <li className="grid-user-li user-detail ">
+                    {projectBaseCurrency} {convertKoboToNaira(projectBudget)}
+                  </li>
+                  <li className="grid-user-li activities  user-detail">
                     {status}
                   </li>
                 </ul>

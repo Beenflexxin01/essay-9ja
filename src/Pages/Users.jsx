@@ -62,10 +62,10 @@ function Users() {
           <nav className="main-nav user-nav activities">
             <ul className="main-ul">
               <li className="main-li name">User name</li>
-              <li className="main-li">No. of Writer Hired</li>
+              <li className="main-li">Email Address</li>
               <li className="main-li">Date Joined</li>
               <li className="main-li">Last Active</li>
-              <li className="main-li">Task Topic</li>
+              <li className="main-li">Phone Number</li>
             </ul>
           </nav>
         </div>

@@ -1,80 +1,97 @@
+import React, { useState } from "react";
 import { useFormik } from "formik";
 import Button from "../../UI/Button";
 import apiCall from "../../hooks/apiCall";
 import { BaseUrl } from "../../Utils/BaseUrl";
 import { toast } from "react-toastify";
-import { useState } from "react";
 import ClipLoader from "react-spinners/ClipLoader";
-import { validationSchema } from "../../Utils/Validator";
+import * as Yup from "yup";
+
+// Validation schema
+const validationSchema = Yup.object({
+  minimumWithdrawal: Yup.number()
+    .required("Minimum Withdrawal Amount is required")
+    .positive("Must be a positive number")
+    .typeError("Must be a number"),
+  fundRelease: Yup.number()
+    .required("Days to release funds is required")
+    .positive("Must be a positive number")
+    .typeError("Must be a number"),
+  contractRelease: Yup.number()
+    .required("Days to release contract is required")
+    .positive("Must be a positive number")
+    .typeError("Must be a number"),
+  contractPercentage: Yup.number()
+    .required("Contract Service Percentage is required")
+    .positive("Must be a positive number")
+    .max(100, "Percentage cannot exceed 100")
+    .typeError("Must be a number"),
+});
 
 function AppSettings() {
   const [isLoading, setIsLoading] = useState(false);
 
-  const onSubmit = async (values, { resetForm }) => {
+  const onSubmit = async (values) => {
     setIsLoading(true);
-    const {
-      minimumWithdrawal,
-      fundRelease,
-      contractPercentage,
-      contractRelease,
-    } = values;
+
+    // Construct payload
+    const payload = [
+      {
+        type: "minimumWithdrawalAmount",
+        value: String(values.minimumWithdrawal),
+      },
+      {
+        type: "releaseFundsToWriterAfterDays",
+        value: String(values.fundRelease),
+      },
+      {
+        type: "contractAcceptanceDeadline",
+        value: String(values.contractRelease),
+      },
+      {
+        type: "contractServiceFeePercentage",
+        value: String(values.contractPercentage),
+      },
+    ];
+
+    console.log("Constructed Payload:", payload); // Debugging
 
     try {
-      // Fetch settings to check if the fundRelease exists
-      const allSettingsRes = await apiCall(`${BaseUrl}/settings`, "GET");
-      console.log(allSettingsRes, "ALL SETTINGS RESPONSE");
-      if (!allSettingsRes || allSettingsRes.status !== 200) {
-        console.log("THE IF BLOCK");
-        throw new Error("Failed to fetch settings");
+      // Check if payload is an array and not empty
+      if (!Array.isArray(payload)) {
+        throw new Error("Payload must be an array");
+      }
+      if (payload.length === 0) {
+        throw new Error("Payload should not be empty");
       }
 
-      console.log("ALL SETTINGS FETCHED SUCCESSFULLY");
-
-      const settings = allSettingsRes.data.data;
-      console.log("Fetched settings:", settings);
-
-      const settingExists = settings.some(
-        (setting) => setting.minimumWithdrawal === minimumWithdrawal
-        // setting.value === value
+      // Making API call
+      const response = await apiCall(
+        `${BaseUrl}/settings/multiple`,
+        "PATCH",
+        payload
       );
-      console.log("Does setting exist?", settingExists);
 
-      if (settingExists) {
-        const patchRes = await apiCall(`${BaseUrl}/settings`, "PATCH", {
-          fundRelease,
-          contractPercentage,
-          contractRelease,
-        });
-        console.log("PATCH RESPONSE", patchRes);
-        if (patchRes.status === 200) {
-          toast.success("Settings updated successfully!");
-        } else {
-          console.error("Failed PATCH response:", patchRes);
-          toast.error("Failed to update settings. Please try again.");
-        }
+      console.log("API Response:", response);
+
+      // Check response status
+      if (response.status === 200) {
+        toast.success("Settings updated successfully!");
       } else {
-        const postRes = await apiCall(`${BaseUrl}/settings`, "POST", {
-          minimumWithdrawal,
-          fundRelease,
-          contractPercentage,
-          contractRelease,
-        });
-        console.log("POST RESPONSE", postRes);
-        if (postRes.status === 201) {
-          toast.success("Settings created successfully!");
-        } else {
-          console.error("Failed POST response:", postRes);
-          toast.error("Failed to create settings. Please try again.");
-        }
+        console.error("Failed PATCH response:", response);
+        toast.error("Failed to update settings. Please try again.");
       }
-
-      // resetForm();
     } catch (error) {
+      // Inspect and log the error details
       console.error(
         "Error updating settings:",
         error.response ? error.response.data : error.message
       );
-      toast.error("An unknown error occurred. Please try again.");
+      toast.error(
+        error.response && error.response.data.message
+          ? error.response.data.message
+          : "An unknown error occurred. Please try again."
+      );
     } finally {
       setIsLoading(false);
     }
@@ -83,9 +100,9 @@ function AppSettings() {
   const formik = useFormik({
     initialValues: {
       minimumWithdrawal: "",
-      contractPercentage: "",
       fundRelease: "",
       contractRelease: "",
+      contractPercentage: "",
     },
     validationSchema,
     onSubmit,
@@ -95,7 +112,7 @@ function AppSettings() {
     <div className="containr">
       <div className="settings">
         <div className="tert">
-          <h3 className="tertiary-header ">Settings</h3>
+          <h3 className="tertiary-header">Settings</h3>
         </div>
         <Button />
       </div>
@@ -126,12 +143,19 @@ function AppSettings() {
                     </div>
                   ) : null}
                 </li>
-                <li className="profile-li ">
-                  <label htmlFor="type">Days to release funds to writer</label>
+                <li className="profile-li">
+                  <label htmlFor="fundRelease">
+                    Days to release funds to writer
+                  </label>
                   <input
                     type="number"
-                    placeholder="5"
+                    id="fundRelease"
+                    name="fundRelease"
                     className="input profile-input"
+                    placeholder="e.g. Days to release funds to writer"
+                    onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
+                    value={formik.values.fundRelease}
                   />
                   {formik.touched.fundRelease && formik.errors.fundRelease ? (
                     <div className="input-error">
@@ -139,14 +163,19 @@ function AppSettings() {
                     </div>
                   ) : null}
                 </li>
-                <li className="profile-li ">
-                  <label htmlFor="type">
+                <li className="profile-li">
+                  <label htmlFor="contractRelease">
                     Days to release contract if not accepted
                   </label>
                   <input
                     type="number"
-                    placeholder="5"
+                    id="contractRelease"
+                    name="contractRelease"
                     className="input profile-input"
+                    placeholder="e.g. Days to release contract if not accepted"
+                    onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
+                    value={formik.values.contractRelease}
                   />
                   {formik.touched.contractRelease &&
                   formik.errors.contractRelease ? (
@@ -156,19 +185,24 @@ function AppSettings() {
                   ) : null}
                 </li>
                 <li className="profile-li">
-                  <label htmlFor="value">Contract Service Percentage</label>
+                  <label htmlFor="contractPercentage">
+                    Contract Service Percentage
+                  </label>
                   <input
                     type="number"
-                    id="value"
-                    name="value"
+                    id="contractPercentage"
+                    name="contractPercentage"
                     className="input profile-input"
-                    placeholder=" 10%"
+                    placeholder="e.g. Contract Service Percentage"
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur}
                     value={formik.values.contractPercentage}
                   />
-                  {formik.touched.value && formik.errors.value ? (
-                    <div className="input-error">{formik.errors.value}</div>
+                  {formik.touched.contractPercentage &&
+                  formik.errors.contractPercentage ? (
+                    <div className="input-error">
+                      {formik.errors.contractPercentage}
+                    </div>
                   ) : null}
                 </li>
                 <li className="profile-li">
