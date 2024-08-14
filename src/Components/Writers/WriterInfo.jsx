@@ -19,7 +19,7 @@ function WriterInfo({ writer, index }) {
       <div className="grid-5-cols">
         <nav className="main-nav user-nav ">
           <BackgroundColor index={index}>
-            <ul className="main-ul">
+            <ul className="main-ul main--ul">
               <li className="main-li check">
                 <input type="checkbox" />
                 {firstName} {lastName}
@@ -29,6 +29,7 @@ function WriterInfo({ writer, index }) {
                 <DateFormatter createdAt={createdAt} />
               </li>
               <li className="main-li ">{ratePerPage ? ratePerPage : "N/A"}</li>
+              <li className="main-li ">{accountStatus}</li>
               <li className="main-li check icon ">
                 <div className="stars">
                   <svg
@@ -43,7 +44,7 @@ function WriterInfo({ writer, index }) {
                       fill="#EC9901"
                     />
                   </svg>{" "}
-                  {averageRating}{" "}
+                  {averageRating}
                 </div>
                 <WritersViewBtn
                   writersId={writersId}

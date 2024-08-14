@@ -1,41 +1,26 @@
-import React, { useState } from "react";
-import { useFormik } from "formik";
-import Button from "../../UI/Button";
-import apiCall from "../../hooks/apiCall";
-import { BaseUrl } from "../../Utils/BaseUrl";
 import { toast } from "react-toastify";
 import ClipLoader from "react-spinners/ClipLoader";
-import * as Yup from "yup";
+import { validationSchema } from "../../../Utils/Validator";
+import { useState } from "react";
+import { BaseUrl } from "../../../Utils/BaseUrl";
+import apiCall from "../../../hooks/apiCall";
+import { useFormik } from "formik";
 
-// Validation schema
-const validationSchema = Yup.object({
-  minimumWithdrawal: Yup.number()
-    .required("Minimum Withdrawal Amount is required")
-    .positive("Must be a positive number")
-    .typeError("Must be a number"),
-  fundRelease: Yup.number()
-    .required("Days to release funds is required")
-    .positive("Must be a positive number")
-    .typeError("Must be a number"),
-  contractRelease: Yup.number()
-    .required("Days to release contract is required")
-    .positive("Must be a positive number")
-    .typeError("Must be a number"),
-  contractPercentage: Yup.number()
-    .required("Contract Service Percentage is required")
-    .positive("Must be a positive number")
-    .max(100, "Percentage cannot exceed 100")
-    .typeError("Must be a number"),
-});
+const convertPercentageToDecimal = (percentage) => {
+  return percentage / 100;
+};
 
-function AppSettings() {
+function AppSet({ settingsValue }) {
   const [isLoading, setIsLoading] = useState(false);
 
-  const onSubmit = async (values) => {
+  const onSubmit = async (values, { resetForm }) => {
     setIsLoading(true);
 
-    // Construct payload
-    const payload = [
+    const contractPercentageDecimal = convertPercentageToDecimal(
+      values.contractPercentage
+    );
+
+    const payloadArray = [
       {
         type: "minimumWithdrawalAmount",
         value: String(values.minimumWithdrawal),
@@ -50,43 +35,32 @@ function AppSettings() {
       },
       {
         type: "contractServiceFeePercentage",
-        value: String(values.contractPercentage),
+        value: String(contractPercentageDecimal),
       },
     ];
 
-    console.log("Constructed Payload:", payload); // Debugging
+    const payload = {
+      payload: payloadArray,
+    };
 
     try {
-      // Check if payload is an array and not empty
-      if (!Array.isArray(payload)) {
-        throw new Error("Payload must be an array");
-      }
-      if (payload.length === 0) {
-        throw new Error("Payload should not be empty");
-      }
-
-      // Making API call
       const response = await apiCall(
         `${BaseUrl}/settings/multiple`,
         "PATCH",
         payload
       );
 
-      console.log("API Response:", response);
-
-      // Check response status
       if (response.status === 200) {
         toast.success("Settings updated successfully!");
+
+        resetForm();
       } else {
-        console.error("Failed PATCH response:", response);
-        toast.error("Failed to update settings. Please try again.");
+        toast.error(
+          response.message || "Failed to update settings. Please try again."
+        );
       }
     } catch (error) {
-      // Inspect and log the error details
-      console.error(
-        "Error updating settings:",
-        error.response ? error.response.data : error.message
-      );
+      console.error("Error:", error);
       toast.error(
         error.response && error.response.data.message
           ? error.response.data.message
@@ -109,13 +83,7 @@ function AppSettings() {
   });
 
   return (
-    <div className="containr">
-      <div className="settings">
-        <div className="tert">
-          <h3 className="tertiary-header">Settings</h3>
-        </div>
-        <Button />
-      </div>
+    <>
       <div className="profile-studio">
         <h3 className="tertiary-header app-header">Application Settings</h3>
         <div className="profile-form">
@@ -130,19 +98,20 @@ function AppSettings() {
                     type="number"
                     id="minimumWithdrawal"
                     name="minimumWithdrawal"
-                    className="input profile-input"
-                    placeholder="e.g. Minimum Withdrawal Amount"
+                    className="input profile-input app-profile"
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur}
                     value={formik.values.minimumWithdrawal}
+                    placeholder={settingsValue.title}
                   />
                   {formik.touched.minimumWithdrawal &&
                   formik.errors.minimumWithdrawal ? (
-                    <div className="input-error">
+                    <div className="input-error app-error">
                       {formik.errors.minimumWithdrawal}
                     </div>
                   ) : null}
                 </li>
+
                 <li className="profile-li">
                   <label htmlFor="fundRelease">
                     Days to release funds to writer
@@ -151,14 +120,14 @@ function AppSettings() {
                     type="number"
                     id="fundRelease"
                     name="fundRelease"
-                    className="input profile-input"
-                    placeholder="e.g. Days to release funds to writer"
+                    className="input profile-input app-profile"
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur}
                     value={formik.values.fundRelease}
+                    placeholder={settingsValue.value}
                   />
                   {formik.touched.fundRelease && formik.errors.fundRelease ? (
-                    <div className="input-error">
+                    <div className="input-error app-error">
                       {formik.errors.fundRelease}
                     </div>
                   ) : null}
@@ -171,15 +140,15 @@ function AppSettings() {
                     type="number"
                     id="contractRelease"
                     name="contractRelease"
-                    className="input profile-input"
-                    placeholder="e.g. Days to release contract if not accepted"
+                    className="input profile-input app-profile"
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur}
                     value={formik.values.contractRelease}
+                    placeholder={settingsValue.value}
                   />
                   {formik.touched.contractRelease &&
                   formik.errors.contractRelease ? (
-                    <div className="input-error">
+                    <div className="input-error app-error">
                       {formik.errors.contractRelease}
                     </div>
                   ) : null}
@@ -192,15 +161,16 @@ function AppSettings() {
                     type="number"
                     id="contractPercentage"
                     name="contractPercentage"
-                    className="input profile-input"
-                    placeholder="e.g. Contract Service Percentage"
+                    className="input profile-input app-profile"
+                    // placeholder="e.g. Contract Service Percentage"
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur}
                     value={formik.values.contractPercentage}
+                    placeholder={settingsValue.value}
                   />
                   {formik.touched.contractPercentage &&
                   formik.errors.contractPercentage ? (
-                    <div className="input-error">
+                    <div className="input-error app-error">
                       {formik.errors.contractPercentage}
                     </div>
                   ) : null}
@@ -221,7 +191,7 @@ function AppSettings() {
                     <input
                       type="submit"
                       value="Update Changes"
-                      className="input button profile-input"
+                      className="input button profile-input app-profile"
                       disabled={formik.isSubmitting}
                     />
                   )}
@@ -231,8 +201,8 @@ function AppSettings() {
           </form>
         </div>
       </div>
-    </div>
+    </>
   );
 }
 
-export default AppSettings;
+export default AppSet;

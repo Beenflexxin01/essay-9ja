@@ -60,11 +60,12 @@ function Writers() {
       </div>
       <div>
         <nav className="main-nav user-nav activities">
-          <ul className="main-ul">
+          <ul className="main-ul main--ul">
             <li className="main-li name">Name</li>
             <li className="main-li">Completed Tasks</li>
             <li className="main-li">Date Joined</li>
             <li className="main-li">Rate</li>
+            <li className="main-li">Account Status</li>
             <li className="main-li">Rating</li>
           </ul>
         </nav>

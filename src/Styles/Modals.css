@@ -41,7 +41,7 @@
 }
 
 .modal-content {
-  width: 26.2rem;
+  /* width: 26.2rem; */
   /* width: 100%; */
   border-radius: 1.6rem;
 }
@@ -138,7 +138,7 @@
 }
 
 .m-btn {
-  margin: 3rem 0.5rem;
+  margin: 3rem 4rem;
 }
 
 .modal--btn {

@@ -7,7 +7,7 @@ import useSignIn from "react-auth-kit/hooks/useSignIn";
 import useIsAuthenticated from "react-auth-kit/hooks/useIsAuthenticated";
 import useAxiosWithAuth from "../../hooks/useAxiosWithAuth"; //
 import logo from "/images/logo.png";
-import {BaseUrl} from "../../Utils/BaseUrl";
+import { BaseUrl } from "../../Utils/BaseUrl";
 import { AxiosError } from "axios";
 import { loginValidatorSchema } from "../../Utils/Validator";
 
@@ -56,7 +56,6 @@ function Login() {
         });
 
         resetForm();
-        // resetForm({ email: "", password: "" });
 
         toast.success("Login Successful. Redriecting to dashboard page!");
 
@@ -82,7 +81,7 @@ function Login() {
       email: "",
       password: "",
     },
-    loginValidatorSchema,
+    validationSchema: loginValidatorSchema,
     onSubmit,
   });
 

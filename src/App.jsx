@@ -23,7 +23,8 @@ import RequireAuth from "@auth-kit/react-router/RequireAuth";
 
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import AppSettings from "./Components/Settings/AppSettings";
+import AppSettings from "./Components/Settings/AppSettings/AppSettings";
+import ContractPage from "./Pages/ContractPage";
 
 function App() {
   const store = createStore({
@@ -50,6 +51,7 @@ function App() {
               <Route path="home" element={<Dashboard />} />
               <Route path="users" element={<Users />} />
               <Route path="writers" element={<Writers />} />
+              <Route path="contracts" element={<ContractPage />} />
               <Route
                 path="wallets/transactions/all"
                 element={<TransactionHistory />}

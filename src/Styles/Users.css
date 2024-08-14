@@ -197,3 +197,9 @@ p {
 .task-width {
   padding: 0 1.6rem;
 }
+
+.app-profile::placeholder {
+  opacity: 100%;
+  color: #000;
+  font-weight: 500;
+}

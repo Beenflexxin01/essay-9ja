@@ -69,7 +69,10 @@ function WritersModal({ writersId, accountStatus, ...props }) {
                     fill="#505050"
                   />
                 </svg>
-                <DeactivateWriterModalBtn accountStatus={accountStatus} />
+                <DeactivateWriterModalBtn
+                  writersId={writersId}
+                  accountStatus={accountStatus}
+                />
               </li>
               <li className="modal-li" onClick={() => setIsOpen(!isOpen)}>
                 <svg

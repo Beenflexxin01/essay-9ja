@@ -31,10 +31,9 @@ function DeactivateAccountModal({
 
       const data = await response.data;
 
-      // Update parent component with new status
       onStatusChange(data.status);
 
-      onHide(); // Optionally close the modal
+      onHide();
     } catch (error) {
       console.error("Error updating account status:", error);
     } finally {

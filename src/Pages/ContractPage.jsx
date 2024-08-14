@@ -1,39 +1,42 @@
 import { useEffect, useState } from "react";
-import UserReg from "../Components/Users/UserReg";
+import Contracts from "../Components/Contracts/Contracts";
 import { Loader } from "../UI/Loader";
 import apiCall from "../hooks/apiCall";
 import { BaseUrl } from "../Utils/BaseUrl";
 import Pagination from "../Utils/Pagination";
 
-function Users() {
-  const [users, setUsers] = useState([]);
+function ContractPage() {
+  const [contracts, setContracts] = useState([]);
 
   const [currentPage, setCurrentPage] = useState(1);
-  const usersPerPage = 10;
+  const contractsPerPage = 10;
 
-  const lastIndex = currentPage * usersPerPage;
-  const firstIndex = lastIndex - usersPerPage;
-  const usersPage = users.slice(firstIndex, lastIndex);
-  const npages = Math.ceil(users.length / usersPerPage);
+  const lastIndex = currentPage * contractsPerPage;
+  const firstIndex = lastIndex - contractsPerPage;
+  const contractPages = contracts.slice(firstIndex, lastIndex);
+  const npages = Math.ceil(contracts.length / contractsPerPage);
   const numbers = [...Array(npages + 1).keys()].slice(1);
+
   useEffect(() => {
-    async function getUserInfo() {
+    async function getContractInfo() {
       try {
-        const response = await apiCall(`${BaseUrl}/users`);
+        const response = await apiCall(`${BaseUrl}/contracts/all`);
+        // const response = await apiCall(`${BaseUrl}/contracts`);
+
         if (
           response &&
           response.data &&
           Array.isArray(response.data.data.data)
         ) {
-          setUsers(response.data.data.data);
+          setContracts(response.data.data.data);
         } else {
           console.error("Unexpected response structure:", response);
         }
       } catch (err) {
-        console.error("Error fetching user data:", err);
+        console.log(err);
       }
     }
-    getUserInfo();
+    getContractInfo();
   }, []);
 
   function nextPage() {
@@ -51,30 +54,34 @@ function Users() {
   function currentPageNumber(id) {
     setCurrentPage(id);
   }
-
   return (
     <>
       <div className="containr act">
         <div className="flex task">
-          <h3 className="tertiary-header">Clients</h3>
+          <h3 className="tertiary-header">Contracts</h3>
         </div>
         <div className="">
           <nav className="main-nav user-nav activities">
             <ul className="main-ul main--ul">
-              <li className="main-li name">User name</li>
-              <li className="main-li">Email Address</li>
-              <li className="main-li">Date Joined</li>
-              <li className="main-li">Last Active</li>
-              <li className="main-li">Active Status</li>
-              <li className="main-li">Phone Number</li>
+              <li className="main-li name">Contract</li>
+              <li className="main-li">Description</li>
+              <li className="main-li"> Clients</li>
+              <li className="main-li">Writer</li>
+              <li className="main-li">Date Created</li>
+              <li className="main-li">Status</li>
             </ul>
           </nav>
         </div>
-        {users.length > 0 ? (
+        {contracts.length > 0 ? (
           <div>
-            {usersPage.map((user, index) => (
-              <UserReg user={user} key={user._id} index={index} />
+            {contractPages.map((npm , index) => (
+              <Contracts
+                contracts={contracts}
+                key={contracts._id}
+                index={index}
+              />
             ))}
+
             <Pagination
               numbers={numbers}
               currentPage={currentPage}
@@ -93,4 +100,4 @@ function Users() {
   );
 }
 
-export default Users;
+export default ContractPage;

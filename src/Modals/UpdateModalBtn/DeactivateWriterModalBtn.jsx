@@ -3,8 +3,14 @@ import Button from "react-bootstrap/Button";
 
 import DeactivateAccountModal from "../UpdateModal/DeactivateAccountModal";
 
-function DeactivateWriterModalBtn() {
+function DeactivateWriterModalBtn({ writersId, accountStatus = "active" }) {
   const [modalShow, setModalShow] = useState(false);
+  const [currentStatus, setCurrentStatus] = useState(accountStatus);
+
+  const handleStatusChange = (newStatus) => {
+    setCurrentStatus(newStatus);
+  };
+
   return (
     <>
       <Button variant="" onClick={() => setModalShow(true)}>
@@ -12,7 +18,10 @@ function DeactivateWriterModalBtn() {
       </Button>
       <DeactivateAccountModal
         show={modalShow}
+        onStatusChange={handleStatusChange}
         onHide={() => setModalShow(false)}
+        isActive={currentStatus === "active"}
+        userId={writersId}
       />
     </>
   );

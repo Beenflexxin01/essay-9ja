@@ -20,7 +20,7 @@ function UserReg({ user, index }) {
       <div className="grid-5-cols">
         <nav className="main-nav user-nav">
           <BackgroundColor index={index}>
-            <ul className="main-ul">
+            <ul className="main-ul main--ul">
               <li className="main-li check cap">
                 <input type="checkbox" />
                 {firstName} {lastName}
@@ -34,8 +34,8 @@ function UserReg({ user, index }) {
                 <span className="span">
                   <TimeFormatter updatedAt={updatedAt} />
                 </span>
-                {accountStatus}
               </li>
+              <li className="main-li format">{accountStatus}</li>
               <li className="main-li check icon">
                 {phoneNumber ? `${phoneNumber}` : "N/A"}
                 <UsersViewBtn userId={userId} accountStatus={accountStatus} />
