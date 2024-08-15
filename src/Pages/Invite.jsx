@@ -1,4 +1,4 @@
-import InviteModal from "../Modals/InviteModal";
+import InviteModal from "../Modals/Neutral/InviteModal";
 
 function Invite() {
   return (

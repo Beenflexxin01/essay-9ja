@@ -1,10 +1,12 @@
 import { useState } from "react";
+import UserModal from "./UserModal";
+// import InviteModal from "../Modals/InviteModal";
 import Button from "react-bootstrap/Button";
 import { PiDotsThreeVertical } from "react-icons/pi";
 
-import TaskModal from "../TaskModal";
-function TasksViewBtn({ taskId }) {
+function UsersViewBtn({ userId, accountStatus }) {
   const [modalShow, setModalShow] = useState(false);
+  // const [modalShow, setModalShow] = React.useState(false);
   return (
     <>
       <Button
@@ -14,13 +16,14 @@ function TasksViewBtn({ taskId }) {
       >
         <PiDotsThreeVertical size={"24px"} className="dots" />
       </Button>
-      <TaskModal
+      <UserModal
         show={modalShow}
         onHide={() => setModalShow(false)}
-        taskId={taskId}
+        userId={userId}
+        accountStatus={accountStatus}
       />
     </>
   );
 }
 
-export default TasksViewBtn;
+export default UsersViewBtn;

@@ -1,5 +1,5 @@
 import React from "react";
-import TasksViewBtn from "../../Modals/ModalBtn/TasksViewBtn";
+import TasksViewBtn from "../../Modals/TaskModal/TasksViewBtn";
 import { convertKoboToNaira } from "../../Utils/NairaConverter";
 import { DateFormatter } from "../../Utils/DateFormatter";
 import { BackgroundColor, GetTaskStatus } from "../../Utils/BaseUrl";

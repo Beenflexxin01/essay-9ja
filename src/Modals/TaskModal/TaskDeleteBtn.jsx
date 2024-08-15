@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Button from "react-bootstrap/Button";
 
-import TaskDeleteModal from "../DeleteModal/TaskDeleteModal";
+import TaskDeleteModal from "../TaskModal/TaskDeleteModal";
 function TaskDeleteBtn() {
   const [modalShow, setModalShow] = useState(false);
   return (

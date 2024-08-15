@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import TasksViewBtn from "../../Modals/ModalBtn/TasksViewBtn";
+import TasksViewBtn from "../../Modals/TaskModal/TasksViewBtn";
 import { convertKoboToNaira } from "../../Utils/NairaConverter";
 import { DateFormatter } from "../../Utils/DateFormatter";
 import { Loader } from "../../UI/Loader";

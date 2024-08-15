@@ -1,10 +1,15 @@
 import Modal from "react-bootstrap/Modal";
 import { useNavigate } from "react-router-dom";
-import WritersDeleteBtn from "./DeleteModalBtn/WritersDeleteBtn";
-import DeactivateUserModalBtn from "./UpdateModalBtn/DeactivateUserModalBtn";
+import WritersDeleteBtn from "../Neutral/WritersDeleteBtn";
+import { useState } from "react";
+import DeactivateWriterModalBtn from "./DeactivateWriterModalBtn";
 
-function UserModal({ userId, accountStatus, ...props }) {
+function WritersModal({ writersId, accountStatus, ...props }) {
   const navigate = useNavigate();
+
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleOffMenuBar = () => setIsOpen(!isOpen);
   return (
     <>
       <Modal
@@ -19,7 +24,7 @@ function UserModal({ userId, accountStatus, ...props }) {
             <ul className="modal-ul">
               <li
                 className="modal-li"
-                onClick={() => navigate(`/user-details/${userId}`)}
+                onClick={() => navigate(`/writer-details/${writersId}`)}
               >
                 <svg
                   width="18"
@@ -39,9 +44,9 @@ function UserModal({ userId, accountStatus, ...props }) {
                     fill="#505050"
                   />
                 </svg>
-                View user detail
+                View detail
               </li>
-              <li className="modal-li">
+              <li className="modal-li" onClick={toggleOffMenuBar}>
                 <svg
                   width="16"
                   height="19"
@@ -63,13 +68,13 @@ function UserModal({ userId, accountStatus, ...props }) {
                     d="M3.83333 0.333008C1.99238 0.333008 0.5 1.82539 0.5 3.66634V15.333C0.5 17.174 1.99238 18.6663 3.83333 18.6663H12.1667C14.0076 18.6663 15.5 17.174 15.5 15.333V7.07147C15.5 6.29168 15.2266 5.53657 14.7274 4.93752L11.8898 1.53239C11.2565 0.772418 10.3183 0.333008 9.32906 0.333008H3.83333ZM2.16667 3.66634C2.16667 2.74587 2.91286 1.99967 3.83333 1.99967H8.83333V4.49967C8.83333 6.34062 10.3257 7.83301 12.1667 7.83301H13.8333V15.333C13.8333 16.2535 13.0871 16.9997 12.1667 16.9997H3.83333C2.91286 16.9997 2.16667 16.2535 2.16667 15.333V3.66634ZM13.5661 6.16634C13.5299 6.11029 13.4901 6.05623 13.447 6.00449L10.6094 2.59937C10.5747 2.55772 10.5382 2.51801 10.5 2.48029V4.49967C10.5 5.42015 11.2462 6.16634 12.1667 6.16634H13.5661Z"
                     fill="#505050"
                   />
-                </svg>{" "}
-                <DeactivateUserModalBtn
-                  userId={userId}
+                </svg>
+                <DeactivateWriterModalBtn
+                  writersId={writersId}
                   accountStatus={accountStatus}
                 />
               </li>
-              <li className="modal-li">
+              <li className="modal-li" onClick={() => setIsOpen(!isOpen)}>
                 <svg
                   width="12"
                   height="19"
@@ -95,7 +100,7 @@ function UserModal({ userId, accountStatus, ...props }) {
                     d="M11.758 6.20847C11.8335 5.15117 10.9219 4.30354 9.886 4.42326C8.82598 4.54576 7.19021 4.70801 5.99992 4.70801C4.80964 4.70801 3.17387 4.54576 2.11385 4.42326C1.07791 4.30354 0.166359 5.15117 0.241881 6.20847L0.955826 16.2037C1.00995 16.9614 1.57431 17.602 2.34879 17.7185C3.1793 17.8434 4.70321 18.0428 6.00089 18.0413C7.28262 18.0399 8.81273 17.8412 9.64689 17.7175C10.4227 17.6024 10.9899 16.9613 11.0442 16.2014L11.758 6.20847ZM10.0773 6.0789C10.0802 6.07857 10.0824 6.07877 10.0824 6.07877L10.0846 6.07927C10.0865 6.07991 10.0894 6.08143 10.0923 6.08415C10.0942 6.08595 10.0956 6.08815 10.0956 6.08815L10.0955 6.08973L9.38253 16.0718C8.55696 16.1938 7.14203 16.3734 5.99896 16.3747C4.8435 16.376 3.43732 16.1962 2.61744 16.0735L1.90431 6.08973L1.90425 6.08815C1.90425 6.08815 1.90567 6.08595 1.90757 6.08415C1.91044 6.08143 1.91335 6.07991 1.9152 6.07927L1.9174 6.07877C1.9174 6.07877 1.91962 6.07857 1.92251 6.0789C2.98441 6.20162 4.70446 6.37467 5.99992 6.37467C7.29539 6.37467 9.01544 6.20162 10.0773 6.0789Z"
                     fill="#505050"
                   />
-                </svg>{" "}
+                </svg>
                 <WritersDeleteBtn />
               </li>
             </ul>
@@ -106,4 +111,4 @@ function UserModal({ userId, accountStatus, ...props }) {
   );
 }
 
-export default UserModal;
+export default WritersModal;

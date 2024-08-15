@@ -25,6 +25,8 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import AppSettings from "./Components/Settings/AppSettings/AppSettings";
 import ContractPage from "./Pages/ContractPage";
+import DisputePage from "./Pages/DisputePage";
+import WritersApprovalPage from "./Pages/WritersApprovalPage";
 
 function App() {
   const store = createStore({
@@ -52,6 +54,11 @@ function App() {
               <Route path="users" element={<Users />} />
               <Route path="writers" element={<Writers />} />
               <Route path="contracts" element={<ContractPage />} />
+              <Route path="disputes" element={<DisputePage />} />
+              <Route
+                path="writer-approvals"
+                element={<WritersApprovalPage />}
+              />
               <Route
                 path="wallets/transactions/all"
                 element={<TransactionHistory />}

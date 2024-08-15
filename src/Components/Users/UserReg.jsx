@@ -1,4 +1,4 @@
-import UsersViewBtn from "../../Modals/ModalBtn/UsersViewBtn";
+import UsersViewBtn from "../../Modals/UserModal/UsersViewBtn";
 import { BackgroundColor } from "../../Utils/BaseUrl";
 import { DateFormatter, TimeFormatter } from "../../Utils/DateFormatter";
 import { DateUpdateFormatter } from "../../Utils/DateFormatter";

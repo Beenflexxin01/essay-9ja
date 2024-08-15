@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Button from "react-bootstrap/Button";
-import InviteModal from "../Modals/InviteModal";
+import InviteModal from "../Modals/Neutral/InviteModal";
 
 function AddBtn() {
   const [show, setShow] = useState(false);
@@ -9,7 +9,11 @@ function AddBtn() {
   const handleShow = () => setShow(true);
   return (
     <>
-      <Button variant="" onClick={handleShow} className="modal-btn side-bar-link">
+      <Button
+        variant=""
+        onClick={handleShow}
+        className="modal-btn side-bar-link"
+      >
         <svg
           width="18"
           height="18"

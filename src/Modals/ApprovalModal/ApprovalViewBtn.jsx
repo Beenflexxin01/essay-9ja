@@ -1,11 +1,10 @@
 import { useState } from "react";
 import Button from "react-bootstrap/Button";
 import { PiDotsThreeVertical } from "react-icons/pi";
-import WritersModal from "../WritersModal";
 
-function WritersViewBtn({ writersId, accountStatus }) {
+import ApprovalModal from "./ApprovalModal";
+function ApprovalViewBtn({ disputeId }) {
   const [modalShow, setModalShow] = useState(false);
-
   return (
     <>
       <Button
@@ -15,14 +14,13 @@ function WritersViewBtn({ writersId, accountStatus }) {
       >
         <PiDotsThreeVertical size={"24px"} className="dots" />
       </Button>
-      <WritersModal
+      <ApprovalModal
         show={modalShow}
         onHide={() => setModalShow(false)}
-        writersId={writersId}
-        accountStatus={accountStatus}
+        disputeId={disputeId}
       />
     </>
   );
 }
 
-export default WritersViewBtn;
+export default ApprovalViewBtn;

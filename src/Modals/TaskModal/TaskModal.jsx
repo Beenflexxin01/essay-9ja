@@ -1,15 +1,11 @@
 import Modal from "react-bootstrap/Modal";
 import { useNavigate } from "react-router-dom";
-import WritersDeleteBtn from "./DeleteModalBtn/WritersDeleteBtn";
-import { useState } from "react";
-import DeactivateWriterModalBtn from "./UpdateModalBtn/DeactivateWriterModalBtn";
+import TaskDeleteBtn from "./TaskDeleteBtn";
+import UpdateTaskModalBtn from "./UpdateTaskModalBtn";
 
-function WritersModal({ writersId, accountStatus, ...props }) {
+function TaskModal({ taskId, ...props }) {
   const navigate = useNavigate();
 
-  const [isOpen, setIsOpen] = useState(false);
-
-  const toggleOffMenuBar = () => setIsOpen(!isOpen);
   return (
     <>
       <Modal
@@ -24,7 +20,7 @@ function WritersModal({ writersId, accountStatus, ...props }) {
             <ul className="modal-ul">
               <li
                 className="modal-li"
-                onClick={() => navigate(`/writer-details/${writersId}`)}
+                onClick={() => navigate(`/task-details/${taskId}`)}
               >
                 <svg
                   width="18"
@@ -44,9 +40,9 @@ function WritersModal({ writersId, accountStatus, ...props }) {
                     fill="#505050"
                   />
                 </svg>
-                View detail
+                View task detail
               </li>
-              <li className="modal-li" onClick={toggleOffMenuBar}>
+              <li className="modal-li">
                 <svg
                   width="16"
                   height="19"
@@ -69,12 +65,9 @@ function WritersModal({ writersId, accountStatus, ...props }) {
                     fill="#505050"
                   />
                 </svg>
-                <DeactivateWriterModalBtn
-                  writersId={writersId}
-                  accountStatus={accountStatus}
-                />
+                <UpdateTaskModalBtn />
               </li>
-              <li className="modal-li" onClick={() => setIsOpen(!isOpen)}>
+              <li className="modal-li">
                 <svg
                   width="12"
                   height="19"
@@ -101,7 +94,7 @@ function WritersModal({ writersId, accountStatus, ...props }) {
                     fill="#505050"
                   />
                 </svg>
-                <WritersDeleteBtn />
+                <TaskDeleteBtn />
               </li>
             </ul>
           </nav>
@@ -111,4 +104,4 @@ function WritersModal({ writersId, accountStatus, ...props }) {
   );
 }
 
-export default WritersModal;
+export default TaskModal;

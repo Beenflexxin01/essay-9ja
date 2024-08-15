@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Button from "react-bootstrap/Button";
 
-import UpdateTaskModal from "../UpdateModal/UpdateTaskModal";
+import UpdateTaskModal from "./UpdateTaskModal";
 
 function UpdateTaskModalBtn() {
   const [modalShow, setModalShow] = useState(false);

@@ -2,7 +2,7 @@ import { useState } from "react";
 import Button from "react-bootstrap/Button";
 import { PiDotsThreeVertical } from "react-icons/pi";
 
-import TransactionModal from "../TransactionModal";
+import TransactionModal from "./TransactionModal";
 function TransactionsViewBtn({ transactionId }) {
   const [modalShow, setModalShow] = useState(false);
   return (

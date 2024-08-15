@@ -1,8 +1,8 @@
-import WritersViewBtn from "../../Modals/WriterModal/WritersViewBtn";
+import ApprovalViewBtn from "../../Modals/ApprovalModal/ApprovalViewBtn";
 import { BackgroundColor } from "../../Utils/BaseUrl";
 import { DateFormatter } from "../../Utils/DateFormatter";
 
-function WriterInfo({ writer, index }) {
+function WriterAoprovals({ writer, index }) {
   const {
     firstName,
     lastName,
@@ -19,7 +19,7 @@ function WriterInfo({ writer, index }) {
       <div className="grid-5-cols">
         <nav className="main-nav user-nav ">
           <BackgroundColor index={index}>
-            <ul className="main-ul main--ul">
+            <ul className="main-ul ">
               <li className="main-li check">
                 <input type="checkbox" />
                 {firstName} {lastName}
@@ -29,7 +29,6 @@ function WriterInfo({ writer, index }) {
                 <DateFormatter createdAt={createdAt} />
               </li>
               <li className="main-li ">{ratePerPage ? ratePerPage : "N/A"}</li>
-              <li className="main-li ">{accountStatus}</li>
               <li className="main-li check icon ">
                 <div className="stars">
                   <svg
@@ -46,7 +45,7 @@ function WriterInfo({ writer, index }) {
                   </svg>{" "}
                   {averageRating}
                 </div>
-                <WritersViewBtn
+                <ApprovalViewBtn
                   writersId={writersId}
                   accountStatus={accountStatus}
                 />
@@ -59,4 +58,4 @@ function WriterInfo({ writer, index }) {
   );
 }
 
-export default WriterInfo;
+export default WriterAoprovals;

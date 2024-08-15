@@ -1,4 +1,4 @@
-import TransactionsViewBtn from "../../Modals/ModalBtn/TransactionsViewBtn";
+import TransactionsViewBtn from "../../Modals/TransactionModal/TransactionsViewBtn";
 import { BackgroundColor, GetTransactionStatus } from "../../Utils/BaseUrl";
 import { convertKoboToNaira } from "../../Utils/NairaConverter";
 

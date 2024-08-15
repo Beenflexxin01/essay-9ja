@@ -20,7 +20,7 @@ function ContractPage() {
   useEffect(() => {
     async function getContractInfo() {
       try {
-        const response = await apiCall(`${BaseUrl}/contracts/all`);
+        const response = await apiCall(`${BaseUrl}/users/writers`);
         // const response = await apiCall(`${BaseUrl}/contracts`);
 
         if (

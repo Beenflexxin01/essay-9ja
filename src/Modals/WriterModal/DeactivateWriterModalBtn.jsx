@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Button from "react-bootstrap/Button";
 
-import DeactivateAccountModal from "../UpdateModal/DeactivateAccountModal";
+import DeactivateAccountModal from "../Neutral/DeactivateAccountModal";
 
 function DeactivateWriterModalBtn({ writersId, accountStatus = "active" }) {
   const [modalShow, setModalShow] = useState(false);

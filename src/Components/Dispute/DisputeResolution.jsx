@@ -1,8 +1,8 @@
-import WritersViewBtn from "../../Modals/WriterModal/WritersViewBtn";
+import DisputeViewBtn from "../../Modals/DisputeModal/DisputeViewBtn";
 import { BackgroundColor } from "../../Utils/BaseUrl";
 import { DateFormatter } from "../../Utils/DateFormatter";
 
-function WriterInfo({ writer, index }) {
+function DisputeResolution({ disputes, index }) {
   const {
     firstName,
     lastName,
@@ -12,7 +12,7 @@ function WriterInfo({ writer, index }) {
     createdAt,
     accountStatus,
     _id: writersId,
-  } = writer;
+  } = disputes;
 
   return (
     <>
@@ -46,7 +46,7 @@ function WriterInfo({ writer, index }) {
                   </svg>{" "}
                   {averageRating}
                 </div>
-                <WritersViewBtn
+                <DisputeViewBtn
                   writersId={writersId}
                   accountStatus={accountStatus}
                 />
@@ -59,4 +59,4 @@ function WriterInfo({ writer, index }) {
   );
 }
 
-export default WriterInfo;
+export default DisputeResolution;

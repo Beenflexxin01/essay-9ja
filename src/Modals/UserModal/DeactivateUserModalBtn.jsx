@@ -1,12 +1,10 @@
 import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
-import DeactivateAccountModal from "../UpdateModal/DeactivateAccountModal";
+import DeactivateAccountModal from "../Neutral/DeactivateAccountModal";
 
 function DeactivateUserModalBtn({ userId, accountStatus = "active" }) {
   const [modalShow, setModalShow] = useState(false);
   const [currentStatus, setCurrentStatus] = useState(accountStatus);
-
-  console.log("isActive:", currentStatus);
 
   const handleStatusChange = (newStatus) => {
     setCurrentStatus(newStatus);
@@ -15,6 +13,7 @@ function DeactivateUserModalBtn({ userId, accountStatus = "active" }) {
   return (
     <>
       <Button variant="" onClick={() => setModalShow(true)}>
+        
         {currentStatus === "active" ? "Deactivate" : "Activate"} User
       </Button>
       <DeactivateAccountModal
