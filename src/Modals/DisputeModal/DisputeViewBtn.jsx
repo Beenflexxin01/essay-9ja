@@ -14,6 +14,7 @@ function DisputeViewBtn({ disputeId }) {
       >
         <PiDotsThreeVertical size={"24px"} className="dots" />
       </Button>
+
       <DisputeModal
         show={modalShow}
         onHide={() => setModalShow(false)}

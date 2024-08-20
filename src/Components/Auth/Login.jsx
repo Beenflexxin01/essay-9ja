@@ -17,7 +17,6 @@ import { toast } from "react-toastify";
 function Login() {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
-
   const isAuthenticated = useIsAuthenticated();
   const signIn = useSignIn();
   const [showPassword, setShowPassword] = useState(false);
@@ -31,7 +30,6 @@ function Login() {
 
   const onSubmit = async (values, { resetForm }) => {
     setIsLoading(true);
-
     try {
       const response = await axios.post(`${BaseUrl}/auth/login`, values);
       if (response.status === 200) {
@@ -177,7 +175,7 @@ function Login() {
                     aria-label="Loading Spinner"
                     data-testid="loader"
                   /> */}
-                  <p className="capitalize">Log In</p>
+                  <p className="capitalize">Log In {error}</p>
                 </div>
               ) : (
                 "Log In"

@@ -2,7 +2,8 @@ import Modal from "react-bootstrap/Modal";
 import { Button } from "react-bootstrap";
 import pic from "../../../public/images/pic.png";
 import RejectWriterBtn from "./RejectWriterBtn";
-function ApprovalModal({ taskId, ...props }) {
+import { Link } from "react-router-dom";
+function ApprovalModal({ approvalId, ...props }) {
   return (
     <>
       <Modal
@@ -12,7 +13,7 @@ function ApprovalModal({ taskId, ...props }) {
         centered
         className="modal-c dispute-modal approval-modal"
       >
-        <div className="dispute-modal-content">
+        <div className="">
           <Modal.Body className="dispute">
             <div className="claim approval">
               <h3 className="tertiary-header tert-head">
@@ -23,7 +24,7 @@ function ApprovalModal({ taskId, ...props }) {
             <div className="flex claim-tab">
               <img src={pic} alt="Writer's Pic" className="approval-img" />
             </div>
-            <nav className="claim-nav approval-nav">
+            <nav className="approval-nav">
               <ul className="claim-ul">
                 <div className="approval-spacing">
                   <li className=" approval-title">Name</li>
@@ -56,10 +57,17 @@ function ApprovalModal({ taskId, ...props }) {
                 <div className="approval-spacing approval--spacing">
                   <li className=" approval-title approval-heading">PORFOLIO</li>
                   <li className="claim-li approval-li">
-                    1. Lecture ll - Lagos State University 2020 (Nigeria)
+                    1. {""}
+                    <Link to="" className="claim-link">
+                      Lecture ll - Lagos State University 2020 (Nigeria)
+                    </Link>
                   </li>
+
                   <li className="claim-li approval-li">
-                    2. Lecture ll - Lagos State University 2020 (Nigeria)
+                    2. {""}
+                    <Link to="" className="claim-link">
+                      Lecture ll - Lagos State University 2020 (Nigeria)
+                    </Link>
                   </li>
                 </div>
 
@@ -85,7 +93,7 @@ function ApprovalModal({ taskId, ...props }) {
                   <li className="claim-li review"></li>
                 </div>
               </ul>
-              <div className="flex claim-butto">
+              <div className="flex approval-btn">
                 <Button className="modal--btn claim-btn">Approve Writer</Button>
                 <RejectWriterBtn />
               </div>

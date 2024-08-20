@@ -29,6 +29,26 @@
 
 .claim-tab {
   margin: 1.5rem 2.4rem;
+  cursor: pointer;
+}
+
+.refund-btn {
+  background: #023474;
+  color: #ffffff;
+}
+
+.refund-btn:hover {
+  background-color: #023474;
+  color: #fff;
+}
+
+.refund-btn:checked + .btn,
+.refund-btn.active,
+.refund-btn.show,
+.refund-btn:first-child:active,
+:not(.refund-btn) + .refund-btn:active {
+  background-color: #023474;
+  color: #fff;
 }
 
 .claim-nav {
@@ -48,25 +68,31 @@
 }
 
 .close-claim {
-  background-color: #e0e0e0;
-  border: #e0e0e0;
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
   color: #ee0006;
+  width: 30.5rem;
+  transition: all 0.3s linear;
 }
 
 .close-claim:hover,
 .close-claim:active {
-  background-color: #e0e0e0;
+  background-color: #e0e0e01e;
+  border: 1px solid #e0e0e0;
+
   color: #ee0006;
 }
 
 :not(.btn-check) + .btn:active {
-  background-color: #e0e0e0;
+  background-color: #e0e0e01e;
   color: #ee0006;
+  border: 1px solid #e0e0e0;
 }
 
 .claim-btn {
   height: 4.8rem;
   font-weight: 400;
+  width: 33.3rem;
 }
 
 .claim-button {
@@ -78,6 +104,10 @@
 
 .claim-material {
   color: #4f4f4f;
+}
+
+.claim-link {
+  color: #000000;
 }
 
 .review {
@@ -101,6 +131,10 @@
   height: 100vh;
 }
 
+.approval-modal::-webkit-scrollbar {
+  width: 0;
+}
+
 .approval {
   width: 71.7rem;
 }
@@ -111,8 +145,7 @@
 }
 
 .approval-nav {
-  height: 86.7rem;
-  width: 65.3rem;
+  margin: 0 3.2rem;
 }
 
 .approval-img {
@@ -138,3 +171,154 @@
 .approval-li {
   font-size: 1.4rem;
 }
+
+.reject-modal-content {
+  width: 64.1rem;
+  height: 44rem;
+  border-radius: 1.6rem;
+  margin: 25rem 40rem;
+  overflow: hidden;
+}
+
+.reject-li {
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin: 1.6rem 0;
+}
+
+.reason-text {
+  font-size: 1.4rem;
+  line-height: 18.9px;
+  margin-bottom: 1.6rem;
+}
+
+.reject-body {
+  margin: 1.6rem 3.2rem;
+}
+
+.reject-header {
+  width: 64.1rem;
+  height: 6.7rem;
+  border-bottom: 1px solid #f2f2f2;
+  margin: 2.3rem 0;
+  padding: 0;
+}
+
+.reject-title {
+  color: #4f4f4f;
+  font-size: 2rem;
+  line-height: 27px;
+  margin: 2.05rem 45.2rem 1.92rem 3.2rem;
+}
+
+.svg-x {
+  cursor: pointer;
+}
+
+.reject-ul {
+  padding: 0;
+}
+
+.reject-button {
+  margin: 2rem 4.3rem 3.2rem 18.2rem;
+  width: 37.6rem;
+}
+
+.reject-btn {
+  height: 4rem;
+  border-radius: 0.6rem;
+  font-weight: 400;
+  font-size: 1.4rem;
+}
+
+.cancel-btn {
+  background-color: #fff;
+  border: 1px solid #f2f2f2;
+  color: #828282;
+  line-height: 18.3px;
+  transition: all 0.3s linear;
+}
+
+.cancel-btn:hover {
+  background-color: #e0e0e01e;
+  border: 1px solid #e0e0e0;
+  color: #828282;
+}
+
+.cancel-btn:checked + .btn,
+.cancel-btn.active,
+.cancel-btn.show,
+.cancel-btn:first-child:active,
+:not(.cancel-btn) + .cancel-btn:active {
+  background-color: #e0e0e01e;
+  border: 1px solid #e0e0e0;
+  color: #828282;
+}
+
+.reject--btn {
+  background-color: #ee0006;
+  font-weight: 500;
+  color: #ffffff;
+  border: none;
+  transition: all 0.4s linear;
+}
+
+.reject--btn:hover {
+  background-color: #fc6d71;
+  color: #fff;
+}
+
+.approval-btn {
+  height: 8.1rem;
+  padding: 0;
+}
+
+.close-claim-modal {
+  width: 44.9rem;
+  height: 27rem;
+  overflow: hidden;
+  text-align: center;
+  margin: 37.7rem 49.6rem;
+  border-radius: 1.6rem;
+}
+
+.svg {
+  margin: 6.3rem 0 2rem 0;
+}
+
+.claim-header {
+  color: #023474;
+  font-size: 1.6rem;
+  font-size: 700;
+  margin-bottom: 0.8rem;
+}
+
+.close-claim-text {
+  height: 6.9rem;
+  color: #505050;
+  margin: 0 6.1rem 4.7rem 6rem;
+}
+
+/* 
+    "error": false,
+    "message": "Writer Profile Requests Fetched Successfully",
+    "data": {
+        "data": [
+            {
+                "_id": "66c1acc4a4fbe8fd65611e0d",
+                "status": "approved",
+                "rejectionReason": "Nothing much",
+                "createdAt": "2024-08-18T08:11:48.318Z",
+                "updatedAt": "2024-08-18T08:12:49.431Z",
+                "writer": {
+                    "_id": "66c1a68297ea7bdbf3c47a11",
+                    "firstName": "Essay",
+                    "lastName": "Writer2",
+                    "phoneNumber": "2348133166901",
+                    "email": "essaywriter2@mailinator.com",
+                    "dateJoined": "2024-08-18T07:45:06.773Z"
+                }
+            },
+            { */

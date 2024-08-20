@@ -40,9 +40,12 @@
   margin: 3.5rem 0;
 }
 
+.user-modal-content {
+  width: 26.2rem;
+  background-color: red;
+}
+
 .modal-content {
-  /* width: 26.2rem; */
-  /* width: 100%; */
   border-radius: 1.6rem;
 }
 

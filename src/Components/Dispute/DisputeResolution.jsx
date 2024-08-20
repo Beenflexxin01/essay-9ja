@@ -46,10 +46,7 @@ function DisputeResolution({ disputes, index }) {
                   </svg>{" "}
                   {averageRating}
                 </div>
-                <DisputeViewBtn
-                  writersId={writersId}
-                  accountStatus={accountStatus}
-                />
+                <DisputeViewBtn writersId={writersId} />
               </li>
             </ul>
           </BackgroundColor>

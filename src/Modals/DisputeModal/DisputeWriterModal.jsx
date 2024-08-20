@@ -1,16 +1,8 @@
 import Modal from "react-bootstrap/Modal";
-import { NavLink } from "react-bootstrap";
+import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { useState } from "react";
-import { CloseWriterClaim, RefundWriter } from "./RefundWriter";
 
-function DisputeModal({ taskId, ...props }) {
-  const [activeTab, setActiveTab] = useState("clients");
-
-  const handleTabClick = (tab) => {
-    setActiveTab(tab);
-  };
-
+function DisputeWriterModal({ taskId, ...props }) {
   return (
     <>
       <Modal
@@ -27,18 +19,8 @@ function DisputeModal({ taskId, ...props }) {
             </div>
 
             <div className="flex claim-tab">
-              <NavLink
-                className={activeTab === "clients" ? "active" : ""}
-                onClick={() => handleTabClick("clients")}
-              >
-                <p className="claim-text">Clients</p>
-              </NavLink>
-              <NavLink
-                className={activeTab === "writer" ? "active" : ""}
-                onClick={() => handleTabClick("writer")}
-              >
-                <p className="claim-text">Writer</p>
-              </NavLink>
+              <p className="claim-text">Clients</p>
+              <p className="claim-text">Writer</p>
             </div>
             <nav className="claim-nav">
               <ul className="claim-ul">
@@ -114,11 +96,15 @@ function DisputeModal({ taskId, ...props }) {
                   <li className=" claim-title">Status</li>
                   <li className="claim-li review">In Review</li>
                 </div>
+                <div className="flex claim-button">
+                  <Button className="modal--btn claim-btn">
+                    Refund Client
+                  </Button>
+                  <Button className="modal--btn close-claim claim-btn">
+                    Close Claim
+                  </Button>
+                </div>
               </ul>
-              <div className="flex claim-button">
-                <RefundWriter />
-                <CloseWriterClaim />
-              </div>
             </nav>
           </Modal.Body>
         </div>
@@ -127,4 +113,4 @@ function DisputeModal({ taskId, ...props }) {
   );
 }
 
-export default DisputeModal;
+export default DisputeWriterModal;

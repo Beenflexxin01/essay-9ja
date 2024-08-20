@@ -20,7 +20,9 @@ function WritersApprovalPage() {
   useEffect(() => {
     async function getWriterInfo() {
       try {
-        const response = await apiCall(`${BaseUrl}/users/writers`);
+        const response = await apiCall(
+          `${BaseUrl}/users/writer/profile/requests`
+        );
         if (
           response &&
           response.data &&
@@ -56,16 +58,17 @@ function WritersApprovalPage() {
   return (
     <div className="containr act">
       <div className="flex task">
-        <h3 className="tertiary-header">writer</h3>
+        <h3 className="tertiary-header">Writer's Approval</h3>
       </div>
       <div>
         <nav className="main-nav user-nav activities">
-          <ul className="main-ul">
+          <ul className="main-ul ">
             <li className="main-li name">Name</li>
             <li className="main-li">Email address</li>
             <li className="main-li">Phone Number</li>
             <li className="main-li">Date Joined</li>
-            <li className="main-li">Action</li>
+            {/* <li className="main-li">status</li> */}
+            <li className="main-li">Status</li>
           </ul>
         </nav>
       </div>

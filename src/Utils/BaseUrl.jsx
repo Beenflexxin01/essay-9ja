@@ -1,7 +1,5 @@
 export const BaseUrl = "https://essay9ja-backend.onrender.com";
 
-// export const backgroundColor = index % 2 === 0 ? "#fff" : "#f8f8f8";
-
 export function StatusComponent({ withdrawalStatus, children }) {
   const statusClass =
     withdrawalStatus === "rejected"

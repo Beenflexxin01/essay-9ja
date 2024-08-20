@@ -3,7 +3,7 @@ import Button from "react-bootstrap/Button";
 
 import RejectModal from "./RejectModal";
 
-function RejectWriterBtn({ writersId, accountStatus = "active" }) {
+function RejectWriterBtn({ writersId, accountStatus = "active",  }) {
   const [modalShow, setModalShow] = useState(false);
   const [currentStatus, setCurrentStatus] = useState(accountStatus);
 
