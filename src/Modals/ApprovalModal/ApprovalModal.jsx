@@ -2,8 +2,33 @@ import Modal from "react-bootstrap/Modal";
 import { Button } from "react-bootstrap";
 import pic from "../../../public/images/pic.png";
 import RejectWriterBtn from "./RejectWriterBtn";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
+import apiCall from "../../hooks/apiCall";
+import { BaseUrl } from "../../Utils/BaseUrl";
 function ApprovalModal({ approvalId, ...props }) {
+  const [writerDetails, setWriterDetails] = useState({});
+  console.log(writerDetails);
+  const { id } = useParams();
+
+  useEffect(() => {
+    async function getWriterDetails() {
+      try {
+        const data = await apiCall(`${BaseUrl}/users/writers/${id}`);
+        console.log(data.data.data);
+        if (data.data.data) {
+          setWriterDetails(data.data.data);
+        } else {
+          if (data.Response === "False")
+            throw new Error("Something went wrong while trying to fetch data!");
+        }
+      } catch (err) {
+        console.log(err, err.message);
+      }
+    }
+
+    getWriterDetails();
+  }, [id]);
   return (
     <>
       <Modal
@@ -28,7 +53,7 @@ function ApprovalModal({ approvalId, ...props }) {
               <ul className="claim-ul">
                 <div className="approval-spacing">
                   <li className=" approval-title">Name</li>
-                  <li className="claim-li">Ronald Richards</li>
+                  <li className="claim-li">Ronald Richard</li>
                 </div>
                 <div className="approval-spacing">
                   <li className=" approval-title">Email address</li>

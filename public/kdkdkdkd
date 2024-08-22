@@ -1,0 +1,56 @@
+{
+  "error": false,
+  "message": "Contract Disputes Fetched Successfully",
+  "data": {
+    "data": [
+      {
+        "_id": "66c1c8600763b8e712b7ec15",
+        "writerId": {
+          "_id": "66c1a68297ea7bdbf3c47a11",
+          "firstName": "Essay",
+          "lastName": "Writer2",
+          "profilePic": "https://picsum.photos/id/237/200/300"
+        },
+        "userId": {
+          "_id": "65076587d40712c7abdaa0a3",
+          "firstName": "Rasheed",
+          "lastName": "Ayoade",
+          "profilePic": "https://picsum.photos/id/237/200/300"
+        },
+        "contractId": {
+          "_id": "66c1bf23716fd0c36bc89238",
+          "title": "Ghost writing job",
+          "description": "Help run am sharp sharp",
+          "amount": 5000,
+          "currency": "NGN",
+          "startDate": "2024-08-18T09:30:37.502Z",
+          "endDate": null,
+          "submissionDate": "2024-08-18T09:53:25.482Z",
+          "submissionFiles": [
+            "http://res.cloudinary.com/dfhteb3xs/image/upload/v1723974804/kk1r84iizc8sjijyzlqs.pdf",
+            "http://res.cloudinary.com/dfhteb3xs/image/upload/v1723974805/gphyedalrzvjvmbirppe.pdf"
+          ],
+          "submissionMessage": "I have adjusted the work"
+        },
+        "status": "available_for_review",
+        "writerClaim": {
+          "claim": "He is not good",
+          "attachment": "http://res.cloudinary.com/dfhteb3xs/image/upload/v1723976567/jjhyp3jdqakmxxx9rv5n.pdf"
+        },
+        "clientClaim": {
+          "claim": "He is not good",
+          "attachment": "http://res.cloudinary.com/dfhteb3xs/image/upload/v1723976596/ibkzol7tpx8rcn4fx3bx.pdf"
+        },
+        "resolutionDate": null,
+        "createdAt": "2024-08-18T10:09:36.252Z",
+        "updatedAt": "2024-08-18T10:23:16.908Z"
+      }
+    ],
+    "metadata": {
+      "total": 1,
+      "perPage": 10,
+      "page": 1,
+      "lastPage": 1
+    }
+  }
+}

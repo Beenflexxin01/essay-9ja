@@ -27,6 +27,7 @@ import AppSettings from "./Components/Settings/AppSettings/AppSettings";
 import ContractPage from "./Pages/ContractPage";
 import DisputePage from "./Pages/DisputePage";
 import WritersApprovalPage from "./Pages/WritersApprovalPage";
+import ApprovalModal from "./Modals/ApprovalModal/ApprovalModal";
 
 function App() {
   const store = createStore({
@@ -76,14 +77,18 @@ function App() {
               <Route path="security-settings" element={<SecuritySettings />} />
               <Route path="app-settings" element={<AppSettings />} />
               <Route
+                path="user/writers-approval/:id"
+                element={<ApprovalModal />}
+              />
+              <Route
                 path="wallets/withdrawal/requests"
                 element={<Withdrawal />}
               />
               <Route path="invite" element={<Invite />} />
-              <Route path="*" element={<PageNotFound />} />
             </Route>
             <Route path="/auth/login" element={<Login />} />
             <Route path="forgot-password" element={<ForgotPssword />} />
+            <Route path="*" element={<PageNotFound />} />
           </Routes>
         </BrowserRouter>
       </AuthProvider>

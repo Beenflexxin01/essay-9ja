@@ -20,7 +20,7 @@ function DisputePage() {
   useEffect(() => {
     async function getContractInfo() {
       try {
-        const response = await apiCall(`${BaseUrl}/users/writers`);
+        const response = await apiCall(`${BaseUrl}/contracts/disputes`);
         // const response = await apiCall(`${BaseUrl}/contracts`);
 
         if (
@@ -64,7 +64,7 @@ function DisputePage() {
           <nav className="main-nav user-nav activities">
             <ul className="main-ul main--ul">
               <li className="main-li name">Claim ID</li>
-              <li className="main-li">Reasons</li>
+              <li className="main-li">Contract Title</li>
               <li className="main-li"> Clients</li>
               <li className="main-li">Writer</li>
               <li className="main-li">Date Created</li>

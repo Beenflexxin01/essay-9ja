@@ -16,6 +16,7 @@ function UsersViewBtn({ userId, accountStatus }) {
       >
         <PiDotsThreeVertical size={"24px"} className="dots" />
       </Button>
+
       <UserModal
         show={modalShow}
         onHide={() => setModalShow(false)}
