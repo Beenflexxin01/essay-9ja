@@ -1,11 +1,36 @@
 import Modal from "react-bootstrap/Modal";
 import { NavLink } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { CloseWriterClaim, RefundWriter } from "./RefundWriter";
+import apiCall from "../../hooks/apiCall";
+import { BaseUrl } from "../../Utils/BaseUrl";
+import { DateFormatter } from "../../Utils/DateFormatter";
 
-function DisputeModal({ taskId, ...props }) {
+function DisputeModal({ disputeId, taskId, ...props }) {
   const [activeTab, setActiveTab] = useState("clients");
+  const [disputes, setDisputes] = useState({});
+
+  const { _id: userId, title, status, createdAt, description } = disputes;
+  useEffect(() => {
+    async function getDisputes() {
+      try {
+        const data = await apiCall(`${BaseUrl}/contracts/${disputeId}`);
+        // const data = await apiCall(`${BaseUrl}/contracts/${disputeId}`);
+        if (data.data.data) {
+          setDisputes(data.data.data);
+        } else {
+          if (data.Response === "False")
+            throw new Error(
+              "Something went wrong while trying to load datas from the data base!"
+            );
+        }
+      } catch (err) {
+        console.log(err);
+      }
+    }
+    getDisputes();
+  }, [disputeId]);
 
   const handleTabClick = (tab) => {
     setActiveTab(tab);
@@ -44,19 +69,23 @@ function DisputeModal({ taskId, ...props }) {
               <ul className="claim-ul">
                 <div className="claim-spacing">
                   <li className=" claim-title">Claim ID</li>
-                  <li className="claim-li">Claim 001</li>
+                  {/* <li className="claim-li">Claim 001</li> */}
+                  <li className="claim-li">{userId}</li>
                 </div>
                 <div className="claim-spacing">
                   <li className=" claim-title">Tasks</li>
-                  <li className="claim-li">Biomedical Practice write-up</li>
+                  <li className="claim-li">{title}</li>
+                  {/* <li className="claim-li">Biomedical Practice write-up</li> */}
                 </div>
                 <div className="claim-spacing">
                   <li className=" claim-title">Description</li>
-                  <li className="claim-li">Incompetency of the writer</li>
+                  <li className="claim-li">{description}</li>
                 </div>
                 <div className="claim-spacing">
                   <li className=" claim-title">Date Created</li>
-                  <li className="claim-li">27-07-2024 15:09</li>
+                  <li className="claim-li">
+                    <DateFormatter createdAt={createdAt} />
+                  </li>
                 </div>
                 <div className="claim-spacing">
                   <li className=" claim-title">Attachment</li>
@@ -112,7 +141,7 @@ function DisputeModal({ taskId, ...props }) {
                 </div>
                 <div className="claim-spacing">
                   <li className=" claim-title">Status</li>
-                  <li className="claim-li review">In Review</li>
+                  <li className="claim-li review">{status}</li>
                 </div>
               </ul>
               <div className="flex claim-button">

@@ -32,7 +32,7 @@ function WriterDetails() {
     async function getWriterDetails() {
       try {
         const data = await apiCall(`${BaseUrl}/users/writers/${id}`);
-
+        console.log(data);
         if (data.data.data) {
           setWriterDetails(data.data.data);
         } else {

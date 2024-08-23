@@ -1,7 +1,7 @@
 import ApprovalViewBtn from "../../Modals/ApprovalModal/ApprovalViewBtn";
 import { DateFormatter } from "../../Utils/DateFormatter";
 
-function WriterAoprovals({ writer, index }) {
+function WriterAoprovals({ writer }) {
   const {
     createdAt,
     accountStatus,

@@ -20,6 +20,7 @@ function WritersApprovalPage() {
   useEffect(() => {
     async function getWriterInfo() {
       try {
+        // const response = await apiCall(`${BaseUrl}/users/writers`);
         const response = await apiCall(
           `${BaseUrl}/users/writer/profile/requests`
         );

@@ -28,6 +28,7 @@ import ContractPage from "./Pages/ContractPage";
 import DisputePage from "./Pages/DisputePage";
 import WritersApprovalPage from "./Pages/WritersApprovalPage";
 import ApprovalModal from "./Modals/ApprovalModal/ApprovalModal";
+// import DisputeDetails from "./Components/Dispute/DisputeDetails";
 
 function App() {
   const store = createStore({
@@ -76,6 +77,10 @@ function App() {
               <Route path="settings" element={<Settings />} />
               <Route path="security-settings" element={<SecuritySettings />} />
               <Route path="app-settings" element={<AppSettings />} />
+              {/* <Route
+                path="/contracts/:id/dispute"
+                element={<DisputeDetails />}
+              /> */}
               <Route
                 path="user/writers-approval/:id"
                 element={<ApprovalModal />}

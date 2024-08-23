@@ -16,12 +16,11 @@ function DisputePage() {
   const contractPages = contracts.slice(firstIndex, lastIndex);
   const npages = Math.ceil(contracts.length / contractsPerPage);
   const numbers = [...Array(npages + 1).keys()].slice(1);
-
   useEffect(() => {
     async function getContractInfo() {
       try {
-        const response = await apiCall(`${BaseUrl}/contracts/disputes`);
-        // const response = await apiCall(`${BaseUrl}/contracts`);
+        const response = await apiCall(`${BaseUrl}/contracts`);
+        // const response = await apiCall(`${BaseUrl}/contracts/disputes`);
 
         if (
           response &&

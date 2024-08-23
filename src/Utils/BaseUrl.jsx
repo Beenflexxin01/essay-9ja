@@ -1,3 +1,4 @@
+// export const BaseUrl = "https://api.essay9ja.com";
 export const BaseUrl = "https://essay9ja-backend.onrender.com";
 
 export function StatusComponent({ withdrawalStatus, children }) {

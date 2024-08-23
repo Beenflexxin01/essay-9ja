@@ -19,7 +19,7 @@ function UserReg({ user, index }) {
     <>
       <div className="grid-5-cols">
         <nav className="main-nav user-nav">
-          <BackgroundColor index={index}>
+          <BackgroundColor index={index} userId={userId}>
             <ul className="main-ul main--ul">
               <li className="main-li check cap">
                 <input type="checkbox" />

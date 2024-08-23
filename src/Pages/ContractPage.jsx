@@ -74,7 +74,7 @@ function ContractPage() {
         </div>
         {contracts.length > 0 ? (
           <div>
-            {contractPages.map((npm , index) => (
+            {contractPages.map((contracts , index) => (
               <Contracts
                 contracts={contracts}
                 key={contracts._id}

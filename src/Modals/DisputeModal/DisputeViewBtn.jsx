@@ -3,7 +3,7 @@ import Button from "react-bootstrap/Button";
 import { PiDotsThreeVertical } from "react-icons/pi";
 
 import DisputeModal from "./DisputeModal";
-function DisputeViewBtn({ disputeId }) {
+function DisputeViewBtn({ disputeId, users }) {
   const [modalShow, setModalShow] = useState(false);
   return (
     <>
@@ -19,6 +19,7 @@ function DisputeViewBtn({ disputeId }) {
         show={modalShow}
         onHide={() => setModalShow(false)}
         disputeId={disputeId}
+        users={users}
       />
     </>
   );
