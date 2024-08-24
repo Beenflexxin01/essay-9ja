@@ -10,6 +10,8 @@ function WriterAoprovals({ writer }) {
     _id: approvalId,
   } = writer;
 
+  const id = writerInfo ? `${writerInfo._id}` : "N/A";
+
   return (
     <>
       <div className="grid-5-cols">
@@ -29,20 +31,13 @@ function WriterAoprovals({ writer }) {
             <li className="main-li">
               <DateFormatter createdAt={createdAt} />
             </li>
-            {/* <li className="main-li check icon">
-                <StatusComponent withdrawalStatus={status}>
-                  {status}
-                </StatusComponent>
-                <ApprovalViewBtn
-                  approvalId={approvalId}
-                  accountStatus={accountStatus}
-                />
-              </li> */}
+
             <li className="main-li check icon">
               {status}
               <ApprovalViewBtn
                 approvalId={approvalId}
                 accountStatus={accountStatus}
+                id={id}
               />
             </li>
           </ul>

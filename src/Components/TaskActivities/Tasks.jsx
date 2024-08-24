@@ -34,7 +34,7 @@ function Tasks({ tasks, index }) {
               </GetTaskStatus>
               <li className="main-li check icon">
                 {projectBaseCurrency} {convertKoboToNaira(projectBudget)}
-                <TasksViewBtn taskId={taskId} />
+                <TasksViewBtn taskId={taskId} status={status} />
               </li>
             </ul>
           </BackgroundColor>

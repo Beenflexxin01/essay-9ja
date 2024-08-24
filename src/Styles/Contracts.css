@@ -170,6 +170,13 @@
 
 .approval-li {
   font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.arr {
+  cursor: pointer;
 }
 
 .reject-modal-content {
@@ -178,6 +185,11 @@
   border-radius: 1.6rem;
   margin: 25rem 40rem;
   overflow: hidden;
+}
+
+.portfolio {
+  flex-direction: column;
+  align-items: start;
 }
 
 .reject-li {
@@ -301,24 +313,7 @@
   margin: 0 6.1rem 4.7rem 6rem;
 }
 
-/* 
-    "error": false,
-    "message": "Writer Profile Requests Fetched Successfully",
-    "data": {
-        "data": [
-            {
-                "_id": "66c1acc4a4fbe8fd65611e0d",
-                "status": "approved",
-                "rejectionReason": "Nothing much",
-                "createdAt": "2024-08-18T08:11:48.318Z",
-                "updatedAt": "2024-08-18T08:12:49.431Z",
-                "writer": {
-                    "_id": "66c1a68297ea7bdbf3c47a11",
-                    "firstName": "Essay",
-                    "lastName": "Writer2",
-                    "phoneNumber": "2348133166901",
-                    "email": "essaywriter2@mailinator.com",
-                    "dateJoined": "2024-08-18T07:45:06.773Z"
-                }
-            },
-            { */
+.phone-link {
+  text-decoration: none;
+  color: #000;
+}

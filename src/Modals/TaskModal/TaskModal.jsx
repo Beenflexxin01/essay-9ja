@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import TaskDeleteBtn from "./TaskDeleteBtn";
 import UpdateTaskModalBtn from "./UpdateTaskModalBtn";
 
-function TaskModal({ taskId, ...props }) {
+function TaskModal({ taskId, status, ...props }) {
   const navigate = useNavigate();
 
   return (
@@ -94,7 +94,7 @@ function TaskModal({ taskId, ...props }) {
                     fill="#505050"
                   />
                 </svg>
-                <TaskDeleteBtn />
+                <TaskDeleteBtn taskId={taskId} status={status} />
               </li>
             </ul>
           </nav>
