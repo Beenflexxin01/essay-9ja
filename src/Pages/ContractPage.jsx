@@ -20,9 +20,7 @@ function ContractPage() {
   useEffect(() => {
     async function getContractInfo() {
       try {
-        const response = await apiCall(`${BaseUrl}/users/writers`);
-        // const response = await apiCall(`${BaseUrl}/contracts`);
-
+        const response = await apiCall(`${BaseUrl}/contracts`);
         if (
           response &&
           response.data &&
@@ -63,18 +61,18 @@ function ContractPage() {
         <div className="">
           <nav className="main-nav user-nav activities">
             <ul className="main-ul main--ul">
-              <li className="main-li name">Contract</li>
-              <li className="main-li">Description</li>
+              <li className="main-li name">Date</li>
+              <li className="main-li">Title</li>
               <li className="main-li"> Clients</li>
               <li className="main-li">Writer</li>
-              <li className="main-li">Date Created</li>
+              <li className="main-li">Amount</li>
               <li className="main-li">Status</li>
             </ul>
           </nav>
         </div>
         {contracts.length > 0 ? (
           <div>
-            {contractPages.map((contracts , index) => (
+            {contractPages.map((contracts, index) => (
               <Contracts
                 contracts={contracts}
                 key={contracts._id}

@@ -10,6 +10,7 @@ import "./Styles/Modals.css";
 import "./Styles/Auth.css";
 import "./Styles/Users.css";
 import "./Styles/Contracts.css";
+import "./Styles/Writers.css";
 import { ErrorBoundary } from "react-error-boundary";
 import ErrorFallback from "./UI/ErrorFallback.jsx";
 

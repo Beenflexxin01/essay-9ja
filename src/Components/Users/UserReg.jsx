@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import UsersViewBtn from "../../Modals/UserModal/UsersViewBtn";
 import { BackgroundColor } from "../../Utils/BaseUrl";
 import { DateFormatter, TimeFormatter } from "../../Utils/DateFormatter";
@@ -25,7 +26,11 @@ function UserReg({ user, index }) {
                 <input type="checkbox" />
                 {firstName} {lastName}
               </li>
-              <li className="main-li email-hover">{email}</li>
+              <li className="main-li email-hover">
+                <Link to={`mailto: ${email}`} className="phone-link">
+                  {email}
+                </Link>
+              </li>
               <li className="main-li">
                 <DateFormatter createdAt={createdAt} />
               </li>

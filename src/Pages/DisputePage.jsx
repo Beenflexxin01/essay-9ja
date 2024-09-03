@@ -19,8 +19,7 @@ function DisputePage() {
   useEffect(() => {
     async function getContractInfo() {
       try {
-        const response = await apiCall(`${BaseUrl}/contracts`);
-        // const response = await apiCall(`${BaseUrl}/contracts/disputes`);
+        const response = await apiCall(`${BaseUrl}/contracts/disputes`);
 
         if (
           response &&

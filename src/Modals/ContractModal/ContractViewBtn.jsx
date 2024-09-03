@@ -2,8 +2,8 @@ import { useState } from "react";
 import Button from "react-bootstrap/Button";
 import { PiDotsThreeVertical } from "react-icons/pi";
 
-import DisputeModal from "./DisputeModal";
-function DisputeViewBtn({ users, id }) {
+import ContractModal from "./ContractModal";
+function ContractViewBtn({ contractId, users, id }) {
   const [modalShow, setModalShow] = useState(false);
   return (
     <>
@@ -15,9 +15,10 @@ function DisputeViewBtn({ users, id }) {
         <PiDotsThreeVertical size={"24px"} className="dots" />
       </Button>
 
-      <DisputeModal
+      <ContractModal
         show={modalShow}
         onHide={() => setModalShow(false)}
+        contract_Id={contractId}
         users={users}
         id={id}
       />
@@ -25,4 +26,4 @@ function DisputeViewBtn({ users, id }) {
   );
 }
 
-export default DisputeViewBtn;
+export default ContractViewBtn;

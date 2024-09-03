@@ -12,10 +12,10 @@ function UserModal({ userId, accountStatus, ...props }) {
         size="lg"
         aria-labelledby="contained-modal-title-vcenter"
         centered
-        className="modal-c "
+        className="modal-c  user-modal-conten"
       >
-        <div className="user-modal-content">
-          <Modal.Body>
+        <div className="user-modal-conten">
+          <Modal.Body className="user-modal-content">
             <nav className="modal-nav">
               <ul className="modal-ul">
                 <li

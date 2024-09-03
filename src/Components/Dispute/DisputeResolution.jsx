@@ -4,12 +4,23 @@ import { BackgroundColor } from "../../Utils/BaseUrl";
 import { DateFormatter } from "../../Utils/DateFormatter";
 
 function DisputeResolution({ disputes, index }) {
-  const { writer, user, title, status, createdAt, _id: disputeId } = disputes;
+  const {
+    writerId,
+    userId,
+    contractId,
+    status,
+    createdAt,
+    _id: disputeId,
+  } = disputes;
+
+  const id = contractId ? `${contractId._id}` : "N/A";
+  const users = userId ? `${userId._id}` : "N/A";
+  const writers = userId ? `${writerId._id}` : "N/A";
 
   return (
     <>
       <div className="grid-5-cols">
-        <nav className="main-nav user-nav ">
+        <nav className="main-nav userId-nav ">
           <BackgroundColor index={index}>
             <ul className="main-ul main--ul">
               <li className="main-li check email-hover">
@@ -17,17 +28,18 @@ function DisputeResolution({ disputes, index }) {
                 {disputeId}
               </li>
               <li className="main-li">
-                {title}
-                {/* {contractId ? `${contractId.title}` : "N/A"} */}
+                {contractId ? `${contractId.title}` : "N/A"}
               </li>
               <li className="main-li">
-                <Link to={`/user-details`}>
-                  {user ? `${user.firstName} ${user.lastName}` : "N/A"}
+                <Link to={`/user-details/${users}`} className="phone-link">
+                  {userId ? `${userId.firstName} ${userId.lastName}` : "N/A"}
                 </Link>
               </li>
               <li className="main-li">
-                <Link to={`/user-details/${user}`}>
-                  {writer ? `${writer.firstName} ${writer.lastName}` : "N/A"}
+                <Link to={`/user-details/${writers}`} className="phone-link">
+                  {writerId
+                    ? `${writerId.firstName} ${writerId.lastName}`
+                    : "N/A"}
                 </Link>
               </li>
               <li className="main-li">
@@ -35,7 +47,7 @@ function DisputeResolution({ disputes, index }) {
               </li>
               <li className="main-li check icon ">
                 {status}
-                <DisputeViewBtn disputeId={disputeId} />
+                <DisputeViewBtn id={id} />
               </li>
             </ul>
           </BackgroundColor>

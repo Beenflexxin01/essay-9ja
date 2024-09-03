@@ -65,7 +65,7 @@ function Users() {
               <li className="main-li">Email Address</li>
               <li className="main-li">Date Joined</li>
               <li className="main-li">Last Active</li>
-              <li className="main-li">Active Status</li>
+              <li className="main-li">Status</li>
               <li className="main-li">Phone Number</li>
             </ul>
           </nav>

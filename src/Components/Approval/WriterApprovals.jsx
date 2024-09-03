@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import ApprovalViewBtn from "../../Modals/ApprovalModal/ApprovalViewBtn";
 import { DateFormatter } from "../../Utils/DateFormatter";
 
@@ -11,7 +12,8 @@ function WriterAoprovals({ writer }) {
   } = writer;
 
   const id = writerInfo ? `${writerInfo._id}` : "N/A";
-
+  const email = writerInfo ? `${writerInfo.email}` : "N/A";
+  const phoneNumber = writerInfo ? `${writerInfo.phoneNumber}` : "N/A";
   return (
     <>
       <div className="grid-5-cols">
@@ -23,10 +25,14 @@ function WriterAoprovals({ writer }) {
               {writerInfo ? `${writerInfo.lastName}` : "N/A"}
             </li>
             <li className="main-li email-hover">
-              {writerInfo ? `${writerInfo.email}` : "N/A"}
+              <Link to={`mailto:${email}`} className="phone-link">
+                {email}
+              </Link>
             </li>
             <li className="main-li">
-              {writerInfo ? `${writerInfo.phoneNumber}` : "N/A"}
+              <Link to={`tel: ${phoneNumber}`} className="phone-link">
+                {phoneNumber}
+              </Link>
             </li>
             <li className="main-li">
               <DateFormatter createdAt={createdAt} />

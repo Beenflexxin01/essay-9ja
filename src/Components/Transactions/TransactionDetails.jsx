@@ -4,9 +4,11 @@ import { BaseUrl } from "../../Utils/BaseUrl";
 import apiCall from "../../hooks/apiCall";
 import { DateFormatter } from "../../Utils/DateFormatter";
 import { convertKoboToNaira } from "../../Utils/NairaConverter";
+import { Loader } from "../../UI/Loader";
 
 function TransactionDetails() {
   const [transactionDetails, setTransactionDetails] = useState({});
+  const [loading, setIsLoading] = useState(false);
   const { id } = useParams();
   const navigate = useNavigate();
 
@@ -29,6 +31,7 @@ function TransactionDetails() {
   useEffect(() => {
     async function getTransactionDetails() {
       try {
+        setIsLoading(true);
         const data = await apiCall(`${BaseUrl}/wallets/transactions/${id}`);
 
         if (data.data.data) {
@@ -40,6 +43,8 @@ function TransactionDetails() {
         }
       } catch (err) {
         console.log(err);
+      } finally {
+        setIsLoading(false);
       }
     }
     getTransactionDetails();
@@ -56,53 +61,62 @@ function TransactionDetails() {
             &larr; Back
           </button>
 
-          <p className="details">Details</p>
-
-          <div className="grid-user">
-            <div className="grid-user-flex">
-              <nav className="grid-user-nav">
-                <ul className="grid-user-ul">
-                  <li className="grid-user-li">Account Number:</li>
-                  <li className="grid-user-li activities">Bank Name:</li>
-                  <li className="grid-user-li">From:</li>
-                  <li className="grid-user-li activities">To:</li>
-                  <li className="grid-user-li">Amount:</li>
-                  <li className="grid-user-li activities">Transaction Date:</li>
-                  <li className="grid-user-li ">Status:</li>
-                  <li className="grid-user-li activities">Reason:</li>
-                </ul>
-              </nav>
+          {loading ? (
+            <div className="spinner">
+              <Loader />
             </div>
+          ) : (
+            <>
+              <p className="details">Details</p>
+              <div className="grid-user">
+                <div className="grid-user-flex">
+                  <nav className="grid-user-nav">
+                    <ul className="grid-user-ul">
+                      <li className="grid-user-li">Account Number:</li>
+                      <li className="grid-user-li activities">Bank Name:</li>
+                      <li className="grid-user-li">From:</li>
+                      <li className="grid-user-li activities">To:</li>
+                      <li className="grid-user-li">Amount:</li>
+                      <li className="grid-user-li activities">
+                        Transaction Date:
+                      </li>
+                      <li className="grid-user-li ">Status:</li>
+                      <li className="grid-user-li activities">Reason:</li>
+                    </ul>
+                  </nav>
+                </div>
 
-            <div className="grid-user-flex">
-              <nav className="grid-user-nav">
-                <ul className="grid-user-ul">
-                  <li className="grid-user-li user-detail">0060078945</li>
-                  <li className="grid-user-li activities user-detail">
-                    Sterling Bank
-                  </li>
-                  <li className="grid-user-li user-detail">Femi Gates</li>
-                  <li className="grid-user-li activities user-detail">
-                    Ronald Richards
-                  </li>
-                  <li className="grid-user-li user-detail">
-                    {currency}
-                    {convertKoboToNaira(transactionAmount)}
-                  </li>
-                  <li className="grid-user-li user-detail activities ">
-                    <DateFormatter createdAt={createdAt} />
-                  </li>
+                <div className="grid-user-flex">
+                  <nav className="grid-user-nav">
+                    <ul className="grid-user-ul">
+                      <li className="grid-user-li user-detail">0060078945</li>
+                      <li className="grid-user-li activities user-detail">
+                        Sterling Bank
+                      </li>
+                      <li className="grid-user-li user-detail">Femi Gates</li>
+                      <li className="grid-user-li activities user-detail">
+                        Ronald Richards
+                      </li>
+                      <li className="grid-user-li user-detail">
+                        {currency}
+                        {convertKoboToNaira(transactionAmount)}
+                      </li>
+                      <li className="grid-user-li user-detail activities ">
+                        <DateFormatter createdAt={createdAt} />
+                      </li>
 
-                  <li className="grid-user-li user-detail canceled">
-                    {transactionStatus}
-                  </li>
-                  <li className="grid-user-li activities user-detail">
-                    {transactionDescription}
-                  </li>
-                </ul>
-              </nav>
-            </div>
-          </div>
+                      <li className="grid-user-li user-detail canceled">
+                        {transactionStatus}
+                      </li>
+                      <li className="grid-user-li activities user-detail">
+                        {transactionDescription}
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+              </div>
+            </>
+          )}
         </div>
       </div>
     </>

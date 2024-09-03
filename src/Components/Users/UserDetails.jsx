@@ -7,9 +7,11 @@ import {
   LastLoginAt,
   LastLoginAtDistance,
 } from "../../Utils/DateFormatter";
+import { Loader } from "../../UI/Loader";
 
 function UserDetails() {
   const [userDetails, setUserDetails] = useState({});
+  const [loading, setIsLoading] = useState(false);
   const navigate = useNavigate();
   const { id } = useParams();
 
@@ -26,6 +28,7 @@ function UserDetails() {
   useEffect(() => {
     async function getWriterDetails() {
       try {
+        setIsLoading(true);
         const data = await apiCall(`${BaseUrl}/users/single/${id}`);
 
         if (data.data.data) {
@@ -37,6 +40,8 @@ function UserDetails() {
         }
       } catch (err) {
         console.log(err);
+      } finally {
+        setIsLoading(false);
       }
     }
     getWriterDetails();
@@ -68,57 +73,69 @@ function UserDetails() {
             &larr; Back
           </button>
 
-          <p className="details">Details</p>
-
-          <div className="grid-user">
-            <div className="grid-user-flex">
-              <nav className="grid-user-nav">
-                <ul className="grid-user-ul">
-                  <li className="grid-user-li">Client name:</li>
-                  <li className="grid-user-li activities">Email address:</li>
-                  <li className="grid-user-li">Contact number:</li>
-
-                  <li className="grid-user-li activities">Date Joined:</li>
-                  <li className="grid-user-li ">State / Country:</li>
-                  <li className="grid-user-li activities">Last Seen:</li>
-                </ul>
-              </nav>
+          {loading ? (
+            <div className="spinner">
+              <Loader />
             </div>
+          ) : (
+            <>
+              <p className="details">Details</p>
+              <div className="grid-user">
+                <div className="grid-user-flex">
+                  <nav className="grid-user-nav">
+                    <ul className="grid-user-ul">
+                      <li className="grid-user-li">Client name:</li>
+                      <li className="grid-user-li activities">
+                        Email address:
+                      </li>
+                      <li className="grid-user-li">Contact number:</li>
 
-            <div className="grid-user-flex">
-              <nav className="grid-user-nav">
-                <ul className="grid-user-ul">
-                  <li className="grid-user-li user-detail">
-                    {firstName} {lastName}
-                  </li>
-                  <li className="grid-user-li activities user-detail">
-                    <Link to="mailto: RonaldRichard@gmail.com" className="mail">
-                      {" "}
-                      {email}
-                    </Link>
-                  </li>
-                  <li className="grid-user-li user-detail">
-                    <Link to="tel: +234 905 673 0986" className="mail">
-                      {phoneNumber ? `${phoneNumber}` : "N/A"}
-                    </Link>
-                  </li>
-                  <li className="grid-user-li user-detail activities">
-                    <DateFormatter createdAt={createdAt} />
-                  </li>
-                  <li className="grid-user-li user-detail ">
-                    {country ? country : "N / A"}
-                  </li>
-                  <li className="grid-user-li activities user-detail activities flex">
-                    <LastLoginAt createdAt={lastLoginAt} />
-                    <span className="span-withdraw span-flex">
-                      at
-                      <LastLoginAtDistance createdAt={lastLoginAt} />
-                    </span>
-                  </li>
-                </ul>
-              </nav>
-            </div>
-          </div>
+                      <li className="grid-user-li activities">Date Joined:</li>
+                      <li className="grid-user-li ">State / Country:</li>
+                      <li className="grid-user-li activities">Last Seen:</li>
+                    </ul>
+                  </nav>
+                </div>
+
+                <div className="grid-user-flex">
+                  <nav className="grid-user-nav">
+                    <ul className="grid-user-ul">
+                      <li className="grid-user-li user-detail">
+                        {firstName} {lastName}
+                      </li>
+                      <li className="grid-user-li activities user-detail">
+                        <Link
+                          to="mailto: RonaldRichard@gmail.com"
+                          className="mail"
+                        >
+                          {" "}
+                          {email}
+                        </Link>
+                      </li>
+                      <li className="grid-user-li user-detail">
+                        <Link to="tel: +234 905 673 0986" className="mail">
+                          {phoneNumber ? `${phoneNumber}` : "N/A"}
+                        </Link>
+                      </li>
+                      <li className="grid-user-li user-detail activities">
+                        <DateFormatter createdAt={createdAt} />
+                      </li>
+                      <li className="grid-user-li user-detail ">
+                        {country ? country : "N / A"}
+                      </li>
+                      <li className="grid-user-li activities user-detail activities flex">
+                        <LastLoginAt createdAt={lastLoginAt} />
+                        <span className="span-withdraw span-flex">
+                          at
+                          <LastLoginAtDistance createdAt={lastLoginAt} />
+                        </span>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+              </div>
+            </>
+          )}
         </div>
       </div>
     </>

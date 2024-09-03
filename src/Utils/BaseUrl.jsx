@@ -26,6 +26,7 @@ export function GetTransactionStatus({ transactions, children }) {
     </div>
   );
 }
+
 export function GetTaskStatus({ status, children }) {
   const taskClass =
     status === "closed"
@@ -39,6 +40,37 @@ export function GetTaskStatus({ status, children }) {
   return (
     <div className={`${taskClass} transaction-nav-li gg `}>{children}</div>
   );
+}
+
+export function GetContractStatus({ status, children }) {
+  const taskClass =
+    status === "started"
+      ? "approved completed task-width started"
+      : status === "cancelled"
+        ? "approved completed rejected task-width"
+        : status === "completed"
+          ? "approved completed task-width"
+          : status === "pending"
+            ? "pending completed task-width"
+            : "";
+
+  return <div className={`${taskClass}`}>{children}</div>;
+}
+
+
+export function GetDisputeStatus({ status, children }) {
+  const taskClass =
+    status === "started"
+      ? "approved completed task-width started"
+      : status === "cancelled"
+        ? "approved completed rejected task-width"
+        : status === "completed"
+          ? "approved completed task-width"
+          : status === "pending"
+            ? "pending completed task-width"
+            : "";
+
+  return <div className={`${taskClass}`}>{children}</div>;
 }
 
 export function BackgroundColor({ index, children }) {

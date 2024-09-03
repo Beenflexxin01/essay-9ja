@@ -1,6 +1,5 @@
 import Modal from "react-bootstrap/Modal";
 import { Button } from "react-bootstrap";
-import pic from "../../../public/images/pic.png";
 import RejectWriterBtn from "./RejectWriterBtn";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
@@ -10,12 +9,21 @@ import { DateFormatter } from "../../Utils/DateFormatter";
 import { Loader } from "../../UI/Loader";
 function ApprovalModal({ approvalId, id, onHide, ...props }) {
   const [writerDetails, setWriterDetails] = useState({});
-  const { firstName, lastName, email, phoneNumber, createdAt, writer } =
-    writerDetails;
+  const [loading, setIsLoading] = useState(false);
+  const {
+    firstName,
+    lastName,
+    email,
+    phoneNumber,
+    createdAt,
+    writer,
+    profilePic,
+  } = writerDetails;
 
   useEffect(() => {
     async function getWriterDetails() {
       try {
+        setIsLoading(true);
         const data = await apiCall(`${BaseUrl}/users/writers/${id}`);
         if (data.data.data) {
           setWriterDetails(data.data.data);
@@ -25,6 +33,8 @@ function ApprovalModal({ approvalId, id, onHide, ...props }) {
         }
       } catch (err) {
         console.log(err, err.message);
+      } finally {
+        setIsLoading(false);
       }
     }
 
@@ -45,6 +55,11 @@ function ApprovalModal({ approvalId, id, onHide, ...props }) {
   const personalWebsite = writer?.portfolio.personalWebsite || [];
   const docsLink = writer?.portfolio.docsLink || [];
   const file = writer?.portfolio.file || [];
+
+  const offeringName = writer?.offerings[0].name || [];
+  const offeringType = writer?.offerings[0].type || [];
+  const offeringName2 = writer?.offerings[1].name || [];
+  const offeringType2 = writer?.offerings[1].type || [];
   return (
     <>
       <Modal
@@ -54,9 +69,13 @@ function ApprovalModal({ approvalId, id, onHide, ...props }) {
         centered
         className="modal-c dispute-modal approval-modal"
       >
-        <div className="">
-          <Modal.Body className="dispute">
-            {writerDetails ? (
+        {loading ? (
+          <div className="spinner">
+            <Loader />
+          </div>
+        ) : (
+          <div className="">
+            <Modal.Body className="dispute">
               <>
                 <div className="claim approval">
                   <h3 className="tertiary-header tert-head">
@@ -68,8 +87,13 @@ function ApprovalModal({ approvalId, id, onHide, ...props }) {
                   </h3>
                 </div>
                 <div className="flex claim-tab">
-                  <img src={pic} alt="Writer's Pic" className="approval-img" />
+                  <img
+                    src={profilePic}
+                    alt="Writer's Pic"
+                    className="approval-img"
+                  />
                 </div>
+
                 <nav className="approval-nav">
                   <ul className="claim-ul">
                     <div className="approval-spacing">
@@ -77,11 +101,14 @@ function ApprovalModal({ approvalId, id, onHide, ...props }) {
                       <li className="claim-li">
                         {firstName} {lastName}
                       </li>
-                      {/* <li className="claim-li">Ronald Richard</li> */}
                     </div>
                     <div className="approval-spacing">
                       <li className=" approval-title">Email address</li>
-                      <li className="claim-li">{email}</li>
+                      <li className="claim-li">
+                        <Link to={`mailto: ${email}`} className="phone-link">
+                          {email}
+                        </Link>
+                      </li>
                     </div>
                     <div className="approval-spacing">
                       <li className=" approval-title">Phone Number</li>
@@ -136,16 +163,10 @@ function ApprovalModal({ approvalId, id, onHide, ...props }) {
                         SKILLS
                       </li>
                       <div className="skill-flex">
-                        <li className="claim-li skills">Master's Degree</li>
-                        <li className="claim-li skills">Master's Degree</li>
-                        <li className="claim-li skills">Master's Degree</li>
-                        <li className="claim-li skills">Master's Degree</li>
-                        <li className="claim-li skills">Master's Degree</li>
-                        <li className="claim-li skills">Academic Service</li>
-                        <li className="claim-li skills">Academic Service</li>
-                        <li className="claim-li skills">Academic Service</li>
-                        <li className="claim-li skills">Academic Service</li>
-                        <li className="claim-li skills">Academic Service</li>
+                        <li className="claim-li skills">{offeringName}</li>
+                        <li className="claim-li skills">{offeringType}</li>
+                        <li className="claim-li skills">{offeringName2}</li>
+                        <li className="claim-li skills">{offeringType2}</li>
                       </div>
                     </div>
                     <div className="approval-spacing approval--spacing">
@@ -163,18 +184,9 @@ function ApprovalModal({ approvalId, id, onHide, ...props }) {
                   </div>
                 </nav>
               </>
-            ) : (
-              // <div className="text-center">
-              //   <Spinner animation="border" role="status">
-              //     <span className="sr-only">Loading...</span>
-              //   </Spinner>
-              // </div>
-              <div className="spinner">
-                <Loader />
-              </div>
-            )}
-          </Modal.Body>
-        </div>
+            </Modal.Body>
+          </div>
+        )}
       </Modal>
     </>
   );

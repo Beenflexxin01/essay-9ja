@@ -21,7 +21,7 @@ function TaskDeleteModal({ taskId, isActive, onStatusChange, ...props }) {
       }
 
       const data = await response.data;
-
+      console.log(data, "DATA ");
       console.log("deleting");
 
       onStatusChange(data.status);

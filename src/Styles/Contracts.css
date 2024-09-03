@@ -67,6 +67,10 @@
   margin: 2.6rem 0;
 }
 
+.contract-spacing {
+  margin: 1.6rem 0;
+}
+
 .close-claim {
   background-color: #fff;
   border: 1px solid #e0e0e0;
@@ -98,8 +102,11 @@
 .claim-button {
   width: 51.2rem;
   height: 4.8rem;
-  margin: 34.8rem 2.2rem 3.3rem 2.2rem;
-  margin: 8rem 0 3.3rem 0;
+  margin: 3rem 0 3.3rem 0;
+}
+
+.claim-ul {
+  padding-left: 1rem;
 }
 
 .claim-material {
@@ -150,6 +157,9 @@
 
 .approval-img {
   margin-bottom: 2.4rem;
+  height: 8.2rem;
+  width: 8.2rem;
+  border-radius: 100%;
 }
 
 .approval-heading {
@@ -166,6 +176,7 @@
   line-height: 18.9px;
   text-align: center;
   margin: 0.7rem 0.7rem 0 0;
+  text-transform: capitalize;
 }
 
 .approval-li {
@@ -177,6 +188,7 @@
 
 .arr {
   cursor: pointer;
+  margin: 0 0.8rem 0 0;
 }
 
 .reject-modal-content {
@@ -315,5 +327,17 @@
 
 .phone-link {
   text-decoration: none;
-  color: #000;
+  /* color: #000; */
+}
+
+.mb-3 {
+  margin: 1.5rem 2.4rem 2.3rem 2.4rem;
+}
+
+.nav-link {
+  margin: 0;
+}
+
+.nav {
+  margin: 1.5rem 0 2.3rem 0;
 }

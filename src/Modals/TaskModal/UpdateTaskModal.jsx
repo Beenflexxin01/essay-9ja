@@ -16,9 +16,9 @@ function UpdateTaskModal(props) {
         <Modal.Body>
           <div className="flex update-button">
             <div className="comp">
-              <button className="success">Active</button>
+              <button className="success">Complete</button>
             </div>
-            <button className="success cancel">Closed</button>
+            <button className="success cancel">Incomplete</button>
           </div>
           <div className="m-btn">
             <Button className="modal--btn">Update</Button>
