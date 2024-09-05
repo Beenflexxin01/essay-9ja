@@ -6,7 +6,7 @@ import { DateFormatter } from "../../Utils/DateFormatter";
 import { convertKoboToNaira } from "../../Utils/NairaConverter";
 import { useParams } from "react-router-dom";
 
-function WriterContract({ firstName, lastName }) {
+function UserContract({ userName, lastName }) {
   const [writerDetails, setWriterDetails] = useState([]);
   const [loading, setLoading] = useState(true);
   const { id } = useParams();
@@ -15,10 +15,7 @@ function WriterContract({ firstName, lastName }) {
     async function getWriterDetails() {
       try {
         setLoading(true);
-        // const response = await apiCall(`${BaseUrl}/contracts`);
-        const response = await apiCall(
-          `${BaseUrl}/wallets/withdrawal/requests?writerId=${id}`
-        );
+        const response = await apiCall(`${BaseUrl}/contracts?userId=${id}`);
         console.log(response, "API Response");
 
         if (response.data && response.data.data) {
@@ -47,8 +44,11 @@ function WriterContract({ firstName, lastName }) {
           <>
             <div>
               <nav className="main-nav user-nav">
-                <ul className="main-ul main--ul withdrawal-grid activities">
+                <ul className="main-ul main--ul activities">
                   <li className="main-li nam">Date</li>
+                  <li className="main-li">Title</li>
+                  <li className="main-li">Clients</li>
+                  <li className="main-li">Writer</li>
                   <li className="main-li">Amount</li>
                   <li className="main-li">Status</li>
                 </ul>
@@ -86,8 +86,7 @@ function WriterContract({ firstName, lastName }) {
               ))
             ) : (
               <p className="info">
-                No withdrawal has been made available by {firstName}
-                {lastName}.
+                No contracts available for {userName} {lastName}.
               </p>
             )}
           </>
@@ -97,4 +96,4 @@ function WriterContract({ firstName, lastName }) {
   );
 }
 
-export default WriterContract;
+export default UserContract;

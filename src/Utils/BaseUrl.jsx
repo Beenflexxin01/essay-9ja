@@ -64,7 +64,7 @@ export function GetDisputeStatus({ status, children }) {
       ? "approved completed task-width started"
       : status === "cancelled"
         ? "approved completed rejected task-width"
-        : status === "completed"
+        : status === "resolved"
           ? "approved completed task-width"
           : status === "pending"
             ? "pending completed task-width"

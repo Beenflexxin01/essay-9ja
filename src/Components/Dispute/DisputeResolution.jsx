@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import DisputeViewBtn from "../../Modals/DisputeModal/DisputeViewBtn";
-import { BackgroundColor } from "../../Utils/BaseUrl";
+import { BackgroundColor, GetDisputeStatus } from "../../Utils/BaseUrl";
 import { DateFormatter } from "../../Utils/DateFormatter";
 
 function DisputeResolution({ disputes, index }) {
@@ -45,10 +45,12 @@ function DisputeResolution({ disputes, index }) {
               <li className="main-li">
                 <DateFormatter createdAt={createdAt} />
               </li>
-              <li className="main-li check icon ">
-                {status}
+              <div className="check icon">
+                <GetDisputeStatus status={status}>
+                  <li className="main-li check icon ">{status}</li>
+                </GetDisputeStatus>
                 <DisputeViewBtn id={id} />
-              </li>
+              </div>
             </ul>
           </BackgroundColor>
         </nav>

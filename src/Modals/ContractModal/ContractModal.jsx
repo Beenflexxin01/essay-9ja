@@ -7,6 +7,7 @@ import { Loader } from "../../UI/Loader";
 import Tab from "react-bootstrap/Tab";
 import Tabs from "react-bootstrap/Tabs";
 import { convertKoboToNaira } from "../../Utils/NairaConverter";
+import ActivityLog from "./ActivityLog";
 function ContractModal({ contract_Id, taskId, onHide, ...props }) {
   const [disputes, setDisputes] = useState({});
   const [loading, setLoading] = useState(false);
@@ -129,7 +130,9 @@ function ContractModal({ contract_Id, taskId, onHide, ...props }) {
                     <div className="flex claim-button"></div>
                   </nav>
                 </Tab>
-                <Tab eventKey="logs" title="Activities Log"></Tab>
+                <Tab eventKey="logs" title="Activities Log">
+                  <ActivityLog contract_Id={contract_Id} />
+                </Tab>
               </Tabs>
             </Modal.Body>
           </div>

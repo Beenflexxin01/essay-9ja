@@ -92,7 +92,8 @@
 
 .bg {
   background-color: #fff;
-  height: 89rem;
+  /* height: 80rem; */
+  /* height: 100vh; */
   border-radius: 1.6rem;
   /* width: 100.4rem; */
   padding: 2rem;

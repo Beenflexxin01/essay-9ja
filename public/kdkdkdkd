@@ -1,336 +1,168 @@
 {
   "error": false,
-  "message": "Contracts Fetched Successfully",
+  "message": "Withdrawal Requests Fetched Successfully",
   "data": {
     "data": [
       {
-        "_id": "66d48f83b324e80a06329904",
-        "title": "now now",
-        "description": "give me an update asap",
-        "taskId": "66c31dc5292d0726c19b773f",
-        "writerId": "66c1a68297ea7bdbf3c47a11",
-        "userId": "65076587d40712c7abdaa0a3",
-        "amount": 500,
-        "txRef": "d1882a0d-f2ec-495c-be70-466fcc11f8fa",
+        "_id": "66ca21529a0dc97c143838b4",
+        "amount": 500000,
         "currency": "NGN",
-        "status": "started",
-        "expiryDate": "2024-09-03T16:00:05.945Z",
-        "dueDate": "2024-09-21T23:00:00.000Z",
-        "startDate": "2024-09-01T16:03:11.618Z",
-        "endDate": null,
-        "createdAt": "2024-09-01T16:00:05.949Z",
-        "updatedAt": "2024-09-01T16:03:11.620Z",
-        "writer": {
-          "_id": "66c1a68297ea7bdbf3c47a11",
-          "firstName": "Essay",
-          "lastName": "Writer2",
-          "profilePic": "https://picsum.photos/id/237/200/300"
-        },
-        "user": {
-          "_id": "65076587d40712c7abdaa0a3",
+        "status": "approved",
+        "createdAt": "2024-08-24T18:07:14.049Z",
+        "updatedAt": "2024-09-01T00:36:27.375Z",
+        "updatedBy": {
+          "_id": "65076739e94dddfc4f33c755",
           "firstName": "Rasheed",
-          "lastName": "Ayoade",
-          "profilePic": "https://picsum.photos/id/237/200/300"
+          "lastName": "Ayoade"
         },
-        "reviews": []
-      },
-      {
-        "_id": "66d48f100f27e71cb2c38e81",
-        "title": "now now",
-        "description": "give me an update asap",
-        "taskId": "66c31dc5292d0726c19b773f",
-        "writerId": "66c1a68297ea7bdbf3c47a11",
-        "userId": "65076587d40712c7abdaa0a3",
-        "amount": 500,
-        "txRef": "a842eba0-3dff-407d-9768-142402d428f5",
-        "currency": "NGN",
-        "status": "started",
-        "expiryDate": "2024-09-03T15:58:10.644Z",
-        "dueDate": "2024-09-21T23:00:00.000Z",
-        "startDate": "2024-09-01T15:59:12.065Z",
-        "endDate": null,
-        "createdAt": "2024-09-01T15:58:10.649Z",
-        "updatedAt": "2024-09-01T15:59:12.066Z",
-        "writer": {
-          "_id": "66c1a68297ea7bdbf3c47a11",
-          "firstName": "Essay",
-          "lastName": "Writer2",
-          "profilePic": "https://picsum.photos/id/237/200/300"
-        },
-        "user": {
-          "_id": "65076587d40712c7abdaa0a3",
-          "firstName": "Rasheed",
-          "lastName": "Ayoade",
-          "profilePic": "https://picsum.photos/id/237/200/300"
-        },
-        "reviews": []
-      },
-      {
-        "_id": "66d48d3872716ce3684f0ef8",
-        "title": "now now",
-        "description": "give me an update asap",
-        "taskId": "66c31dc5292d0726c19b773f",
-        "writerId": "66c1a68297ea7bdbf3c47a11",
-        "userId": "65076587d40712c7abdaa0a3",
-        "amount": 500,
-        "txRef": "ba056071-0e52-4645-9f63-7f0cd15a59c5",
-        "currency": "NGN",
-        "status": "started",
-        "expiryDate": "2024-09-03T15:50:19.215Z",
-        "dueDate": "2024-09-21T23:00:00.000Z",
-        "startDate": "2024-09-01T15:55:08.599Z",
-        "endDate": null,
-        "createdAt": "2024-09-01T15:50:19.218Z",
-        "updatedAt": "2024-09-01T15:55:08.600Z",
-        "writer": {
-          "_id": "66c1a68297ea7bdbf3c47a11",
-          "firstName": "Essay",
-          "lastName": "Writer2",
-          "profilePic": "https://picsum.photos/id/237/200/300"
-        },
-        "user": {
-          "_id": "65076587d40712c7abdaa0a3",
-          "firstName": "Rasheed",
-          "lastName": "Ayoade",
-          "profilePic": "https://picsum.photos/id/237/200/300"
-        },
-        "reviews": []
-      },
-      {
-        "_id": "66d48c9972716ce3684f0ee2",
-        "title": "now now",
-        "description": "give me an update asap",
-        "taskId": "66c31dc5292d0726c19b773f",
-        "writerId": "66c1a68297ea7bdbf3c47a11",
-        "userId": "65076587d40712c7abdaa0a3",
-        "amount": 500,
-        "txRef": "88561db4-9be2-437d-afb7-bf9d700d7294",
-        "currency": "NGN",
-        "status": "pending",
-        "expiryDate": "2024-09-03T15:47:39.640Z",
-        "dueDate": "2024-09-21T23:00:00.000Z",
-        "startDate": null,
-        "endDate": null,
-        "createdAt": "2024-09-01T15:47:39.643Z",
-        "updatedAt": "2024-09-01T15:47:39.643Z",
-        "writer": {
-          "_id": "66c1a68297ea7bdbf3c47a11",
-          "firstName": "Essay",
-          "lastName": "Writer2",
-          "profilePic": "https://picsum.photos/id/237/200/300"
-        },
-        "user": {
-          "_id": "65076587d40712c7abdaa0a3",
-          "firstName": "Rasheed",
-          "lastName": "Ayoade",
-          "profilePic": "https://picsum.photos/id/237/200/300"
-        },
-        "reviews": []
-      },
-      {
-        "_id": "66c1bf23716fd0c36bc89238",
-        "title": "Ghost writing job",
-        "description": "Help run am sharp sharp",
-        "taskId": "66bdd9dc6886103331553646",
-        "writerId": "66c1a68297ea7bdbf3c47a11",
-        "userId": "65076587d40712c7abdaa0a3",
-        "amount": 5000,
-        "txRef": "e1061c3f-77cc-4fc0-b7c3-1665009aef32",
-        "currency": "NGN",
-        "status": "cancelled",
-        "expiryDate": "2024-08-20T09:30:14.389Z",
-        "dueDate": "2024-08-21T23:00:00.000Z",
-        "startDate": "2024-08-18T09:30:37.502Z",
-        "endDate": "2024-08-18T11:56:53.902Z",
-        "createdAt": "2024-08-18T09:30:14.392Z",
-        "updatedAt": "2024-08-18T11:56:53.902Z",
-        "writer": {
-          "_id": "66c1a68297ea7bdbf3c47a11",
-          "firstName": "Essay",
-          "lastName": "Writer2",
-          "profilePic": "https://picsum.photos/id/237/200/300"
-        },
-        "user": {
-          "_id": "65076587d40712c7abdaa0a3",
-          "firstName": "Rasheed",
-          "lastName": "Ayoade",
-          "profilePic": "https://picsum.photos/id/237/200/300"
-        },
-        "reviews": []
-      },
-      {
-        "_id": "669cfd423bdef3a4df9c6f5d",
-        "title": "BLOG writing Gig",
-        "description": "Help run am sharp sharp",
-        "taskId": "669cfd233bdef3a4df9c6f58",
-        "writerId": "6507651ed40712c7abdaa09e",
-        "userId": "65076587d40712c7abdaa0a3",
-        "amount": 5000,
-        "txRef": "985a729f-f28b-48a9-a2d1-47519db53ba8",
-        "currency": "NGN",
-        "status": "completed",
-        "expiryDate": "2024-07-29T12:21:23.364Z",
-        "dueDate": "2024-08-22T00:00:00.000Z",
-        "startDate": "2024-07-21T12:21:55.386Z",
-        "endDate": "2024-07-21T12:22:22.455Z",
-        "createdAt": "2024-07-21T12:21:23.365Z",
-        "updatedAt": "2024-07-21T12:22:22.455Z",
         "writer": {
           "_id": "6507651ed40712c7abdaa09e",
           "firstName": "Rasheed",
           "lastName": "Ayoade",
           "profilePic": "https://picsum.photos/id/237/200/300"
         },
-        "user": {
-          "_id": "65076587d40712c7abdaa0a3",
-          "firstName": "Rasheed",
-          "lastName": "Ayoade",
-          "profilePic": "https://picsum.photos/id/237/200/300"
-        },
-        "reviews": []
+        "bankAccount": {
+          "bankName": "OPay Digital Services Limited (OPay)",
+          "accountName": "RASHEED ADEDAMOLA AYOADE",
+          "bankCode": "999992",
+          "accountNumber": "9027175094"
+        }
       },
       {
-        "_id": "669cfc593bdef3a4df9c6f06",
-        "title": "BLOG writing Gig",
-        "description": "Help run am sharp sharp",
-        "taskId": "669cfc263bdef3a4df9c6efc",
-        "writerId": "6507651ed40712c7abdaa09e",
-        "userId": "65076587d40712c7abdaa0a3",
-        "amount": 5000,
-        "txRef": "0cf24794-7176-4290-b037-f84517e007a7",
+        "_id": "669cfd833bdef3a4df9c6fa1",
+        "amount": 500000,
         "currency": "NGN",
-        "status": "completed",
-        "expiryDate": "2024-07-28T12:17:29.656Z",
-        "dueDate": "2024-07-29T00:00:00.000Z",
-        "startDate": "2024-07-21T12:19:33.887Z",
-        "endDate": "2024-07-21T12:20:15.837Z",
-        "createdAt": "2024-07-21T12:17:29.658Z",
-        "updatedAt": "2024-07-21T12:20:15.838Z",
+        "status": "rejected",
+        "createdAt": "2024-07-21T12:22:27.470Z",
+        "updatedAt": "2024-07-21T13:06:15.468Z",
+        "remark": "Withdrawal Request Rejected Because You Are Not Yet Authorized For This Action!",
+        "updatedBy": {
+          "_id": "65076739e94dddfc4f33c755",
+          "firstName": "Rasheed",
+          "lastName": "Ayoade"
+        },
         "writer": {
           "_id": "6507651ed40712c7abdaa09e",
           "firstName": "Rasheed",
           "lastName": "Ayoade",
           "profilePic": "https://picsum.photos/id/237/200/300"
         },
-        "user": {
-          "_id": "65076587d40712c7abdaa0a3",
-          "firstName": "Rasheed",
-          "lastName": "Ayoade",
-          "profilePic": "https://picsum.photos/id/237/200/300"
-        },
-        "reviews": []
+        "bankAccount": {
+          "bankName": "OPay Digital Services Limited (OPay)",
+          "accountName": "RASHEED ADEDAMOLA AYOADE",
+          "bankCode": "999992",
+          "accountNumber": "9027175094"
+        }
       },
       {
-        "_id": "669a9ef3c67dfe3c62892f0c",
-        "title": "BLOG writing Gig",
-        "description": "Help run am sharp sharp",
-        "taskId": "66818aa102b3258c06d8b09b",
-        "writerId": "6507651ed40712c7abdaa09e",
-        "userId": "65076587d40712c7abdaa0a3",
-        "amount": 5000,
-        "txRef": "eff3b0d8-4add-4c13-9880-2bedb168b1da",
+        "_id": "669cfd093bdef3a4df9c6f4e",
+        "amount": 500000,
         "currency": "NGN",
-        "status": "completed",
-        "expiryDate": "2024-07-21T17:14:27.933Z",
-        "dueDate": "2024-07-29T00:00:00.000Z",
-        "startDate": "2024-07-19T17:14:53.803Z",
-        "endDate": "2024-07-19T17:15:40.019Z",
-        "createdAt": "2024-07-19T17:14:27.934Z",
-        "updatedAt": "2024-07-19T17:15:40.019Z",
+        "status": "approved",
+        "createdAt": "2024-07-21T12:20:25.638Z",
+        "updatedAt": "2024-07-21T13:05:29.446Z",
+        "updatedBy": {
+          "_id": "65076739e94dddfc4f33c755",
+          "firstName": "Rasheed",
+          "lastName": "Ayoade"
+        },
         "writer": {
           "_id": "6507651ed40712c7abdaa09e",
           "firstName": "Rasheed",
           "lastName": "Ayoade",
           "profilePic": "https://picsum.photos/id/237/200/300"
         },
-        "user": {
-          "_id": "65076587d40712c7abdaa0a3",
-          "firstName": "Rasheed",
-          "lastName": "Ayoade",
-          "profilePic": "https://picsum.photos/id/237/200/300"
-        },
-        "reviews": [
-          {
-            "_id": "669a9f6ec67dfe3c62892f4a",
-            "senderId": "6507651ed40712c7abdaa09e",
-            "receiverId": "65076587d40712c7abdaa0a3",
-            "taskId": "66818aa102b3258c06d8b09b",
-            "contractId": "669a9ef3c67dfe3c62892f0c",
-            "feedback": "Working with Shawn was very great. He set out clear expectations of the project which made the scraping project run smoothly. I would really love to work with Shawn again on other projects.",
-            "rating": 4.5,
-            "createdAt": "2024-07-19T17:16:30.019Z",
-            "updatedAt": "2024-07-19T17:16:30.019Z"
-          }
-        ]
+        "bankAccount": {
+          "bankName": "OPay Digital Services Limited (OPay)",
+          "accountName": "RASHEED ADEDAMOLA AYOADE",
+          "bankCode": "999992",
+          "accountNumber": "9027175094"
+        }
       },
       {
-        "_id": "669a9ed2c67dfe3c62892ef7",
-        "title": "BLOG writing Gig",
-        "description": "Help run am sharp sharp",
-        "taskId": "66818aa102b3258c06d8b09b",
-        "writerId": "6507651ed40712c7abdaa09e",
-        "userId": "65076587d40712c7abdaa0a3",
-        "amount": 1510,
-        "txRef": "239f2323-94fd-42eb-acdf-416d6bfe48bf",
+        "_id": "669aa10cc67dfe3c62892f57",
+        "amount": 500000,
         "currency": "NGN",
-        "status": "pending",
-        "expiryDate": "2024-07-21T17:13:55.496Z",
-        "dueDate": "2024-07-29T00:00:00.000Z",
-        "startDate": null,
-        "endDate": null,
-        "createdAt": "2024-07-19T17:13:55.498Z",
-        "updatedAt": "2024-07-19T17:13:55.498Z",
+        "status": "rejected",
+        "createdAt": "2024-07-19T17:23:24.968Z",
+        "updatedAt": "2024-07-21T10:38:45.601Z",
+        "remark": "Nothing much",
+        "updatedBy": {
+          "_id": "65076739e94dddfc4f33c755",
+          "firstName": "Rasheed",
+          "lastName": "Ayoade"
+        },
         "writer": {
           "_id": "6507651ed40712c7abdaa09e",
           "firstName": "Rasheed",
           "lastName": "Ayoade",
           "profilePic": "https://picsum.photos/id/237/200/300"
         },
-        "user": {
-          "_id": "65076587d40712c7abdaa0a3",
-          "firstName": "Rasheed",
-          "lastName": "Ayoade",
-          "profilePic": "https://picsum.photos/id/237/200/300"
-        },
-        "reviews": []
+        "bankAccount": {
+          "bankName": "OPay Digital Services Limited (OPay)",
+          "accountName": "RASHEED ADEDAMOLA AYOADE",
+          "bankCode": "999992",
+          "accountNumber": "9027175094"
+        }
       },
       {
-        "_id": "66818c982981f7992428aaea",
-        "title": "BLOG writing Gig",
-        "description": "Help run am sharp sharp",
-        "taskId": "6665b933d03b84d4954c87a0",
-        "writerId": "6507651ed40712c7abdaa09e",
-        "userId": "65076587d40712c7abdaa0a3",
-        "amount": 1110,
-        "txRef": "0b3d5ff9-e6ef-4cd0-860b-1f601049055b",
+        "_id": "665c6d6ef984ce0f52d115d0",
+        "amount": 100000,
         "currency": "NGN",
-        "status": "completed",
-        "expiryDate": "2024-07-05T16:49:31.078Z",
-        "dueDate": "2024-07-28T23:00:00.000Z",
-        "startDate": "2024-06-30T16:55:13.419Z",
-        "endDate": "2024-06-30T17:18:59.030Z",
-        "createdAt": "2024-06-30T16:49:31.084Z",
-        "updatedAt": "2024-06-30T17:18:59.031Z",
+        "status": "approved",
+        "createdAt": "2024-06-02T13:02:38.533Z",
+        "updatedAt": "2024-06-02T13:03:50.901Z",
+        "remark": "Nothing much",
+        "updatedBy": {
+          "_id": "65076739e94dddfc4f33c755",
+          "firstName": "Rasheed",
+          "lastName": "Ayoade"
+        },
         "writer": {
           "_id": "6507651ed40712c7abdaa09e",
           "firstName": "Rasheed",
           "lastName": "Ayoade",
           "profilePic": "https://picsum.photos/id/237/200/300"
         },
-        "user": {
-          "_id": "65076587d40712c7abdaa0a3",
+        "bankAccount": {
+          "bankName": "OPay Digital Services Limited (OPay)",
+          "accountName": "RASHEED ADEDAMOLA AYOADE",
+          "bankCode": "999992",
+          "accountNumber": "9027175094"
+        }
+      },
+      {
+        "_id": "665c69cc7d5fa43c28e8f013",
+        "amount": 300000,
+        "currency": "NGN",
+        "status": "rejected",
+        "createdAt": "2024-06-02T12:47:08.106Z",
+        "updatedAt": "2024-06-02T13:00:41.501Z",
+        "remark": "Nothing much",
+        "updatedBy": {
+          "_id": "65076739e94dddfc4f33c755",
+          "firstName": "Rasheed",
+          "lastName": "Ayoade"
+        },
+        "writer": {
+          "_id": "6507651ed40712c7abdaa09e",
           "firstName": "Rasheed",
           "lastName": "Ayoade",
           "profilePic": "https://picsum.photos/id/237/200/300"
         },
-        "reviews": []
+        "bankAccount": {
+          "bankName": "OPay Digital Services Limited (OPay)",
+          "accountName": "RASHEED ADEDAMOLA AYOADE",
+          "bankCode": "999992",
+          "accountNumber": "9027175094"
+        }
       }
     ],
     "metadata": {
-      "total": 23,
+      "total": 6,
       "perPage": 10,
       "page": 1,
-      "lastPage": 3
+      "lastPage": 1
     }
   }
 }

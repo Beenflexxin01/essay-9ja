@@ -71,7 +71,11 @@ function WriterDetails() {
           </div>
         ) : (
           <>
-            <Tabs activeKey={key} onSelect={(k) => setKey(k)} className="mb-3">
+            <Tabs
+              activeKey={key}
+              onSelect={(k) => setKey(k)}
+              className="mb-3 tab-nav"
+            >
               <Tab eventKey="home" title="Details">
                 <div className="grid-user">
                   <div className="grid-user-flex">
@@ -150,10 +154,10 @@ function WriterDetails() {
                 </div>
               </Tab>
               <Tab eventKey="contracts" title="Contracts / Tasks">
-                <WriterContract />
+                <WriterContract firstName={firstName} lastName={lastName} />
               </Tab>
               <Tab eventKey="history" title="Withdrawal History">
-                <WriterWithdrawal />
+                <WriterWithdrawal firstName={firstName} lastName={lastName} />
               </Tab>
             </Tabs>
           </>

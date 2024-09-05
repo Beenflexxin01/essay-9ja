@@ -338,6 +338,15 @@
   margin: 0;
 }
 
-.nav {
+.tab-nav {
   margin: 1.5rem 0 2.3rem 0;
+}
+
+.withdrawal-grid {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.info {
+  font-size: 3rem;
+  margin: 6rem 1rem;
 }
