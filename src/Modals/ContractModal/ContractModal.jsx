@@ -28,9 +28,13 @@ function ContractModal({ contract_Id, taskId, onHide, ...props }) {
     async function getDisputes() {
       try {
         setLoading(true);
+        // const data = await apiCall(
+        //   `${BaseUrl}/contracts/${contract_Id}/activity-logs`
+        // );
         const data = await apiCall(`${BaseUrl}/contracts/${contract_Id}`);
         if (data.data.data) {
           setDisputes(data.data.data);
+          console.log(data.data.data, "SET DATA");
         } else {
           if (data.Response === "False")
             throw new Error(

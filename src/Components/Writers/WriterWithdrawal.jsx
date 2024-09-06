@@ -86,8 +86,7 @@ function WriterContract({ firstName, lastName }) {
               ))
             ) : (
               <p className="info">
-                No withdrawal has been made available by {firstName}
-                {lastName}.
+                No withdrawal has been made available by {firstName} {lastName}.
               </p>
             )}
           </>

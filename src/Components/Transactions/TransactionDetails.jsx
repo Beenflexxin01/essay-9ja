@@ -13,19 +13,11 @@ function TransactionDetails() {
   const navigate = useNavigate();
 
   const {
-    // txRef,
     transactionAmount,
-    // paymentGateway,
-    // transactionMode,
     transactionStatus,
     transactionDescription,
     currency,
-    // taskId,
-    // transactionType,
-    // contractId,
     createdAt,
-    // firstName,
-    // lastName,
   } = transactionDetails;
 
   useEffect(() => {

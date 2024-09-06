@@ -1,168 +1,98 @@
 {
   "error": false,
-  "message": "Withdrawal Requests Fetched Successfully",
+  "message": "Contract Activity Logs Fetched Successfully",
   "data": {
     "data": [
       {
-        "_id": "66ca21529a0dc97c143838b4",
-        "amount": 500000,
-        "currency": "NGN",
-        "status": "approved",
-        "createdAt": "2024-08-24T18:07:14.049Z",
-        "updatedAt": "2024-09-01T00:36:27.375Z",
-        "updatedBy": {
-          "_id": "65076739e94dddfc4f33c755",
-          "firstName": "Rasheed",
-          "lastName": "Ayoade"
-        },
-        "writer": {
-          "_id": "6507651ed40712c7abdaa09e",
+        "_id": "66d490589da73ee9618e45ac",
+        "userId": {
+          "_id": "65076587d40712c7abdaa0a3",
           "firstName": "Rasheed",
           "lastName": "Ayoade",
           "profilePic": "https://picsum.photos/id/237/200/300"
         },
-        "bankAccount": {
-          "bankName": "OPay Digital Services Limited (OPay)",
-          "accountName": "RASHEED ADEDAMOLA AYOADE",
-          "bankCode": "999992",
-          "accountNumber": "9027175094"
-        }
+        "contractId": {
+          "_id": "66d48f83b324e80a06329904",
+          "title": "now now",
+          "description": "give me an update asap",
+          "amount": 500,
+          "currency": "NGN",
+          "startDate": "2024-09-01T16:03:11.618Z",
+          "endDate": null
+        },
+        "message": "Essay Writer2 accepted the offer",
+        "actionType": "contract:offer:accepted",
+        "createdAt": "2024-09-01T16:03:36.833Z",
+        "updatedAt": "2024-09-01T16:03:36.833Z"
       },
       {
-        "_id": "669cfd833bdef3a4df9c6fa1",
-        "amount": 500000,
-        "currency": "NGN",
-        "status": "rejected",
-        "createdAt": "2024-07-21T12:22:27.470Z",
-        "updatedAt": "2024-07-21T13:06:15.468Z",
-        "remark": "Withdrawal Request Rejected Because You Are Not Yet Authorized For This Action!",
-        "updatedBy": {
-          "_id": "65076739e94dddfc4f33c755",
-          "firstName": "Rasheed",
-          "lastName": "Ayoade"
-        },
-        "writer": {
-          "_id": "6507651ed40712c7abdaa09e",
+        "_id": "66d48fd2b324e80a0632991a",
+        "userId": {
+          "_id": "65076587d40712c7abdaa0a3",
           "firstName": "Rasheed",
           "lastName": "Ayoade",
           "profilePic": "https://picsum.photos/id/237/200/300"
         },
-        "bankAccount": {
-          "bankName": "OPay Digital Services Limited (OPay)",
-          "accountName": "RASHEED ADEDAMOLA AYOADE",
-          "bankCode": "999992",
-          "accountNumber": "9027175094"
-        }
-      },
-      {
-        "_id": "669cfd093bdef3a4df9c6f4e",
-        "amount": 500000,
-        "currency": "NGN",
-        "status": "approved",
-        "createdAt": "2024-07-21T12:20:25.638Z",
-        "updatedAt": "2024-07-21T13:05:29.446Z",
-        "updatedBy": {
-          "_id": "65076739e94dddfc4f33c755",
-          "firstName": "Rasheed",
-          "lastName": "Ayoade"
+        "contractId": {
+          "_id": "66d48f83b324e80a06329904",
+          "title": "now now",
+          "description": "give me an update asap",
+          "amount": 500,
+          "currency": "NGN",
+          "startDate": "2024-09-01T16:03:11.618Z",
+          "endDate": null
         },
-        "writer": {
-          "_id": "6507651ed40712c7abdaa09e",
-          "firstName": "Rasheed",
-          "lastName": "Ayoade",
-          "profilePic": "https://picsum.photos/id/237/200/300"
-        },
-        "bankAccount": {
-          "bankName": "OPay Digital Services Limited (OPay)",
-          "accountName": "RASHEED ADEDAMOLA AYOADE",
-          "bankCode": "999992",
-          "accountNumber": "9027175094"
-        }
-      },
-      {
-        "_id": "669aa10cc67dfe3c62892f57",
-        "amount": 500000,
-        "currency": "NGN",
-        "status": "rejected",
-        "createdAt": "2024-07-19T17:23:24.968Z",
-        "updatedAt": "2024-07-21T10:38:45.601Z",
-        "remark": "Nothing much",
-        "updatedBy": {
-          "_id": "65076739e94dddfc4f33c755",
-          "firstName": "Rasheed",
-          "lastName": "Ayoade"
-        },
-        "writer": {
-          "_id": "6507651ed40712c7abdaa09e",
-          "firstName": "Rasheed",
-          "lastName": "Ayoade",
-          "profilePic": "https://picsum.photos/id/237/200/300"
-        },
-        "bankAccount": {
-          "bankName": "OPay Digital Services Limited (OPay)",
-          "accountName": "RASHEED ADEDAMOLA AYOADE",
-          "bankCode": "999992",
-          "accountNumber": "9027175094"
-        }
-      },
-      {
-        "_id": "665c6d6ef984ce0f52d115d0",
-        "amount": 100000,
-        "currency": "NGN",
-        "status": "approved",
-        "createdAt": "2024-06-02T13:02:38.533Z",
-        "updatedAt": "2024-06-02T13:03:50.901Z",
-        "remark": "Nothing much",
-        "updatedBy": {
-          "_id": "65076739e94dddfc4f33c755",
-          "firstName": "Rasheed",
-          "lastName": "Ayoade"
-        },
-        "writer": {
-          "_id": "6507651ed40712c7abdaa09e",
-          "firstName": "Rasheed",
-          "lastName": "Ayoade",
-          "profilePic": "https://picsum.photos/id/237/200/300"
-        },
-        "bankAccount": {
-          "bankName": "OPay Digital Services Limited (OPay)",
-          "accountName": "RASHEED ADEDAMOLA AYOADE",
-          "bankCode": "999992",
-          "accountNumber": "9027175094"
-        }
-      },
-      {
-        "_id": "665c69cc7d5fa43c28e8f013",
-        "amount": 300000,
-        "currency": "NGN",
-        "status": "rejected",
-        "createdAt": "2024-06-02T12:47:08.106Z",
-        "updatedAt": "2024-06-02T13:00:41.501Z",
-        "remark": "Nothing much",
-        "updatedBy": {
-          "_id": "65076739e94dddfc4f33c755",
-          "firstName": "Rasheed",
-          "lastName": "Ayoade"
-        },
-        "writer": {
-          "_id": "6507651ed40712c7abdaa09e",
-          "firstName": "Rasheed",
-          "lastName": "Ayoade",
-          "profilePic": "https://picsum.photos/id/237/200/300"
-        },
-        "bankAccount": {
-          "bankName": "OPay Digital Services Limited (OPay)",
-          "accountName": "RASHEED ADEDAMOLA AYOADE",
-          "bankCode": "999992",
-          "accountNumber": "9027175094"
-        }
+        "message": "Rasheed Ayoade sent an offer",
+        "actionType": "contract:sent",
+        "createdAt": "2024-09-01T16:01:22.205Z",
+        "updatedAt": "2024-09-01T16:01:22.205Z"
       }
     ],
     "metadata": {
-      "total": 6,
+      "total": 2,
       "perPage": 10,
       "page": 1,
       "lastPage": 1
     }
   }
+}
+
+
+
+
+
+{
+    "error": false,
+    "message": "Contract Fetched Successfully",
+    "data": {
+        "_id": "66d48f83b324e80a06329904",
+        "title": "now now",
+        "description": "give me an update asap",
+        "taskId": "66c31dc5292d0726c19b773f",
+        "writerId": "66c1a68297ea7bdbf3c47a11",
+        "userId": "65076587d40712c7abdaa0a3",
+        "amount": 500,
+        "txRef": "d1882a0d-f2ec-495c-be70-466fcc11f8fa",
+        "currency": "NGN",
+        "status": "started",
+        "expiryDate": "2024-09-03T16:00:05.945Z",
+        "dueDate": "2024-09-21T23:00:00.000Z",
+        "startDate": "2024-09-01T16:03:11.618Z",
+        "endDate": null,
+        "createdAt": "2024-09-01T16:00:05.949Z",
+        "updatedAt": "2024-09-01T16:03:11.620Z",
+        "writer": {
+            "_id": "66c1a68297ea7bdbf3c47a11",
+            "firstName": "Essay",
+            "lastName": "Writer2",
+            "profilePic": "https://picsum.photos/id/237/200/300"
+        },
+        "user": {
+            "_id": "65076587d40712c7abdaa0a3",
+            "firstName": "Rasheed",
+            "lastName": "Ayoade",
+            "profilePic": "https://picsum.photos/id/237/200/300"
+        },
+        "reviews": []
+    }
 }
