@@ -16,16 +16,18 @@ function WriterContract({ firstName, lastName }) {
       try {
         setLoading(true);
         const response = await apiCall(`${BaseUrl}/contracts?writerId=${id}`);
-        console.log(response, "API Response");
 
-        if (response.data && response.data.data) {
-          setWriterDetails(response.data.data);
-          console.log(response.data.data, "TTETETETETETETET");
+        if (
+          response.data &&
+          response.data.data &&
+          Array.isArray(response.data.data.data)
+        ) {
+          setWriterDetails(response.data.data.data);
         } else {
-          throw new Error("Something went wrong while trying to fetch data");
+          setWriterDetails([]);
         }
       } catch (err) {
-        console.log(err);
+        console.error("Error fetching writer details:", err);
       } finally {
         setLoading(false);
       }
@@ -55,14 +57,14 @@ function WriterContract({ firstName, lastName }) {
               </nav>
             </div>
             {writerDetails.length > 0 ? (
-              writerDetails.map((detail, index) => (
-                <div key={index}>
+              writerDetails.map((detail) => (
+                <div key={detail._id}>
                   <nav className="main-nav user-nav">
                     <ul className="main-ul main--ul">
                       <li className="main-li ">
                         <DateFormatter createdAt={detail.createdAt} />
                       </li>
-                      <li className="main-li">{detail.description}</li>
+                      <li className="main-li">{detail.title}</li>
                       <li className="main-li">
                         {detail.user
                           ? `${detail.user.firstName} ${detail.user.lastName}`
@@ -77,9 +79,7 @@ function WriterContract({ firstName, lastName }) {
                         {detail.currency}
                         {convertKoboToNaira(detail.amount)}
                       </li>
-                      <li className="main-li">
-                        {detail.status ? detail.status : "N/A"}
-                      </li>
+                      <li className="main-li">{detail.status || "N/A"}</li>
                     </ul>
                   </nav>
                 </div>

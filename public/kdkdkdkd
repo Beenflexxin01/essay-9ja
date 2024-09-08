@@ -1,98 +1,130 @@
 {
   "error": false,
-  "message": "Contract Activity Logs Fetched Successfully",
+  "message": "Contracts Fetched Successfully",
   "data": {
     "data": [
       {
-        "_id": "66d490589da73ee9618e45ac",
-        "userId": {
+        "_id": "66818c982981f7992428aaea",
+        "title": "BLOG writing Gig",
+        "description": "Help run am sharp sharp",
+        "taskId": "6665b933d03b84d4954c87a0",
+        "writerId": "6507651ed40712c7abdaa09e",
+        "userId": "65076587d40712c7abdaa0a3",
+        "amount": 1110,
+        "txRef": "0b3d5ff9-e6ef-4cd0-860b-1f601049055b",
+        "currency": "NGN",
+        "status": "completed",
+        "expiryDate": "2024-07-05T16:49:31.078Z",
+        "dueDate": "2024-07-28T23:00:00.000Z",
+        "startDate": "2024-06-30T16:55:13.419Z",
+        "endDate": "2024-06-30T17:18:59.030Z",
+        "createdAt": "2024-06-30T16:49:31.084Z",
+        "updatedAt": "2024-06-30T17:18:59.031Z",
+        "writer": {
+          "_id": "6507651ed40712c7abdaa09e",
+          "firstName": "Rasheed",
+          "lastName": "Ayoade",
+          "profilePic": "https://picsum.photos/id/237/200/300"
+        },
+        "user": {
           "_id": "65076587d40712c7abdaa0a3",
           "firstName": "Rasheed",
           "lastName": "Ayoade",
           "profilePic": "https://picsum.photos/id/237/200/300"
         },
-        "contractId": {
-          "_id": "66d48f83b324e80a06329904",
-          "title": "now now",
-          "description": "give me an update asap",
-          "amount": 500,
-          "currency": "NGN",
-          "startDate": "2024-09-01T16:03:11.618Z",
-          "endDate": null
-        },
-        "message": "Essay Writer2 accepted the offer",
-        "actionType": "contract:offer:accepted",
-        "createdAt": "2024-09-01T16:03:36.833Z",
-        "updatedAt": "2024-09-01T16:03:36.833Z"
+        "reviews": []
       },
       {
-        "_id": "66d48fd2b324e80a0632991a",
-        "userId": {
+        "_id": "664a0457794765d29f239b2f",
+        "title": "BLOG writing Gig",
+        "description": "Help run am sharp sharp",
+        "taskId": "65c6fae5a16631e64444b5a3",
+        "writerId": "6507651ed40712c7abdaa09e",
+        "userId": "65076587d40712c7abdaa0a3",
+        "amount": 1500,
+        "txRef": "34833877-d17c-4a35-9629-4d338ec6900e",
+        "currency": "NGN",
+        "status": "completed",
+        "expiryDate": "2024-05-26T13:53:29.625Z",
+        "dueDate": "2024-05-24T23:00:00.000Z",
+        "startDate": null,
+        "endDate": "2024-05-19T13:53:29.638Z",
+        "createdAt": "2024-05-19T13:53:29.638Z",
+        "updatedAt": "2024-05-19T13:55:34.547Z",
+        "writer": {
+          "_id": "6507651ed40712c7abdaa09e",
+          "firstName": "Rasheed",
+          "lastName": "Ayoade",
+          "profilePic": "https://picsum.photos/id/237/200/300"
+        },
+        "user": {
           "_id": "65076587d40712c7abdaa0a3",
           "firstName": "Rasheed",
           "lastName": "Ayoade",
           "profilePic": "https://picsum.photos/id/237/200/300"
         },
-        "contractId": {
-          "_id": "66d48f83b324e80a06329904",
-          "title": "now now",
-          "description": "give me an update asap",
-          "amount": 500,
-          "currency": "NGN",
-          "startDate": "2024-09-01T16:03:11.618Z",
-          "endDate": null
+        "reviews": [
+          {
+            "_id": "664a107f0be5f2fd809abf77",
+            "taskId": "65c6fae5a16631e64444b5a3",
+            "contractId": "664a0457794765d29f239b2f",
+            "feedback": "Working with Shawn was very great. He set out clear expectations of the project which made the scraping project run smoothly. I would really love to work with Shawn again on other projects.",
+            "rating": 4.5,
+            "createdAt": "2024-05-19T14:45:19.961Z",
+            "updatedAt": "2024-05-19T14:45:19.961Z",
+            "senderId": "65076587d40712c7abdaa0a3",
+            "receiverId": "6507651ed40712c7abdaa09e"
+          },
+          {
+            "_id": "664a12f66a5a4702eb21686e",
+            "taskId": "65c6fae5a16631e64444b5a3",
+            "contractId": "664a0457794765d29f239b2f",
+            "feedback": "Working with Shawn was very great. He set out clear expectations of the project which made the scraping project run smoothly. I would really love to work with Shawn again on other projects.",
+            "rating": 2.5,
+            "createdAt": "2024-05-19T14:55:50.153Z",
+            "updatedAt": "2024-05-19T14:55:50.153Z",
+            "receiverId": "65076587d40712c7abdaa0a3",
+            "senderId": "6507651ed40712c7abdaa09e"
+          }
+        ]
+      },
+      {
+        "_id": "6649dde4161f3850767cb12b",
+        "title": "BLOG writing Gig",
+        "description": "Help run am sharp sharp",
+        "taskId": "65c6fae5a16631e64444b5a3",
+        "writerId": "6507651ed40712c7abdaa09e",
+        "userId": "65076587d40712c7abdaa0a3",
+        "amount": 3500,
+        "txRef": "156cee4e-e8fd-47c6-bb96-33b89cefaa5b",
+        "currency": "NGN",
+        "status": "completed",
+        "expiryDate": "2024-05-26T11:09:27.260Z",
+        "dueDate": "2024-05-24T23:00:00.000Z",
+        "startDate": null,
+        "endDate": "2024-05-19T13:53:29.638Z",
+        "createdAt": "2024-05-19T11:09:27.270Z",
+        "updatedAt": "2024-05-19T13:26:34.008Z",
+        "writer": {
+          "_id": "6507651ed40712c7abdaa09e",
+          "firstName": "Rasheed",
+          "lastName": "Ayoade",
+          "profilePic": "https://picsum.photos/id/237/200/300"
         },
-        "message": "Rasheed Ayoade sent an offer",
-        "actionType": "contract:sent",
-        "createdAt": "2024-09-01T16:01:22.205Z",
-        "updatedAt": "2024-09-01T16:01:22.205Z"
+        "user": {
+          "_id": "65076587d40712c7abdaa0a3",
+          "firstName": "Rasheed",
+          "lastName": "Ayoade",
+          "profilePic": "https://picsum.photos/id/237/200/300"
+        },
+        "reviews": []
       }
     ],
     "metadata": {
-      "total": 2,
+      "total": 3,
       "perPage": 10,
       "page": 1,
       "lastPage": 1
     }
   }
-}
-
-
-
-
-
-{
-    "error": false,
-    "message": "Contract Fetched Successfully",
-    "data": {
-        "_id": "66d48f83b324e80a06329904",
-        "title": "now now",
-        "description": "give me an update asap",
-        "taskId": "66c31dc5292d0726c19b773f",
-        "writerId": "66c1a68297ea7bdbf3c47a11",
-        "userId": "65076587d40712c7abdaa0a3",
-        "amount": 500,
-        "txRef": "d1882a0d-f2ec-495c-be70-466fcc11f8fa",
-        "currency": "NGN",
-        "status": "started",
-        "expiryDate": "2024-09-03T16:00:05.945Z",
-        "dueDate": "2024-09-21T23:00:00.000Z",
-        "startDate": "2024-09-01T16:03:11.618Z",
-        "endDate": null,
-        "createdAt": "2024-09-01T16:00:05.949Z",
-        "updatedAt": "2024-09-01T16:03:11.620Z",
-        "writer": {
-            "_id": "66c1a68297ea7bdbf3c47a11",
-            "firstName": "Essay",
-            "lastName": "Writer2",
-            "profilePic": "https://picsum.photos/id/237/200/300"
-        },
-        "user": {
-            "_id": "65076587d40712c7abdaa0a3",
-            "firstName": "Rasheed",
-            "lastName": "Ayoade",
-            "profilePic": "https://picsum.photos/id/237/200/300"
-        },
-        "reviews": []
-    }
 }

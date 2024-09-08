@@ -15,15 +15,16 @@ function WriterContract({ firstName, lastName }) {
     async function getWriterDetails() {
       try {
         setLoading(true);
-        // const response = await apiCall(`${BaseUrl}/contracts`);
         const response = await apiCall(
           `${BaseUrl}/wallets/withdrawal/requests?writerId=${id}`
         );
-        console.log(response, "API Response");
 
-        if (response.data && response.data.data) {
-          setWriterDetails(response.data.data);
-          console.log(response.data.data, "TTETETETETETETET");
+        if (
+          response.data &&
+          response.data.data &&
+          Array.isArray(response.data.data.data)
+        ) {
+          setWriterDetails(response.data.data.data);
         } else {
           throw new Error("Something went wrong while trying to fetch data");
         }
@@ -58,20 +59,9 @@ function WriterContract({ firstName, lastName }) {
               writerDetails.map((detail, index) => (
                 <div key={index}>
                   <nav className="main-nav user-nav">
-                    <ul className="main-ul main--ul">
+                    <ul className="main-ul main--ul withdrawal-grid">
                       <li className="main-li ">
                         <DateFormatter createdAt={detail.createdAt} />
-                      </li>
-                      <li className="main-li">{detail.description}</li>
-                      <li className="main-li">
-                        {detail.user
-                          ? `${detail.user.firstName} ${detail.user.lastName}`
-                          : "N/A"}
-                      </li>
-                      <li className="main-li">
-                        {detail.writer
-                          ? `${detail.writer.firstName} ${detail.writer.lastName}`
-                          : "N/A"}
                       </li>
                       <li className="main-li">
                         {detail.currency}

@@ -117,6 +117,10 @@
   color: #505050;
 }
 
+.user-transform {
+  text-transform: capitalize;
+}
+
 .mail {
   color: #505050;
   text-decoration: none;

@@ -104,7 +104,7 @@ function WriterDetails() {
                   <div className="grid-user-flex">
                     <nav className="grid-user-nav">
                       <ul className="grid-user-ul">
-                        <li className="grid-user-li user-detail">
+                        <li className="grid-user-li user-detail user-transform">
                           {firstName} {lastName}
                         </li>
                         <li className="grid-user-li activities user-detail">

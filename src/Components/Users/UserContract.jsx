@@ -16,11 +16,13 @@ function UserContract({ userName, lastName }) {
       try {
         setLoading(true);
         const response = await apiCall(`${BaseUrl}/contracts?userId=${id}`);
-        console.log(response, "API Response");
 
-        if (response.data && response.data.data) {
-          setWriterDetails(response.data.data);
-          console.log(response.data.data, "TTETETETETETETET");
+        if (
+          response.data &&
+          response.data.data &&
+          Array.isArray(response.data.data.data)
+        ) {
+          setWriterDetails(response.data.data.data);
         } else {
           throw new Error("Something went wrong while trying to fetch data");
         }
