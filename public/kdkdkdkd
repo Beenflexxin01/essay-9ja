@@ -1,130 +1,274 @@
 {
   "error": false,
-  "message": "Contracts Fetched Successfully",
+  "message": "Flagged Tasks Fetched Successfully",
   "data": {
     "data": [
       {
-        "_id": "66818c982981f7992428aaea",
-        "title": "BLOG writing Gig",
-        "description": "Help run am sharp sharp",
-        "taskId": "6665b933d03b84d4954c87a0",
-        "writerId": "6507651ed40712c7abdaa09e",
-        "userId": "65076587d40712c7abdaa0a3",
-        "amount": 1110,
-        "txRef": "0b3d5ff9-e6ef-4cd0-860b-1f601049055b",
-        "currency": "NGN",
-        "status": "completed",
-        "expiryDate": "2024-07-05T16:49:31.078Z",
-        "dueDate": "2024-07-28T23:00:00.000Z",
-        "startDate": "2024-06-30T16:55:13.419Z",
-        "endDate": "2024-06-30T17:18:59.030Z",
-        "createdAt": "2024-06-30T16:49:31.084Z",
-        "updatedAt": "2024-06-30T17:18:59.031Z",
-        "writer": {
-          "_id": "6507651ed40712c7abdaa09e",
-          "firstName": "Rasheed",
-          "lastName": "Ayoade",
-          "profilePic": "https://picsum.photos/id/237/200/300"
-        },
-        "user": {
+        "userId": {
           "_id": "65076587d40712c7abdaa0a3",
           "firstName": "Rasheed",
           "lastName": "Ayoade",
           "profilePic": "https://picsum.photos/id/237/200/300"
         },
-        "reviews": []
+        "_id": "66d4d41a9246c958b689383c",
+        "title": "BLOG writing Gigs",
+        "description": "Help run am sharp sharp",
+        "attachment": null,
+        "offeringId": {
+          "_id": "65076888571a827bb21fb4d3",
+          "name": "SEO writing",
+          "type": "business",
+          "createdAt": "2023-09-17T20:58:48.966Z",
+          "updatedAt": "2023-09-17T20:58:48.966Z"
+        },
+        "projectBaseCurrency": "NGN",
+        "projectBudget": 10000,
+        "projectDuration": "less_than_one_month",
+        "projectScope": "one_off",
+        "status": "closed",
+        "createdAt": "2024-09-01T20:52:42.053Z",
+        "updatedAt": "2024-09-08T20:27:29.830Z"
       },
       {
-        "_id": "664a0457794765d29f239b2f",
-        "title": "BLOG writing Gig",
-        "description": "Help run am sharp sharp",
-        "taskId": "65c6fae5a16631e64444b5a3",
-        "writerId": "6507651ed40712c7abdaa09e",
-        "userId": "65076587d40712c7abdaa0a3",
-        "amount": 1500,
-        "txRef": "34833877-d17c-4a35-9629-4d338ec6900e",
-        "currency": "NGN",
-        "status": "completed",
-        "expiryDate": "2024-05-26T13:53:29.625Z",
-        "dueDate": "2024-05-24T23:00:00.000Z",
-        "startDate": null,
-        "endDate": "2024-05-19T13:53:29.638Z",
-        "createdAt": "2024-05-19T13:53:29.638Z",
-        "updatedAt": "2024-05-19T13:55:34.547Z",
-        "writer": {
-          "_id": "6507651ed40712c7abdaa09e",
-          "firstName": "Rasheed",
-          "lastName": "Ayoade",
-          "profilePic": "https://picsum.photos/id/237/200/300"
-        },
-        "user": {
+        "userId": {
           "_id": "65076587d40712c7abdaa0a3",
           "firstName": "Rasheed",
           "lastName": "Ayoade",
           "profilePic": "https://picsum.photos/id/237/200/300"
         },
-        "reviews": [
-          {
-            "_id": "664a107f0be5f2fd809abf77",
-            "taskId": "65c6fae5a16631e64444b5a3",
-            "contractId": "664a0457794765d29f239b2f",
-            "feedback": "Working with Shawn was very great. He set out clear expectations of the project which made the scraping project run smoothly. I would really love to work with Shawn again on other projects.",
-            "rating": 4.5,
-            "createdAt": "2024-05-19T14:45:19.961Z",
-            "updatedAt": "2024-05-19T14:45:19.961Z",
-            "senderId": "65076587d40712c7abdaa0a3",
-            "receiverId": "6507651ed40712c7abdaa09e"
-          },
-          {
-            "_id": "664a12f66a5a4702eb21686e",
-            "taskId": "65c6fae5a16631e64444b5a3",
-            "contractId": "664a0457794765d29f239b2f",
-            "feedback": "Working with Shawn was very great. He set out clear expectations of the project which made the scraping project run smoothly. I would really love to work with Shawn again on other projects.",
-            "rating": 2.5,
-            "createdAt": "2024-05-19T14:55:50.153Z",
-            "updatedAt": "2024-05-19T14:55:50.153Z",
-            "receiverId": "65076587d40712c7abdaa0a3",
-            "senderId": "6507651ed40712c7abdaa09e"
-          }
-        ]
+        "_id": "669d70bfec845d2c6a3c6d20",
+        "title": "BLOG writing Gig",
+        "description": "Help run am sharp sharp",
+        "attachment": null,
+        "offeringId": {
+          "_id": "65076888571a827bb21fb4d3",
+          "name": "SEO writing",
+          "type": "business",
+          "createdAt": "2023-09-17T20:58:48.966Z",
+          "updatedAt": "2023-09-17T20:58:48.966Z"
+        },
+        "projectBaseCurrency": "NGN",
+        "projectBudget": 10000,
+        "projectDuration": "less_than_one_month",
+        "projectScope": "one_off",
+        "status": "active",
+        "createdAt": "2024-07-21T20:34:07.408Z",
+        "updatedAt": "2024-07-21T20:34:07.408Z"
       },
       {
-        "_id": "6649dde4161f3850767cb12b",
-        "title": "BLOG writing Gig",
-        "description": "Help run am sharp sharp",
-        "taskId": "65c6fae5a16631e64444b5a3",
-        "writerId": "6507651ed40712c7abdaa09e",
-        "userId": "65076587d40712c7abdaa0a3",
-        "amount": 3500,
-        "txRef": "156cee4e-e8fd-47c6-bb96-33b89cefaa5b",
-        "currency": "NGN",
-        "status": "completed",
-        "expiryDate": "2024-05-26T11:09:27.260Z",
-        "dueDate": "2024-05-24T23:00:00.000Z",
-        "startDate": null,
-        "endDate": "2024-05-19T13:53:29.638Z",
-        "createdAt": "2024-05-19T11:09:27.270Z",
-        "updatedAt": "2024-05-19T13:26:34.008Z",
-        "writer": {
-          "_id": "6507651ed40712c7abdaa09e",
-          "firstName": "Rasheed",
-          "lastName": "Ayoade",
-          "profilePic": "https://picsum.photos/id/237/200/300"
-        },
-        "user": {
+        "userId": {
           "_id": "65076587d40712c7abdaa0a3",
           "firstName": "Rasheed",
           "lastName": "Ayoade",
           "profilePic": "https://picsum.photos/id/237/200/300"
         },
-        "reviews": []
+        "_id": "669d70bfec845d2c6a3c6d20",
+        "title": "BLOG writing Gig",
+        "description": "Help run am sharp sharp",
+        "attachment": null,
+        "offeringId": {
+          "_id": "65076888571a827bb21fb4d3",
+          "name": "SEO writing",
+          "type": "business",
+          "createdAt": "2023-09-17T20:58:48.966Z",
+          "updatedAt": "2023-09-17T20:58:48.966Z"
+        },
+        "projectBaseCurrency": "NGN",
+        "projectBudget": 10000,
+        "projectDuration": "less_than_one_month",
+        "projectScope": "one_off",
+        "status": "active",
+        "createdAt": "2024-07-21T20:34:07.408Z",
+        "updatedAt": "2024-07-21T20:34:07.408Z"
+      },
+      {
+        "userId": {
+          "_id": "65076587d40712c7abdaa0a3",
+          "firstName": "Rasheed",
+          "lastName": "Ayoade",
+          "profilePic": "https://picsum.photos/id/237/200/300"
+        },
+        "_id": "66c9c81c4f49049972c79bbc",
+        "title": "importance of food to life",
+        "description": "i need a detailed project about the importance of food to human health, and well being",
+        "attachment": null,
+        "offeringId": {
+          "_id": "6507687f571a827bb21fb4d0",
+          "name": "Ghost writing",
+          "type": "business",
+          "createdAt": "2023-09-17T20:58:39.339Z",
+          "updatedAt": "2023-09-17T20:58:39.339Z"
+        },
+        "projectBaseCurrency": "NGN",
+        "projectBudget": 399999.99,
+        "projectDuration": "less_than_one_month",
+        "projectScope": "one_off",
+        "status": "closed",
+        "createdAt": "2024-08-24T11:46:36.090Z",
+        "updatedAt": "2024-08-27T16:33:23.491Z"
+      },
+      {
+        "userId": {
+          "_id": "65076587d40712c7abdaa0a3",
+          "firstName": "Rasheed",
+          "lastName": "Ayoade",
+          "profilePic": "https://picsum.photos/id/237/200/300"
+        },
+        "_id": "669d70bfec845d2c6a3c6d20",
+        "title": "BLOG writing Gig",
+        "description": "Help run am sharp sharp",
+        "attachment": null,
+        "offeringId": {
+          "_id": "65076888571a827bb21fb4d3",
+          "name": "SEO writing",
+          "type": "business",
+          "createdAt": "2023-09-17T20:58:48.966Z",
+          "updatedAt": "2023-09-17T20:58:48.966Z"
+        },
+        "projectBaseCurrency": "NGN",
+        "projectBudget": 10000,
+        "projectDuration": "less_than_one_month",
+        "projectScope": "one_off",
+        "status": "active",
+        "createdAt": "2024-07-21T20:34:07.408Z",
+        "updatedAt": "2024-07-21T20:34:07.408Z"
+      },
+      {
+        "userId": {
+          "_id": "65076587d40712c7abdaa0a3",
+          "firstName": "Rasheed",
+          "lastName": "Ayoade",
+          "profilePic": "https://picsum.photos/id/237/200/300"
+        },
+        "_id": "66c295a79197d375fb72ed3c",
+        "title": "Engineering final year project",
+        "description": "give me an update asap",
+        "attachment": null,
+        "offeringId": {
+          "_id": "65076888571a827bb21fb4d3",
+          "name": "SEO writing",
+          "type": "business",
+          "createdAt": "2023-09-17T20:58:48.966Z",
+          "updatedAt": "2023-09-17T20:58:48.966Z"
+        },
+        "projectBaseCurrency": "NGN",
+        "projectBudget": 10000,
+        "projectDuration": "less_than_one_month",
+        "projectScope": "one_off",
+        "status": "active",
+        "createdAt": "2024-08-19T00:45:27.804Z",
+        "updatedAt": "2024-08-19T00:45:27.804Z"
+      },
+      {
+        "userId": {
+          "_id": "65076587d40712c7abdaa0a3",
+          "firstName": "Rasheed",
+          "lastName": "Ayoade",
+          "profilePic": "https://picsum.photos/id/237/200/300"
+        },
+        "_id": "66c295a79197d375fb72ed3c",
+        "title": "Engineering final year project",
+        "description": "give me an update asap",
+        "attachment": null,
+        "offeringId": {
+          "_id": "65076888571a827bb21fb4d3",
+          "name": "SEO writing",
+          "type": "business",
+          "createdAt": "2023-09-17T20:58:48.966Z",
+          "updatedAt": "2023-09-17T20:58:48.966Z"
+        },
+        "projectBaseCurrency": "NGN",
+        "projectBudget": 10000,
+        "projectDuration": "less_than_one_month",
+        "projectScope": "one_off",
+        "status": "active",
+        "createdAt": "2024-08-19T00:45:27.804Z",
+        "updatedAt": "2024-08-19T00:45:27.804Z"
+      },
+      {
+        "userId": {
+          "_id": "65076587d40712c7abdaa0a3",
+          "firstName": "Rasheed",
+          "lastName": "Ayoade",
+          "profilePic": "https://picsum.photos/id/237/200/300"
+        },
+        "_id": "66c295a79197d375fb72ed3c",
+        "title": "Engineering final year project",
+        "description": "give me an update asap",
+        "attachment": null,
+        "offeringId": {
+          "_id": "65076888571a827bb21fb4d3",
+          "name": "SEO writing",
+          "type": "business",
+          "createdAt": "2023-09-17T20:58:48.966Z",
+          "updatedAt": "2023-09-17T20:58:48.966Z"
+        },
+        "projectBaseCurrency": "NGN",
+        "projectBudget": 10000,
+        "projectDuration": "less_than_one_month",
+        "projectScope": "one_off",
+        "status": "active",
+        "createdAt": "2024-08-19T00:45:27.804Z",
+        "updatedAt": "2024-08-19T00:45:27.804Z"
+      },
+      {
+        "userId": {
+          "_id": "65076587d40712c7abdaa0a3",
+          "firstName": "Rasheed",
+          "lastName": "Ayoade",
+          "profilePic": "https://picsum.photos/id/237/200/300"
+        },
+        "_id": "66c31dc5292d0726c19b773f",
+        "title": "now now",
+        "description": "give me an update asap",
+        "attachment": null,
+        "offeringId": {
+          "_id": "65076888571a827bb21fb4d3",
+          "name": "SEO writing",
+          "type": "business",
+          "createdAt": "2023-09-17T20:58:48.966Z",
+          "updatedAt": "2023-09-17T20:58:48.966Z"
+        },
+        "projectBaseCurrency": "NGN",
+        "projectBudget": 500000,
+        "projectDuration": "less_than_one_month",
+        "projectScope": "one_off",
+        "status": "active",
+        "createdAt": "2024-08-19T10:26:13.131Z",
+        "updatedAt": "2024-08-19T10:26:13.131Z"
+      },
+      {
+        "userId": {
+          "_id": "65076587d40712c7abdaa0a3",
+          "firstName": "Rasheed",
+          "lastName": "Ayoade",
+          "profilePic": "https://picsum.photos/id/237/200/300"
+        },
+        "_id": "66c31dc5292d0726c19b773f",
+        "title": "now now",
+        "description": "give me an update asap",
+        "attachment": null,
+        "offeringId": {
+          "_id": "65076888571a827bb21fb4d3",
+          "name": "SEO writing",
+          "type": "business",
+          "createdAt": "2023-09-17T20:58:48.966Z",
+          "updatedAt": "2023-09-17T20:58:48.966Z"
+        },
+        "projectBaseCurrency": "NGN",
+        "projectBudget": 500000,
+        "projectDuration": "less_than_one_month",
+        "projectScope": "one_off",
+        "status": "active",
+        "createdAt": "2024-08-19T10:26:13.131Z",
+        "updatedAt": "2024-08-19T10:26:13.131Z"
       }
     ],
     "metadata": {
-      "total": 3,
+      "total": 13,
       "perPage": 10,
       "page": 1,
-      "lastPage": 1
+      "lastPage": 2
     }
   }
 }

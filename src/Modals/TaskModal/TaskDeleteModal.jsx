@@ -5,7 +5,13 @@ import apiCall from "../../hooks/apiCall";
 import { BaseUrl } from "../../Utils/BaseUrl";
 import { useState } from "react";
 
-function TaskDeleteModal({ taskId, isActive, onStatusChange, ...props }) {
+function TaskDeleteModal({
+  taskId,
+  isActive,
+  onStatusChange,
+  onHide,
+  ...props
+}) {
   const [loading, setIsLoading] = useState(false);
   const newStatus = isActive ? "close" : "activate";
   const handleCloseTask = async () => {
@@ -42,11 +48,11 @@ function TaskDeleteModal({ taskId, isActive, onStatusChange, ...props }) {
       >
         <Modal.Header className="modal--header">
           <img src={btn} alt="Delete" className="modal-img" />
-          <Modal.Title className="delete remove">Delete Task</Modal.Title>
+          <Modal.Title className="delete remove">Close Task</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <p className="modal-text">
-            Are you sure you want to delete this task?
+            Are you sure you want to close this task?
           </p>
           <div className="m-btn">
             <Button
@@ -56,7 +62,9 @@ function TaskDeleteModal({ taskId, isActive, onStatusChange, ...props }) {
             >
               Yes, close task
             </Button>
-            <Button className="modal--btn keep-btn">No, keep task</Button>
+            <Button className="modal--btn keep-btn" onClick={onHide}>
+              No, keep task
+            </Button>
           </div>
         </Modal.Body>
       </Modal>

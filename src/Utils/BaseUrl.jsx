@@ -46,17 +46,18 @@ export function GetContractStatus({ status, children }) {
   const taskClass =
     status === "started"
       ? "approved completed task-width started"
-      : status === "cancelled"
+      : status === "rejected"
         ? "approved completed rejected task-width"
-        : status === "completed"
-          ? "approved completed task-width"
-          : status === "pending"
-            ? "pending completed task-width"
-            : "";
+        : status === "cancelled"
+          ? "approved completed rejected task-width"
+          : status === "completed"
+            ? "approved completed task-width"
+            : status === "pending"
+              ? "pending completed task-width"
+              : "";
 
   return <div className={`${taskClass}`}>{children}</div>;
 }
-
 
 export function GetDisputeStatus({ status, children }) {
   const taskClass =

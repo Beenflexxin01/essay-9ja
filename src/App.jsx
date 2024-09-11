@@ -28,7 +28,7 @@ import ContractPage from "./Pages/ContractPage";
 import DisputePage from "./Pages/DisputePage";
 import WritersApprovalPage from "./Pages/WritersApprovalPage";
 import ApprovalModal from "./Modals/ApprovalModal/ApprovalModal";
-// import DisputeDetails from "./Components/Dispute/DisputeDetails";
+import FlaggedTaskPage from "./Pages/FlaggedTaskPage";
 
 function App() {
   const store = createStore({
@@ -74,6 +74,7 @@ function App() {
               <Route path="writer-details/:id" element={<WriterDetails />} />
               <Route path="task-details/:id" element={<TaskDetails />} />
               <Route path="tasks" element={<TaskActivities />} />
+              <Route path="flagged-tasks" element={<FlaggedTaskPage />} />
               <Route path="settings" element={<Settings />} />
               <Route path="security-settings" element={<SecuritySettings />} />
               <Route path="app-settings" element={<AppSettings />} />
