@@ -8,7 +8,13 @@ import Tab from "react-bootstrap/Tab";
 import Tabs from "react-bootstrap/Tabs";
 import { convertKoboToNaira } from "../../Utils/NairaConverter";
 import ActivityLog from "./ActivityLog";
-function ContractModal({ contract_Id, taskId, onHide, ...props }) {
+function ContractModal({
+  contract_Id,
+  taskId,
+  onHide,
+  writerDetail,
+  ...props
+}) {
   const [disputes, setDisputes] = useState({});
   const [loading, setLoading] = useState(false);
   const {
@@ -28,13 +34,10 @@ function ContractModal({ contract_Id, taskId, onHide, ...props }) {
     async function getDisputes() {
       try {
         setLoading(true);
-        // const data = await apiCall(
-        //   `${BaseUrl}/contracts/${contract_Id}/activity-logs`
-        // );
         const data = await apiCall(`${BaseUrl}/contracts/${contract_Id}`);
+        // console.log(data)
         if (data.data.data) {
           setDisputes(data.data.data);
-          console.log(data.data.data, "SET DATA");
         } else {
           if (data.Response === "False")
             throw new Error(
@@ -135,7 +138,10 @@ function ContractModal({ contract_Id, taskId, onHide, ...props }) {
                   </nav>
                 </Tab>
                 <Tab eventKey="logs" title="Activities Log">
-                  <ActivityLog contract_Id={contract_Id} />
+                  <ActivityLog
+                    contract_Id={contract_Id}
+                    writerDetail={writerDetail}
+                  />
                 </Tab>
               </Tabs>
             </Modal.Body>

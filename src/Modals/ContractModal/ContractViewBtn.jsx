@@ -3,7 +3,7 @@ import Button from "react-bootstrap/Button";
 import { PiDotsThreeVertical } from "react-icons/pi";
 
 import ContractModal from "./ContractModal";
-function ContractViewBtn({ contractId, users, id }) {
+function ContractViewBtn({ contractId, users, id, writerDetail }) {
   const [modalShow, setModalShow] = useState(false);
   return (
     <>
@@ -21,6 +21,7 @@ function ContractViewBtn({ contractId, users, id }) {
         contract_Id={contractId}
         users={users}
         id={id}
+        writerDetail={writerDetail}
       />
     </>
   );

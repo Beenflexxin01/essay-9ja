@@ -20,6 +20,10 @@ function Tasks({ contracts }) {
     currency,
   } = contracts;
 
+  const writerDetail = writer
+    ? `${writer.firstName} ${writer.lastName}`
+    : "N/A";
+
   return (
     <>
       <div className="grid-5-cols">
@@ -37,7 +41,7 @@ function Tasks({ contracts }) {
             </li>
             <li className="main-li">
               <Link to={`/writer-details/${writerId}`} className="phone-link">
-                {writer ? `${writer.firstName} ${writer.lastName}` : "N/A"}
+                {writerDetail}
               </Link>
             </li>
 
@@ -49,7 +53,10 @@ function Tasks({ contracts }) {
               <GetContractStatus status={status}>
                 <li className="main-li">{status}</li>
               </GetContractStatus>
-              <ContractViewBtn contractId={contractId} />
+              <ContractViewBtn
+                contractId={contractId}
+                writerDetail={writerDetail}
+              />
             </div>
           </ul>
         </nav>

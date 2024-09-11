@@ -1,0 +1,60 @@
+.contract-info {
+  font-size: 2rem;
+  margin: 2rem 3rem;
+}
+
+.profile-picture {
+  height: 3.2rem;
+  width: 3.2rem;
+  border-radius: 10rem;
+}
+
+.logs {
+  margin: 1.6rem;
+}
+
+.log-border {
+  border: 1px solid #f2f2f2;
+  width: 46rem;
+  height: 7.1rem;
+  border-radius: 0.6rem;
+  padding: 1.2rem;
+}
+
+.polygon {
+  position: absolute;
+  left: 15%;
+}
+
+.message {
+  font-weight: 400;
+  font-size: 1.6rem;
+  color: #2c2c3a;
+  line-height: 19.2px;
+}
+
+.time {
+  margin: 0.9rem;
+}
+
+.activity-date {
+  border: 0 0 1px 0 solid #f2f2f2;
+  border-radius: 0.4rem;
+  height: 3.2rem;
+  padding: 0.4rem 1.2rem;
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: #f8f8f8;
+  border-radius: 0.4rem;
+  height: 3.2rem;
+}
+
+.accordion-button {
+  font-size: 1.6rem;
+  font-weight: 400;
+}
+
+.accordion-header {
+  margin: 2.4rem;
+}

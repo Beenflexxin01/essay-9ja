@@ -350,3 +350,12 @@
   font-size: 3rem;
   margin: 6rem 1rem;
 }
+
+.tab-content {
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.tab-content::-webkit-scrollbar {
+  width: 0;
+}
