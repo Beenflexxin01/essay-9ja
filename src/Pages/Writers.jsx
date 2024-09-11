@@ -71,7 +71,7 @@ function Writers() {
         </nav>
       </div>
       {writer.length > 0 ? (
-        <div>
+        <div className="dispute-bg">
           {writerPage.map((writer, index) => (
             <WriterInfo key={writer._id} writer={writer} index={index} />
           ))}

@@ -14,7 +14,7 @@ export function StatusComponent({ withdrawalStatus, children }) {
 
 export function GetTransactionStatus({ transactions, children }) {
   const transactionClass =
-    transactions === "cancelled"
+    transactions === "closed"
       ? "rejected completed"
       : transactions === "successful"
         ? ""

@@ -11,6 +11,7 @@ import {
 } from "../../Utils/DateFormatter";
 import { Loader } from "../../UI/Loader";
 import UserContract from "./UserContract";
+import UserTasks from "./UserTasks";
 
 function UserDetails() {
   const [userDetails, setUserDetails] = useState({});
@@ -151,8 +152,11 @@ function UserDetails() {
                     </div>
                   </div>
                 </Tab>
-                <Tab eventKey="contracts" title="Contracts / Tasks">
-                  <UserContract userName={firstName} lastName={lastName}/>
+                <Tab eventKey="contracts" title="Contracts">
+                  <UserContract userName={firstName} lastName={lastName} />
+                </Tab>
+                <Tab eventKey="tasks" title="Tasks">
+                  <UserTasks userName={firstName} lastName={lastName} />
                 </Tab>
               </Tabs>
             </>

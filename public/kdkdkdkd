@@ -1,55 +1,247 @@
 {
   "error": false,
-  "message": "Contract Activity Logs Fetched Successfully",
+  "message": "Tasks fetched Successfully",
   "data": {
     "data": [
       {
-        "_id": "66d490589da73ee9618e45ac",
+        "_id": "66dc84e2a4c9b3bfb292f71b",
+        "title": "Ghost writing job",
+        "description": "Help run am sharp sharp",
+        "attachment": null,
         "userId": {
           "_id": "65076587d40712c7abdaa0a3",
           "firstName": "Rasheed",
           "lastName": "Ayoade",
           "profilePic": "https://picsum.photos/id/237/200/300"
         },
-        "contractId": {
-          "_id": "66d48f83b324e80a06329904",
-          "title": "now now",
-          "description": "give me an update asap",
-          "amount": 500,
-          "currency": "NGN",
-          "startDate": "2024-09-01T16:03:11.618Z",
-          "endDate": null
+        "offeringId": {
+          "_id": "65076888571a827bb21fb4d3",
+          "name": "SEO writing",
+          "type": "business",
+          "createdAt": "2023-09-17T20:58:48.966Z",
+          "updatedAt": "2023-09-17T20:58:48.966Z"
         },
-        "message": "Essay Writer2 accepted the offer",
-        "actionType": "contract:offer:accepted",
-        "createdAt": "2024-09-01T16:03:36.833Z",
-        "updatedAt": "2024-09-01T16:03:36.833Z"
+        "projectBaseCurrency": "NGN",
+        "projectBudget": 10000,
+        "projectDuration": "less_than_one_month",
+        "projectScope": "one_off",
+        "status": "active",
+        "additionaInfo": {
+          "fontSize": "14",
+          "fontTheme": "Arial",
+          "spaceLine": "Double Spacing",
+          "numberOfPages": "20",
+          "numberOfResearchQuestions": "5",
+          "numberOfChapters": "3",
+          "info": "Please do am well"
+        },
+        "createdAt": "2024-09-07T16:52:50.953Z",
+        "updatedAt": "2024-09-07T16:52:50.953Z"
       },
       {
-        "_id": "66d48fd2b324e80a0632991a",
+        "_id": "66c31dc5292d0726c19b773f",
+        "title": "now now",
+        "description": "give me an update asap",
+        "attachment": null,
         "userId": {
           "_id": "65076587d40712c7abdaa0a3",
           "firstName": "Rasheed",
           "lastName": "Ayoade",
           "profilePic": "https://picsum.photos/id/237/200/300"
         },
-        "contractId": {
-          "_id": "66d48f83b324e80a06329904",
-          "title": "now now",
-          "description": "give me an update asap",
-          "amount": 500,
-          "currency": "NGN",
-          "startDate": "2024-09-01T16:03:11.618Z",
-          "endDate": null
+        "offeringId": {
+          "_id": "65076888571a827bb21fb4d3",
+          "name": "SEO writing",
+          "type": "business",
+          "createdAt": "2023-09-17T20:58:48.966Z",
+          "updatedAt": "2023-09-17T20:58:48.966Z"
         },
-        "message": "Rasheed Ayoade sent an offer",
-        "actionType": "contract:sent",
-        "createdAt": "2024-09-01T16:01:22.205Z",
-        "updatedAt": "2024-09-01T16:01:22.205Z"
+        "projectBaseCurrency": "NGN",
+        "projectBudget": 500000,
+        "projectDuration": "less_than_one_month",
+        "projectScope": "one_off",
+        "status": "active",
+        "additionaInfo": {
+          "fontSize": "14",
+          "fontTheme": "Arial",
+          "spaceLine": "Double Spacing",
+          "numberOfPages": "20",
+          "numberOfResearchQuestions": "5",
+          "numberOfChapters": "3",
+          "info": "expecting good reaponse"
+        },
+        "createdAt": "2024-08-19T10:26:13.131Z",
+        "updatedAt": "2024-08-19T10:26:13.131Z"
+      },
+      {
+        "_id": "66c296399197d375fb72ed48",
+        "title": "anonymous",
+        "description": "give me an update asap",
+        "attachment": null,
+        "userId": {
+          "_id": "65076587d40712c7abdaa0a3",
+          "firstName": "Rasheed",
+          "lastName": "Ayoade",
+          "profilePic": "https://picsum.photos/id/237/200/300"
+        },
+        "offeringId": {
+          "_id": "65076888571a827bb21fb4d3",
+          "name": "SEO writing",
+          "type": "business",
+          "createdAt": "2023-09-17T20:58:48.966Z",
+          "updatedAt": "2023-09-17T20:58:48.966Z"
+        },
+        "projectBaseCurrency": "NGN",
+        "projectBudget": 500000,
+        "projectDuration": "less_than_one_month",
+        "projectScope": "one_off",
+        "status": "active",
+        "additionaInfo": {
+          "fontSize": "14",
+          "fontTheme": "Arial",
+          "spaceLine": "Double Spacing",
+          "numberOfPages": "20",
+          "numberOfResearchQuestions": "5",
+          "numberOfChapters": "3",
+          "info": "expecting good reaponse"
+        },
+        "createdAt": "2024-08-19T00:47:53.909Z",
+        "updatedAt": "2024-08-19T00:47:53.909Z"
+      },
+      {
+        "_id": "66c295a79197d375fb72ed3c",
+        "title": "Engineering final year project",
+        "description": "give me an update asap",
+        "attachment": null,
+        "userId": {
+          "_id": "65076587d40712c7abdaa0a3",
+          "firstName": "Rasheed",
+          "lastName": "Ayoade",
+          "profilePic": "https://picsum.photos/id/237/200/300"
+        },
+        "offeringId": {
+          "_id": "65076888571a827bb21fb4d3",
+          "name": "SEO writing",
+          "type": "business",
+          "createdAt": "2023-09-17T20:58:48.966Z",
+          "updatedAt": "2023-09-17T20:58:48.966Z"
+        },
+        "projectBaseCurrency": "NGN",
+        "projectBudget": 10000,
+        "projectDuration": "less_than_one_month",
+        "projectScope": "one_off",
+        "status": "active",
+        "additionaInfo": {
+          "fontSize": "14",
+          "fontTheme": "Arial",
+          "spaceLine": "Double Spacing",
+          "numberOfPages": "20",
+          "numberOfResearchQuestions": "5",
+          "numberOfChapters": "3",
+          "info": "expecting good reaponse"
+        },
+        "createdAt": "2024-08-19T00:45:27.804Z",
+        "updatedAt": "2024-08-19T00:45:27.804Z"
+      },
+      {
+        "_id": "66bd1aa0c5e73150d33dc7a4",
+        "title": "write an engineering project",
+        "description": "immediate task",
+        "attachment": "http://res.cloudinary.com/dfhteb3xs/image/upload/v1723669151/by2krmba9zjrmzw4az30.pdf",
+        "userId": {
+          "_id": "65076587d40712c7abdaa0a3",
+          "firstName": "Rasheed",
+          "lastName": "Ayoade",
+          "profilePic": "https://picsum.photos/id/237/200/300"
+        },
+        "offeringId": {
+          "_id": "65076888571a827bb21fb4d3",
+          "name": "SEO writing",
+          "type": "business",
+          "createdAt": "2023-09-17T20:58:48.966Z",
+          "updatedAt": "2023-09-17T20:58:48.966Z"
+        },
+        "projectBaseCurrency": "NGN",
+        "projectBudget": 300000,
+        "projectDuration": "less_than_one_month",
+        "projectScope": "one_off",
+        "status": "active",
+        "additionaInfo": {
+          "fontSize": "14",
+          "fontTheme": "Arial",
+          "spaceLine": "Double Spacing",
+          "numberOfPages": "20",
+          "numberOfResearchQuestions": "5",
+          "numberOfChapters": "3",
+          "info": "Please do am well"
+        },
+        "createdAt": "2024-08-14T20:59:12.105Z",
+        "updatedAt": "2024-08-14T20:59:12.105Z"
+      },
+      {
+        "_id": "66b0b442bd0727a5ad75cc41",
+        "title": "Master Thesis",
+        "description": "This is just a test.",
+        "attachment": null,
+        "userId": {
+          "_id": "65076587d40712c7abdaa0a3",
+          "firstName": "Rasheed",
+          "lastName": "Ayoade",
+          "profilePic": "https://picsum.photos/id/237/200/300"
+        },
+        "offeringId": {
+          "_id": "650767b8571a827bb21fb4a9",
+          "name": "Article writing",
+          "type": "academic",
+          "createdAt": "2023-09-17T20:55:20.182Z",
+          "updatedAt": "2023-09-17T20:55:20.182Z"
+        },
+        "projectBaseCurrency": "NGN",
+        "projectBudget": 12000,
+        "projectDuration": "one_to_three_months",
+        "projectScope": "one_off",
+        "status": "active",
+        "createdAt": "2024-08-05T11:15:14.889Z",
+        "updatedAt": "2024-08-05T11:15:14.889Z"
+      },
+      {
+        "_id": "669d70bfec845d2c6a3c6d20",
+        "title": "BLOG writing Gig",
+        "description": "Help run am sharp sharp",
+        "attachment": null,
+        "userId": {
+          "_id": "65076587d40712c7abdaa0a3",
+          "firstName": "Rasheed",
+          "lastName": "Ayoade",
+          "profilePic": "https://picsum.photos/id/237/200/300"
+        },
+        "offeringId": {
+          "_id": "65076888571a827bb21fb4d3",
+          "name": "SEO writing",
+          "type": "business",
+          "createdAt": "2023-09-17T20:58:48.966Z",
+          "updatedAt": "2023-09-17T20:58:48.966Z"
+        },
+        "projectBaseCurrency": "NGN",
+        "projectBudget": 10000,
+        "projectDuration": "less_than_one_month",
+        "projectScope": "one_off",
+        "status": "active",
+        "additionaInfo": {
+          "fontSize": "14",
+          "fontTheme": "Arial",
+          "spaceLine": "Double Spacing",
+          "numberOfPages": "20",
+          "numberOfResearchQuestions": "5",
+          "numberOfChapters": "3",
+          "info": "Please do am well"
+        },
+        "createdAt": "2024-07-21T20:34:07.408Z",
+        "updatedAt": "2024-07-21T20:34:07.408Z"
       }
     ],
     "metadata": {
-      "total": 2,
+      "total": 7,
       "perPage": 10,
       "page": 1,
       "lastPage": 1

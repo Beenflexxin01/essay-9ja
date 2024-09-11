@@ -153,7 +153,7 @@ function WriterDetails() {
                   </div>
                 </div>
               </Tab>
-              <Tab eventKey="contracts" title="Contracts / Tasks">
+              <Tab eventKey="contracts" title="Contracts">
                 <WriterContract firstName={firstName} lastName={lastName} />
               </Tab>
               <Tab eventKey="history" title="Withdrawal History">

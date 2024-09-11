@@ -74,7 +74,7 @@ function WritersApprovalPage() {
         </nav>
       </div>
       {writer.length > 0 ? (
-        <div>
+        <div className="dispute-bg">
           {writerPage.map((writer, index) => (
             <WriterAoprovals key={writer._id} writer={writer} index={index} />
           ))}

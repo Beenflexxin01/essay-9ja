@@ -71,7 +71,7 @@ function DisputePage() {
           </nav>
         </div>
         {contracts.length > 0 ? (
-          <div>
+          <div className="bg dispute-bg">
             {contractPages.map((disputes, index) => (
               <DisputeResolution
                 disputes={disputes}

@@ -58,3 +58,7 @@
 .accordion-header {
   margin: 2.4rem;
 }
+
+.accordion-item {
+  border: none;
+}

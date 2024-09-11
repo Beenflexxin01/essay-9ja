@@ -71,7 +71,7 @@ function ContractPage() {
           </nav>
         </div>
         {contracts.length > 0 ? (
-          <div>
+          <div className="bg dispute-bg">
             {contractPages.map((contracts, index) => (
               <Contracts
                 contracts={contracts}

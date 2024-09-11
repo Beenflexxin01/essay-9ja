@@ -92,11 +92,14 @@
 
 .bg {
   background-color: #fff;
-  /* height: 80rem; */
-  /* height: 100vh; */
+  height: 70rem;
   border-radius: 1.6rem;
-  /* width: 100.4rem; */
   padding: 2rem;
+}
+
+.dispute-bg {
+  padding: 0;
+  height: 60rem;
 }
 
 .grid-user {
