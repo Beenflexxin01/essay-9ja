@@ -157,8 +157,8 @@ function DisputeModal({ id, onHide, ...props }) {
                       </div>
                     </ul>
                     <div className="flex claim-button">
-                      <RefundWriter />
-                      <CloseWriterClaim />
+                      <RefundWriter id={id} />
+                      <CloseWriterClaim id={id} />
                     </div>
                   </nav>
                 </Tab>

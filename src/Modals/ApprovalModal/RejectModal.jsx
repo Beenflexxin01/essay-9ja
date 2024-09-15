@@ -1,7 +1,23 @@
+import { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 
 function RejectModal({ onHide, handleSubmission, ...props }) {
+  const [rejectionReason, setRejectionReason] = useState("");
+
+  const handleReasonChange = (event) => {
+    setRejectionReason(event.target.value);
+  };
+
+  const handleReject = () => {
+    if (!rejectionReason) {
+      alert("Please select a reason for rejection");
+      return;
+    }
+
+    handleSubmission(rejectionReason);
+  };
+
   return (
     <Modal
       {...props}
@@ -40,32 +56,51 @@ function RejectModal({ onHide, handleSubmission, ...props }) {
         <nav className="reject-nav">
           <ul className="reject-ul">
             <li className="reject-li">
-              <input type="radio" />
+              <input
+                type="radio"
+                name="rejectionReason"
+                value="Incomplete Profile"
+                onChange={handleReasonChange}
+              />
               Incomplete Profile
             </li>
             <li className="reject-li">
-              <input type="radio" />
+              <input
+                type="radio"
+                name="rejectionReason"
+                value="Attachment are not specific"
+                onChange={handleReasonChange}
+              />
               Attachment are not specific
             </li>
             <li className="reject-li">
-              <input type="radio" />
+              <input
+                type="radio"
+                name="rejectionReason"
+                value="Not capable"
+                onChange={handleReasonChange}
+              />
               Not capable
             </li>
             <li className="reject-li">
-              <input type="radio" />
+              <input
+                type="radio"
+                name="rejectionReason"
+                value="It is something else"
+                onChange={handleReasonChange}
+              />
               It is something else
             </li>
             <div className="flex reject-button">
               <Button
-                className="modal--btn cancel-btn  reject-btn"
+                className="modal--btn cancel-btn reject-btn"
                 onClick={onHide}
               >
                 Cancel
               </Button>
               <Button
                 className="modal--btn reject-btn reject--btn"
-                onClick={handleSubmission}
-                // disabled={loading}
+                onClick={handleReject}
               >
                 Reject Writer
               </Button>

@@ -184,12 +184,6 @@ function ApprovalModal({
                       <li className="claim-li review"></li>
                     </div>
                   </ul>
-                  {/* <div className="flex approval-btn">
-                    <Button className="modal--btn claim-btn">
-                      Approve Writer
-                    </Button>
-                    <RejectWriterBtn />
-                  </div> */}
 
                   <ApprovalModalBtn status={status} requestId={approvalId} />
                 </nav>

@@ -26,7 +26,7 @@ function FlaggedTasks({ tasks, index }) {
                 <input type="checkbox" />
                 {offeringId ? `${offeringId.name} ` : "N/A"}
               </li>
-              <li className="main-li">{title}</li>
+              <li className="main-li email-hover">{title}</li>
               <li className="main-li">
                 <DateFormatter createdAt={createdAt} />
               </li>
@@ -36,7 +36,6 @@ function FlaggedTasks({ tasks, index }) {
               <li className="main-li check icon">
                 {projectBaseCurrency} {convertKoboToNaira(projectBudget)}
                 <PiDotsThreeVertical size={"24px"} className="dots" />
-                {/* <TasksViewBtn taskId={taskId} status={status} /> */}
               </li>
             </ul>
           </BackgroundColor>

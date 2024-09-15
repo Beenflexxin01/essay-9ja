@@ -8,51 +8,57 @@ function ApprovalModalBtn({ status, requestId }) {
   const [loading, setIsLoading] = useState(false);
   const [currentStatus, setCurrentStatus] = useState(status);
 
-  const newAction = currentStatus ? "approved" : "rejected";
-
   const handleStatusChange = (newStatus) => {
     setCurrentStatus(newStatus);
   };
 
-  const handleSubmission = async () => {
+  const handleSubmission = async (rejectionReason) => {
     try {
       setIsLoading(true);
       const response = await apiCall(
         `${BaseUrl}/users/writer/profile/requests/${requestId}`,
         "PATCH",
+
         {
-          action: newAction,
+          action: "rejected",
+          rejectionReason: rejectionReason,
         }
       );
 
-      if (response.status !== 200)
+      if (response.status !== 200) {
         throw new Error(
           "Something went wrong while updating the status! Try again."
         );
+      }
 
       console.log(response, "REQUEST RESPONSE");
 
-      const data = await response.data;
+      const data = response.data;
 
       console.log(data, "DATA ALGO");
 
-      handleStatusChange(data.ststus);
+      handleStatusChange("rejected");
     } catch (err) {
       console.log(err);
     } finally {
       setIsLoading(false);
     }
   };
+
   return (
     <div className="flex approval-btn">
       <Button
         className="modal--btn claim-btn"
-        onClick={handleSubmission}
-        disabled={loading}
+        onClick={() => handleSubmission("approved")}
+        disabled={loading || currentStatus === "approved"}
       >
         Approve Writer
       </Button>
-      <RejectWriterBtn handleSubmission={handleSubmission}/>
+
+      <RejectWriterBtn
+        handleSubmission={() => handleSubmission("rejected")}
+        loading={loading || currentStatus === "rejected"}
+      />
     </div>
   );
 }

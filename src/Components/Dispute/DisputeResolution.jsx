@@ -20,7 +20,7 @@ function DisputeResolution({ disputes }) {
   return (
     <>
       <div className="grid-5-cols">
-        <nav className="main-nav userId-nav ">
+        <nav className="main-nav user-nav ">
           <ul className="main-ul main--ul">
             <li className="main-li check email-hover">
               <input type="checkbox" />
