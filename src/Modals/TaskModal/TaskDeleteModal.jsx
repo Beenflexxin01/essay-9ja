@@ -13,7 +13,7 @@ function TaskDeleteModal({
   ...props
 }) {
   const [loading, setIsLoading] = useState(false);
-  const newStatus = isActive ? "close" : "activate";
+  const newStatus = isActive ? "close" : "active";
   const handleCloseTask = async () => {
     try {
       const response = await apiCall(
@@ -27,8 +27,6 @@ function TaskDeleteModal({
       }
 
       const data = await response.data;
-      console.log(data, "DATA ");
-      console.log("deleting");
 
       onStatusChange(data.status);
     } catch (err) {

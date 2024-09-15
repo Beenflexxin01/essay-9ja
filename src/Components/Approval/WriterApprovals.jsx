@@ -44,6 +44,8 @@ function WriterAoprovals({ writer }) {
                 approvalId={approvalId}
                 accountStatus={accountStatus}
                 id={id}
+                status={status}
+                requestId={approvalId}
               />
             </li>
           </ul>

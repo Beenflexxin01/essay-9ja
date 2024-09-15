@@ -1,13 +1,21 @@
 import Modal from "react-bootstrap/Modal";
-import { Button } from "react-bootstrap";
-import RejectWriterBtn from "./RejectWriterBtn";
+// import { Button } from "react-bootstrap";
+// import RejectWriterBtn from "./RejectWriterBtn";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import apiCall from "../../hooks/apiCall";
 import { BaseUrl } from "../../Utils/BaseUrl";
 import { DateFormatter } from "../../Utils/DateFormatter";
 import { Loader } from "../../UI/Loader";
-function ApprovalModal({ approvalId, id, onHide, ...props }) {
+import ApprovalModalBtn from "./ApprovalModalBtn";
+function ApprovalModal({
+  approvalId,
+  id,
+  onHide,
+  status,
+  requestId,
+  ...props
+}) {
   const [writerDetails, setWriterDetails] = useState({});
   const [loading, setIsLoading] = useState(false);
   const {
@@ -176,12 +184,14 @@ function ApprovalModal({ approvalId, id, onHide, ...props }) {
                       <li className="claim-li review"></li>
                     </div>
                   </ul>
-                  <div className="flex approval-btn">
+                  {/* <div className="flex approval-btn">
                     <Button className="modal--btn claim-btn">
                       Approve Writer
                     </Button>
                     <RejectWriterBtn />
-                  </div>
+                  </div> */}
+
+                  <ApprovalModalBtn status={status} requestId={approvalId} />
                 </nav>
               </>
             </Modal.Body>

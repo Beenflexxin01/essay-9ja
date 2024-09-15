@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
-import { BaseUrl, GetTransactionStatus } from "../../Utils/BaseUrl";
+import { BaseUrl } from "../../Utils/BaseUrl";
 import apiCall from "../../hooks/apiCall";
 import { Loader } from "../../UI/Loader";
 import { DateFormatter } from "../../Utils/DateFormatter";
 import { convertKoboToNaira } from "../../Utils/NairaConverter";
 import { useParams } from "react-router-dom";
+import TasksViewBtn from "../../Modals/TaskModal/TasksViewBtn";
 
 function UserContract({ userName, lastName }) {
   const [writerDetails, setWriterDetails] = useState([]);
@@ -64,7 +65,7 @@ function UserContract({ userName, lastName }) {
                       <li className="main-li ">
                         <DateFormatter createdAt={detail.createdAt} />
                       </li>
-                      <li className="main-li">{detail.projectDuration}</li>
+                      <li className="main-li ">{detail.projectDuration}</li>
                       <li className="main-li">
                         {detail.userId
                           ? `${detail.userId.firstName} ${detail.userId.lastName}`
@@ -75,15 +76,21 @@ function UserContract({ userName, lastName }) {
                           ? `${detail.writer.firstName} ${detail.writer.lastName}`
                           : "N/A"}
                       </li>
+
                       <li className="main-li">
                         {detail.projectBaseCurrency}
                         {convertKoboToNaira(detail.projectBudget)}
                       </li>
-                      <GetTransactionStatus>
+                      <div className="check icon">
                         <li className="main-li">
                           {detail.status ? detail.status : "N/A"}
                         </li>
-                      </GetTransactionStatus>
+
+                        <TasksViewBtn
+                          taskId={detail._id}
+                          status={detail.status}
+                        />
+                      </div>
                     </ul>
                   </nav>
                 </div>

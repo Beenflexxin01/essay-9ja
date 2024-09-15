@@ -71,7 +71,7 @@ function FlaggedTaskPage() {
           </nav>
         </div>
         {contracts.length > 0 ? (
-          <div>
+          <div className="dispute-bg">
             {contractPages.map((tasks, index) => (
               <FlaggedTasks tasks={tasks} key={tasks._id} index={index} />
             ))}

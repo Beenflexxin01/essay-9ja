@@ -3,7 +3,11 @@ import Button from "react-bootstrap/Button";
 
 import RejectModal from "./RejectModal";
 
-function RejectWriterBtn({ writersId, accountStatus = "active",  }) {
+function RejectWriterBtn({
+  writersId,
+  accountStatus = "active",
+  handleSubmission,
+}) {
   const [modalShow, setModalShow] = useState(false);
   const [currentStatus, setCurrentStatus] = useState(accountStatus);
 
@@ -26,6 +30,7 @@ function RejectWriterBtn({ writersId, accountStatus = "active",  }) {
         onHide={() => setModalShow(false)}
         isActive={currentStatus === "active"}
         userId={writersId}
+        handleSubmission={handleSubmission}
       />
     </>
   );

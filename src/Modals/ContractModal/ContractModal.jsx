@@ -80,9 +80,9 @@ function ContractModal({
               <Tabs
                 activeKey={key}
                 onSelect={(k) => setKey(k)}
-                className="mb-3"
+                className="mb-3 "
               >
-                <Tab eventKey="home" title="Summary">
+                <Tab eventKey="home" title="Summary" className="tab--content">
                   <nav className="claim-nav">
                     <ul className="claim-ul">
                       <div className="contract-spacing">
@@ -137,7 +137,11 @@ function ContractModal({
                     <div className="flex claim-button"></div>
                   </nav>
                 </Tab>
-                <Tab eventKey="logs" title="Activities Log">
+                <Tab
+                  eventKey="logs"
+                  title="Activities Log"
+                  className="tab--content"
+                >
                   <ActivityLog
                     contract_Id={contract_Id}
                     writerDetail={writerDetail}

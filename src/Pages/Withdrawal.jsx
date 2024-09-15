@@ -62,7 +62,7 @@ function Withdrawal() {
           <h3 className="tertiary-header">Withdrawal Requests</h3>
         </div>
         {withdrawals.length > 0 ? (
-          <div>
+          <div className="dispute-bg">
             {withdrawalPage.map((withdrawal, index) => (
               <WithdrawalActivities
                 withdrawal={withdrawal}

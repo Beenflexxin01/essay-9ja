@@ -72,7 +72,7 @@ function TaskActivities() {
           </nav>
         </div>
         {contracts.length > 0 ? (
-          <div>
+          <div className="dispute-bg">
             {contractPages.map((tasks, index) => (
               <Tasks tasks={tasks} key={tasks._id} index={index} />
             ))}

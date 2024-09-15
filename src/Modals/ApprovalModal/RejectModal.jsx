@@ -1,39 +1,7 @@
-import { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
-import { BaseUrl } from "../../Utils/BaseUrl";
-import apiCall from "../../hooks/apiCall";
 
-function RejectModal({ userId, isActive, onHide, onStatusChange, ...props }) {
-  const [loading, setLoading] = useState(false);
-
-  const handleStatusChange = async () => {
-    setLoading(true);
-
-    try {
-      const newStatus = isActive ? "inactive" : "active";
-      const response = await apiCall(
-        `${BaseUrl}/users/${userId}/status`,
-        "PATCH",
-        { status: newStatus }
-      );
-
-      if (response.status !== 200) {
-        throw new Error("Failed to update status");
-      }
-
-      const data = await response.data;
-
-      onStatusChange(data.status);
-
-      onHide();
-    } catch (error) {
-      console.error("Error updating account status:", error);
-    } finally {
-      setLoading(false);
-    }
-  };
-
+function RejectModal({ onHide, handleSubmission, ...props }) {
   return (
     <Modal
       {...props}
@@ -96,8 +64,8 @@ function RejectModal({ userId, isActive, onHide, onStatusChange, ...props }) {
               </Button>
               <Button
                 className="modal--btn reject-btn reject--btn"
-                onClick={handleStatusChange}
-                disabled={loading}
+                onClick={handleSubmission}
+                // disabled={loading}
               >
                 Reject Writer
               </Button>

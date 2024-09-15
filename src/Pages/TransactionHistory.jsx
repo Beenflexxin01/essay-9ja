@@ -70,7 +70,7 @@ function TransactionHistory() {
             </ul>
           </nav>
           {transactions.length > 0 ? (
-            <div className="transaction-container">
+            <div className="transaction-containe dispute-bg">
               {transactionPage.map((transactions, index) => (
                 <Transactions
                   transactions={transactions}

@@ -5,6 +5,7 @@ import { Loader } from "../../UI/Loader";
 import { DateFormatter } from "../../Utils/DateFormatter";
 import { convertKoboToNaira } from "../../Utils/NairaConverter";
 import { useParams } from "react-router-dom";
+import ContractViewBtn from "../../Modals/ContractModal/ContractViewBtn";
 
 function UserContract({ userName, lastName }) {
   const [writerDetails, setWriterDetails] = useState([]);
@@ -64,7 +65,7 @@ function UserContract({ userName, lastName }) {
                       <li className="main-li ">
                         <DateFormatter createdAt={detail.createdAt} />
                       </li>
-                      <li className="main-li">{detail.description}</li>
+                      <li className="main-li email-hover">{detail.title}</li>
                       <li className="main-li">
                         {detail.user
                           ? `${detail.user.firstName} ${detail.user.lastName}`
@@ -79,9 +80,14 @@ function UserContract({ userName, lastName }) {
                         {detail.currency}
                         {convertKoboToNaira(detail.amount)}
                       </li>
-                      <li className="main-li">
-                        {detail.status ? detail.status : "N/A"}
-                      </li>
+                      <div className="check icon">
+                        <li className="main-li">
+                          {detail.status ? detail.status : "N/A"}
+                        </li>
+                        <ContractViewBtn
+                          contractId={detail._id}
+                        />
+                      </div>
                     </ul>
                   </nav>
                 </div>

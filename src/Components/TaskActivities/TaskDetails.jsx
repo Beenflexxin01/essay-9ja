@@ -1,16 +1,163 @@
+// import { useEffect, useState } from "react";
+// import { useNavigate, useParams } from "react-router-dom";
+// import { BaseUrl } from "../../Utils/BaseUrl";
+// import apiCall from "../../hooks/apiCall";
+// import { DateFormatter } from "../../Utils/DateFormatter";
+// import { DateUpdateFormatter } from "../../Utils/DateFormatter";
+// import { convertKoboToNaira } from "../../Utils/NairaConverter";
+// import { Loader } from "../../UI/Loader";
+// function TaskDetails() {
+//   const [taskDetails, setTaskDetails] = useState({});
+//   const [loading, setIsLoading] = useState(false);
+//   const [activeTab, setActiveTab] = useState("tasks");
+//   const navigate = useNavigate();
+//   const { id } = useParams();
+
+//   const {
+//     title,
+//     status,
+//     createdAt,
+//     updatedAt,
+//     projectBudget,
+//     projectBaseCurrency,
+//     offeringId,
+//   } = taskDetails;
+
+//   useEffect(() => {
+//     async function getTaskDetails() {
+//       try {
+//         setIsLoading(true);
+//         const data = await apiCall(`${BaseUrl}/tasks/${id}`);
+
+//         if (data.data.data) {
+//           setTaskDetails(data.data.data);
+//         } else {
+//           if (data.Response === "False")
+//             throw new Error("Something went wrong while trying to fetch data");
+//           setTaskDetails(data);
+//         }
+//       } catch (err) {
+//         console.log(err);
+//       } finally {
+//         setIsLoading(false);
+//       }
+//     }
+//     getTaskDetails();
+//   }, [id]);
+
+//   const handleNavigation = () => {
+//     if (activeTab === "tasks") {
+//       navigate("/tasks");
+//     } else if (activeTab === "users") {
+//       navigate("/users");
+//     }
+//   };
+
+//   return (
+//     <>
+//       <div className="containr">
+//         <div className="bg">
+//           {/* <button className="back" onClick={handleNavigation}>
+//             &larr; Back
+//           </button> */}
+
+//           {/* <button onClick={() => setActiveTab("tasks")}>Tasks Tab</button>
+//           <button onClick={() => setActiveTab("users")}>Users Tab</button> */}
+
+//           <button className="back" onClick={handleNavigation}>
+//             &larr; Back
+//           </button>
+
+//           {/* Buttons for switching between tabs */}
+//           <div className="tabs">
+//             <button
+//               className={`tab-button ${activeTab === "tasks" ? "active" : ""}`}
+//               onClick={() => setActiveTab("tasks")}
+//             >
+//               Tasks Tab
+//             </button>
+//             <button
+//               className={`tab-button ${activeTab === "users" ? "active" : ""}`}
+//               onClick={() => setActiveTab("users")}
+//             >
+//               Users Tab
+//             </button>
+//           </div>
+
+//           {loading ? (
+//             <div className="spinner">
+//               <Loader />
+//             </div>
+//           ) : (
+//             <>
+//               <p className="details">Details</p>
+//               <div className="grid-user">
+//                 <div className="grid-user-flex">
+//                   <nav className="grid-user-nav">
+//                     <ul className="grid-user-ul">
+//                       <li className="grid-user-li">Writer's name:</li>
+//                       {/* <li className="grid-user-li activities">Customer's Name:</li> */}
+//                       <li className="grid-user-li activities">Task Title:</li>
+//                       <li className="grid-user-li ">Start Date:</li>
+//                       <li className="grid-user-li activities">End Date:</li>
+//                       <li className="grid-user-li">project Budget Charge:</li>
+//                       <li className="grid-user-li activities">Status:</li>
+//                     </ul>
+//                   </nav>
+//                 </div>
+
+//                 <div className="grid-user-flex">
+//                   <nav className="grid-user-nav">
+//                     <ul className="grid-user-ul">
+//                       <li className="grid-user-li user-detail">
+//                         {offeringId ? `${offeringId.name} ` : "N/A"}
+//                       </li>
+
+//                       <li className="grid-user-li user-detail activities">
+//                         {title}
+//                       </li>
+//                       <li className="grid-user-li  user-detail">
+//                         <DateFormatter createdAt={createdAt} />
+//                       </li>
+//                       <li className="grid-user-li activities  user-detail">
+//                         <DateUpdateFormatter updatedAt={updatedAt} />
+//                       </li>
+//                       <li className="grid-user-li user-detail ">
+//                         {projectBaseCurrency}{" "}
+//                         {convertKoboToNaira(projectBudget)}
+//                       </li>
+//                       <li className="grid-user-li activities  user-detail">
+//                         {status}
+//                       </li>
+//                     </ul>
+//                   </nav>
+//                 </div>
+//               </div>
+//             </>
+//           )}
+//         </div>
+//       </div>
+//     </>
+//   );
+// }
+
+// export default TaskDetails;
+
 import { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams, useLocation } from "react-router-dom";
 import { BaseUrl } from "../../Utils/BaseUrl";
 import apiCall from "../../hooks/apiCall";
 import { DateFormatter } from "../../Utils/DateFormatter";
 import { DateUpdateFormatter } from "../../Utils/DateFormatter";
 import { convertKoboToNaira } from "../../Utils/NairaConverter";
 import { Loader } from "../../UI/Loader";
+
 function TaskDetails() {
   const [taskDetails, setTaskDetails] = useState({});
   const [loading, setIsLoading] = useState(false);
   const navigate = useNavigate();
   const { id } = useParams();
+  const location = useLocation();
 
   const {
     title,
@@ -44,11 +191,20 @@ function TaskDetails() {
     getTaskDetails();
   }, [id]);
 
+  const handleNavigation = () => {
+    // Check previous path from useLocation state or pathname
+    if (location.state && location.state.from) {
+      navigate(location.state.from); // Navigate back to the previous route
+    } else {
+      navigate("/tasks"); // Default to tasks if there's no history
+    }
+  };
+
   return (
     <>
       <div className="containr">
         <div className="bg">
-          <button className="back" onClick={() => navigate("/tasks")}>
+          <button className="back" onClick={handleNavigation}>
             &larr; Back
           </button>
 
@@ -64,11 +220,10 @@ function TaskDetails() {
                   <nav className="grid-user-nav">
                     <ul className="grid-user-ul">
                       <li className="grid-user-li">Writer's name:</li>
-                      {/* <li className="grid-user-li activities">Customer's Name:</li> */}
                       <li className="grid-user-li activities">Task Title:</li>
                       <li className="grid-user-li ">Start Date:</li>
                       <li className="grid-user-li activities">End Date:</li>
-                      <li className="grid-user-li">project Budget Charge:</li>
+                      <li className="grid-user-li">Project Budget Charge:</li>
                       <li className="grid-user-li activities">Status:</li>
                     </ul>
                   </nav>
@@ -78,27 +233,22 @@ function TaskDetails() {
                   <nav className="grid-user-nav">
                     <ul className="grid-user-ul">
                       <li className="grid-user-li user-detail">
-                        {offeringId ? `${offeringId.name} ` : "N/A"}
+                        {offeringId ? `${offeringId.name}` : "N/A"}
                       </li>
-
-                      {/* <li className="grid-user-li user-detail activities">
-      {writer ? `${writer.firstName} ${writer.lastName}` : "N/A"}
-    </li> */}
-
                       <li className="grid-user-li user-detail activities">
                         {title}
                       </li>
-                      <li className="grid-user-li  user-detail">
+                      <li className="grid-user-li user-detail">
                         <DateFormatter createdAt={createdAt} />
                       </li>
-                      <li className="grid-user-li activities  user-detail">
+                      <li className="grid-user-li activities user-detail">
                         <DateUpdateFormatter updatedAt={updatedAt} />
                       </li>
-                      <li className="grid-user-li user-detail ">
+                      <li className="grid-user-li user-detail">
                         {projectBaseCurrency}{" "}
                         {convertKoboToNaira(projectBudget)}
                       </li>
-                      <li className="grid-user-li activities  user-detail">
+                      <li className="grid-user-li activities user-detail">
                         {status}
                       </li>
                     </ul>

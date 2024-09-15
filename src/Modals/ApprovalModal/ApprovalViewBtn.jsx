@@ -3,7 +3,7 @@ import Button from "react-bootstrap/Button";
 import { PiDotsThreeVertical } from "react-icons/pi";
 import ApprovalModal from "./ApprovalModal";
 
-function ApprovalViewBtn({ approvalId, id }) {
+function ApprovalViewBtn({ approvalId, id, status }) {
   const [modalShow, setModalShow] = useState(false);
   return (
     <>
@@ -19,6 +19,8 @@ function ApprovalViewBtn({ approvalId, id }) {
         onHide={() => setModalShow(false)}
         approvalId={approvalId}
         id={id}
+        status={status}
+        requestId={approvalId}
       />
     </>
   );

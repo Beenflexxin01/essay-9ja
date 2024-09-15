@@ -144,6 +144,9 @@
 
 .approval {
   width: 71.7rem;
+  position: sticky;
+  top: 0;
+  bottom: 0;
 }
 
 .skill-flex {
@@ -210,6 +213,7 @@
   align-items: center;
   gap: 0.8rem;
   margin: 1.6rem 0;
+  cursor: pointer;
 }
 
 .reason-text {
@@ -351,11 +355,11 @@
   margin: 6rem 1rem;
 }
 
-.tab-content {
+.tab--content {
   overflow-x: hidden;
   overflow-y: scroll;
 }
 
-.tab-content::-webkit-scrollbar {
+.tab--content::-webkit-scrollbar {
   width: 0;
 }

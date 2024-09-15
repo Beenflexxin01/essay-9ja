@@ -190,6 +190,11 @@
   margin: 1.6rem auto 3.2rem auto;
 }
 
+.modal-img {
+  height: 8rem;
+  width: 4rem;
+}
+
 .comp {
   background-color: #f6f6f6;
   height: 3.2rem;

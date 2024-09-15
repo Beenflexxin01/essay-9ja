@@ -5,6 +5,7 @@ import { Loader } from "../../UI/Loader";
 import { DateFormatter } from "../../Utils/DateFormatter";
 import { convertKoboToNaira } from "../../Utils/NairaConverter";
 import { useParams } from "react-router-dom";
+import ContractViewBtn from "../../Modals/ContractModal/ContractViewBtn";
 
 function WriterContract({ firstName, lastName }) {
   const [writerDetails, setWriterDetails] = useState([]);
@@ -79,7 +80,12 @@ function WriterContract({ firstName, lastName }) {
                         {detail.currency}
                         {convertKoboToNaira(detail.amount)}
                       </li>
-                      <li className="main-li">{detail.status || "N/A"}</li>
+                      <div className="check icon">
+                        <li className="main-li">
+                          {detail.status ? detail.status : "N/A"}
+                        </li>
+                        <ContractViewBtn contractId={detail._id} />
+                      </div>
                     </ul>
                   </nav>
                 </div>
