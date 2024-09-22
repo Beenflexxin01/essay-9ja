@@ -58,13 +58,6 @@ function WithdrawalActivities({ withdrawal, index }) {
   const accountNumber = bankAccount ? bankAccount.accountNumber : "N / A";
   const bankName = bankAccount ? bankAccount.bankName : "N / A";
 
-  // const statusClass =
-  //   withdrawalStatus === "rejected"
-  //     ? "rejected"
-  //     : withdrawalStatus === "approved"
-  //       ? "approved"
-  //       : "pending";
-
   return (
     <>
       <div className="grid-5-cols ">
@@ -108,22 +101,24 @@ function WithdrawalActivities({ withdrawal, index }) {
                 <li className="main-li">Request {withdrawalStatus}</li>
                 {withdrawalStatus === "pending" && (
                   <>
-                    <li className="main-li">
-                      <button
-                        onClick={() => handleStatusChange("approved")}
-                        className="approve"
-                      >
-                        Approve
-                      </button>
-                    </li>
-                    <li className="main-li check icon  ">
-                      <button
-                        onClick={() => handleStatusChange("rejected")}
-                        className="rejected btnn approve"
-                      >
-                        Reject
-                      </button>
-                    </li>
+                    <div className="flex pend">
+                      <li className="main-li">
+                        <button
+                          onClick={() => handleStatusChange("approved")}
+                          className="approve"
+                        >
+                          Approve
+                        </button>
+                      </li>
+                      <li className="main-li check icon  ">
+                        <button
+                          onClick={() => handleStatusChange("rejected")}
+                          className="rejected btnn approve"
+                        >
+                          Reject
+                        </button>
+                      </li>
+                    </div>
                   </>
                 )}
               </StatusComponent>

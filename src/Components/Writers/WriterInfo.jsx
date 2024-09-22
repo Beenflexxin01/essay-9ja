@@ -1,5 +1,5 @@
 import WritersViewBtn from "../../Modals/WriterModal/WritersViewBtn";
-import { BackgroundColor } from "../../Utils/BaseUrl";
+import { BackgroundColor, GetWriterStatus } from "../../Utils/BaseUrl";
 import { DateFormatter } from "../../Utils/DateFormatter";
 
 function WriterInfo({ writer, index }) {
@@ -29,7 +29,6 @@ function WriterInfo({ writer, index }) {
                 <DateFormatter createdAt={createdAt} />
               </li>
               <li className="main-li ">{ratePerPage ? ratePerPage : "N/A"}</li>
-              <li className="main-li ">{accountStatus}</li>
               <li className="main-li check icon ">
                 <div className="stars">
                   <svg
@@ -46,11 +45,17 @@ function WriterInfo({ writer, index }) {
                   </svg>{" "}
                   {averageRating}
                 </div>
+              </li>
+              <div className="check icon">
+                <GetWriterStatus status={accountStatus}>
+                  <li className="main-li ">{accountStatus}</li>
+                </GetWriterStatus>
+
                 <WritersViewBtn
                   writersId={writersId}
                   accountStatus={accountStatus}
                 />
-              </li>
+              </div>
             </ul>
           </BackgroundColor>
         </nav>

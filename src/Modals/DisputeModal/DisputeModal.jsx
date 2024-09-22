@@ -9,6 +9,7 @@ import { Loader } from "../../UI/Loader";
 import Tab from "react-bootstrap/Tab";
 import Tabs from "react-bootstrap/Tabs";
 import DisputeWriterTab from "./DisputeWriterTab";
+
 function DisputeModal({ id, onHide, ...props }) {
   const [disputes, setDisputes] = useState({});
   const [loading, setLoading] = useState(false);
@@ -155,11 +156,11 @@ function DisputeModal({ id, onHide, ...props }) {
                         <li className=" claim-title">Status</li>
                         <li className="claim-li review">{status}</li>
                       </div>
+                      <div className="flex claim-button">
+                        <RefundWriter id={id} status={status} />
+                        <CloseWriterClaim id={id} />
+                      </div>
                     </ul>
-                    <div className="flex claim-button">
-                      <RefundWriter id={id} />
-                      <CloseWriterClaim id={id} />
-                    </div>
                   </nav>
                 </Tab>
                 <Tab eventKey="writers" title="Writers">

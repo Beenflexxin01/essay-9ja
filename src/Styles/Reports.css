@@ -138,6 +138,10 @@ label {
   grid-template-columns: 85% 20%;
 }
 
+.pend {
+ margin: 0 -3rem; 
+}
+
 .with-flex {
   padding: 0;
 }
@@ -181,6 +185,11 @@ label {
   color: #008000;
   text-transform: capitalize;
 }
+
+/* .approval-status {
+  background-color: transparent;
+  border: 2px solid #e5ffe5;
+} */
 
 .rejected {
   background-color: #ffebeb;

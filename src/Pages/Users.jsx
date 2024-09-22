@@ -63,10 +63,10 @@ function Users() {
             <ul className="main-ul main--ul">
               <li className="main-li name">User name</li>
               <li className="main-li">Email Address</li>
+              <li className="main-li">Phone Number</li>
               <li className="main-li">Date Joined</li>
               <li className="main-li">Last Active</li>
               <li className="main-li">Status</li>
-              <li className="main-li">Phone Number</li>
             </ul>
           </nav>
         </div>

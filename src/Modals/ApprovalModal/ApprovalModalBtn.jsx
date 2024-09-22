@@ -31,7 +31,6 @@ function ApprovalModalBtn({ status, requestId }) {
         );
       }
 
-      console.log(response, "REQUEST RESPONSE");
 
       const data = response.data;
 

@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import ApprovalViewBtn from "../../Modals/ApprovalModal/ApprovalViewBtn";
 import { DateFormatter } from "../../Utils/DateFormatter";
+import { GetApprovalStatus } from "../../Utils/BaseUrl";
 
 function WriterAoprovals({ writer }) {
   const {
@@ -38,16 +39,17 @@ function WriterAoprovals({ writer }) {
               <DateFormatter createdAt={createdAt} />
             </li>
 
-            <li className="main-li check icon">
-              {status}
+            <div className="check icon">
+              <GetApprovalStatus status={status}>
+                <li className="main-li">{status}</li>
+              </GetApprovalStatus>
               <ApprovalViewBtn
-                approvalId={approvalId}
                 accountStatus={accountStatus}
                 id={id}
                 status={status}
                 requestId={approvalId}
               />
-            </li>
+            </div>
           </ul>
         </nav>
       </div>

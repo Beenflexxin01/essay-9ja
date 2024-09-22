@@ -35,7 +35,7 @@ function DisputeResolution({ disputes }) {
               </Link>
             </li>
             <li className="main-li">
-              <Link to={`/user-details/${writers}`} className="phone-link">
+              <Link to={`/writer-details/${writers}`} className="phone-link">
                 {writerId
                   ? `${writerId.firstName} ${writerId.lastName}`
                   : "N/A"}
@@ -46,7 +46,7 @@ function DisputeResolution({ disputes }) {
             </li>
             <div className="check icon">
               <GetDisputeStatus status={status}>
-                <li className="main-li check icon ">{status}</li>
+                <li className="main-li">{status}</li>
               </GetDisputeStatus>
               <DisputeViewBtn id={id} />
             </div>

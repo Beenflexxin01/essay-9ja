@@ -61,15 +61,37 @@ export function GetContractStatus({ status, children }) {
 
 export function GetDisputeStatus({ status, children }) {
   const taskClass =
-    status === "started"
+    status === "in_progress"
       ? "approved completed task-width started"
-      : status === "cancelled"
+      : status === "resolved"
+        ? "approved completed task-width"
+        : "";
+
+  return <div className={`${taskClass}`}>{children}</div>;
+}
+
+export function GetApprovalStatus({ status, children }) {
+  const taskClass =
+    status === "approved"
+      ? "approved completed task-width approval-status"
+      : status === "rejected"
         ? "approved completed rejected task-width"
-        : status === "resolved"
-          ? "approved completed task-width"
-          : status === "pending"
-            ? "pending completed task-width"
-            : "";
+        : status === "pending"
+          ? "pending completed task-width"
+          : "";
+
+  return <div className={`${taskClass}`}>{children}</div>;
+}
+
+export function GetWriterStatus({ status, children }) {
+  const taskClass =
+    status === "active"
+      ? "approved completed task-width approval-status"
+      : status === "inactive"
+        ? "approved completed rejected task-width"
+        : status === "pending"
+          ? "pending completed task-width"
+          : "";
 
   return <div className={`${taskClass}`}>{children}</div>;
 }

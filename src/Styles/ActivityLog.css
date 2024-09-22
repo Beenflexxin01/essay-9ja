@@ -62,3 +62,11 @@
 .accordion-item {
   border: none;
 }
+
+.Toastify__progress-bar--wrp {
+  width: 0;
+}
+
+.Toastify__toast-body > div:last-child {
+  font-size: 1.3rem;
+}

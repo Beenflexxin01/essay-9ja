@@ -214,6 +214,7 @@
   border-radius: 0.6rem;
   font-size: 1.4rem;
   line-height: 20.3px;
+  text-align: center;
 }
 
 .kf {
@@ -257,5 +258,5 @@
 
 .gg {
   padding: 0.5rem;
-  text-transform: capitalize;
+  text-align: center;
 }

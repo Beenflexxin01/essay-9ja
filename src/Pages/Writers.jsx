@@ -65,8 +65,8 @@ function Writers() {
             <li className="main-li">Completed Tasks</li>
             <li className="main-li">Date Joined</li>
             <li className="main-li">Rate</li>
-            <li className="main-li">Account Status</li>
             <li className="main-li">Rating</li>
+            <li className="main-li">Account Status</li>
           </ul>
         </nav>
       </div>

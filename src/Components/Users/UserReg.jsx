@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import UsersViewBtn from "../../Modals/UserModal/UsersViewBtn";
-import { BackgroundColor } from "../../Utils/BaseUrl";
+import { BackgroundColor, GetWriterStatus } from "../../Utils/BaseUrl";
 import { DateFormatter, TimeFormatter } from "../../Utils/DateFormatter";
 import { DateUpdateFormatter } from "../../Utils/DateFormatter";
 
@@ -31,6 +31,11 @@ function UserReg({ user, index }) {
                   {email}
                 </Link>
               </li>
+              <li className="main-li check icon">
+                <Link to={`tel: ${phoneNumber}`} className="phone-link">
+                  {phoneNumber ? `${phoneNumber}` : "N/A"}
+                </Link>
+              </li>
               <li className="main-li">
                 <DateFormatter createdAt={createdAt} />
               </li>
@@ -40,11 +45,12 @@ function UserReg({ user, index }) {
                   <TimeFormatter updatedAt={updatedAt} />
                 </span>
               </li>
-              <li className="main-li format">{accountStatus}</li>
-              <li className="main-li check icon">
-                {phoneNumber ? `${phoneNumber}` : "N/A"}
+              <div className="check icon">
+                <GetWriterStatus status={accountStatus}>
+                  <li className="main-li">{accountStatus}</li>
+                </GetWriterStatus>
                 <UsersViewBtn userId={userId} accountStatus={accountStatus} />
-              </li>
+              </div>
             </ul>
           </BackgroundColor>
         </nav>

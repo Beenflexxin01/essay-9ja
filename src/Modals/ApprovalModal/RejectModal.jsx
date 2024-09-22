@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
+import { toast } from "react-toastify";
 
 function RejectModal({ onHide, handleSubmission, ...props }) {
   const [rejectionReason, setRejectionReason] = useState("");
@@ -11,7 +12,7 @@ function RejectModal({ onHide, handleSubmission, ...props }) {
 
   const handleReject = () => {
     if (!rejectionReason) {
-      alert("Please select a reason for rejection");
+      toast.error("Please select a reason for rejection");
       return;
     }
 

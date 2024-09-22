@@ -45,7 +45,7 @@ function TaskActivities({ contracts }) {
                       <DateFormatter createdAt={contract.createdAt} />
                     </li>
                     <GetTransactionStatus>
-                      <li className="gg">{contract.status}</li>
+                      <li className="main-li">{contract.status}</li>
                     </GetTransactionStatus>
                     <li className="main-li check icon">
                       {contract.currency} {convertKoboToNaira(contract.amount)}{" "}

@@ -55,7 +55,7 @@ function Login() {
 
         resetForm();
 
-        toast.success("Login Successful. Redriecting to dashboard page!");
+        toast.success("Login Successful ...");
 
         navigate("/home");
       } else {
@@ -168,13 +168,6 @@ function Login() {
             >
               {isLoading ? (
                 <div className="">
-                  {/* <ClipLoader
-                    color={"#ffffff"}
-                    loading={isLoading}
-                    size={20}
-                    aria-label="Loading Spinner"
-                    data-testid="loader"
-                  /> */}
                   <p className="capitalize">Log In {error}</p>
                 </div>
               ) : (

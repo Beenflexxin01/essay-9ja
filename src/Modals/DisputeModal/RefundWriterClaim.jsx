@@ -1,6 +1,12 @@
 import Modal from "react-bootstrap/Modal";
+import Button from "react-bootstrap/Button";
 
-function RefundWriterClaim({ ...props }) {
+function RefundWriterClaim({ handleSubmission, onHide, ...props }) {
+  const handleConfirm = () => {
+    handleSubmission("resolved");
+    onHide();
+  };
+
   return (
     <Modal
       {...props}
@@ -54,8 +60,18 @@ function RefundWriterClaim({ ...props }) {
         <h3 className="tertiary-header claim-header">Refund Writer</h3>
         <p className="claim-text close-claim-text">
           A message will be sent to both parties informing them about the
-          decision, and the client will be refunded in the next few hours
+          decision, and the client will be refunded in the next few hours.
         </p>
+        <div className="modal-footer">
+          <div className="flex">
+            <Button variant="secondary" onClick={onHide}>
+              Cancel
+            </Button>
+            <Button variant="secondary" onClick={handleConfirm}>
+              Confirm Refund
+            </Button>
+          </div>
+        </div>
       </Modal.Body>
     </Modal>
   );
