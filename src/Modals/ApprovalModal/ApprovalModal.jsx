@@ -185,7 +185,7 @@ function ApprovalModal({
                     </div>
                   </ul>
 
-                  <ApprovalModalBtn status={status} requestId={approvalId} />
+                  <ApprovalModalBtn status={status} approvalId={approvalId} />
                 </nav>
               </>
             </Modal.Body>

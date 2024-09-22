@@ -17,10 +17,9 @@ function ApprovalViewBtn({ approvalId, id, status }) {
       <ApprovalModal
         show={modalShow}
         onHide={() => setModalShow(false)}
-        approvalId={approvalId}
         id={id}
         status={status}
-        requestId={approvalId}
+        approvalId={approvalId}
       />
     </>
   );

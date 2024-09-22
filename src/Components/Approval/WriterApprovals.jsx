@@ -47,7 +47,7 @@ function WriterAoprovals({ writer }) {
                 accountStatus={accountStatus}
                 id={id}
                 status={status}
-                requestId={approvalId}
+                approvalId={approvalId}
               />
             </div>
           </ul>

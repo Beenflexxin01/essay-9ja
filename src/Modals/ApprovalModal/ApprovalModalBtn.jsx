@@ -4,7 +4,7 @@ import { useState } from "react";
 import apiCall from "../../hooks/apiCall";
 import { BaseUrl } from "../../Utils/BaseUrl";
 
-function ApprovalModalBtn({ status, requestId }) {
+function ApprovalModalBtn({ status, approvalId }) {
   const [loading, setIsLoading] = useState(false);
   const [currentStatus, setCurrentStatus] = useState(status);
 
@@ -16,7 +16,7 @@ function ApprovalModalBtn({ status, requestId }) {
     try {
       setIsLoading(true);
       const response = await apiCall(
-        `${BaseUrl}/users/writer/profile/requests/${requestId}`,
+        `${BaseUrl}/users/writer/profile/requests/${approvalId}`,
         "PATCH",
 
         {
@@ -31,10 +31,7 @@ function ApprovalModalBtn({ status, requestId }) {
         );
       }
 
-
-      const data = response.data;
-
-      console.log(data, "DATA ALGO");
+      // const data = response.data;
 
       handleStatusChange("rejected");
     } catch (err) {
