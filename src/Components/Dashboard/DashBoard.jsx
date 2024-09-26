@@ -182,7 +182,7 @@ function DashBoard({ status }) {
                           {convertKoboToNaira(transaction.transactionAmount)}
                         </li>
                         <GetTransactionStatus withdrawalStatus={transactions}>
-                          <li className="gg">{transaction.transactionStatus}</li>
+                          <li className="">{transaction.transactionStatus}</li>
                         </GetTransactionStatus>
                       </div>
                     </div>

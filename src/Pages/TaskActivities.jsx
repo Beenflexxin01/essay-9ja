@@ -66,8 +66,8 @@ function TaskActivities() {
               <li className="main-li name">Name</li>
               <li className="main-li">Task Title</li>
               <li className="main-li"> Date</li>
-              <li className="main-li">Status</li>
               <li className="main-li">Amount</li>
+              <li className="main-li">Status</li>
             </ul>
           </nav>
         </div>

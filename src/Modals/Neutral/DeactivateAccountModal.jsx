@@ -3,6 +3,7 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import { BaseUrl } from "../../Utils/BaseUrl";
 import apiCall from "../../hooks/apiCall";
+import { toast } from "react-toastify";
 
 function DeactivateAccountModal({
   userId,
@@ -30,10 +31,10 @@ function DeactivateAccountModal({
       const data = await response.data;
 
       onStatusChange(data.status);
-
       onHide();
     } catch (error) {
       console.error("Error updating account status:", error);
+      toast.error("Unable to carry out the requested action. Please try again");
     } finally {
       setLoading(false);
     }

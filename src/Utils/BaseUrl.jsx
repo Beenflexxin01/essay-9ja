@@ -20,11 +20,7 @@ export function GetTransactionStatus({ transactions, children }) {
         ? ""
         : "approved transaction-approved completed";
 
-  return (
-    <div className={`${transactionClass} transaction-nav-li gg`}>
-      {children}
-    </div>
-  );
+  return <div className={`${transactionClass}`}>{children}</div>;
 }
 
 export function GetTaskStatus({ status, children }) {
@@ -37,9 +33,7 @@ export function GetTaskStatus({ status, children }) {
           ? "pending completed task-width"
           : "";
 
-  return (
-    <div className={`${taskClass} transaction-nav-li gg `}>{children}</div>
-  );
+  return <div className={`${taskClass} `}>{children}</div>;
 }
 
 export function GetContractStatus({ status, children }) {
@@ -54,7 +48,9 @@ export function GetContractStatus({ status, children }) {
             ? "approved completed task-width"
             : status === "pending"
               ? "pending completed task-width"
-              : "";
+              : status === "disputed"
+                ? "pending completed task-width"
+                : "";
 
   return <div className={`${taskClass}`}>{children}</div>;
 }
@@ -94,6 +90,19 @@ export function GetWriterStatus({ status, children }) {
           : "";
 
   return <div className={`${taskClass}`}>{children}</div>;
+}
+
+export function GetWithdrawalStatus({ withdrawalStatus, children }) {
+  const taskClass =
+    withdrawalStatus === "rejected"
+      ? "rejected completed task-width withdrawal"
+      : withdrawalStatus === "approved"
+        ? "approved completed task-width withdrawal"
+        : withdrawalStatus === "pending"
+          ? "pending completed task-width withdrawal"
+          : "";
+
+  return <div className={`${taskClass} `}>{children}</div>;
 }
 
 export function BackgroundColor({ index, children }) {

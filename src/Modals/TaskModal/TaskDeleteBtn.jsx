@@ -21,6 +21,7 @@ function TaskDeleteBtn({ taskId, status }) {
         taskId={taskId}
         onStatusChage={handleStatusChange}
         isActive={currentStatus === "active"}
+        status={status}
       />
     </>
   );

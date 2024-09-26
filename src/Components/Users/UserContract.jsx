@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { BaseUrl } from "../../Utils/BaseUrl";
+import { BaseUrl, GetContractStatus } from "../../Utils/BaseUrl";
 import apiCall from "../../hooks/apiCall";
 import { Loader } from "../../UI/Loader";
 import { DateFormatter } from "../../Utils/DateFormatter";
@@ -81,12 +81,12 @@ function UserContract({ userName, lastName }) {
                         {convertKoboToNaira(detail.amount)}
                       </li>
                       <div className="check icon">
-                        <li className="main-li">
-                          {detail.status ? detail.status : "N/A"}
-                        </li>
-                        <ContractViewBtn
-                          contractId={detail._id}
-                        />
+                        <GetContractStatus status={detail.status}>
+                          <li className="main-li">
+                            {detail.status ? detail.status : "N/A"}
+                          </li>
+                        </GetContractStatus>
+                        <ContractViewBtn contractId={detail._id} />
                       </div>
                     </ul>
                   </nav>

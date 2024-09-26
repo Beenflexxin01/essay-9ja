@@ -3,6 +3,7 @@ import RejectWriterBtn from "./RejectWriterBtn";
 import { useState } from "react";
 import apiCall from "../../hooks/apiCall";
 import { BaseUrl } from "../../Utils/BaseUrl";
+import { toast } from "react-toastify";
 
 function ApprovalModalBtn({ status, approvalId }) {
   const [loading, setIsLoading] = useState(false);
@@ -36,6 +37,7 @@ function ApprovalModalBtn({ status, approvalId }) {
       handleStatusChange("rejected");
     } catch (err) {
       console.log(err);
+      toast.error(`You cannot carry out this action at this time.`);
     } finally {
       setIsLoading(false);
     }
@@ -46,14 +48,14 @@ function ApprovalModalBtn({ status, approvalId }) {
       <Button
         className="modal--btn claim-btn"
         onClick={() => handleSubmission("approved")}
-        disabled={loading || currentStatus === "approved"}
+        disabled={loading || currentStatus === "approved" || "rejected"}
       >
         Approve Writer
       </Button>
 
       <RejectWriterBtn
         handleSubmission={() => handleSubmission("rejected")}
-        loading={loading || currentStatus === "rejected"}
+        loading={loading || currentStatus === "rejected" || "approved"}
       />
     </div>
   );

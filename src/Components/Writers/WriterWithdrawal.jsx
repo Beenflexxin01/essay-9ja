@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { BaseUrl } from "../../Utils/BaseUrl";
+import { BaseUrl, GetWithdrawalStatus } from "../../Utils/BaseUrl";
 import apiCall from "../../hooks/apiCall";
 import { Loader } from "../../UI/Loader";
 import { DateFormatter } from "../../Utils/DateFormatter";
@@ -67,9 +67,11 @@ function WriterContract({ firstName, lastName }) {
                         {detail.currency}
                         {convertKoboToNaira(detail.amount)}
                       </li>
-                      <li className="main-li">
-                        {detail.status ? detail.status : "N/A"}
-                      </li>
+                      <GetWithdrawalStatus withdrawalStatus={detail.status}>
+                        <li className="main-li">
+                          {detail.status ? detail.status : "N/A"}
+                        </li>
+                      </GetWithdrawalStatus>
                     </ul>
                   </nav>
                 </div>

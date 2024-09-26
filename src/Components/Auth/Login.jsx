@@ -66,9 +66,10 @@ function Login() {
         setError(err.response?.data.message);
       else if (err && err instanceof Error) setError(err.message);
       console.log("Error: ", err);
-      toast.error(
-        `Unable to login! Please check your login credentials and try again! `
-      );
+      toast.error(`${error}`);
+      // toast.error(
+      //   `Unable to login! Please check your login credentials and try again! ${error}`
+      // );
     } finally {
       setIsLoading(false);
     }
@@ -168,7 +169,7 @@ function Login() {
             >
               {isLoading ? (
                 <div className="">
-                  <p className="capitalize">Log In {error}</p>
+                  <p className="capitalize">Log In</p>
                 </div>
               ) : (
                 "Log In"

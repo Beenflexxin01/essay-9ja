@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { BaseUrl } from "../../Utils/BaseUrl";
+import { BaseUrl, GetTaskStatus } from "../../Utils/BaseUrl";
 import apiCall from "../../hooks/apiCall";
 import { Loader } from "../../UI/Loader";
 import { DateFormatter } from "../../Utils/DateFormatter";
@@ -82,9 +82,11 @@ function UserContract({ userName, lastName }) {
                         {convertKoboToNaira(detail.projectBudget)}
                       </li>
                       <div className="check icon">
-                        <li className="main-li">
-                          {detail.status ? detail.status : "N/A"}
-                        </li>
+                        <GetTaskStatus status={detail.status}>
+                          <li className="main-li">
+                            {detail.status ? detail.status : "N/A"}
+                          </li>
+                        </GetTaskStatus>
 
                         <TasksViewBtn
                           taskId={detail._id}

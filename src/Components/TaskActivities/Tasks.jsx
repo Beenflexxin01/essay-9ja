@@ -29,13 +29,16 @@ function Tasks({ tasks, index }) {
               <li className="main-li">
                 <DateFormatter createdAt={createdAt} />
               </li>
-              <GetTaskStatus status={status}>
-                <li className="main-li gg ">{status}</li>
-              </GetTaskStatus>
-              <li className="main-li check icon">
+              <li className="main-li ">
                 {projectBaseCurrency} {convertKoboToNaira(projectBudget)}
-                <TasksViewBtn taskId={taskId} status={status} />
               </li>
+
+              <div className="check icon">
+                <GetTaskStatus status={status}>
+                  <li className="main-li">{status}</li>
+                </GetTaskStatus>
+                <TasksViewBtn taskId={taskId} status={status} />
+              </div>
             </ul>
           </BackgroundColor>
         </nav>

@@ -6,6 +6,7 @@ import { auth } from "../../hooks/apiAuth";
 import { DateFormatter } from "../../Utils/DateFormatter";
 import { convertKoboToNaira } from "../../Utils/NairaConverter";
 import { StatusComponent } from "../../Utils/BaseUrl";
+import { toast } from "react-toastify";
 function WithdrawalActivities({ withdrawal, index }) {
   const {
     currency,
@@ -18,7 +19,7 @@ function WithdrawalActivities({ withdrawal, index }) {
   } = withdrawal;
 
   const [withdrawalStatus, setWithdrawalStatus] = useState(status);
-
+  const [loading, setIsLoading] = useState(false);
   const handleStatusChange = async (newStatus) => {
     const payload = {
       action: newStatus,
@@ -30,6 +31,8 @@ function WithdrawalActivities({ withdrawal, index }) {
     }
 
     try {
+      setIsLoading(true);
+
       const url = `${BaseUrl}/wallets/withdrawal/requests/${withdrawalId}`;
 
       if (!payload.action) {
@@ -52,6 +55,11 @@ function WithdrawalActivities({ withdrawal, index }) {
       }
     } catch (error) {
       console.error("There was a problem with the fetch operation:", error);
+      toast.error(
+        `Unfortunately, the requested action cannot be carried out at this time!`
+      );
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -102,22 +110,21 @@ function WithdrawalActivities({ withdrawal, index }) {
                 {withdrawalStatus === "pending" && (
                   <>
                     <div className="flex pend">
-                      <li className="main-li">
-                        <button
-                          onClick={() => handleStatusChange("approved")}
-                          className="approve"
-                        >
-                          Approve
-                        </button>
-                      </li>
-                      <li className="main-li check icon  ">
-                        <button
-                          onClick={() => handleStatusChange("rejected")}
-                          className="rejected btnn approve"
-                        >
-                          Reject
-                        </button>
-                      </li>
+                      <button
+                        onClick={() => handleStatusChange("approved")}
+                        className="approve"
+                        disabled={loading}
+                      >
+                        {loading ? "Approving..." : "Approve"}
+                      </button>
+
+                      <button
+                        onClick={() => handleStatusChange("rejected")}
+                        className="rejected btnn approve"
+                        disabled={loading}
+                      >
+                        {loading ? "Rejecting..." : "Reject"}
+                      </button>
                     </div>
                   </>
                 )}

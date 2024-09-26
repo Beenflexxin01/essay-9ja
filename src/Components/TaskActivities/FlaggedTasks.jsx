@@ -3,7 +3,8 @@ import React from "react";
 import { convertKoboToNaira } from "../../Utils/NairaConverter";
 import { DateFormatter } from "../../Utils/DateFormatter";
 import { BackgroundColor, GetTaskStatus } from "../../Utils/BaseUrl";
-import { PiDotsThreeVertical } from "react-icons/pi";
+// import { PiDotsThreeVertical } from "react-icons/pi";
+import TasksViewBtn from "../../Modals/TaskModal/TasksViewBtn";
 
 function FlaggedTasks({ tasks, index }) {
   const {
@@ -12,7 +13,7 @@ function FlaggedTasks({ tasks, index }) {
     status,
     projectBaseCurrency,
     projectBudget,
-    // _id: taskId,
+    _id: taskId,
     offeringId,
   } = tasks;
 
@@ -30,13 +31,18 @@ function FlaggedTasks({ tasks, index }) {
               <li className="main-li">
                 <DateFormatter createdAt={createdAt} />
               </li>
-              <GetTaskStatus status={status}>
-                <li className="main-li gg ">{status}</li>
-              </GetTaskStatus>
+
               <li className="main-li check icon">
                 {projectBaseCurrency} {convertKoboToNaira(projectBudget)}
-                <PiDotsThreeVertical size={"24px"} className="dots" />
               </li>
+
+              <div className="check icon">
+                <GetTaskStatus status={status}>
+                  <li className="main-li">{status}</li>
+                </GetTaskStatus>
+                {/* <PiDotsThreeVertical size={"24px"} className="dots" /> */}
+                <TasksViewBtn taskId={taskId} status={status} />
+              </div>
             </ul>
           </BackgroundColor>
         </nav>

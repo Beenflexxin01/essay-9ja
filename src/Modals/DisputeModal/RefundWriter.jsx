@@ -38,6 +38,7 @@ export function RefundWriter({ id, status }) {
       handleStatusChange("refund");
     } catch (err) {
       console.log(err);
+      toast.error(`You cannot carry out this action at this time.`);
     } finally {
       setIsLoading(false);
     }
@@ -52,7 +53,7 @@ export function RefundWriter({ id, status }) {
         className="refund-btn modal--btn refund--btn"
         disabled={loading || currentStatus === "resolved"}
       >
-        Refund Writer
+        Refund Client
       </button>
       <RefundWriterClaim
         show={modalShow}
@@ -63,18 +64,56 @@ export function RefundWriter({ id, status }) {
   );
 }
 
-export function CloseWriterClaim() {
+export function CloseWriterClaim({ id, status }) {
   const [modalShow, setModalShow] = useState(false);
+  const [currentStatus, setCurrentStatus] = useState(status);
+  const [loading, setIsLoading] = useState(false);
+  const handleStatusChange = (newStatus) => {
+    setCurrentStatus(newStatus);
+  };
+
+  const handleSubmission = async (resolutionMessage) => {
+    try {
+      setIsLoading(true);
+      const response = await apiCall(
+        `${BaseUrl}/contracts/${id}/dispute`,
+        "PATCH",
+        {
+          action: "close",
+          resolutionMessage: resolutionMessage,
+        }
+      );
+
+      if (response.status !== 200) {
+        throw new Error("Unable to update dispute");
+      } else {
+        toast.success("Dispute status successfully uodated!");
+      }
+
+      handleStatusChange("close");
+    } catch (err) {
+      console.log(err);
+      toast.error(`You cannot carry out this action at this time.`);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   return (
     <>
       <button
         variant=""
         onClick={() => setModalShow(true)}
         className="modal--btn close-claim refund--btn"
+        disabled={currentStatus || loading === "resolved"}
       >
         Close The Claim
       </button>
-      <CloseClaim show={modalShow} onHide={() => setModalShow(false)} />
+      <CloseClaim
+        show={modalShow}
+        onHide={() => setModalShow(false)}
+        handleSubmission={handleSubmission}
+      />
     </>
   );
 }

@@ -24,7 +24,9 @@ function Transactions({ transactions, index }) {
                 <input type="checkbox" />
                 {userId ? `${userId.firstName} ${userId.lastName}` : "N/A"}
               </li>
-              <li className="main-li email-hover t-h">{transactionDescription}</li>
+              <li className="main-li email-hover t-h">
+                {transactionDescription}
+              </li>
               <li className="main-li ">{transactionType}</li>
               <li className="main-li">
                 {currency}
@@ -32,7 +34,7 @@ function Transactions({ transactions, index }) {
               </li>
               <div className="check icon">
                 <GetTransactionStatus>
-                  <li className="gg">{transactionStatus}</li>
+                  <li className="main-li">{transactionStatus}</li>
                 </GetTransactionStatus>
                 <TransactionsViewBtn transactionId={transactionId} />
               </div>

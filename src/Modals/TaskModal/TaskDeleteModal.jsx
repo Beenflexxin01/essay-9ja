@@ -4,18 +4,21 @@ import btn from "../../../public/images/icon.png";
 import apiCall from "../../hooks/apiCall";
 import { BaseUrl } from "../../Utils/BaseUrl";
 import { useState } from "react";
+import { toast } from "react-toastify";
 
 function TaskDeleteModal({
   taskId,
   isActive,
   onStatusChange,
   onHide,
+  status,
   ...props
 }) {
   const [loading, setIsLoading] = useState(false);
   const newStatus = isActive ? "close" : "active";
   const handleCloseTask = async () => {
     try {
+      setIsLoading(true);
       const response = await apiCall(
         `${BaseUrl}/tasks/${taskId}/close`,
         "PATCH",
@@ -23,14 +26,18 @@ function TaskDeleteModal({
       );
 
       if (response.status !== 200) {
-        throw new Error("Failed to close task");
+        toast.error("Failed to close task");
+      } else {
+        toast.success(`Task has been successfully ${status}`);
       }
 
       const data = await response.data;
 
       onStatusChange(data.status);
+      onHide();
     } catch (err) {
       console.log(err);
+      toast.error(`Unable to close this task at this time. Please try again!`);
     } finally {
       setIsLoading(false);
     }
@@ -45,7 +52,7 @@ function TaskDeleteModal({
         className="modal--content"
       >
         <Modal.Header className="modal--header">
-          <img src={btn} alt="Delete" className="modal-img" />
+          <img src={btn} alt="Delete" className="modal--img" />
           <Modal.Title className="delete remove">Close Task</Modal.Title>
         </Modal.Header>
         <Modal.Body>
@@ -60,7 +67,11 @@ function TaskDeleteModal({
             >
               Yes, close task
             </Button>
-            <Button className="modal--btn keep-btn" onClick={onHide}>
+            <Button
+              className="modal--btn keep-btn"
+              onClick={onHide}
+              disabled={loading}
+            >
               No, keep task
             </Button>
           </div>

@@ -70,7 +70,7 @@ function Users() {
             </ul>
           </nav>
         </div>
-        {users.length > 0 ? (
+        {usersPage.length > 0 ? (
           <div className="dispute-bg">
             {usersPage.map((user, index) => (
               <UserReg user={user} key={user._id} index={index} />

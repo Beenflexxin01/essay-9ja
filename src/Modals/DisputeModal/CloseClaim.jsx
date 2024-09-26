@@ -1,6 +1,12 @@
+import { Button } from "react-bootstrap";
 import Modal from "react-bootstrap/Modal";
 
-function CloseClaim({ ...props }) {
+function CloseClaim({ handleSubmission, onHide, ...props }) {
+  const handleConfirmation = () => {
+    handleSubmission("resolved");
+
+    onHide();
+  };
   return (
     <Modal
       {...props}
@@ -56,6 +62,16 @@ function CloseClaim({ ...props }) {
           A message will be sent to both parties informing them about the
           decision, and the writer will be paid in the next few hours
         </p>
+        <div className="modal-footer">
+          <div className="flex">
+            <Button variant="secondary" onClick={onHide}>
+              Cancel
+            </Button>
+            <Button variant="secondary" onClick={handleConfirmation}>
+              Confirm
+            </Button>
+          </div>
+        </div>
       </Modal.Body>
     </Modal>
   );
