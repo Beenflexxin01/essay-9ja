@@ -95,12 +95,9 @@
 }
 
 .modal-c {
-  width: 30rem;
-  overflow: hidden;
-  border-radius: 1.6rem;
-  position: absolute;
+  width: 27rem;
   left: 79%;
-  top: 0;
+  /* top: 0; */
 }
 
 .delete {

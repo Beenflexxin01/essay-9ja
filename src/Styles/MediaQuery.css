@@ -1,0 +1,68 @@
+@media (max-width: 89em) {
+  body {
+    /* background-color: red; */
+    overflow-x: hidden;
+  }
+
+  .task-width {
+    width: 100%;
+    padding: 0;
+  }
+
+  .main-li {
+    font-size: 1.2rem;
+  }
+
+  .main-ul {
+    padding: 0.8rem;
+  }
+
+  .check {
+    gap: 1rem;
+  }
+
+  .name {
+    padding: 0 1.5rem;
+  }
+
+  .withdraw-ul {
+    grid-template-columns: 81% 20%;
+    align-items: center;
+  }
+
+  .with-li {
+    margin: 1rem 3rem;
+  }
+
+  .req {
+    width: 100%;
+    padding: 0;
+  }
+
+  .modal-c {
+    left: 74%;
+    width: 25rem;
+  }
+
+  .grid-user-li {
+    font-size: 1.3rem;
+  }
+
+  .info {
+    font-size: 2rem;
+  }
+
+  .approval-modal {
+    width: 70%;
+    left: 30%;
+  }
+
+  .dispute-modal {
+    width: 55%;
+    left: 45%;
+  }
+
+  .claim-spacing {
+    margin: 1.8rem 0;
+  }
+}

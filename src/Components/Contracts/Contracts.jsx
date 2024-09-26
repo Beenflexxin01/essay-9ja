@@ -45,7 +45,7 @@ function Tasks({ contracts }) {
               </Link>
             </li>
 
-            <li className="transaction-nav-li transaction-date">
+            <li className="main-li">
               {currency} {convertKoboToNaira(amount)}
             </li>
 

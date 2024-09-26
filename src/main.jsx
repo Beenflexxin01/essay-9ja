@@ -12,6 +12,7 @@ import "./Styles/Users.css";
 import "./Styles/Contracts.css";
 import "./Styles/Writers.css";
 import "./Styles/ActivityLog.css";
+import "./Styles/MediaQuery.css";
 import { ErrorBoundary } from "react-error-boundary";
 import ErrorFallback from "./UI/ErrorFallback.jsx";
 

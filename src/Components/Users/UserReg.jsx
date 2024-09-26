@@ -31,7 +31,7 @@ function UserReg({ user, index }) {
                   {email}
                 </Link>
               </li>
-              <li className="main-li check icon">
+              <li className="main-li">
                 <Link to={`tel: ${phoneNumber}`} className="phone-link">
                   {phoneNumber ? `${phoneNumber}` : "N/A"}
                 </Link>
@@ -39,6 +39,7 @@ function UserReg({ user, index }) {
               <li className="main-li">
                 <DateFormatter createdAt={createdAt} />
               </li>
+
               <li className="main-li format">
                 <DateUpdateFormatter updatedAt={updatedAt} />-
                 <span className="span">

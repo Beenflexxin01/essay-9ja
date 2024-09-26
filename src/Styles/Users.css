@@ -197,6 +197,7 @@ p {
   text-overflow: ellipsis;
   position: relative;
   white-space: nowrap;
+  text-transform: lowercase;
 }
 
 .email-hover:hover {
