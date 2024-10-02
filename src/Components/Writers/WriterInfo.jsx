@@ -16,6 +16,18 @@ function WriterInfo({ writer, index }) {
 
   return (
     <>
+      <div className="hidden-info">
+        <nav className="main-nav user-nav activities">
+          <ul className="main-ul main--ul">
+            <li className="main-li name">Name</li>
+            <li className="main-li">Completed Tasks</li>
+            <li className="main-li">Date Joined</li>
+            <li className="main-li">Rate</li>
+            <li className="main-li">Rating</li>
+            <li className="main-li">Account Status</li>
+          </ul>
+        </nav>
+      </div>
       <div className="grid-5-cols">
         <nav className="main-nav user-nav ">
           <BackgroundColor index={index}>

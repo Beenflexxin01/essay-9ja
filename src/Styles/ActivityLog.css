@@ -70,3 +70,7 @@
 .Toastify__toast-body > div:last-child {
   font-size: 1.3rem;
 }
+
+.hidden-dot {
+  display: none;
+}

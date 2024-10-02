@@ -1,12 +1,15 @@
 .dispute-modal {
   width: 56rem;
-  left: 63%;
+  left: 64%;
 }
 
 .dispute-modal-content {
-  height: 102.4rem;
   background-color: #fff;
-  height: 100vh;
+  height: 97vh;
+}
+
+.modal-dialog {
+  margin: 0;
 }
 
 .dispute {
@@ -22,7 +25,6 @@
 
 .claim {
   height: 8.3rem;
-  width: 56.1rem;
   background-color: #f8f8f8;
   padding: 2.8rem 2.4rem;
 }
@@ -356,10 +358,6 @@
 
 .mb-3 {
   margin: 1.5rem 2.4rem 2.3rem 2.4rem;
-}
-
-.nav-link {
-  margin: 0;
 }
 
 .tab-nav {

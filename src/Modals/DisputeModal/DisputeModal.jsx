@@ -164,7 +164,7 @@ function DisputeModal({ id, onHide, ...props }) {
                   </nav>
                 </Tab>
                 <Tab eventKey="writers" title="Writers">
-                  <DisputeWriterTab id={id} />
+                  <DisputeWriterTab id={id} status={status} />
                 </Tab>
               </Tabs>
             </Modal.Body>

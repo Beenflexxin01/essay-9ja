@@ -1,4 +1,4 @@
-@media (max-width: 89em) {
+@media (max-width: 75em) {
   body {
     /* background-color: red; */
     overflow-x: hidden;
@@ -52,17 +52,144 @@
     font-size: 2rem;
   }
 
-  .approval-modal {
-    width: 70%;
-    left: 30%;
+  .dispute-modal {
+    width: 58rem;
+    left: 55%;
   }
 
-  .dispute-modal {
-    width: 55%;
-    left: 45%;
+  .approval-modal {
+    width: 50%;
+    left: 51%;
   }
 
   .claim-spacing {
-    margin: 1.8rem 0;
+    margin: 1.2rem 0;
+  }
+
+  .dispute-modal-content {
+    height: 100vh;
+  }
+
+  .claim-li,
+  .claim-title,
+  .nav-link,
+  .message {
+    font-size: 1.4rem;
+  }
+
+  .log-border {
+    width: 83%;
+  }
+
+  .polygon {
+    left: 12%;
+  }
+
+  .logs {
+    margin: 0;
+  }
+
+  .accordion-header {
+    width: 87%;
+    margin: 1.5rem;
+  }
+}
+
+@media (max-width: 64em) {
+  .log-border {
+    width: 60%;
+    border: 2px solid;
+  }
+
+  .accordion-header {
+    width: 75%;
+    margin: 1.5rem;
+  }
+}
+
+@media (max-width: 48em) {
+  body {
+    overflow-x: hidden;
+    /* background-color: green; */
+  }
+
+  .main--ul {
+    display: flex;
+    flex-direction: column;
+    margin: 0 3rem;
+    justify-content: space-between;
+    padding: 2.3rem 1rem;
+    align-items: flex-start;
+  }
+
+  .m-n {
+    align-items: end;
+    text-align: justify;
+    margin: 0;
+  }
+
+  .hidden-info {
+    display: block;
+    position: absolute;
+  }
+
+  .grid-5-cols {
+    height: 50%;
+    border: 1px solid #f2f2f2;
+    border-radius: 0.6rem;
+    margin: 2rem 1rem;
+  }
+
+  .name {
+    padding: 0;
+  }
+
+  .main-li {
+    margin: 1rem 0;
+    font-size: 1.4rem;
+  }
+
+  .checkbox {
+    display: none;
+  }
+
+  .hidden--info {
+    display: none;
+  }
+
+  .activities {
+    background-color: transparent;
+  }
+
+  .email-hover {
+    max-width: 100%;
+  }
+
+  .hidden-dots {
+    display: none;
+  }
+
+  .hidden-dot {
+    display: block;
+    position: absolute;
+    bottom: 25rem;
+    left: 7rem;
+  }
+
+  .modal-c {
+    left: 65%;
+    width: 18.3rem;
+  }
+
+  .modal-li {
+    font-size: 1.2rem;
+  }
+
+  .check {
+    display: block;
+  }
+
+  .task-width {
+    width: 10rem;
   }
 }

@@ -13,7 +13,11 @@ function DeactivateUserModalBtn({ userId, accountStatus }) {
 
   return (
     <>
-      <Button variant="" onClick={() => setModalShow(true)}>
+      <Button
+        variant=""
+        onClick={() => setModalShow(true)}
+        className="modal-li"
+      >
         {currentStatus === "active" ? "Deactivate" : "Activate"} User
       </Button>
       <DeactivateAccountModal

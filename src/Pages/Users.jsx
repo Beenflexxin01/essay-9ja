@@ -9,7 +9,7 @@ function Users() {
   const [users, setUsers] = useState([]);
 
   const [currentPage, setCurrentPage] = useState(1);
-  const usersPerPage = 10;
+  const usersPerPage = 2;
 
   const lastIndex = currentPage * usersPerPage;
   const firstIndex = lastIndex - usersPerPage;
@@ -58,7 +58,7 @@ function Users() {
         <div className="flex task">
           <h3 className="tertiary-header">Clients</h3>
         </div>
-        <div className="">
+        <div className="hidden--info">
           <nav className="main-nav user-nav activities">
             <ul className="main-ul main--ul">
               <li className="main-li name">User name</li>
@@ -73,7 +73,9 @@ function Users() {
         {usersPage.length > 0 ? (
           <div className="dispute-bg">
             {usersPage.map((user, index) => (
-              <UserReg user={user} key={user._id} index={index} />
+              <>
+                <UserReg user={user} key={user._id} index={index} />
+              </>
             ))}
             <Pagination
               numbers={numbers}

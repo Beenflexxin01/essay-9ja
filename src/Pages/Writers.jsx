@@ -58,7 +58,7 @@ function Writers() {
       <div className="flex task">
         <h3 className="tertiary-header">writer</h3>
       </div>
-      <div>
+      <div className="hidden--info">
         <nav className="main-nav user-nav activities">
           <ul className="main-ul main--ul">
             <li className="main-li name">Name</li>

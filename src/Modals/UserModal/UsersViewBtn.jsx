@@ -1,8 +1,8 @@
 import { useState } from "react";
 import UserModal from "./UserModal";
-// import InviteModal from "../Modals/InviteModal";
 import Button from "react-bootstrap/Button";
 import { PiDotsThreeVertical } from "react-icons/pi";
+import { HiOutlineDotsHorizontal } from "react-icons/hi";
 
 function UsersViewBtn({ userId, accountStatus }) {
   const [modalShow, setModalShow] = useState(false);
@@ -14,7 +14,8 @@ function UsersViewBtn({ userId, accountStatus }) {
         onClick={() => setModalShow(true)}
         className="view-btn"
       >
-        <PiDotsThreeVertical size={"24px"} className="dots" />
+        <PiDotsThreeVertical size={"24px"} className="dots hidden-dots" />
+        <HiOutlineDotsHorizontal size={"24px"} className="dots hidden-dot" />
       </Button>
 
       <UserModal

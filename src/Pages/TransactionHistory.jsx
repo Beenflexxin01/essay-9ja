@@ -59,7 +59,7 @@ function TransactionHistory() {
         <div className="flex task">
           <h3 className="tertiary-header">Transactional history</h3>
         </div>
-        <div className="transaction-containe">
+        <div className="hidden--info">
           <nav className="main-nav user-nav activities">
             <ul className="main-ul ">
               <li className="main-li name">Name</li>
@@ -69,30 +69,31 @@ function TransactionHistory() {
               <li className="main-li">Status</li>
             </ul>
           </nav>
-          {transactions.length > 0 ? (
-            <div className="transaction-containe dispute-bg">
-              {transactionPage.map((transactions, index) => (
-                <Transactions
-                  transactions={transactions}
-                  key={transactions._id}
-                  index={index}
-                />
-              ))}
-
-              <Pagination
-                numbers={numbers}
-                currentPage={currentPage}
-                previousPage={previousPage}
-                nextPage={nextPage}
-                currentPageNumber={currentPageNumber}
-              />
-            </div>
-          ) : (
-            <div className="spinner">
-              <Loader />
-            </div>
-          )}
         </div>
+
+        {transactions.length > 0 ? (
+          <div className="transaction-containe dispute-bg">
+            {transactionPage.map((transactions, index) => (
+              <Transactions
+                transactions={transactions}
+                key={transactions._id}
+                index={index}
+              />
+            ))}
+
+            <Pagination
+              numbers={numbers}
+              currentPage={currentPage}
+              previousPage={previousPage}
+              nextPage={nextPage}
+              currentPageNumber={currentPageNumber}
+            />
+          </div>
+        ) : (
+          <div className="spinner">
+            <Loader />
+          </div>
+        )}
       </div>
     </>
   );
