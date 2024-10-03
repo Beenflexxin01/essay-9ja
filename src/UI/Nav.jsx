@@ -4,7 +4,7 @@ import { IoSearch } from "react-icons/io5";
 function Nav() {
   return (
     <>
-      <div className="nav-container image-container">
+      <div className="nav-container ">
         <nav className="main-nav">
           <ul className="main-nav-ul nav">
             <li className="main-nav-li">

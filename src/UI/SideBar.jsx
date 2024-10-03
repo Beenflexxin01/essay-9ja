@@ -11,10 +11,13 @@ function SideBar() {
   return (
     <>
       <div className="side-bar">
-        <div className="log-img image-container">
-          <Link to="/home">
-            <img src={logo} alt="Logo" className="logo-img" />
-          </Link>
+        <div className="log-img">
+          <div>
+            <Link to="/home">
+              <img src={logo} alt="Logo" className="logo-img" />
+            </Link>
+          </div>
+
           <div
             className={`burger ${isOpen && "open"}`}
             onClick={() => setIsOpen(!isOpen)}
