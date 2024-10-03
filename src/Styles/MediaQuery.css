@@ -102,8 +102,12 @@
 }
 
 @media (max-width: 48em) {
-  body {
-    background-color: #fff;
+  .dispute-bg {
+    height: 100%;
+  }
+
+  .act {
+    border-radius: 0;
   }
 
   .containr {
@@ -367,6 +371,10 @@
     width: 100%;
     z-index: 1;
   }
+
+  html {
+    overflow-x: hidden;
+  }
 }
 
 @media (max-width: 36em) {
@@ -382,5 +390,9 @@
   .grid-5-cols {
     width: 95%;
     margin: 2rem 1rem;
+  }
+
+  .modal-c {
+    left: 54%;
   }
 }
