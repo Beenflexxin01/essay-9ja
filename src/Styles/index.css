@@ -48,7 +48,6 @@ li {
   right: 0;
   border: 1px solid #f2f2f2;
   width: 23.4rem;
-  /* height: 100vh; */
 }
 
 .dd {
@@ -60,7 +59,8 @@ li {
 }
 
 .side-bar-ul,
-.sidebar {
+.sidebar,
+.burger-menu {
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
@@ -76,9 +76,7 @@ li {
 }
 
 .sidebar {
-  /* margin-top: 1.5rem; */
   padding: 0;
-  /* height: 13.6rem; */
 }
 
 .side-bar-link {
@@ -94,11 +92,9 @@ li {
 
 .active {
   background-color: #f4f7fb;
-  /* padding: 0.8rem 1.6rem; */
   border-radius: 0.8rem;
   color: #023474;
   font-weight: 500;
-  /* line-height: 18.9px; */
 }
 
 .main-nav-ul,
@@ -174,8 +170,6 @@ li {
   font-size: 1.6rem;
   line-height: 21.6px;
   font-weight: 500;
-  display: flex;
-  align-items: center;
   gap: 0.8rem;
 }
 

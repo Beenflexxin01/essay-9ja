@@ -61,7 +61,7 @@ function WritersApprovalPage() {
       <div className="flex task">
         <h3 className="tertiary-header">Writer's Approval</h3>
       </div>
-      <div>
+      <div className="hidden--info">
         <nav className="main-nav user-nav activities">
           <ul className="main-ul ">
             <li className="main-li name">Name</li>

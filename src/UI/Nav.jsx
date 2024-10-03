@@ -4,9 +4,9 @@ import { IoSearch } from "react-icons/io5";
 function Nav() {
   return (
     <>
-      <div className="nav-container">
+      <div className="nav-container image-container">
         <nav className="main-nav">
-          <ul className="main-nav-ul">
+          <ul className="main-nav-ul nav">
             <li className="main-nav-li">
               <form action="" className="nav-form">
                 <IoSearch size={"24px"} className="icons" />

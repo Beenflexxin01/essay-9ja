@@ -15,13 +15,24 @@ function Transactions({ transactions, index }) {
 
   return (
     <>
+      <div className="hidden-info">
+        <nav className="main-nav user-nav activities">
+          <ul className="main-ul main--ul">
+            <li className="main-li name">Name</li>
+            <li className="main-li">Description</li>
+            <li className="main-li">Account Detail</li>
+            <li className="main-li">Amount</li>
+            <li className="main-li">Status</li>
+          </ul>
+        </nav>
+      </div>
       <div className="grid-5-cols">
         <nav className="main-nav user-nav transaction-nav">
           <BackgroundColor index={index}>
-            <ul className="main-ul transaction-ul">
+            <ul className="main-ul transaction-ul main__ul m-n">
               <li className="main-li check">
                 {" "}
-                <input type="checkbox" />
+                <input type="checkbox" className="checkbox" />
                 {userId ? `${userId.firstName} ${userId.lastName}` : "N/A"}
               </li>
               <li className="main-li email-hover t-h">

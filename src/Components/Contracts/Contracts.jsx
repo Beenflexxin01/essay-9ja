@@ -26,11 +26,23 @@ function Tasks({ contracts }) {
 
   return (
     <>
+      <div className="hidden-info">
+        <nav className="main-nav user-nav activities">
+          <ul className="main-ul main--ul">
+            <li className="main-li name">Date</li>
+            <li className="main-li">Title</li>
+            <li className="main-li"> Clients</li>
+            <li className="main-li">Writer</li>
+            <li className="main-li">Amount</li>
+            <li className="main-li">Status</li>
+          </ul>
+        </nav>
+      </div>
       <div className="grid-5-cols">
         <nav className="main-nav user-nav">
-          <ul className="main-ul main--ul">
+          <ul className="main-ul main--ul m-n">
             <li className="main-li check">
-              <input type="checkbox" />
+              <input type="checkbox" className="checkbox" />
               <DateFormatter createdAt={createdAt} />
             </li>
             <li className="main-li email-hover">{title}</li>

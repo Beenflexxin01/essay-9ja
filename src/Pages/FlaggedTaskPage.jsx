@@ -59,7 +59,7 @@ function FlaggedTaskPage() {
         <div className="flex task">
           <h3 className="tertiary-header">Task Activities</h3>
         </div>
-        <div className="">
+        <div className="hidden--info">
           <nav className="main-nav user-nav activities">
             <ul className="main-ul">
               <li className="main-li name">Name</li>

@@ -3,6 +3,7 @@ import Button from "react-bootstrap/Button";
 import { PiDotsThreeVertical } from "react-icons/pi";
 
 import ContractModal from "./ContractModal";
+import { HiOutlineDotsHorizontal } from "react-icons/hi";
 function ContractViewBtn({ contractId, users, id, writerDetail }) {
   const [modalShow, setModalShow] = useState(false);
   return (
@@ -12,7 +13,8 @@ function ContractViewBtn({ contractId, users, id, writerDetail }) {
         onClick={() => setModalShow(true)}
         className="view-btn"
       >
-        <PiDotsThreeVertical size={"24px"} className="dots" />
+        <PiDotsThreeVertical size={"24px"} className="dots hidden-dots" />
+        <HiOutlineDotsHorizontal size={"24px"} className="dots hidden-dot" />
       </Button>
 
       <ContractModal

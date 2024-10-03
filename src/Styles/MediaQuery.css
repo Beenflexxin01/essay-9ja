@@ -1,9 +1,4 @@
 @media (max-width: 75em) {
-  body {
-    /* background-color: red; */
-    overflow-x: hidden;
-  }
-
   .task-width {
     width: 100%;
     padding: 0;
@@ -98,7 +93,6 @@
 @media (max-width: 64em) {
   .log-border {
     width: 60%;
-    border: 2px solid;
   }
 
   .accordion-header {
@@ -109,11 +103,11 @@
 
 @media (max-width: 48em) {
   body {
-    overflow-x: hidden;
-    /* background-color: green; */
+    background-color: #fff;
   }
 
-  .main--ul {
+  .main--ul,
+  .main__ul {
     display: flex;
     flex-direction: column;
     margin: 0 3rem;
@@ -134,10 +128,15 @@
   }
 
   .grid-5-cols {
-    height: 50%;
+    height: 48vh;
     border: 1px solid #f2f2f2;
     border-radius: 0.6rem;
-    margin: 2rem 1rem;
+    margin: 1rem 2.4rem;
+  }
+
+  .task {
+    margin: 0.8rem 2.4rem;
+    padding: 0;
   }
 
   .name {
@@ -172,17 +171,12 @@
   .hidden-dot {
     display: block;
     position: absolute;
-    bottom: 25rem;
+    bottom: 25.5rem;
     left: 7rem;
   }
 
   .modal-c {
-    left: 65%;
-    width: 18.3rem;
-  }
-
-  .modal-li {
-    font-size: 1.2rem;
+    left: 62%;
   }
 
   .check {
@@ -191,5 +185,197 @@
 
   .task-width {
     width: 10rem;
+  }
+
+  .burger {
+    display: flex;
+    background-color: transparent;
+    justify-content: space-around;
+    flex-direction: column;
+    top: 15px;
+    height: 2.4rem;
+    position: absolute;
+    left: 73rem;
+  }
+
+  .burger_bar {
+    position: relative;
+    background-color: red;
+    height: 2px;
+    width: 3rem;
+    transition: all 0.5s ease-in-out;
+    left: -2rem;
+  }
+
+  .burger_bar::before,
+  .burger_bar::after {
+    content: "X";
+    position: absolute;
+    height: 2px;
+    border-radius: 2px;
+    transition: all 0.4s ease-in-out;
+  }
+
+  .bar {
+    right: 0;
+    width: 1.5rem;
+  }
+
+  .bar3 {
+    width: 2.5rem;
+  }
+
+  .open > .burger_bar {
+    background-color: transparent;
+  }
+
+  .open > .burger_bar::before {
+    width: 32px;
+    transform: rotate(45deg);
+  }
+
+  .open > .burger_bar::after {
+    width: 32px;
+    transform: rotate(-45deg);
+  }
+
+  .burger-menu {
+    display: block;
+    background-color: #fff;
+    position: fixed;
+    top: 9rem;
+    left: 0;
+    width: 28rem;
+    align-items: start;
+    transition: all 0.3s linear;
+    opacity: 0;
+    z-index: 1;
+    transform: translateY(100%) translate(-100%);
+    transform: translateX(100%);
+  }
+
+  .active {
+    border-bottom: none;
+  }
+
+  .h1 {
+    font-size: 2rem;
+  }
+
+  .burger-menu.open {
+    transform: translate(0);
+    opacity: 100%;
+  }
+
+  .nav {
+    display: none;
+  }
+
+  .log-img {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1;
+  }
+
+  .containr {
+    margin: auto;
+  }
+
+  .side-bar-ul,
+  .burger-menu {
+    padding: 0.8rem 1rem 2rem 1rem;
+  }
+
+  .side-bar {
+    border: none;
+  }
+
+  .side-bar-li {
+    margin: 0.3rem 0;
+  }
+
+  .sidebar {
+    margin: 0;
+    gap: 0;
+    display: inline;
+  }
+
+  .cta {
+    width: 100%;
+  }
+
+  .tertiary-header {
+    font-size: 2rem;
+  }
+
+  .approval-modal {
+    left: 35%;
+    width: 100%;
+  }
+
+  .approval {
+    width: 100%;
+  }
+
+  .skill-flex {
+    overflow-x: scroll;
+  }
+
+  .dispute-modal {
+    width: 100%;
+    left: 35%;
+  }
+
+  .claim-button {
+    width: 90%;
+    margin: 0;
+  }
+
+  .nav-tabs {
+    display: flex;
+  }
+
+  .claim-ul {
+    padding: 0;
+  }
+
+  .log-border {
+    width: 100%;
+  }
+
+  .accordion-header {
+    width: 94%;
+  }
+
+  .cols {
+    height: 45vh;
+    margin: 1rem;
+  }
+
+  .withdrawal-cols {
+    height: 25vh;
+    margin: 1rem;
+  }
+
+  .withdrawal-grid {
+    margin: 0;
+  }
+
+  .withdrawal {
+    line-height: 0;
+  }
+
+  .approval-dot {
+    bottom: 21rem;
+  }
+
+  .image-container {
+    margin: 0;
+    display: flex;
+    /* background-color: red; */
   }
 }

@@ -12,7 +12,7 @@ const LogOut = () => {
   };
 
   return (
-    <button onClick={handleLogout} className="cta logout-cta">
+    <button onClick={handleLogout} className="cta logout-cta side-bar-link">
       <TbLogout2 size={"24px"} className="icons logout" />
       Logout
     </button>

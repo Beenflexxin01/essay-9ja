@@ -31,9 +31,9 @@ function WriterInfo({ writer, index }) {
       <div className="grid-5-cols">
         <nav className="main-nav user-nav ">
           <BackgroundColor index={index}>
-            <ul className="main-ul main--ul">
+            <ul className="main-ul main--ul m-n">
               <li className="main-li check">
-                <input type="checkbox" />
+                <input type="checkbox" className="checkbox" />
                 {firstName} {lastName}
               </li>
               <li className="main-li ll">{totalTasksCompleted}</li>

@@ -58,7 +58,7 @@ function ContractPage() {
         <div className="flex task">
           <h3 className="tertiary-header">Contracts</h3>
         </div>
-        <div className="">
+        <div className="hidden--info">
           <nav className="main-nav user-nav activities">
             <ul className="main-ul main--ul">
               <li className="main-li name">Date</li>

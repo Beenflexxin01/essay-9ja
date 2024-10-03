@@ -19,11 +19,23 @@ function DisputeResolution({ disputes }) {
 
   return (
     <>
+      <div className="hidden-info">
+        <nav className="main-nav user-nav activities">
+          <ul className="main-ul main--ul">
+            <li className="main-li name">Claim ID</li>
+            <li className="main-li">Contract Title</li>
+            <li className="main-li"> Clients</li>
+            <li className="main-li">Writer</li>
+            <li className="main-li">Date Created</li>
+            <li className="main-li">Status</li>
+          </ul>
+        </nav>
+      </div>
       <div className="grid-5-cols">
         <nav className="main-nav user-nav ">
-          <ul className="main-ul main--ul">
+          <ul className="main-ul main--ul m-n">
             <li className="main-li check email-hover">
-              <input type="checkbox" />
+              <input type="checkbox" className="checkbox" />
               {disputeId}
             </li>
             <li className="main-li">

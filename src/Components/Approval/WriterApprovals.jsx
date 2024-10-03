@@ -17,11 +17,23 @@ function WriterAoprovals({ writer }) {
   const phoneNumber = writerInfo ? `${writerInfo.phoneNumber}` : "N/A";
   return (
     <>
+      <div className="hidden-info">
+        <nav className="main-nav user-nav activities">
+          <ul className="main-ul main--ul ">
+            <li className="main-li name">Name</li>
+            <li className="main-li">Email address</li>
+            <li className="main-li">Phone Number</li>
+            <li className="main-li">Date Joined</li>
+            {/* <li className="main-li">status</li> */}
+            <li className="main-li">Status</li>
+          </ul>
+        </nav>
+      </div>
       <div className="grid-5-cols">
         <nav className="main-nav user-nav ">
-          <ul className="main-ul ">
+          <ul className="main-ul main__ul m-n">
             <li className="main-li check">
-              <input type="checkbox" />
+              <input type="checkbox" className="checkbox" />
               {writerInfo ? `${writerInfo.firstName}` : "N/A"}{" "}
               {writerInfo ? `${writerInfo.lastName}` : "N/A"}
             </li>

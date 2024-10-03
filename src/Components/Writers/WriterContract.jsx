@@ -45,7 +45,7 @@ function WriterContract({ firstName, lastName }) {
           </div>
         ) : (
           <>
-            <div>
+            <div className="hidden--info">
               <nav className="main-nav user-nav">
                 <ul className="main-ul main--ul activities">
                   <li className="main-li nam">Date</li>
@@ -59,9 +59,21 @@ function WriterContract({ firstName, lastName }) {
             </div>
             {writerDetails.length > 0 ? (
               writerDetails.map((detail) => (
-                <div key={detail._id}>
+                <div key={detail._id} className="grid-5-cols cols">
+                  <div className="hidden-info">
+                    <nav className="main-nav user-nav">
+                      <ul className="main-ul main--ul withdrawal-grid activities">
+                        <li className="main-li nam">Date</li>
+                        <li className="main-li">Title</li>
+                        <li className="main-li">Clients</li>
+                        <li className="main-li">Writer</li>
+                        <li className="main-li">Amount</li>
+                        <li className="main-li">Status</li>
+                      </ul>
+                    </nav>
+                  </div>
                   <nav className="main-nav user-nav">
-                    <ul className="main-ul main--ul">
+                    <ul className="main-ul main--ul m-n">
                       <li className="main-li ">
                         <DateFormatter createdAt={detail.createdAt} />
                       </li>

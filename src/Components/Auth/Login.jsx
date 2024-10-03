@@ -90,7 +90,7 @@ function Login() {
     return (
       <div className="form-container">
         <div className="align">
-          <NavLink to="/home">
+          <NavLink to="">
             <img src={logo} alt="Logo" className="logo login-logo" />
           </NavLink>
           <h2 className="secondary-header">👋Welcome Admin</h2>

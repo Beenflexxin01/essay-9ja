@@ -45,7 +45,7 @@ function UserContract({ userName, lastName }) {
           </div>
         ) : (
           <>
-            <div>
+            <div className="hidden--info">
               <nav className="main-nav user-nav">
                 <ul className="main-ul main--ul activities">
                   <li className="main-li nam">Date</li>
@@ -59,9 +59,21 @@ function UserContract({ userName, lastName }) {
             </div>
             {writerDetails.length > 0 ? (
               writerDetails.map((detail, index) => (
-                <div key={index}>
+                <div key={index} className="grid-5-cols cols">
+                  <div className="hidden-info">
+                    <nav className="main-nav user-nav">
+                      <ul className="main-ul main--ul withdrawal-grid activities">
+                        <li className="main-li nam">Date</li>
+                        <li className="main-li">Project Duration</li>
+                        <li className="main-li">Clients</li>
+                        <li className="main-li">Writer</li>
+                        <li className="main-li">Project Budget</li>
+                        <li className="main-li">Status</li>
+                      </ul>
+                    </nav>
+                  </div>
                   <nav className="main-nav user-nav">
-                    <ul className="main-ul main--ul">
+                    <ul className="main-ul main--ul m-n">
                       <li className="main-li ">
                         <DateFormatter createdAt={detail.createdAt} />
                       </li>
