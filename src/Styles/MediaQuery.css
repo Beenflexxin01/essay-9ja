@@ -407,16 +407,19 @@
     display: flex;
     align-items: center;
   }
+
+  .bg {
+    height: 100%;
+  }
+
+  html {
+    overflow-x: hidden;
+  }
 }
 
 @media (max-width: 36em) {
   body {
     overflow-x: hidden;
-  }
-  .approval-modal {
-    left: 5%;
-    left: 0;
-    height: 100%;
   }
 
   .grid-5-cols {
@@ -427,6 +430,13 @@
   .modal-c {
     left: 50%;
     width: 19rem;
+  }
+
+  .approval-modal {
+    left: 5%;
+    left: 0;
+    height: 100%;
+    width: 91%;
   }
 
   .modal-li {
