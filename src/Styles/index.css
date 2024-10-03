@@ -161,6 +161,10 @@ li {
   margin: 0 0 0 22rem;
 }
 
+.burger {
+  display: none;
+}
+
 .cta {
   background-color: #ffe5e5;
   padding: 0.8rem;

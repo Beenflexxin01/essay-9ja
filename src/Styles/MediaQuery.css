@@ -34,6 +34,10 @@
     padding: 0;
   }
 
+  .absolute {
+    top: 48rem;
+  }
+
   .modal-c {
     left: 74%;
     width: 25rem;
@@ -95,6 +99,14 @@
     width: 60%;
   }
 
+  .login-text {
+    font-size: 1.3rem;
+  }
+
+  .secondary-header {
+    font-size: 3rem;
+  }
+
   .accordion-header {
     width: 75%;
     margin: 1.5rem;
@@ -106,12 +118,39 @@
 }
 
 @media (max-width: 48em) {
-  html {
-    overflow-x: hidden;
+  .absolute {
+    left: 70rem;
+    top: 40rem;
+  }
+
+  .form-container {
+    width: 94%;
+    margin: 2.4rem;
+  }
+
+  .forgot-password {
+    margin: 1.2rem 0 3rem 0;
   }
 
   .dispute-bg {
     height: 100%;
+  }
+
+  .dashboard {
+    height: 100%;
+    background-color: #fff;
+  }
+
+  .dashboard-flex {
+    margin: 1.6rem 2.4rem;
+  }
+
+  .grid-flex {
+    width: 100%;
+  }
+
+  .dashboard-task {
+    display: none;
   }
 
   .act {
@@ -419,11 +458,41 @@
   .modal--content {
     left: 23%;
   }
+
+  .login-text {
+    font-size: 1.5rem;
+  }
+
+  .secondary-header {
+    font-size: 3.5rem;
+  }
+
+  .forgot-password {
+    margin: 1.2rem 0 4.8rem 0;
+  }
+
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+
+  html {
+    overflow-x: hidden;
+  }
 }
 
 @media (max-width: 36em) {
   body {
     overflow-x: hidden;
+    overflow-y: scroll;
+  }
+
+  .form-container {
+    width: 90%;
+  }
+
+  .absolute {
+    left: 88%;
+    top: 64%;
   }
 
   .grid-5-cols {
@@ -469,7 +538,34 @@
     width: 30%;
   }
 
-    .modal--content {
+  .modal--content {
     left: 16%;
+  }
+
+  .claim-button {
+    width: 100%;
+  }
+
+  .claim-ul {
+    padding: 0 1rem;
+  }
+
+  .analytics {
+    width: 100%;
+    /* display: none; */
+  }
+
+  .dashboard-flex {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .grid-flex {
+    width: 100%;
+  }
+
+  .transaction-nav-li {
+    font-size: 1.3rem;
   }
 }

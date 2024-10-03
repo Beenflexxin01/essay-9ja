@@ -18,11 +18,11 @@ function TaskActivities({ contracts }) {
         <div className="">
           <nav className="main-nav activities">
             <ul className="main-ul">
-              <li className="main-li">Writer name</li>
+              <li className="main-li name">Writer name</li>
               <li className="main-li">Task Title</li>
               <li className="main-li">Date</li>
-              <li className="main-li">Status</li>
               <li className="main-li">Amount</li>
+              <li className="main-li">Status</li>
             </ul>
           </nav>
         </div>
@@ -30,29 +30,34 @@ function TaskActivities({ contracts }) {
           {contracts.length > 0 ? (
             contracts.map((contract) => (
               <>
-                <div key={contract.writer.firstName}></div>
-                <nav className="main-nav ">
-                  <ul className="main-ul">
-                    <li className="main-li check">
-                      {" "}
-                      <input type="checkbox" />
-                      {contract.writer
-                        ? `${contract.writer.firstName} ${contract.writer.lastName}`
-                        : "N/A"}
-                    </li>
-                    <li className="main-li">{contract.title}</li>
-                    <li className="main-li">
-                      <DateFormatter createdAt={contract.createdAt} />
-                    </li>
-                    <GetTransactionStatus>
-                      <li className="main-li">{contract.status}</li>
-                    </GetTransactionStatus>
-                    <li className="main-li check icon">
-                      {contract.currency} {convertKoboToNaira(contract.amount)}{" "}
-                      <TasksViewBtn />
-                    </li>
-                  </ul>
-                </nav>
+                <div key={contract.writer.firstName}>
+                  <nav className="main-nav ">
+                    <ul className="main-ul">
+                      <li className="main-li check ">
+                        {" "}
+                        <input type="checkbox" />
+                        {contract.writer
+                          ? `${contract.writer.firstName} ${contract.writer.lastName}`
+                          : "N/A"}
+                      </li>
+                      <li className="main-li">{contract.title}</li>
+                      <li className="main-li">
+                        <DateFormatter createdAt={contract.createdAt} />
+                      </li>
+                      <li className="main-li check icon">
+                        {contract.currency}{" "}
+                        {convertKoboToNaira(contract.amount)}
+                      </li>
+
+                      <div className="check icon">
+                        <GetTransactionStatus>
+                          <li className="main-li">{contract.status}</li>
+                        </GetTransactionStatus>
+                        <TasksViewBtn />
+                      </div>
+                    </ul>
+                  </nav>
+                </div>
               </>
             ))
           ) : (

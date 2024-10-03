@@ -100,7 +100,7 @@ const LineChart = () => {
     },
   };
 
-  return <Line data={data} options={options} />;
+  return <Line data={data} options={options} className="line-chart" />;
 };
 
 export default LineChart;
