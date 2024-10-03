@@ -68,12 +68,12 @@ function WithdrawalActivities({ withdrawal, index }) {
 
   return (
     <>
-      <div className="grid-5-cols ">
+      <div className="grid-5-col sp">
         <nav className="main-nav withdrawal-nav">
           <BackgroundColor index={index}>
             <ul className="main-ul withdraw-ul">
-              <div className="sp">
-                <li className="main-li check">
+              <div className="s">
+                <li className="main-li check with-check">
                   {/* <HiMegaphone size={"15px"} className="icon meg" /> */}
                   <svg
                     width="24"
@@ -106,28 +106,32 @@ function WithdrawalActivities({ withdrawal, index }) {
               </div>
 
               <StatusComponent withdrawalStatus={withdrawalStatus}>
-                <li className="main-li">Request {withdrawalStatus}</li>
-                {withdrawalStatus === "pending" && (
-                  <>
-                    <div className="flex pend">
-                      <button
-                        onClick={() => handleStatusChange("approved")}
-                        className="approve"
-                        disabled={loading}
-                      >
-                        {loading ? "Approving..." : "Approve"}
-                      </button>
+                <li className="main-li status-li">
+                  Request {withdrawalStatus}
+                </li>
+                <div className="pending-withdraw">
+                  {withdrawalStatus === "pending" && (
+                    <>
+                      <div className="flex pend">
+                        <button
+                          onClick={() => handleStatusChange("approved")}
+                          className="approve status-li"
+                          disabled={loading}
+                        >
+                          {loading ? "Approving..." : "Approve"}
+                        </button>
 
-                      <button
-                        onClick={() => handleStatusChange("rejected")}
-                        className="rejected btnn approve"
-                        disabled={loading}
-                      >
-                        {loading ? "Rejecting..." : "Reject"}
-                      </button>
-                    </div>
-                  </>
-                )}
+                        <button
+                          onClick={() => handleStatusChange("rejected")}
+                          className="rejected btnn approve status-li"
+                          disabled={loading}
+                        >
+                          {loading ? "Rejecting..." : "Reject"}
+                        </button>
+                      </div>
+                    </>
+                  )}
+                </div>
               </StatusComponent>
             </ul>
           </BackgroundColor>

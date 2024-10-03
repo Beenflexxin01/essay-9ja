@@ -372,6 +372,38 @@
     z-index: 1;
   }
 
+  .with-li {
+    font-size: 1.2rem;
+    margin: 0 3.5rem;
+  }
+
+  .status-li {
+    font-size: 1.2rem;
+  }
+
+  .withdraw-ul {
+    display: block;
+  }
+
+  .req {
+    width: 20%;
+    margin: 1rem 3rem;
+  }
+
+  .sp {
+    height: 20vh;
+  }
+
+  .pending-withdraw {
+    top: 23rem;
+    left: 7%;
+  }
+
+  .with-check {
+    display: flex;
+    align-items: center;
+  }
+
   html {
     overflow-x: hidden;
   }
@@ -394,5 +426,23 @@
 
   .modal-c {
     left: 54%;
+  }
+
+  .sp {
+    height: 25vh;
+  }
+
+  .pending-withdraw {
+    top: 40%;
+    left: 8.7%;
+  }
+
+  .with-li {
+    display: block;
+    margin: 0 3rem;
+  }
+
+  .req {
+    width: 30%;
   }
 }

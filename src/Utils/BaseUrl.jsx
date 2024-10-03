@@ -7,7 +7,7 @@ export function StatusComponent({ withdrawalStatus, children }) {
       ? "rejected"
       : withdrawalStatus === "approved"
         ? "approved completed"
-        : "pending";
+        : "pending pending-withdrawal";
 
   return <div className={`${statusClass} approve req`}>{children}</div>;
 }

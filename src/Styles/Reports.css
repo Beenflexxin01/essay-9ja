@@ -139,7 +139,7 @@ label {
 }
 
 .pend {
- margin: 0 -3rem; 
+  margin: 0 -3rem;
 }
 
 .with-flex {
@@ -151,6 +151,7 @@ label {
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  /* text-align: center; */
 }
 
 .approve {
@@ -201,10 +202,6 @@ label {
   text-transform: capitalize;
 }
 
-.pending {
-  background-color: transparent;
-}
-
 .btnn {
   border: none;
   outline: none;
@@ -223,8 +220,14 @@ label {
 }
 
 .pending {
+  background-color: transparent;
   color: red;
   border: 1px solid #ffebeb;
+}
+
+.pending-withdrawal {
+  border: none;
+  color: transparent;
 }
 
 .started {

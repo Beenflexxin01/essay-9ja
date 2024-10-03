@@ -34,3 +34,13 @@
   padding: 0;
   width: 2rem;
 }
+
+  .pending-withdraw {
+    position: absolute;
+    top: 18rem;
+    gap: 0;
+  }
+
+  .pend {
+    gap: 0.6rem;
+  }
