@@ -13,7 +13,7 @@ function DeactivateWriterModalBtn({ writersId, accountStatus = "active" }) {
 
   return (
     <>
-      <Button variant="" onClick={() => setModalShow(true)}>
+      <Button variant="" className="modal-li" onClick={() => setModalShow(true)}>
         {currentStatus === "active" ? "Deactivate" : "Activate"} Writer
       </Button>
       <DeactivateAccountModal

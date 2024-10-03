@@ -12,7 +12,11 @@ function TaskDeleteBtn({ taskId, status }) {
 
   return (
     <>
-      <Button variant="" onClick={() => setModalShow(true)} className="delete">
+      <Button
+        variant=""
+        className="delete modal-li"
+        onClick={() => setModalShow(true)}
+      >
         Close Task
       </Button>
       <TaskDeleteModal

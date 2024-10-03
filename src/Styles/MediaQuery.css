@@ -99,9 +99,17 @@
     width: 75%;
     margin: 1.5rem;
   }
+
+  .modal--content {
+    left: 27%;
+  }
 }
 
 @media (max-width: 48em) {
+  html {
+    overflow-x: hidden;
+  }
+
   .dispute-bg {
     height: 100%;
   }
@@ -264,10 +272,6 @@
     border-bottom: none;
   }
 
-  .h1 {
-    font-size: 2rem;
-  }
-
   .burger-menu.open {
     transform: translate(0);
     opacity: 100%;
@@ -412,8 +416,8 @@
     height: 100%;
   }
 
-  html {
-    overflow-x: hidden;
+  .modal--content {
+    left: 23%;
   }
 }
 
@@ -428,15 +432,19 @@
   }
 
   .modal-c {
-    left: 50%;
-    width: 19rem;
+    left: 57%;
+    width: 20rem;
   }
 
   .approval-modal {
-    left: 5%;
     left: 0;
     height: 100%;
-    width: 91%;
+    width: 100%;
+  }
+
+  .dispute-modal {
+    width: 100%;
+    left: 0;
   }
 
   .modal-li {
@@ -459,5 +467,9 @@
 
   .req {
     width: 30%;
+  }
+
+    .modal--content {
+    left: 16%;
   }
 }

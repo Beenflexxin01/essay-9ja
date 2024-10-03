@@ -14,10 +14,7 @@ function TasksViewBtn({ taskId, status }) {
         className="view-btn"
       >
         <PiDotsThreeVertical size={"24px"} className="dots hidden-dots" />
-        <HiOutlineDotsHorizontal
-          size={"24px"}
-          className="dots hidden-dot approval-dot"
-        />
+        <HiOutlineDotsHorizontal size={"24px"} className="dots hidden-dot" />
       </Button>
       <TaskModal
         show={modalShow}

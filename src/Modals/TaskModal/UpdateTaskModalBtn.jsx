@@ -7,7 +7,11 @@ function UpdateTaskModalBtn() {
   const [modalShow, setModalShow] = useState(false);
   return (
     <>
-      <Button variant="" onClick={() => setModalShow(true)}>
+      <Button
+        variant=""
+        className="modal-li"
+        onClick={() => setModalShow(true)}
+      >
         Update Task Status
       </Button>
       <UpdateTaskModal show={modalShow} onHide={() => setModalShow(false)} />
