@@ -69,6 +69,10 @@
     height: 100vh;
   }
 
+  .claim-nav {
+    height: 100%;
+  }
+
   .claim-li,
   .claim-title,
   .nav-link,
@@ -96,11 +100,15 @@
 
 @media (max-width: 64em) {
   .log-border {
-    width: 60%;
+    width: 100%;
   }
 
   .login-text {
     font-size: 1.3rem;
+  }
+
+  .polygon {
+    left: 11.5%;
   }
 
   .secondary-header {
@@ -108,12 +116,32 @@
   }
 
   .accordion-header {
-    width: 75%;
+    width: 95%;
     margin: 1.5rem;
   }
 
   .modal--content {
     left: 27%;
+  }
+
+  .skill-flex {
+    overflow-x: scroll;
+  }
+
+  .with-li {
+    margin: 0 3rem;
+  }
+
+  .modal-c {
+    left: 72%;
+  }
+
+  .dispute-modal {
+    left: 44%;
+  }
+
+  .approval-modal {
+    left: 51%;
   }
 }
 
@@ -121,6 +149,15 @@
   .absolute {
     left: 70rem;
     top: 40rem;
+  }
+
+  .bg {
+    border-radius: 0;
+    height: 100vh;
+  }
+
+  .modal-body {
+    border-radius: 0;
   }
 
   .form-container {
@@ -506,7 +543,7 @@
   }
 
   .approval-modal {
-    left: 0;
+    /* left: 0; */
     height: 100%;
     width: 100%;
   }
@@ -567,5 +604,28 @@
 
   .transaction-nav-li {
     font-size: 1.3rem;
+  }
+
+  .main-li {
+    font-size: 1.2rem;
+  }
+
+  .pagination-ul {
+    margin: 0;
+  }
+}
+
+@media (max-width: 30em) {
+  .claim-button {
+    width: 85%;
+  }
+
+  .grid-5-cols {
+    height: 42vh;
+    margin: 4rem 1rem;
+  }
+
+  .analytics {
+    display: none;
   }
 }
