@@ -50,7 +50,8 @@ export function RefundWriter({ id, status }) {
         variant=""
         // onClick={() => handleSubmission("resolved")}
         onClick={() => setModalShow(true)}
-        className="refund-btn modal--btn refund--btn"
+        className="refund-btn modal--btn claim-btn"
+        // className="modal--btn claim-btn"
         disabled={loading || currentStatus === "resolved"}
       >
         Refund Client
@@ -66,8 +67,9 @@ export function RefundWriter({ id, status }) {
 
 export function CloseWriterClaim({ id, status }) {
   const [modalShow, setModalShow] = useState(false);
+  const [loading, setIsLoading] = useState();
   const [currentStatus, setCurrentStatus] = useState(status);
-  const [loading, setIsLoading] = useState(false);
+
   const handleStatusChange = (newStatus) => {
     setCurrentStatus(newStatus);
   };
@@ -75,22 +77,23 @@ export function CloseWriterClaim({ id, status }) {
   const handleSubmission = async (resolutionMessage) => {
     try {
       setIsLoading(true);
+
       const response = await apiCall(
         `${BaseUrl}/contracts/${id}/dispute`,
         "PATCH",
         {
-          action: "close",
+          action: "refund",
           resolutionMessage: resolutionMessage,
         }
       );
 
       if (response.status !== 200) {
-        throw new Error("Unable to update dispute");
+        throw new Error("Cannot carry out the requested action!");
       } else {
-        toast.success("Dispute status successfully uodated!");
+        toast.success(`Dispute has been successfully ${status}`);
       }
 
-      handleStatusChange("close");
+      handleStatusChange("refund");
     } catch (err) {
       console.log(err);
       toast.error(`You cannot carry out this action at this time.`);
@@ -104,11 +107,12 @@ export function CloseWriterClaim({ id, status }) {
       <button
         variant=""
         onClick={() => setModalShow(true)}
-        className="modal--btn close-claim refund--btn"
-        disabled={currentStatus || loading === "resolved"}
+        className="modal--btn close-claim claim-btn"
+        disabled={loading || currentStatus === "resolved"}
       >
         Close The Claim
       </button>
+
       <CloseClaim
         show={modalShow}
         onHide={() => setModalShow(false)}

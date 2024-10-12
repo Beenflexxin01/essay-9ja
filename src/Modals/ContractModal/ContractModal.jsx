@@ -26,6 +26,10 @@ function ContractModal({
     writer,
     amount,
     currency,
+    submissionStatus,
+    expiryDate,
+    submissionMessage,
+    submissionFiles,
   } = disputes;
 
   const [key, setKey] = useState("home");
@@ -68,7 +72,7 @@ function ContractModal({
           </div>
         ) : (
           <div className="dispute-modal-content">
-            <div className="claim">
+            <div className="claim approval">
               <h3 className="tertiary-header tert-head">
                 <span onClick={onHide} className="arr">
                   &larr;
@@ -96,19 +100,6 @@ function ContractModal({
                         </li>
                       </div>
                       <div className="contract-spacing">
-                        <li className=" claim-title">Additional Info</li>
-                        <li className="claim-li">Font Size: 14</li>
-                        <li className="claim-li">Font Theme: Arial</li>
-                        <li className="claim-li">Space Line: Arial</li>
-                        <li className="claim-li">Number of Pages: Arial</li>
-                      </div>
-                      <div className="contract-spacing">
-                        <li className=" claim-title">Date Created</li>
-                        <li className="claim-li">
-                          <DateFormatter createdAt={createdAt} />
-                        </li>
-                      </div>
-                      <div className="contract-spacing">
                         <li className=" claim-title">Client</li>
                         <li className="claim-li">
                           {user ? `${user.firstName} ${user.lastName}` : "N/A"}
@@ -122,6 +113,33 @@ function ContractModal({
                             : "N/A"}
                         </li>
                       </div>
+                      <div className="contract-spacing">
+                        <li className=" claim-title">Submission Files</li>
+                        <li className="claim-li">{submissionFiles}</li>
+                      </div>
+                      <div className="contract-spacing">
+                        <li className=" claim-title">Submission Message</li>
+                        <li className=" claim-title">{submissionMessage}</li>
+                      </div>
+
+                      <div className="contract-spacing">
+                        <li className=" claim-title">Submission Status</li>
+                        <li className="claim-li">{submissionStatus}</li>
+                      </div>
+
+                      <div className="contract-spacing">
+                        <li className=" claim-title">Date Created</li>
+                        <li className="claim-li">
+                          <DateFormatter createdAt={createdAt} />
+                        </li>
+                      </div>
+                      <div className="contract-spacing">
+                        <li className=" claim-title">Expiry Created</li>
+                        <li className="claim-li">
+                          <DateFormatter createdAt={expiryDate} />
+                        </li>
+                      </div>
+
                       <div className="contract-spacing">
                         <li className=" claim-title">Amount</li>
                         <li className="claim-li">

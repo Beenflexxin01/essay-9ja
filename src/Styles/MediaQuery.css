@@ -71,6 +71,7 @@
 
   .claim-nav {
     height: 100%;
+
   }
 
   .claim-li,
@@ -616,8 +617,16 @@
 }
 
 @media (max-width: 30em) {
+  .dashboard-flex {
+    display: block;
+  }
   .claim-button {
-    width: 85%;
+    width: 95%;
+    gap: 0.5rem;
+  }
+
+  .claim-nav {
+    width: 100%;
   }
 
   .grid-5-cols {
@@ -628,4 +637,8 @@
   .analytics {
     display: none;
   }
+
+  /* .modal--btn {
+    width: 40%;
+  } */
 }
