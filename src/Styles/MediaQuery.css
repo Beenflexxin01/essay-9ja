@@ -29,6 +29,28 @@
     margin: 1rem 3rem;
   }
 
+  .settings {
+    width: 78%;
+    height: 100vh;
+  }
+
+  .profile-studio {
+    width: 70%;
+    margin: 15rem 4rem;
+    padding: 0;
+  }
+
+  .profile-set {
+    display: flex;
+    justify-content: space-between;
+    margin: 2rem;
+    height: 0;
+  }
+
+  .profile {
+    width: 20vw;
+  }
+
   .req {
     width: 100%;
     padding: 0;
@@ -71,7 +93,6 @@
 
   .claim-nav {
     height: 100%;
-
   }
 
   .claim-li,
@@ -152,6 +173,29 @@
     top: 40rem;
   }
 
+  .settings {
+    width: 100%;
+    height: 100vh;
+  }
+
+  .profile-studio {
+    width: 100%;
+    margin: 15rem auto;
+    padding: 0;
+  }
+
+  .profile-set {
+    margin: 1rem 0;
+  }
+
+  .profile {
+    width: 29vw;
+  }
+
+  .pro-form {
+    width: 65%;
+  }
+
   .bg {
     border-radius: 0;
     height: 100vh;
@@ -205,7 +249,7 @@
     flex-direction: column;
     margin: 0 3rem;
     justify-content: space-between;
-    padding: 2.3rem 1rem;
+    padding: 2.3rem 1rem 0 1rem;
     align-items: flex-start;
   }
 
@@ -336,7 +380,8 @@
     position: fixed;
     top: 7.8rem;
     left: 0;
-    width: 28rem;
+    width: 100%;
+    height: 100%;
     align-items: start;
     transition: all 0.3s linear;
     opacity: 0;
@@ -516,12 +561,49 @@
   html {
     overflow-x: hidden;
   }
+
+  .grid-5-cols {
+    height: 30vh;
+  }
 }
 
 @media (max-width: 36em) {
   body {
     overflow-x: hidden;
     overflow-y: scroll;
+  }
+
+  .profile-ul {
+    padding: 0 1rem;
+  }
+
+  .settings {
+    width: 100%;
+  }
+
+  .profile-studio {
+    width: 100%;
+  }
+
+  .profile-input {
+    width: 95%;
+  }
+
+  .profile-btn {
+    margin: 1.6rem 0;
+  }
+
+  .profile-set {
+    margin: 1rem 0;
+  }
+
+  .profile {
+    width: 29vw;
+    font-size: 1.3rem;
+  }
+
+  .pro-form {
+    width: 100%;
   }
 
   .form-container {
@@ -544,7 +626,6 @@
   }
 
   .approval-modal {
-    /* left: 0; */
     height: 100%;
     width: 100%;
   }
@@ -625,12 +706,16 @@
     gap: 0.5rem;
   }
 
+  .profile-input {
+    width: 100%;
+  }
+
   .claim-nav {
     width: 100%;
   }
 
   .grid-5-cols {
-    height: 42vh;
+    height: 30vh;
     margin: 4rem 1rem;
   }
 
